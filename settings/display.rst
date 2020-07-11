@@ -39,12 +39,12 @@ Apply bilinear filtering to smooth out textures displayed on screen.
 Screen Filter
 ^^^^^^^^^^^^^
 
-Apply a filter to make the picture resemble the digital-to-analog converter output of a real Voodoo card.
+Apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
 
 Render threads
 ^^^^^^^^^^^^^^
 
-Allows the Voodoo workload to be split into multiple threads. 2 render threads are recommended for host systems with more than 2 CPU cores.
+Allows the Voodoo workload to be split into multiple threads. 2 render threads are recommended for host systems with more than two CPU cores.
 
 SLI
 ^^^

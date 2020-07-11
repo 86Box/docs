@@ -43,14 +43,14 @@ The I/O port and IRQ can be configured through the *Configure* button.
 Innovation SSI-2001
 -------------------
 
-Emulate the **Innovation SSI-2001** ISA sound card, based on the MOS Technology 6581 chip commonly known as the Commodore SID.
+Emulate the **Innovation SSI-2001** ISA sound card, based on the MOS Technology 6581 chip (commonly known as the Commodore SID) and supported by a limited number of games.
 
 SID emulation is provided by the `reSID <http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/resid/>`_ library.
 
 CMS / Game Blaster
 ------------------
 
-Emulate the **Creative Music System** or **Game Blaster** ISA sound card, based on dual Philips SAA1099 sound chips.
+Emulate the **Creative Music System** or **Game Blaster** ISA sound card, based on dual Philips SAA1099 sound chips and supported by some games.
 
 Gravis Ultrasound
 -----------------
