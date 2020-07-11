@@ -6,9 +6,13 @@ The *Input devices* page contains settings related to the emulated machine's mou
 Mouse
 -----
 
-Mouse device to emulate. Bus, serial and PS/2 (on supported machines) mice are supported.
+Mouse device to emulate. The following types of mice are supported:
 
-The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, the serial port for serial mice, or the I/O port and IRQ for bus mice.
+* **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
+* **Serial mouse:** connected to the serial port of your choosing.
+* **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
+
+The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
 
 Joystick
 --------
