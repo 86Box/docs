@@ -33,3 +33,4 @@ Documentation
    usage/gettingstarted
    settings/index
    usage/machinespecific
+   usage/imageformats
