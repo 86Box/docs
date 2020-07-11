@@ -24,5 +24,5 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+
    usage/gettingstarted
