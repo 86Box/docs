@@ -12,3 +12,4 @@ If any changes were made to the settings, you will be asked whether or not you w
    machine
    display
    input
+   sound

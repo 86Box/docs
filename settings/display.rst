@@ -6,7 +6,7 @@ The *Display* page contains settings related to the emulated machine's 2D and 3D
 Video
 -----
 
-Video card to emulate. Only video cards supported by the machine's expansion buses will be listed.
+Video card to emulate. Only video cards supported by the machine's expansion buses will be listed. The *Internal* option corresponds to the onboard video chip on machines equipped with one.
 
 The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of installed video memory.
 
