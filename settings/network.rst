@@ -40,7 +40,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Advanced: SLiRP port forwarding
 -------------------------------
 
-Port forwarding allows other machines to connect to TCP or UDP servers running on the guest system through the host's IP address. Port forwarding can be enabled by manually editing the configuration file (``86box.cfg`` by default) to add a ``[SLiRP Port Forwarding]`` section.
+Port forwarding allows other machines to connect to TCP or UDP servers running on the guest system through the host's IP address when using the SLiRP network type. Port forwarding can be enabled by manually editing the configuration file (``86box.cfg`` by default) to add a ``[SLiRP Port Forwarding]`` section.
 
 Port forwards are numbered starting from zero. The following configuration directives are available under the ``[SLiRP Port Forwarding]`` section (assuming port forward number 0):
 
