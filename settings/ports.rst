@@ -9,9 +9,9 @@ LPT1-3 Device
 Emulated device to connect to the given parallel (LPT) port.
 
 * **None:** no device connected.
-* **Disney Sound Source:** sound device with a resistor ladder DAC and FIFO, supported by some games.
+* **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by some games.
 * **LPT DAC / Covox Speech Thing:** sound device with a resistor ladder DAC, supported by many games and demos.
-* **Stereo LPT DAC:** stereo version of the LPT DAC, using the strobe pin to toggle between channels.
+* **Stereo LPT DAC:** stereo version of the LPT DAC, using the strobe pin to select the active output channel.
 * **Generic Text Printer:** simple printer capable of outputting text only.
 
    * Printed documents are saved as ``.txt`` files in the ``printer`` directory.
@@ -19,7 +19,7 @@ Emulated device to connect to the given parallel (LPT) port.
 * **Generic ESC/P Dot-Matrix:** EPSON ESC/P compatible printer. The FreeType library file must be present in the 86Box directory for this printer to operate.
 
    * Printed pages are saved as ``.png`` files in the ``printer`` directory.
-   * Use the **PLACEHOLDER** printer driver for best results.
+   * Use the **EPSON LQ-2500** printer driver for best results.
 
 * **Generic PostScript Printer:** PostScript compatible printer. The GhostScript library file must be present in the 86Box directory for this printer to output ``.pdf`` files.
 
