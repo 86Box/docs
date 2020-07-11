@@ -31,4 +31,5 @@ Documentation
    :maxdepth: 2
 
    usage/gettingstarted
+   settings/index
    usage/machinespecific
