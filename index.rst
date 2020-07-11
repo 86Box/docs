@@ -1,5 +1,7 @@
 About 86Box
 ===========
+**NOTE: This documentation is a work in progress.**
+
 **86Box** is a hypervisor and IBM PC system emulator that specializes in
 running old operating systems and software designed for IBM PC systems and
 compatibles from 1981 through fairly recent system designs based on the
@@ -29,3 +31,4 @@ Documentation
    :maxdepth: 2
 
    usage/gettingstarted
+   usage/machinespecific
