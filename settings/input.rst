@@ -17,7 +17,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Joystick
 --------
 
-Game port controller to emulate. The following choices are available:
+Game port controller to emulate.
 
 * **Standard 2-button joystick(s):** up to two controllers, each with two buttons and a single analog stick.
 * **Standard 4-button joystick:** single controller with four buttons and a single analog stick.

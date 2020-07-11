@@ -20,7 +20,7 @@ The *Configure* button provides the following settings:
 Voodoo type
 ^^^^^^^^^^^
 
-Type of Voodoo card to emulate. The following choices are available:
+Type of Voodoo card to emulate.
 
 * **Voodoo Graphics:** the original Voodoo model, with a single Texture Mapping Unit operating at 50 MHz.
 * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, equipped with a second Texture Mapping Unit like the Voodoo 2.
