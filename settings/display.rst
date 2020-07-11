@@ -1,10 +1,10 @@
+Display
+=======
+
+The *Display* page contains settings related to the emulated machine's 2D and 3D video cards.
+
 Video
-=====
-
-The *Video* page contains settings related to the emulated machine's 2D and 3D video cards.
-
-Video⁠
-------
+-----
 
 Video card to emulate. Only video cards supported by the machine's expansion buses will be listed.
 
