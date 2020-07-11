@@ -26,12 +26,12 @@ Network connection type to emulate.
 PCap device
 -----------
 
-The host network adapter to use for PCap mode. If you aren't seeing any adapters, make sure Npcap is installed correctly.
+Host network adapter to use for PCap mode. If you aren't seeing any adapters, make sure Npcap is installed correctly.
 
 Network adapter
 ---------------
 
-Network card to emulate.
+Network card to emulate. Only cards supported by the machine's expansion buses will be listed.
 
 The *Configure* button opens a new window with settings specific to the selected network card, such as the I/O port and IRQ for ISA cards.
 
