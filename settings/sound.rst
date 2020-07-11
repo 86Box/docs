@@ -8,7 +8,7 @@ Sound card
 
 Sound card to emulate. The *Internal* option corresponds to the onboard sound chip on machines equipped with one.
 
-The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA sound cards.
+The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
 MIDI Out Device
 ---------------
