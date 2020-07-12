@@ -6,7 +6,7 @@ The *Sound* page contains settings related to the emulated machine's audio hardw
 Sound card
 ----------
 
-Sound card to emulate. Only cards supported by the machine's expansion buses will be listed. The *Internal* option corresponds to the onboard sound chip on machines equipped with one.
+Sound card to emulate. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard sound chip, the *Internal* option enables the onboard sound.
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 

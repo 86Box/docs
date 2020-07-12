@@ -12,7 +12,7 @@ Network connection type to emulate.
 * **PCap:** connect directly to a host network adapter, similarly to the *Bridge* setting of other virtualizers. `Npcap <https://nmap.org/npcap/>`_ must be installed, and the host system must be connected to a **wired network**, as support for wireless network adapters is rare.
 * **SLiRP:** create a virtual network, similarly to the *NAT* setting of other virtualizers.
 
-   * SLiRP will automatically provide the guest with an IP address through DHCP, but if you are unable to use DHCP, use the following settings:
+   * SLiRP will automatically provide the guest with an IP address through DHCP. If you are unable to use DHCP, use the following static IP settings:
 
       * IP address: 10.0.2.15
       * Subnet mask: 255.255.255.0
