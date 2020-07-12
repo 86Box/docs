@@ -28,7 +28,7 @@ Number of memory wait states. This box is only enabled and relevant if a 286- or
 Memory
 ------
 
-Amount of RAM to give the emulated machine. The minimum and maximum amounts of RAM will vary depending on the selected machine.
+Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the selected machine.
 
 Dynamic Recompiler
 ------------------
@@ -38,8 +38,8 @@ Enable the dynamic recompiler, which provides faster but less accurate CPU emula
 Time synchronization
 --------------------
 
-Time synchronization automatically copies your host machine's date and time settings over to the guest machine's hardware real-time clock. Synchronization is performed every time the guest operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
+Time synchronization automatically copies your host system's date and time settings over to the guest machine's hardware real-time clock. Synchronization is performed every time the guest operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
 
 * **Disabled:** do not perform time synchronization.
-* **Enabled (local time):** synchronize the time in your host machine's configured timezone. Use this option when running a guest operating system which stores local time in the hardware clock, such as DOS or Windows.
+* **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when running a guest operating system which stores local time in the hardware clock, such as DOS or Windows.
 * **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when running a guest operating system which stores UTC time in the hardware clock, such as Linux.

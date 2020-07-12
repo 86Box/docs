@@ -6,10 +6,10 @@ The *Input devices* page contains settings related to the emulated machine's mou
 Mouse
 -----
 
-Mouse device to emulate. The following types of mice are supported:
+Emulate a mouse pointing device. The following mouse types are supported:
 
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
-* **Serial mouse:** connected to the serial port of your choosing.
+* **Serial mouse:** connected to the serial port of your choosing. The selected serial port must be enabled in :ref:`settings/ports:Serial port 1-4`.
 * **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
 
 The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
@@ -17,7 +17,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Joystick
 --------
 
-Game port controller to emulate.
+Emulate one or more game port controller(s). The following controller types are supported:
 
 * **Standard 2-button joystick(s):** up to two controllers, each with two buttons and a single analog stick.
 * **Standard 4-button joystick:** single controller with four buttons and a single analog stick.
@@ -36,4 +36,4 @@ Configure the mappings for each emulated game port controller. The *Device* box 
 
 If you're not sure as to what axis or button numbers map to which sticks and buttons on the real controller, use the *Test* feature of Windows' *Game Controllers* control panel (``joy.cpl``). Keep in mind 86Box's button numbers start with 0, whereas the control panel's numbers start with 1.
 
-.. note:: Only DInput controllers are supported at the moment. XInput controllers are still supported through their DInput emulation mode, with no action required.
+.. note:: Only DInput controllers are supported at the moment. XInput controllers can still be used through their DInput emulation mode, with no action required.

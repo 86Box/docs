@@ -62,4 +62,4 @@ The type of UltraSound to emulate (Classic or MAX), I/O port and amount of onboa
 Use FLOAT32 sound
 -----------------
 
-Use the 32-bit floating point (instead of 16-bit integer) data type for audio output. Try disabling this option if you're getting glitchy audio even at 100% emulation speed.
+Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping. Try disabling this option if you're getting no audio output at all.

@@ -15,7 +15,7 @@ HD Controller
 
 Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed.
 
-MFM, RLL, ESDI and IDE controllers are emulated. On machines with onboard IDE, selecting an IDE controller is not necessary.
+MFM, RLL, ESDI and IDE controllers are available. On machines with onboard IDE, selecting an IDE controller is not necessary.
 
 The *Configure* button opens a new window with settings specific to the selected controller card, such as the BIOS option ROM address.
 
@@ -24,7 +24,7 @@ FD Controller
 
 Floppy disk drive controller card to emulate.
 
-Selecting a controller is usually not required. The DTK controllers are useful for providing high-density 1.44 MB floppy support on XT machines.
+Selecting a controller is not usually necessary. The DTK controllers are useful for adding high-density 1.44 MB floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 

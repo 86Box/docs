@@ -30,7 +30,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 * **Bus:** bus to attach the disk to.
 * **Channel**/**ID:** where to attach the disk on the selected bus.
 
-   * The *Channel* for an IDE bus has two numbers, which correspond to an IDE channel and device, respectively:
+   * The *Channel* value for the IDE bus has two numbers, which correspond to an IDE channel and device, respectively:
 
 +---------+-----------+------+
 |*Channel*|IDE channel|Device|
@@ -52,14 +52,14 @@ The *New...* button opens a new window allowing you to create an existing hard d
 |3:1      |Quaternary |Slave |
 +---------+-----------+------+
 
-Press the *OK* button to create the image, or *Cancel* to close the window.
+Press the *OK* button to create the disk image file, or *Cancel* to close the window.
 
 Adding an existing disk
 -----------------------
 
 The *Existing...* button opens a similar window to the *New...* button, except that it lets you select an existing disk image file. The CHS parameters are guessed from the image's file size, or the file header if the image is of a format which contains a header.
 
-After selecting the image file and checking if the parameters are correct, select the *Bus* and *Channel*/*ID* and press *OK* to add the image. Press *Cancel* to close the window.
+After selecting the image file and checking if the parameters are correct, select the *Bus* and *Channel*/*ID* for the hard disk and press *OK* to add it. Press *Cancel* to close the window.
 
 Removing a disk
 ---------------
@@ -71,7 +71,7 @@ Select a disk on the list and press *Remove* to remove it.
 Size limits
 -----------
 
-There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's age, but here are a few important ones:
+There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's age. Here are a few important ones:
 
 +------------+---------+---------+-----+-------+
 |Limit       |Disk size|Cylinders|Heads|Sectors|

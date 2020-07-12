@@ -13,7 +13,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Voodoo Graphics
 ---------------
 
-Emulate a **3Dfx Voodoo** or **Voodoo 2** 3D accelerator, connected to the PCI bus and to the video card selected above.
+Emulate a **3Dfx Voodoo** 3D accelerator, connected to the PCI bus and to the video card selected above.
 
 The *Configure* button provides the following settings:
 
