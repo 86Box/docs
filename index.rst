@@ -30,7 +30,5 @@ Documentation
 .. toctree::
    :maxdepth: 2
 
-   usage/gettingstarted
+   usage/index
    settings/index
-   usage/machinespecific
-   usage/imageformats

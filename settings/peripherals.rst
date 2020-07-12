@@ -15,7 +15,7 @@ HD Controller
 
 Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed.
 
-MFM, RLL, ESDI and IDE controllers are available. On machines with onboard IDE, selecting an IDE controller is not necessary.
+MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not necessary for machines with onboard IDE.
 
 The *Configure* button opens a new window with settings specific to the selected controller card, such as the BIOS option ROM address.
 
