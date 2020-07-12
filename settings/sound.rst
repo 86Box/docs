@@ -29,7 +29,7 @@ MIDI In Device
 Device to receive MIDI music from, for sound cards equipped with an external MIDI input.
 
 * **None:** don't receive MIDI music.
-* **System MIDI:** receive from a (configurable) host MIDI device, such as a USB MIDI adapter. The input device is configurable.
+* **System MIDI:** receive from a (configurable) host MIDI device, such as a USB MIDI adapter.
 
 The *Configure* button opens a new window with settings specific to the selected input device.
 
