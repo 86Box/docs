@@ -25,7 +25,7 @@ Emulated device to connect to the given parallel (LPT) port.
 
    * Printed documents are saved as ``.pdf`` (or ``.ps`` if GhostScript is missing) files in the ``printer`` directory.
    * Use the generic PostScript printer driver provided by your operating system.
-   * Windows no longer provides a generic PostScript driver starting with 95; use the **Apple LaserWriter IIf** or **IIg** driver instead.
+   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** or **IIg** driver instead.
 
 Serial port 1-4
 ---------------
