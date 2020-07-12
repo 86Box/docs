@@ -10,3 +10,4 @@ This section contains information on how to use 86Box and its emulated hardware 
    gettingstarted
    machinespecific
    imageformats
+   ideterqua

@@ -28,20 +28,16 @@ Selecting a controller is not usually necessary. The DTK controllers are useful 
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 
+.. _ideterqua:
+
 Tertiary / Quaternary IDE Controller
 ------------------------------------
 
-Add a third or fourth (respectively) IDE channel to the emulated machine, through a generic ISA or VLB IDE controller card. The following resources are used by the additional controllers:
-
-+----------+-------------+---------------+-----------+
-|Channel   |Main I/O port|Status I/O port|Default IRQ|
-+==========+=============+===============+===========+
-|Tertiary  |0168h        |036Eh          |10         |
-+----------+-------------+---------------+-----------+
-|Quaternary|01E8h        |03EEh          |11         |
-+----------+-------------+---------------+-----------+
+Add a third or fourth (respectively) IDE channel to the emulated machine, through a generic ISA or VLB IDE controller card.
 
 The IRQ used by each controller can be configured through its respective *Settings* button.
+
+.. note:: The tertiary and quaternary channels may require manual configuration of guest operating systems, and may not be bootable. See :doc:`../usage/ideterqua` for more information.
 
 ISABugger
 ---------
