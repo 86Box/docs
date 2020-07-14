@@ -32,25 +32,25 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
    * The *Channel* value for the IDE bus has two numbers, which correspond to an IDE channel and device, respectively:
 
-+---------+-----------+------+
-|*Channel*|IDE channel|Device|
-+=========+===========+======+
-|0:0      |Primary    |Master|
-+---------+-----------+------+
-|0:1      |Primary    |Slave |
-+---------+-----------+------+
-|1:0      |Secondary  |Master|
-+---------+-----------+------+
-|1:1      |Secondary  |Slave |
-+---------+-----------+------+
-|2:0      |Tertiary   |Master|
-+---------+-----------+------+
-|2:1      |Tertiary   |Slave |
-+---------+-----------+------+
-|3:0      |Quaternary |Master|
-+---------+-----------+------+
-|3:1      |Quaternary |Slave |
-+---------+-----------+------+
+     +---------+-----------+------+
+     |*Channel*|IDE channel|Device|
+     +=========+===========+======+
+     |0:0      |Primary    |Master|
+     +---------+-----------+------+
+     |0:1      |Primary    |Slave |
+     +---------+-----------+------+
+     |1:0      |Secondary  |Master|
+     +---------+-----------+------+
+     |1:1      |Secondary  |Slave |
+     +---------+-----------+------+
+     |2:0      |Tertiary   |Master|
+     +---------+-----------+------+
+     |2:1      |Tertiary   |Slave |
+     +---------+-----------+------+
+     |3:0      |Quaternary |Master|
+     +---------+-----------+------+
+     |3:1      |Quaternary |Slave |
+     +---------+-----------+------+
 
 Press the *OK* button to create the disk image file, or *Cancel* to close the window.
 
@@ -73,12 +73,16 @@ Size limits
 
 There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's age. Here are a few important ones:
 
-+------------+---------+---------+-----+-------+
-|Limit       |Disk size|Cylinders|Heads|Sectors|
-+============+=========+=========+=====+=======+
-|20-bit CHS  |504 MB   |1024     |16   |63     |
-+------------+---------+---------+-----+-------+
-|Extended CHS|8032 MB  |1024     |256  |63     |
-+------------+---------+---------+-----+-------+
-|48-bit LBA  |131071 MB|Not applicable         |
-+------------+---------+-----------------------+
++---------------+---------+---------+-----+-------+
+|Limit          |Disk size|Cylinders|Heads|Sectors|
++===============+=========+=========+=====+=======+
+|20-bit CHS     |504 MB   |1024     |16   |63     |
++---------------+---------+---------+-----+-------+
+|Extended CHS   |8032 MB  |1024     |256  |63     |
++---------------+---------+---------+-----+-------+
+|65535 cylinders|32255 MB |65535    |16   |63     |
++---------------+---------+---------+-----+-------+
+|48-bit LBA     |131071 MB|Not applicable         |
++---------------+---------+-----------------------+
+
+These limits can be worked around (with caveats) by using software such as *Ontrack Disk Manager*, except for the 131071 MB one which is a hard limit of 86Box's hard disk emulation.
