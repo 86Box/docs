@@ -1,7 +1,7 @@
 Tertiary and quaternary IDE
 ===========================
 
-The additional tertiary and quaternary IDE controllers, enabled through the :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller` settings, may require manual configuration of guest operating systems, which is outlined in this page. They are also **not bootable**, except on machines equipped with MR BIOS.
+The additional tertiary and quaternary IDE controllers, enabled through the :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller` settings, are not supported by all BIOSes and may require manual configuration of guest operating systems. The specific details are outlined on this page.
 
 The following system resources are used by these additional controllers:
 
@@ -20,40 +20,28 @@ The following system resources are used by these additional controllers:
 BIOS support
 ------------
 
-The tertiary and quaternary controllers are only supported (partially or fully) by some BIOSes. The following table lists all BIOSes emulated by 86Box which are known to support these controllers:
-
-+--------------------------------+-------------+-----------+-------------------------------+
-|BIOS                            |Seen in BIOS?|Bootable? *|:ref:`Windows NT support? <nt>`|
-+================================+=============+===========+===============================+
-|American Megatrends             |No           |No         |Yes                            |
-+--------------------------------+-------------+-----------+-------------------------------+
-|Phoenix - AwardBIOS v6.00PG \*\*|No           |No         |Yes                            |
-+--------------------------------+-------------+-----------+-------------------------------+
-|MR BIOS                         |Yes          |Yes        |Yes                            |
-+--------------------------------+-------------+-----------+-------------------------------+
-
-| \* Includes support for DOS and other real mode operating systems.
-| \*\* Award Modular BIOS v6.00PG and all other versions before it do not have any support.
+The tertiary and quaternary channels are both not visible and not bootable in any BIOS with the exception of **MR BIOS**, which provides full support for them, including bootability and real mode / DOS (INT 13h) access.
 
 Windows 95, 98 and Me
-----------------
+---------------------
 
 TBD
 
 .. _nt:
 
-Windows NT, 2000, XP and newer
-------------------------------
+Windows NT, 2000, and XP
+------------------------
 
-The Windows NT family will detect and enable both additional channels at installation time *only if* supported by the BIOS (see the *Windows NT support?* column on :ref:`the table above <bios>`).
+The Windows NT 4 and 5 family will automatically detect and enable both additional channels during installation. This auto-detection does not work on machines with **Award BIOS**, except for the version that identifies itself as *Phoenix - AwardBIOS v6.00PG*, which does work.
 
-.. note:: If you install the system to a hard disk on one of the additional channels, it will not be bootable if the BIOS doesn't support booting from these channels (see the *Bootable?* column).
+.. note:: If you install the system to a hard disk on one of the additional channels, it will not be bootable if the BIOS doesn't support booting from these channels.
 
-Alternatively, the additional channels can be enabled after the system is installed:
+On Windows 2000 only, the additional channels can be enabled after the system is installed by going to the *Add New Hardware* control panel and adding a *Standard IDE/ESDI Hard Disk Controller* device for each additional channel. Configuration 0002 corresponds to the **tertiary** channel, while Configuration 0003 corresponds to the **quaternary** channel.
 
-* **Windows NT 4.0:** TBD.
-* **Windows 2000:** go to the *Add New Hardware* control panel and add a *Generic IDE/ESDI Hard Disk Controller* device for each additional channel. Configuration 000x corresponds to the **tertiary** channel, while Configuration 000x corresponds to the **quaternary** channel.
-* **Windows XP:** TBD. (IDE/ESDI not listed - let PnP do the job?)
+Windows Vista and 7
+-------------------
+
+The Windows NT 6 family does not support non-Plug-and-Play IDE controllers.
 
 Linux
 -----
