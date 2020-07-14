@@ -59,3 +59,5 @@ See: :ref:`atc6310bxii`
 * Equipped with dual Winbond W83977EF Super I/O chips driving four serial (COM1-COM4) and two parallel (LPT1-LPT2) ports.
 
    * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
+
+* ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. Enable it through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
