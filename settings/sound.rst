@@ -62,4 +62,4 @@ The type of UltraSound to emulate (Classic or MAX), I/O port and amount of onboa
 Use FLOAT32 sound
 -----------------
 
-Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping. Try disabling this option if you're getting no audio output at all.
+Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this option if you're getting no audio output from 86Box whatsoever.

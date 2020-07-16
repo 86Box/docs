@@ -58,7 +58,7 @@ Emulate a diagnostic POST card, which displays I/O port 80h POST code values on 
 Some machines use a different I/O port for POST codes: port 0680h on Micro Channel Architecture-based machines, or port 90h on non-MCA-based IBM PS/2 machines.
 
 
-.. note:: Some guest operating systems (such as Linux before kernel 3.0) rely heavily on the DMA extra page register, which is shared with the POST card. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+.. note:: Some guest operating systems (such as Linux before kernel 3.0) rely heavily on the first DMA extra page register, which is shared with the POST card. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
 
 ISA RTC
 -------
