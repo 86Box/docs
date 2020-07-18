@@ -24,12 +24,33 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 `Visit our Discord server <https://discord.gg/QXK9XTv>`_
 
-Documentation
--------------
+.. toctree::
+   :maxdepth: 1
+   :caption: Using 86Box
+   
+   usage/gettingstarted
+   usage/machinespecific
+   usage/diskimages
+   usage/ideterqua
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :caption: Settings
+   
+   settings/machine
+   settings/display
+   settings/input
+   settings/sound
+   settings/network
+   settings/ports
+   settings/peripherals
+   settings/hdd
+   settings/floppycdrom
+   settings/removable
 
-   usage/index
-   settings/index
-   formats/index
+.. toctree::
+   :maxdepth: 1
+   :caption: File formats
+   
+   formats/86f
+   formats/hdx
