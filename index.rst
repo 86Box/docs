@@ -32,3 +32,4 @@ Documentation
 
    usage/index
    settings/index
+   formats/index

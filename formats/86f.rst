@@ -1,0 +1,71 @@
+86F
+===
+
+A floppy disk image format which stores data in FM- or MFM-encoded transitions.
+
+Preliminary specification for v2.20
+-----------------------------------
+
+All offsets are in hexadecimal. This specification is subject to change before its final release.
+
+.. code-block:: none
+ 
+ 00000000: Magic 4 bytes ("86BF")
+ 00000004: Minor version (0x14)
+ 00000005: Major version (0x02)
+ 00000006: Disk flags (16-bit)
+         Bit 0           Has surface description data (1 = yes, 0 = no)
+                         This data indicates if the corresponding bit on the FM/MFM encoded surface
+                         is a normal bit or a special bit (weak bit or hole, depending on the other bit):
+                                 0 = The corresponding FM/MFM encoded surface bit is normal
+                                 1 = The corresponding FM/MFM encoded surface bit is either a weak bit or a hole:
+                                                 Corresponding FM/MFM encoded bit is 0: Hole (noise on read, not overwritable)
+                                                 Corresponding FM/MFM encoded bit is 1: Weak bit (noise on read, overwritable)
+         Bits 2, 1       Hole (3 = ED + 2000 kbps, 2 = ED, 1 = HD, 0 = DD)
+         Bit 3           Sides (1 = 2 sides, 0 = 1 side)
+         Bit 4           Write protect (1 = yes, 0 = no)
+         Bit 5           Bitcell mode (1 = Extra bitcells count specified after
+                         disk flags, 0 = No extra bitcells)
+                         The maximum number of extra bitcells is 1024 (which
+                         after decoding translates to 64 bytes)
+         Bit 6           Revolutions (0 = one revolution, 1 track has 16-bit number of revolutions)
+ 00000008: Offsets of tracks
+         Note that thick-track (eg. 360k) disks will have (tracks * 2) tracks, with each pair of tracks
+         being identical to each other.
+         Each side of each track is stored as its own track, in order (so, track 0 side 0, track 0 side 1,
+         track 1 side 0, track 1 side 0, etc.).
+         The table of the offsets of tracks is 2048 bytes long, each track offset is an unigned 32-bit
+         integer. An offset of 00000000 indicates the track is not present in the file.
+         As an example, an 86F representing a disk with 80 thin tracks and 2 sides per track, where all
+         the tracks are present in the file, would have the first 160 offsets filled in, same for a disk
+         with 40 thick tracks and 2 sides. Same with only 1 side but only the offsets at 0000000, 0000008,
+         etc. (so every second offset) would be filled in.
+ 
+ Track offset + 00000000: Track flags (16-bit)
+         Bits 4, 3       Encoding
+                         00 = FM
+                         01 = MFM
+                         10 = M2FM
+                         11 = GCR
+         Bits 2, 1, 0    Bit rate, if encoding is MFM:
+                         000 = 500 kbps
+                         001 = 300 kbps
+                         010 = 250 kbps
+                         011 = 1000 kbps
+                         101 = 2000 kbps
+                         If encoding is FM, the bit rate is half that.
+         The RPM is determined from track length and data rate.
+ Track offset + 00000002: Total bit cells count (32-bit)
+ Track offset + 00000006: Bit cell where index hole is (32-bit)
+ Track offset + 0000000A: FM/MFM/M2FM/GCR-encoded data (track length bytes)
+ Track offset + 0000000A + track length: Surface description data if present (track length bytes)
+
+ If this is a multi-revolution 86F, then track offset + 00000000 has a 16-bit number of track revolutions,
+ and the track header + data appears for each revolution, while surface description data, if present,
+ can appear any number of times, but only once per encoding + bit rate combination.
+ This needs work to properly make surface data work with flexible multi-revolution support.
+ 
+ Track lengths:
+         The total bit cells count is always present.
+         The track is stored as (bit cells >> 8) bytes, with one extra bit cells if the number of bit cells
+         is not divisible by 8.
