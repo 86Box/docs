@@ -1,0 +1,63 @@
+Disk images
+===========
+
+Supported hard disk image formats
+---------------------------------
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|**Raw image**        |Many *        |
++---------------------+--------------+
+|Japanese FDI         |.hdi          |
++---------------------+--------------+
+|:doc:`../formats/hdx`|.hdx          |
++---------------------+--------------+
+|Virtual Hard Disk    |.vhd          |
++---------------------+--------------+
+
+\* Raw images come in many extensions, including: img ima
+
+Supported floppy disk image formats
+-----------------------------------
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|**Raw image**        |Many *        |
++---------------------+--------------+
+|:doc:`../formats/86f`|.86f          |
++---------------------+--------------+
+|Formatted Disk Image |.fdi          |
++---------------------+--------------+
+|CopyQM               |.cqm          |
++---------------------+--------------+
+|DiskDupe             |.ddi          |
++---------------------+--------------+
+|EZ-DisKlone Plus     |.fdf          |
++---------------------+--------------+
+|HxC MFM              |.mfm          |
++---------------------+--------------+
+|ImageDisk            |.imd          |
++---------------------+--------------+
+|Japanese FDI         |.fdi          |
++---------------------+--------------+
+|PCjs JSON            |.json         |
++---------------------+--------------+
+|Teledisk             |.td0          |
++---------------------+--------------+
+
+\* Raw images come in many extensions, including: img ima flp vfd
+
+Floppy disk detection
+---------------------
+
+86Box detects the physical media format (sides, tracks per side, sectors per track, bytes per sector) of a floppy disk image through the following methods:
+
+1. Data stored in the file header, except for Raw and DiskDupe formats where there is none.
+2. Data stored in the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_.
+3. If all else fails, a guess is made based on the file size.
+
+The BIOS Parameter Block detection may result in incorrect behavior on *raw stream* (non-DOS) floppy disks. Installation floppies for UNIX and Linux are common examples of *raw stream* disks. Disabling the :ref:`settings/floppycdrom:Check BPB` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
+
+.. note:: When using a raw image of a raw stream floppy with the Check BPB option disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
