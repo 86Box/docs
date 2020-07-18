@@ -17,6 +17,8 @@ The following system resources are used by these additional controllers:
 
 .. note:: While the IRQ for each channel can be changed through its respective *Settings* button on :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller`, many operating systems do not allow legacy (ISA or VLB) IDE controllers to use custom IRQs.
 
+.. _bios:
+
 BIOS support
 ------------
 
@@ -30,7 +32,7 @@ DOS and other real mode operating systems rely on the BIOS-provided INT 13h serv
 Windows 95, 98 and Me
 ---------------------
 
-Each additional channel can be enabled after installation through the following procedure:
+The Windows 9x family will only detect and enable both additional channels during installation :ref:`if the BIOS supports them <bios>`. Each additional channel can be enabled after installation through the following procedure:
 
 1. Go to the *Add New Hardware* control panel.
 2. Add a *Standard IDE/ESDI Hard Disk Controller* from the *Hard disk controllers* category.
@@ -54,7 +56,7 @@ Each additional channel can be enabled after installation through the following 
 Windows NT, 2000, and XP
 ------------------------
 
-The Windows NT 4 and 5 families will automatically detect and enable both additional channels during installation. This auto-detection does not work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
+The Windows NT 4 and 5 families will automatically detect and enable both additional channels during installation, regardless of BIOS support. This auto-detection does not, however, work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
 
 .. note:: If you install the system to a hard disk on one of the additional channels, it will not be bootable if the BIOS doesn't support booting from these channels.
 
