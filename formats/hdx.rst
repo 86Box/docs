@@ -1,7 +1,7 @@
 Extended HDI (HDX)
 ==================
 
-A derivative of the *Japanese FDI* disk image format, with a more compact header and support for images larger than 4 GB.
+A derivative of the *Japanese FDI* disk image format, with a more compact header as well as support for images larger than 4 GB.
 
 Specification
 -------------

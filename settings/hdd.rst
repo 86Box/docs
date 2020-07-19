@@ -20,7 +20,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 * **File name:** where to save the disk image file.
 
-   * See :ref:`usage/imageformats:Supported disk image formats` for a list of supported disk image formats.
+   * See :ref:`usage/diskimages:Hard disk images` for a list of supported image formats.
 
 * **Cylinders/Heads/Sectors:** CHS parameters for the disk image. These boxes control the *Size (MB)* box below.
 * **Size (MB):** the disk image's size in MB. This box controls the *Cylinders*, *Heads* and *Sectors* boxes above.

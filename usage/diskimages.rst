@@ -1,8 +1,12 @@
 Disk images
 ===========
 
-Supported hard disk image formats
----------------------------------
+86Box supports a large variety of disk image formats for the emulated drives.
+
+Hard disk images
+----------------
+
+Supported formats:
 
 +---------------------+--------------+
 |Format               |File extension|
@@ -18,8 +22,10 @@ Supported hard disk image formats
 
 \* Raw images come in many extensions, including: img ima
 
-Supported floppy disk image formats
------------------------------------
+Floppy disk images
+------------------
+
+Supported formats:
 
 +---------------------+--------------+
 |Format               |File extension|
@@ -50,7 +56,7 @@ Supported floppy disk image formats
 \* Raw images come in many extensions, including: img ima flp vfd
 
 Floppy disk detection
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 86Box detects the physical media format (sides, tracks per side, sectors per track, bytes per sector) of a floppy disk image through the following methods:
 
@@ -58,6 +64,26 @@ Floppy disk detection
 2. Data stored in the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_.
 3. If all else fails, a guess is made based on the file size.
 
-The BIOS Parameter Block detection may result in incorrect behavior on *raw stream* (non-DOS) floppy disks. Installation floppies for UNIX and Linux are common examples of *raw stream* disks. Disabling the :ref:`settings/floppycdrom:Check BPB` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection may result in incorrect behavior on *raw stream* (non-DOS) floppy disks. Installation floppies for UNIX and Linux are common examples of *raw stream* disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
 
 .. note:: When using a raw image of a raw stream floppy with the Check BPB option disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
+
+CD-ROM / DVD-ROM optical disc images
+------------------------------------
+
+Supported formats:
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|Cue sheet            |.cue + .bin   |
++---------------------+--------------+
+|ISO                  |.iso          |
++---------------------+--------------+
+
+CD audio
+^^^^^^^^
+
+Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective CD-ROM drive in the status bar or the Media menu.
+
+.. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.
