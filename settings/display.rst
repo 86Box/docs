@@ -13,7 +13,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Voodoo Graphics
 ---------------
 
-Emulate a **3Dfx Voodoo** 3D accelerator, connected to the PCI bus and to the video card selected above.
+Emulate a **3dfx Voodoo** 3D accelerator, connected to the PCI bus and to the video card selected above.
 
 The *Configure* button provides the following settings:
 
@@ -24,9 +24,9 @@ The *Configure* button provides the following settings:
    * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory to give the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
-* **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on screen.
+* **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on the screen.
 * **Screen Filter:** apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
-* **Render threads:** allows the Voodoo workload to be split into multiple threads. 2 render threads are recommended for host systems with more than two CPU cores.
+* **Render threads:** allows the Voodoo workload to be split into multiple CPU threads. 2 render threads are recommended for host systems with more than two CPU cores.
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through Scan Line Interleave (SLI).
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
 

@@ -50,7 +50,7 @@ SID emulation is provided by the `reSID <http://www.zimmers.net/anonftp/pub/cbm/
 CMS / Game Blaster
 ------------------
 
-Emulate the **Creative Music System** or **Game Blaster** ISA sound card, based on dual Philips SAA1099 sound chips and supported by some games.
+Emulate the **Creative Music System** or **Game Blaster** ISA sound card, based on dual Philips SAA1099 chips and supported by some games.
 
 Gravis Ultrasound
 -----------------

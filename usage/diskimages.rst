@@ -64,9 +64,9 @@ Floppy disk detection
 2. Data stored in the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_.
 3. If all else fails, a guess is made based on the file size.
 
-The BIOS Parameter Block detection may result in incorrect behavior on *raw stream* (non-DOS) floppy disks. Installation floppies for UNIX and Linux are common examples of *raw stream* disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection may result in incorrect behavior on non-DOS-compatible floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS-compatible disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
 
-.. note:: When using a raw image of a raw stream floppy with the Check BPB option disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
+.. note:: When using a raw image of a non-DOS-compatible floppy with the Check BPB option disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
 
 CD-ROM / DVD-ROM optical disc images
 ------------------------------------

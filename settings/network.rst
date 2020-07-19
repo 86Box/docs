@@ -26,7 +26,7 @@ Network connection type to emulate.
 PCap device
 -----------
 
-Host network adapter to use for PCap mode. If you aren't seeing any adapters, make sure Npcap is installed correctly.
+Host network adapter to use for PCap mode. If you aren't seeing any adapters, make sure Npcap is installed correctly and a compatible network adapter is present.
 
 Network adapter
 ---------------
