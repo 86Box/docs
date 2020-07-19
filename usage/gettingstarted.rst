@@ -11,15 +11,9 @@ Here are the basic steps to help you get started with 86Box. The user interface 
 
 Once you got the romset in the right place, you can start ``86Box.exe``. The main window has three important areas:
 
-* **The menu bar at the top**, where most commands and options are located
-* **The display area in the middle**, which is where the output from the emulated machine will be rendered
-* **The status bar at the bottom**, containing icons for quickly accessing the configured peripheral devices
-
-The *Action* menu has basic commands for controlling the emulated machine. You can cycle the power (also known as a *hard reset*), send the *Ctrl+Alt+Del* and *Ctrl+Alt+Esc* keystrokes, pause the virtual machine or close it.
-
-The *View* menu is mostly filled with various options for advanced users, so we'll skip it for now. The *Tools* menu, on the other hand, is pretty important, as it allows you to access the settings for the virtual machine and take screenshots.
- 
-In the *About* menu, you can access the *About 86Box* window and see who helped make this emulator.
+* **The menu bar at the top**, where most controls and options are located. See :doc:`menu` for more information.
+* **The display area in the middle**, which is where the display output from the emulated machine will be rendered.
+* **The status bar at the bottom**, containing icons for quickly accessing the configured peripheral devices.
 
 .. rubric:: Step 3: Configure the hardware
 

@@ -53,7 +53,7 @@ Slot 2
 
 .. rubric:: Gigabyte GA-6GXU
 
-* The BIOS display will corrupt itself after the memory test if the maximum 2048 MB RAM is selected. This is a visual glitch which does not otherwise negatively impact the machine.
+* The BIOS display will corrupt itself during the memory test if the maximum of 2048 MB RAM is selected. This is a visual glitch which does not otherwise negatively impact the machine.
 
 Socket 370
 ----------
@@ -68,4 +68,4 @@ See: :ref:`atc6310bxii`
 
    * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
 
-* ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. Enable it through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
+* ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
