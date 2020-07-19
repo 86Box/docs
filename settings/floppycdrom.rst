@@ -6,7 +6,7 @@ The *Floppy and CD-ROM drives* page contains settings related to the emulated ma
 Floppy drives
 -------------
 
-Up to four floppy disk drives can be attached to the emulated system, although not all BIOSes provide support for more than two drives. The following options apply to the selected drive:
+Up to four floppy disk drives can be attached to the emulated system, although not all BIOSes provide support for more than two drives. The following settings apply to the selected drive:
 
 * **Type:** Type of floppy drive to emulate. Some drive types have special properties:
 
@@ -24,7 +24,7 @@ Floppy disk images can be inserted and removed through the status bar or the *Me
 CD-ROM drives
 -------------
 
-Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated system. The following options apply to the selected drive:
+Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated system. The following settings apply to the selected drive:
 
 * **Bus:** bus to attach the drive to. ATAPI (IDE) and SCSI are supported.
 * **Channel**/**ID:** where to attach the drive on the selected bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels.

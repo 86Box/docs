@@ -64,9 +64,9 @@ Floppy disk detection
 2. Data stored in the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_.
 3. If all else fails, a guess is made based on the file size.
 
-The BIOS Parameter Block detection may result in incorrect behavior on non-DOS-compatible floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS-compatible disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` option is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection may result in incorrect behavior on non-DOS-compatible floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS-compatible disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` setting is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
 
-.. note:: When using a raw image of a non-DOS-compatible floppy with the Check BPB option disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
+.. note:: When using a raw image of a non-DOS-compatible floppy with the Check BPB setting disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
 
 CD-ROM / DVD-ROM optical disc images
 ------------------------------------
@@ -84,6 +84,6 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective CD-ROM drive in the status bar or the Media menu.
+Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* box for the respective CD-ROM drive in the status bar or the Media menu.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.

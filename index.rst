@@ -29,24 +29,10 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    :caption: Using 86Box
    
    usage/gettingstarted
+   settings/index
    usage/machinespecific
    usage/diskimages
    usage/ideterqua
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Settings
-   
-   settings/machine
-   settings/display
-   settings/input
-   settings/sound
-   settings/network
-   settings/ports
-   settings/peripherals
-   settings/hdd
-   settings/floppycdrom
-   settings/removable
 
 .. toctree::
    :maxdepth: 1

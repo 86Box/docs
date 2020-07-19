@@ -23,7 +23,7 @@ In the *About* menu, you can access the *About 86Box* window and see who helped 
 
 .. rubric:: Step 3: Configure the hardware
 
-When you start a virtual machine, you probably want to configure it with the hardware options you want. This is much like putting together the hardware components to build a PC. To do this, go to the *Tools* menu and select *Settings*. This will bring up the *Settings* window, which has a lot of options to choose from, split into several categories.
+When you start a virtual machine, you probably want to configure it with the hardware options you want. This is much like putting together the hardware components to build a PC. To do this, go to the *Tools* menu and select *Settings*. This will bring up the *Settings* window, which has many options to choose from, split into :doc:`a handful of categories <../settings/index>`.
 
 .. rubric:: Step 4: Configure the BIOS
 
