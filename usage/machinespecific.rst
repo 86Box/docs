@@ -1,6 +1,8 @@
 Machine-specific notes
 ======================
 
+This page contains important notes related to specific machine types emulated by 86Box.
+
 80286
 -----
 
