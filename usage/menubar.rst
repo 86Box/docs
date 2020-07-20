@@ -6,7 +6,7 @@ The menu bar located at the top of the 86Box window provides controls for the em
 Action
 ------
 
-* **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to match some special keyboards where the Alt key is located on the right side of the space bar.
+* **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Hard reset:** force a reset of the emulated machine. Requires confirmation.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
@@ -47,7 +47,7 @@ Tools
 -----
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window.
-* **Update status bar icons:** enable the blinking lights on :doc:`status bar <statusbar>` icons. Unchecking this may improve emulation performance on low-end host systems.
+* **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Enable Discord integration:** enable Discord Rich Presence. Other Discord users will know that you're running 86Box, as well as the names of the virtual machine directory, emulated machine and emulated CPU you're using.
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as PNG images in the ``screenshots`` directory.
 

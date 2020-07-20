@@ -11,9 +11,9 @@ Here are the basic steps to help you get started with 86Box. The user interface 
 
 Once you got the romset in the right place, you can start ``86Box.exe``. The main window has three important areas:
 
-* **The menu bar at the top**, where most controls and options are located. See :doc:`menu` for more information.
+* **The menu bar at the top**, where most controls and options are located. See :doc:`menubar` for more information.
 * **The display area in the middle**, which is where the display output from the emulated machine will be rendered.
-* **The status bar at the bottom**, containing icons for quickly accessing the configured peripheral devices.
+* **The status bar at the bottom**, containing icons for quickly accessing the configured peripheral devices. See :doc:`statusbar` for more information.
 
 .. rubric:: Step 3: Configure the hardware
 
@@ -25,19 +25,7 @@ Once you've selected the hardware components you wish to emulate, you need to ma
 
 .. rubric:: Step 5: Mount some images
 
-Now that you've configured everything, you're ready to run some software in your virtual machine. Maybe you want to install an operating system or play a booter game. In any case, you'll have to mount some virtual media to get going. You can do this with the icons in the status bar. Icons representing removable media appear semi-transparent when their associated drive is empty, and fully opaque when media is inserted.
-
-Depending on the hardware configuration you've chosen, you may or may not see the following icons in the status bar, from left to right:
-
-* **Floppy disk:** the icon is different for 3.5" and 5.25" floppy disk drives. This also determines the kind of floppy disk images you can use with a particular drive. You can have up to 4 floppy drives configured, though BIOS limitations also apply. To mount a floppy disk image, click on the floppy disk icon, select *Existing image...*, and select the disk image you wish to mount.
-* **CD-ROM:** this represents the CD-ROM drive you've configured, you can have up to 4 drives. To mount a disk image, click on the icon and select *Image...*, then select the image you wish to mount.
-* **ZIP disk:** represents the Iomega ZIP drive, also up to four drives. The mounting procedure is the same in this case as well, click on the icon, select *Existing image...* and select your ZIP disk image.
-* **MO disk:** represents the Magneto-Optical drive, which works very similarly to the ZIP drive above.
-* **Hard disk drive:** currently only there to let you know that a hard disk drive has been configured. If you hover over it, the tooltip will tell you which interface was selected for this particular drive. You could theoretically have an unlimited number of hard disk drives, but interface and BIOS limitations prevent this.
-* **Network:** will only be present if you've enabled a network interface. It doesn't do anything yet other than let you know that networking capability has been enabled.
-* **Sound:** always present. Double-click it to adjust the sound gain level.
-
-Icons will also flash a small green dot every now and then. This means the particular piece of hardware associated with the icon is in use; for example, the data on the hard disk drive is being read or written.
+Now that you've configured everything, you're ready to run some software in your virtual machine. Maybe you want to install an operating system or play a booter game. In any case, you'll have to mount some virtual media to get going. You can do this with the icons in the :doc:`status bar <statusbar>`. Icons representing removable media appear semi-transparent when their associated drive is empty, and fully opaque when media is inserted.
 
 When you want to eject virtual media, click on the particular icon again and select *Eject* (for floppy and ZIP disks) or *Empty* (for CD-ROMs). The icon becomes semi-transparent again.
 

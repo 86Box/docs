@@ -1,7 +1,7 @@
 Floppy & CD-ROM drives
 ======================
 
-The *Floppy & CD-ROM drives* page contains settings related to the emulated machine's base removable devices.
+The *Floppy & CD-ROM drives* page contains settings related to the emulated machine's base removable storage drives.
 
 Floppy drives
 -------------

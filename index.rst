@@ -29,7 +29,8 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    :caption: Using 86Box
    
    usage/gettingstarted
-   usage/menu
+   usage/menubar
+   usage/statusbar
    settings/index
    usage/machinespecific
    usage/diskimages

@@ -1,7 +1,7 @@
 86F
 ===
 
-A floppy disk image format which stores data in FM- or MFM-encoded transitions.
+A floppy disk surface image format which stores data in FM- or MFM-encoded transitions.
 
 Preliminary specification for v2.20
 -----------------------------------
