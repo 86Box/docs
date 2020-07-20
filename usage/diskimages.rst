@@ -3,6 +3,9 @@ Disk images
 
 86Box supports a large variety of disk image formats for the emulated drives.
 
+.. |nbdash| unicode:: 0x2011
+   :trim:
+
 Hard disk images
 ----------------
 
@@ -68,6 +71,23 @@ The BIOS Parameter Block detection may result in incorrect behavior on non-DOS-c
 
 .. note:: When using a raw image of a non-DOS-compatible floppy with the Check BPB setting disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
 
+MO / ZIP removable disk images
+------------------------------
+
+Supported formats:
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|**Raw image**        |Many *        |
++---------------------+--------------+
+|Japanese FDI         |.mdi (MO)     |
+|                     +--------------+
+|                     |.zdi (ZIP)    |
++---------------------+--------------+
+
+\* Raw images come in many extensions, including: img ima
+
 CD-ROM / DVD-ROM optical disc images
 ------------------------------------
 
@@ -84,6 +104,6 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* box for the respective CD-ROM drive in the status bar or the Media menu.
+Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective CD |nbdash| ROM drive on the status bar or the Media menu.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.

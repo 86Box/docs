@@ -1,7 +1,7 @@
 Status bar
 ==========
 
-The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, as listed below. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
+The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
 
 .. |nbsp| unicode:: 0xA0 0xA0
    :trim:
@@ -28,7 +28,7 @@ The status bar located at the bottom of the 86Box window provides icons related 
 A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <settings/floppycdrom:Floppy drives>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
-* **Existing image:** insert a disk image file into this drive.
+* **Existing image:** insert a :ref:`disk image file <usage/diskimages:Floppy disk images>` into this drive.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
@@ -41,7 +41,7 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * **Mute:** mute any :ref:`usage/diskimages:CD audio` played through this drive. **CD audio is muted by default on all drives.**
 * **Empty:** remove any disc inserted into this drive.
 * **Reload previous image:** reinsert the last disc image file selected through the *Image* option.
-* **Image:** insert a CD-ROM or DVD-ROM disc image into this drive.
+* **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <usage/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive.
 
 |zip| |mo| |nbsp| ZIP and MO drives
 -----------------------------------
@@ -49,7 +49,7 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 A ZIP or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
-* **Existing image:** insert a disk image file into this drive.
+* **Existing image:** insert a :ref:`disk image file <usage/diskimages:MO / ZIP removable disk images>` into this drive.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * **Eject:** remove the currently-inserted disk from this drive.
 * **Reload previous image:** reinsert the last disk image file selected through the *Existing image* options.

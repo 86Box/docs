@@ -17,8 +17,6 @@ The following system resources are used by these additional controllers:
 
 .. note:: While the IRQ for each channel can be changed through its respective *Settings* button on :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller`, many operating systems do not allow legacy (ISA or VLB) IDE controllers to use custom IRQs.
 
-.. _bios:
-
 BIOS support
 ------------
 
@@ -32,7 +30,7 @@ DOS and other real mode operating systems rely on the BIOS-provided INT 13h serv
 Windows 95, 98 and Me
 ---------------------
 
-The Windows 9x family will only detect and enable both additional channels during installation :ref:`if the BIOS supports them <bios>`. Each additional channel can be enabled after installation through the following procedure:
+The Windows 9x family will only detect and enable both additional channels during installation :ref:`if the BIOS supports them <usage/ideterqua:BIOS support>`. Each additional channel can be enabled after installation through the following procedure:
 
 1. Go to the *Add New Hardware* control panel.
 2. Add a *Standard IDE/ESDI Hard Disk Controller* from the *Hard disk controllers* category.
