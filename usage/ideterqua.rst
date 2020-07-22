@@ -49,10 +49,8 @@ The Windows 9x family will only detect and enable both additional channels durin
 .. image:: images/ideterqua_win98.png
    :align: center
 
-.. _nt:
-
-Windows NT, 2000, and XP
-------------------------
+Windows NT, 2000 and XP
+-----------------------
 
 The Windows NT 4 and 5 families will automatically detect and enable both additional channels during installation, regardless of BIOS support. This auto-detection does not, however, work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
 
