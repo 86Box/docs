@@ -14,16 +14,16 @@ Emulated device to connect to the given parallel (LPT) port.
 * **Stereo LPT DAC:** stereo version of the LPT DAC, using the *Strobe* pin to select the active output channel.
 * **Generic Text Printer:** simple printer capable of outputting text only.
 
-   * Printed documents are saved as ``.txt`` files in the ``printer`` directory.
+   * Printed documents are saved as .txt files in the ``printer`` directory.
 
 * **Generic ESC/P Dot-Matrix:** EPSON ESC/P compatible printer. The FreeType library file must be present in the 86Box directory for this printer to operate.
 
-   * Printed pages are saved as ``.png`` files in the ``printer`` directory.
+   * Printed pages are saved as .png files in the ``printer`` directory.
    * Use the **EPSON LQ-2500** printer driver for best results.
 
-* **Generic PostScript Printer:** PostScript compatible printer. The GhostScript library file must be present in the 86Box directory for this printer to output ``.pdf`` files.
+* **Generic PostScript Printer:** PostScript compatible printer. The GhostScript library file must be present in the 86Box directory for this printer to output PDF files.
 
-   * Printed documents are saved as ``.pdf`` (or ``.ps`` if GhostScript is missing) files in the ``printer`` directory.
+   * Printed documents are saved as .pdf (or .ps if GhostScript is missing) files in the ``printer`` directory.
    * Use the generic PostScript printer driver provided by your operating system.
    * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** or **IIg** driver instead.
 
