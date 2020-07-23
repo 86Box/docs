@@ -9,9 +9,9 @@ LPT1-3 Device
 Emulated device to connect to the given parallel (LPT) port.
 
 * **None:** no device connected.
-* **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by some games.
-* **LPT DAC / Covox Speech Thing:** sound device with a resistor ladder DAC, supported by many games, demos and trackers.
-* **Stereo LPT DAC:** stereo version of the LPT DAC, using the strobe pin to select the active output channel.
+* **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
+* **LPT DAC / Covox Speech Thing:** sound device with a resistor ladder DAC, supported by many games (through compatibility with the *Disney Sound Source* above), demos and trackers.
+* **Stereo LPT DAC:** stereo version of the LPT DAC, using the *Strobe* pin to select the active output channel.
 * **Generic Text Printer:** simple printer capable of outputting text only.
 
    * Printed documents are saved as ``.txt`` files in the ``printer`` directory.
