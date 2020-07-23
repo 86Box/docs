@@ -17,17 +17,17 @@ View
 ----
 
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will return the window to its normal size.
-* **Remember size & position:** automatically save the size and position of the 86Box window to the configuration file.
+* **Remember size & position:** automatically save the size and position of the 86Box window to the virtual machine configuration file.
 * **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended, but it may not work on some host systems, where *SDL (Software)* is the best option.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
-   * **Full screen stretch:** stretch the emulated display to completely fit the host display.
+   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
    * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
-   * **Square pixels (keep ratio):** scale the emulated display to fit the host display.
-   * **Integer scale:** scale the emulated display to the largest integer scale amount to fit the host display. This provides the highest possible picture quality, at the cost of black bars.
+   * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
+   * **Integer scale:** scale the emulated display to the largest integer scale amount to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
@@ -35,7 +35,7 @@ View
    * **VGA screen type:** select the VGA monitor type to emulate. Color, grayscale, amber phosphor, green phosphor and white phosphor monitors can be selected.
    * **Grayscale conversion type:** select the color-to-grayscale conversion profile to use when a grayscale monitor is selected.
 
-* **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** enable an overscan border around the display for the specified video hardware types.
+* **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
 
 Media

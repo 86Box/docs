@@ -65,7 +65,7 @@ The Windows NT 6 family does not support non-Plug-and-Play IDE controllers, and 
 
 Linux
 -----
-          
+
 On kernels 2.6.19 and newer (after the switch to ``libata``), run the ``modprobe pata_legacy probe_all=1`` command as root to enable both additional channels. Consult your distribution's documentation on how to load that module on startup.
 
 On kernels older than 2.6.19 (before the switch to ``libata``), add the following parameters to the kernel command line to enable their respective channels:

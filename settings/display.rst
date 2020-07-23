@@ -30,4 +30,4 @@ The *Configure* button provides the following settings:
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through Scan Line Interleave (SLI).
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
 
-.. note:: A host CPU with SSE2 support is required for the Voodoo recompiler. SSE2 is present in most CPUs made since 2005.
+.. note:: The Voodoo recompiler requires a host CPU with SSE2 support. SSE2 is present in most CPUs made since 2005.

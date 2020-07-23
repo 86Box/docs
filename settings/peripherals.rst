@@ -28,8 +28,6 @@ Selecting a controller is not usually necessary. The DTK controllers are useful 
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 
-.. _ideterqua:
-
 Tertiary / Quaternary IDE Controller
 ------------------------------------
 
