@@ -61,7 +61,7 @@ On Windows 2000 only, the additional channels can be enabled after the system is
 Windows Vista and 7
 -------------------
 
-The Windows NT 6 family does not support non-Plug-and-Play IDE controllers.
+The Windows NT 6 family does not support non-Plug-and-Play IDE controllers, and therefore cannot use the additional channels as currently implemented in 86Box.
 
 Linux
 -----
@@ -73,4 +73,4 @@ On kernels older than 2.6.19 (before the switch to ``libata``), add the followin
 * **Tertiary:** ``ide2=0x168,0x36e,10`` (assuming IRQ 10)
 * **Quaternary:** ``ide3=0x1e8,0x3ee,11`` (assuming IRQ 11)
 
-Very few Linux distributions will automatically detect and enable both additional channels.
+.. note:: Some Linux distributions may automatically detect and enable both additional channels, however, that is very rarely the case.
