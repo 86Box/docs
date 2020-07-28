@@ -12,6 +12,8 @@ Sound card to emulate. Only cards supported by the machine's expansion buses wil
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
+Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ library.
+
 MIDI Out Device
 ---------------
 
@@ -19,10 +21,10 @@ Device to output MIDI music to, for sound cards equipped with an external MIDI o
 
 * **None:** don't output MIDI music.
 * **FluidSynth:** a software soundfont synthesizer. The FluidSynth library file must be present in the 86Box directory, and a soundfont must be configured.
-* **Roland MT-32**/**CM-32L Emulation:** emulate a Roland MT-32 or CM-32L synthesizer device. Emulation is provided by the `Munt <http://munt.sourceforge.net>`_ library.
-* **System MIDI:** output to a (configurable) host MIDI device, such as the Windows software synthesizer or a USB MIDI adapter.
+* **Roland MT-32**/**CM-32L Emulation:** emulate a Roland synthesizer module. Emulation is provided by the `Munt <http://munt.sourceforge.net>`_ library.
+* **System MIDI:** output to a MIDI device on the host system, such as the Windows software synthesizer or a USB MIDI adapter.
 
-The *Configure* button opens a new window with settings specific to the selected output device.
+The *Configure* button opens a new window with settings specific to the selected output device, such as the host MIDI device to use for *System MIDI*.
 
 MIDI In Device
 --------------
@@ -30,9 +32,9 @@ MIDI In Device
 Device to receive MIDI music from, for sound cards equipped with an external MIDI input.
 
 * **None:** don't receive MIDI music.
-* **System MIDI:** receive from a (configurable) host MIDI device, such as a USB MIDI adapter.
+* **System MIDI:** receive from a MIDI device on the host system, such as a USB MIDI adapter.
 
-The *Configure* button opens a new window with settings specific to the selected input device.
+The *Configure* button opens a new window with settings specific to the selected input device, such as the host MIDI device to use for *System MIDI*.
 
 Standalone MPU-401
 ------------------

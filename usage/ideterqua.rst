@@ -61,7 +61,7 @@ On Windows 2000 only, the additional channels can be enabled after the system is
 Windows Vista and 7
 -------------------
 
-The Windows NT 6 family does not support non-Plug-and-Play IDE controllers, and therefore cannot use the additional channels as currently implemented in 86Box.
+The Windows NT 6 family does not support legacy non-Plug-and-Play IDE controllers, and therefore cannot use the additional channels as currently implemented in 86Box.
 
 Linux
 -----
