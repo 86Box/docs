@@ -67,6 +67,6 @@ This icon will appear if :doc:`networking <../settings/network>` is enabled. No 
 |sound| |nbsp| Sound
 --------------------
 
-This icon is always present. Double-clicking it opens a sound gain control, which allows you to increase the loudness of all audio produced by the emulated machine, including the PC speaker and any :doc:`sound cards <../settings/sound>`.
+This icon is always present. Double-clicking it opens a sound gain control, which allows you to increase the loudness of all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
 
 .. note:: The gain control does not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.

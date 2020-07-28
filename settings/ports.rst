@@ -4,7 +4,7 @@ Ports (COM & LPT)
 The *Ports (COM & LPT)* page contains settings related to the emulated machine's I/O ports.
 
 LPT1-3 Device
----------------
+-------------
 
 Emulated device to connect to the given parallel (LPT) port.
 

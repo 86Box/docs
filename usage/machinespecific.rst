@@ -16,7 +16,7 @@ Socket 7
 .. _p65up5:
 .. rubric:: ASUS P/I-P65UP5 (C-P55T2D)
 
-* A modular motherboard consisting of a baseboard (P/I-P65UP5) and one of the following CPU cards:
+* Modular motherboard, consisting of a **P/I-P65UP5** baseboard and one of the following CPU cards:
 
    * **C-P55T2D:** Socket 7 with Intel 430HX northbridge.
    * **C-P6ND:** Socket 8 with Intel 440FX northbridge.
@@ -24,7 +24,7 @@ Socket 7
 
 * While the northbridge depends on the selected CPU card, the southbridge always remains the Intel PIIX3, as it is located on the baseboard.
 * The real CPU cards support dual CPUs. As 86Box does not emulate multiprocessing, only a single CPU will be present.
-* Due to a lack of I/O APIC emulation at the moment, 86Box will patch the MultiProcessor Specification tables out of RAM before boot, so that operating systems will not hang or exhibit other erratic behavior due to the missing I/O APIC.
+* Due to a lack of I/O APIC emulation at the moment, 86Box will patch the MultiProcessor Specification tables out of RAM during boot, so that operating systems will not hang or exhibit other erratic behavior due to the missing I/O APIC.
 
 Socket 8
 --------
