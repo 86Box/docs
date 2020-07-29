@@ -3,9 +3,6 @@ Disk images
 
 86Box supports a large variety of disk image formats for the emulated drives.
 
-.. |nbdash| unicode:: 0x2011
-   :trim:
-
 Hard disk images
 ----------------
 
@@ -61,15 +58,15 @@ Supported formats:
 Floppy disk detection
 ^^^^^^^^^^^^^^^^^^^^^
 
-86Box detects the physical media format (sides, tracks per side, sectors per track, bytes per sector) of a floppy disk image through the following methods:
+86Box determines the physical media format (sides, tracks per side, sectors per track, bytes per sector) of a floppy disk image through the following methods:
 
-1. Data stored in the file header, except for Raw and DiskDupe formats where there is none.
-2. Data stored in the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_.
-3. If all else fails, a guess is made based on the file size.
+1. Image file header data - not applicable for **Raw** and **DiskDupe** formats;
+2. `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ data within the image;
+3. If all else fails, a guess is made based on the image file's size.
 
-The BIOS Parameter Block detection may result in incorrect behavior on non-DOS-compatible floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS-compatible disks. Disabling the :ref:`Check BPB <settings/floppycdrom:Floppy drives>` setting is strongly recommended for accessing these, as the inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection method may behave incorrectly with non-DOS floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS disks. Disabling :ref:`Check BPB <settings/floppycdrom:Floppy drives>` is strongly recommended for accessing these, as an inaccurate BPB detection may result in read errors, data corruption and other issues.
 
-.. note:: When using a raw image of a non-DOS-compatible floppy with the Check BPB setting disabled, make sure the image file has the right size for its media type, otherwise incorrect behavior may still occur.
+.. note:: When using a **Raw** image of a non-DOS floppy with Check BPB disabled, make sure the image file is not truncated (smaller than its media size), otherwise incorrect behavior may still occur.
 
 MO / ZIP removable disk images
 ------------------------------
@@ -104,6 +101,6 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) is supported on *Cue sheet* images. CD audio playback is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective CD |nbdash| ROM drive on the status bar or the Media menu.
+Compact Disc Digital Audio (CDDA) is supported on **Cue sheet** images. CD audio playback is muted on all emulated CD-ROM drives by default; it can be unmuted by unchecking the *Mute* option for the respective drive on the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or the :ref:`Media menu <usage/menubar:Media>`.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.

@@ -41,7 +41,7 @@ View
 Media
 -----
 
-This menu lists all removable media drives attached to the emulated machine, and provides the same controls that are accessible by clicking the respective drive icon on the :doc:`status bar <statusbar>`.
+This menu lists all removable media drives attached to the emulated machine, and provides the same controls that are accessible by clicking the respective drive's icon on the :doc:`status bar <statusbar>`.
 
 Tools
 -----
