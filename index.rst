@@ -35,6 +35,7 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    usage/machinespecific
    usage/diskimages
    usage/ideterqua
+   usage/network
 
 .. toctree::
    :maxdepth: 1
