@@ -13,4 +13,4 @@ Up to four Magneto-Optical and four Iomega ZIP disk drives can be attached to th
 * **Type** (MO only): drive model to identify as. A list of real drive models is provided.
 * **ZIP 250** (ZIP only): enable the drive to read and write 250 MB ZIP disks.
 
-MO / ZIP disk images can be inserted and removed through the status bar or the *Media* menu.
+MO / ZIP disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|zip| |mo| |nbsp| ZIP and MO drives>` or :ref:`Media menu <usage/menubar:Media>`.

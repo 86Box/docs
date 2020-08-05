@@ -6,7 +6,7 @@ The *Network* page contains settings related to the emulated machine's network c
 Network type
 ------------
 
-Network emulation mode to use. See :doc:`../usage/network` for more information on these.
+Network emulation mode to use. See :doc:`../hardware/network` for more information on these.
 
 * **None:** disable networking.
 * **PCap:** connects directly to a host network adapter. Similar to the **Bridge** mode on other virtualizers.

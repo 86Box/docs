@@ -1,7 +1,7 @@
 Disk images
 ===========
 
-86Box supports a large variety of disk image formats for the emulated drives.
+86Box supports a large variety of disk image formats for the emulated disk drives.
 
 Hard disk images
 ----------------
@@ -21,6 +21,25 @@ Supported formats:
 +---------------------+--------------+
 
 \* Raw images come in many extensions, including: img ima
+
+Hard disk size limits
+^^^^^^^^^^^^^^^^^^^^^
+
+There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's age. Here are a few important ones:
+
++---------------+---------+---------+-----+-------+
+|Limit          |Disk size|Cylinders|Heads|Sectors|
++===============+=========+=========+=====+=======+
+|20-bit CHS     |504 MB   |1024     |16   |63     |
++---------------+---------+---------+-----+-------+
+|Extended CHS   |8032 MB  |1024     |256  |63     |
++---------------+---------+---------+-----+-------+
+|65535 cylinders|32255 MB |65535    |16   |63     |
++---------------+---------+---------+-----+-------+
+|48-bit LBA     |131071 MB|Not applicable         |
++---------------+---------+-----------------------+
+
+These limits can be worked around (with caveats) by using software such as *Ontrack Disk Manager*, except for the 131071 MB one which is a hard limit of 86Box's hard disk emulation.
 
 Floppy disk images
 ------------------
@@ -101,6 +120,6 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) is supported on **Cue sheet** images. CD audio playback is muted on all emulated CD-ROM drives by default; it can be unmuted by unchecking the *Mute* option for the respective drive on the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or the :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drive is supported on **Cue sheet** images. Audio output is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective drive on the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.

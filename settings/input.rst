@@ -6,7 +6,7 @@ The *Input devices* page contains settings related to the emulated machine's mou
 Mouse
 -----
 
-Emulate a mouse pointing device. The following mouse types are supported:
+Emulate a pointing device. The following mouse types are supported:
 
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
 * **Serial mouse:** connected to the serial port of your choosing. The selected serial port must be enabled in :ref:`settings/ports:Serial port 1-4`.

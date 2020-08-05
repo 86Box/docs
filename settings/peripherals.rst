@@ -35,7 +35,7 @@ Add a third or fourth (respectively) IDE channel to the emulated machine, throug
 
 The IRQ used by each controller can be configured through its respective *Settings* button.
 
-.. note:: The tertiary and quaternary channels may require manual configuration of guest operating systems, and may not be bootable. See :doc:`../usage/ideterqua` for more information.
+.. note:: The tertiary and quaternary channels may require manual configuration of guest operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
 
 ISABugger
 ---------

@@ -6,7 +6,7 @@ Networking
 SLiRP
 -----
 
-SLiRP creates a private network with a virtual router, allowing the emulated machine to reach the host, its network and the Internet; on the other hand, the host and other devices on its network cannot reach the emulated machine, unless :ref:`port forwarding <usage/network:SLiRP port forwarding>` is configured. This is similar to the **NAT** mode on other virtualizers.
+SLiRP creates a private network with a virtual router, allowing the emulated machine to reach the host, its network and the Internet; on the other hand, the host and other devices on its network cannot reach the emulated machine, unless :ref:`port forwarding <hardware/network:SLiRP port forwarding>` is configured. This is similar to the **NAT** mode on other virtualizers.
 
 The virtual router provides automatic IP configuration to the emulated machine through DHCP. If that is not an option, use the following static IP settings:
 
@@ -17,7 +17,7 @@ The virtual router provides automatic IP configuration to the emulated machine t
 
 The host can be reached through IP address 10.0.2.2, while other devices on the host's network can be reached through their normal IP addresses.
 
-.. note:: SLiRP is only capable of routing TCP and UDP traffic. Other protocols such as IPX and NetBEUI can only be used with :ref:`usage/network:PCap` networking.
+.. note:: SLiRP is only capable of routing TCP and UDP traffic. Other protocols such as IPX and NetBEUI can only be used with :ref:`hardware/network:PCap` networking.
 
 PCap
 ----
@@ -39,8 +39,8 @@ If you have an incompatible network connection (such as Wi-Fi), or if you wish t
 
 * If VMware is installed, use one of the VMnet adapters included with it.
 
-   * VMnet1 (host-only) connects to the host only.
-   * VMnet8 (NAT) connects to the host, its network and the Internet.
+   * *VMnet1* (Host-only) connects to the host only.
+   * *VMnet8* (NAT) connects to the host, its network and the Internet.
 
 Advanced features
 -----------------
