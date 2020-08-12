@@ -44,7 +44,7 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 .. toctree::
    :maxdepth: 1
-   :caption: File formats
+   :caption: Development
    
-   formats/86f
-   formats/hdx
+   dev/builds
+   dev/formats/index

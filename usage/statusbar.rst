@@ -30,7 +30,7 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
-* **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../formats/86f` surface image format. You will be asked where to save the converted file.
+* **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
 
 |cdrom| |nbsp| CD-ROM drives
