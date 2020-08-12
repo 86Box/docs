@@ -45,7 +45,7 @@ See: :ref:`p65up5`
 .. _atc6310bxii:
 .. rubric:: A-Trend ATC6310BXII
 
-* Equipped with the SMSC Victory66 southbridge instead of the regular Intel PIIX4E.
+* Equipped with the obscure SMSC Victory66 southbridge instead of the regular Intel PIIX4E.
 
    * The Victory66 has faster IDE - up to Ultra ATA/66 as opposed to the PIIX4E's Ultra ATA/33 - and a different USB controller.
    * Drivers for Windows 95, 98, Me and 2000 are available `here <http://www.attro.com/download/driver/IDE/90e66smsc.zip>`_ (TODO: mirror this). Windows XP, Vista and 7 include drivers out of the box.
@@ -60,6 +60,7 @@ Slot 2
 .. rubric:: Freeway FW-6400GX
 
 * Hybrid motherboard supporting both Slot 1 and Slot 2 CPUs.
+* The maximum amount of RAM is limited to 2032 MB due to a BIOS bug with 2048 MB.
 * ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu on the BIOS setup.
 * Once enabled, ACPI does not work correctly if a VIA Cyrix III CPU is selected. See :ref:`brokenacpi` for more information.
 
