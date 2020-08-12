@@ -3,6 +3,8 @@ Machine-specific notes
 
 This page contains important notes related to specific machine models emulated by 86Box.
 
+----
+
 80286
 -----
 
@@ -55,6 +57,12 @@ Slot 2
 
 * The BIOS display will corrupt itself during the memory test if the maximum of 2048 MB RAM is selected. This is a visual glitch which does not otherwise negatively impact the machine.
 
+.. rubric:: Freeway FW-6400GX
+
+* Hybrid motherboard supporting both Slot 1 and Slot 2 CPUs.
+* ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu on the BIOS setup.
+* Once enabled, ACPI does not work correctly if a VIA Cyrix III CPU is selected. See :ref:`brokenacpi` for more information.
+
 Socket 370
 ----------
 
@@ -69,3 +77,19 @@ See: :ref:`atc6310bxii`
    * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
 
 * ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
+
+----
+
+Footnotes
+---------
+
+.. _brokenacpi:
+.. rubric:: Broken ACPI
+
+Some machines may have faulty or otherwise incomplete `Advanced Configuration and Power Interface <https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface>`_ implementations in their BIOSes, symptoms of which include:
+
+* Windows 2000 and higher will install the "Standard PC" HAL, which does not enable ACPI features such as soft power off and suspend to RAM;
+* Booting an existing Windows installation with the ACPI HAL will result in a STOP 0x000000A5 blue screen;
+* Booting Windows Vista or 7 (which require ACPI) will also result in a STOP 0x000000A5 blue screen, or a Windows Boot Manager 0xc0000225 error.
+
+There is no solution to this issue, as none of the currently emulated machines with broken ACPI ever received a BIOS update to fix it.
