@@ -51,10 +51,14 @@ The following information is displayed on the status bar (from left to right) wh
 POST card
 ---------
 
-Emulate a diagnostic POST card, which displays I/O port 80h POST code values on the status bar. The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
+Emulate a diagnostic POST card, which displays POST code values issued by the emulated machine's BIOS on the status bar. The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
-Some machines use a different I/O port for POST codes: port 0680h on Micro Channel Architecture-based machines, or port 90h on non-MCA-based IBM PS/2 machines.
+The POST card will automatically use the correct diagnostic I/O port for the emulated machine:
 
+* Port 80h on the IBM AT, clones and the XT-based Xi 8088;
+* Port 84h on early Compaq machines;
+* Port 0190h on IBM PS/1 and PS/2 machines not based on Micro Channel Architecture;
+* Port 0680h on Micro Channel Architecture machines.
 
 .. note:: Some guest operating systems (such as Linux before kernel 3.0) rely heavily on the first DMA extra page register, which is shared with the POST card. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
 

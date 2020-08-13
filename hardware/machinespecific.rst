@@ -10,7 +10,7 @@ This page contains important notes related to specific machine models emulated b
 
 .. rubric:: IBM AT
 
-* The diagnostics diskette is not Y2K-compliant, and will therefore produce error codes if :ref:`settings/machine:time synchronization` is enabled. These codes can be cleared by disabling time synchronization and then using a tool such as the MS-DOS ``date`` command to set the date to before the year 2000.
+* The IBM Personal Computer Diagnostics disks will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled, due to a lack of Y2K compliance. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the ``nvr`` directory.
 
 Socket 7
 --------
@@ -89,7 +89,7 @@ Footnotes
 
 Some machines may have faulty or otherwise incomplete `Advanced Configuration and Power Interface <https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface>`_ implementations in their BIOSes, symptoms of which include:
 
-* Windows 2000 and higher will install the "Standard PC" HAL, which does not enable ACPI features such as soft power off and suspend to RAM;
+* Windows 2000 and higher will install the "Standard PC" HAL, which does not enable ACPI features such as soft power off and sleep mode;
 * Booting an existing Windows installation with the ACPI HAL will result in a STOP 0x000000A5 blue screen;
 * Booting Windows Vista or 7 (which require ACPI) will also result in a STOP 0x000000A5 blue screen, or a Windows Boot Manager 0xc0000225 error.
 

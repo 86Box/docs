@@ -25,7 +25,9 @@ Optimized
 
 Optimized builds (**86Box-Optimized**) are :ref:`standard builds <dev/builds:Standard>` which have been optimized for use with a specific CPU family on the host machine. These provide slight performance improvements, especially on older or low-end hosts; however, the aggressive optimizations employed **may result in bugs** not present on standard builds.
 
-There are many different optimized binaries available for each build; you must download the **correct one for your host CPU**, otherwise, 86Box will run poorly or even crash. The table below lists most CPUs currently supported by optimized builds, along with the respective binaries you should use with them, as well as their codenames (as shown on an identification tool such as `CPU-Z <http://www.cpuid.com/softwares/cpu-z.html>`_):
+There are many different optimized binaries available for each build, with each one corresponding to a CPU family. The table below lists most CPUs currently supported by optimized builds, along with the respective binaries you should use with them, as well as their codenames (as shown on an identification tool such as `CPU-Z <http://www.cpuid.com/softwares/cpu-z.html>`_).
+
+.. note:: Using the wrong optimized binary for your CPU will result in poor performance and/or crashes.
 
 .. raw:: html
 

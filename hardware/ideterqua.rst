@@ -16,7 +16,7 @@ The following resources are used by these additional controllers:
 |Quaternary|01E8h        |03EEh          |11 |
 +----------+-------------+---------------+---+
 
-These controllers are not Plug and Play compliant. If the emulated machine supports ISA PnP or PCI, remember to mark the IRQ(s) as being used by a legacy ISA device in the BIOS setup utility.
+These controllers are not Plug and Play compliant. If the emulated machine supports Plug and Play (through ISA, PCI or other means), remember to mark the IRQ(s) as being used by a legacy ISA device in the BIOS setup utility.
 
 .. note:: While the IRQ for each channel can be changed through its respective *Settings* button on :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller`, many operating systems do not allow legacy (ISA or VLB) IDE controllers to use custom IRQs.
 
