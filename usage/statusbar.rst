@@ -70,3 +70,20 @@ This icon will appear if :doc:`networking <../settings/network>` is enabled. No 
 This icon is always present. Double-clicking it opens a sound gain control, which allows you to increase the loudness of all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
 
 .. note:: The gain control does not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
+
+Additional information area
+---------------------------
+
+When enabled, the :ref:`settings/peripherals:ISABugger` and :ref:`settings/peripherals:POST card` display additional information on the status bar, to the right of the icons described above.
+
+ISABugger
+^^^^^^^^^
+
+The ISABugger's hexadecimal displays and LED banks are displayed here. See :doc:`../hardware/isabugger` for more information.
+
+POST card
+^^^^^^^^^
+
+The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
+
+.. note:: The additional information area can only be used by one peripheral at a time. If both are enabled simultaneously, the POST card takes over whenever a POST code is reported, and the ISABugger takes over whenever one of its registers is written to.

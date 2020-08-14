@@ -24,7 +24,7 @@ FD Controller
 
 Floppy disk drive controller card to emulate.
 
-Selecting a controller is not usually necessary. The DTK controllers are useful for adding high-density 1.44 MB floppy support to XT machines.
+Selecting a controller is not usually necessary. The DTK controllers are useful for adding high-density 1.44M floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 
@@ -40,27 +40,22 @@ The IRQ used by each controller can be configured through its respective *Settin
 ISABugger
 ---------
 
-Emulate an **ISABugger** debugging card. Documentation on the card's functionality can be found in the `header comment <https://github.com/86Box/86Box/blob/master/src/device/bugger.c#L1>`_ of ``src/device/bugger.c`` in the 86Box source code.
-
-The following information is displayed on the status bar (from left to right) when the ISABugger is enabled:
-
-* Hexadecimal values corresponding to the left and right 7-segment displays, respectively.
-* Green LED bank, from the most significant to the least significant bit: **G** if the LED is lit, **g** if it's not lit.
-* Red LED bank, from the most significant to the least significant bit: **R** if the LED is lit, **r** if it's not lit.
+Emulate an **ISABugger** debugging interface card, equipped with two hexadecimal displays and two LED banks, all controlled by the emulated machine. See :doc:`../hardware/isabugger` for documentation on the card's features.
 
 POST card
 ---------
 
-Emulate a diagnostic POST card, which displays POST code values issued by the emulated machine's BIOS on the status bar. The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
+Emulate a diagnostic POST card, which displays POST code values issued by the emulated machine's BIOS on the status bar. See :ref:`Status bar: POST card <usage/statusbar:POST card>` for more information.
 
 The POST card will automatically use the correct diagnostic I/O port for the emulated machine:
 
 * Port 80h on the IBM AT, clones and the XT-based Xi 8088;
 * Port 84h on early Compaq machines;
-* Port 0190h on IBM PS/1 and PS/2 machines not based on Micro Channel Architecture;
+* Port 0190h on IBM PS/1 and PS/2 machines not based on the Micro Channel Architecture;
 * Port 0680h on Micro Channel Architecture machines.
 
-.. note:: Some guest operating systems (such as Linux before kernel 3.0) rely heavily on the first DMA extra page register, which is shared with the POST card. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+.. note:: Some guest operating systems (such as Linux before kernel 3.0) rely heavily on a DMA register which shares port 80h with the POST card. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+
 
 ISA RTC
 -------

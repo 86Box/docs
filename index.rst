@@ -40,7 +40,8 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    hardware/machinespecific
    hardware/diskimages
    hardware/ideterqua
-   hardware/network   
+   hardware/network
+   hardware/isabugger
 
 .. toctree::
    :maxdepth: 1

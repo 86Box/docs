@@ -20,7 +20,7 @@ The *Configure* button provides the following settings:
 * **Voodoo type:** type of Voodoo card to emulate.
 
    * **Voodoo Graphics:** the original Voodoo model, with a single Texture Mapping Unit operating at 50 MHz.
-   * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, equipped with a second Texture Mapping Unit like the Voodoo 2.
+   * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
    * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory to give the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
@@ -30,4 +30,4 @@ The *Configure* button provides the following settings:
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through Scan Line Interleave (SLI).
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
 
-.. note:: The Voodoo recompiler requires a host CPU with SSE2 support. SSE2 is present in most CPUs made since 2005.
+.. note:: The Voodoo recompiler requires a host CPU with SSE2 support. SSE2 is present in most CPUs released since 2005.

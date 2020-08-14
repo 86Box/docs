@@ -79,4 +79,4 @@ On kernels without ``libata`` (typically older than 2.6.19), add the following p
 * **Tertiary:** ``ide2=0x168,0x36e,10`` (assuming IRQ 10)
 * **Quaternary:** ``ide3=0x1e8,0x3ee,11`` (assuming IRQ 11)
 
-.. note:: Some Linux distributions may automatically detect and enable both additional channels, however, that is very rarely the case.
+.. note:: Some Linux distributions may automatically detect and enable both additional channels; however, that is very rarely the case.

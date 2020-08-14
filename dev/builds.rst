@@ -8,12 +8,12 @@ The `86Box Jenkins <https://ci.86box.net/>`_ provides all kinds of pre-release t
 Standard
 --------
 
-Standard builds (**86Box**) are compiled with default options. Release versions of 86Box are based on these.
+Standard builds (**86Box**) are compiled with default options. Release versions of 86Box are based on standard builds.
 
 Debug
 -----
 
-Debug builds (**86Box-Debug**) are :ref:`standard builds <dev/builds:Standard>` compiled with debug symbols and no optimizations, to allow for debugging with ``gdb`` and other tools if you don't have a full 86Box development setup. These run slower than standard builds due to the removal of optimizations and addition of debugging features.
+Debug builds (**86Box-Debug**) are :ref:`standard builds <dev/builds:Standard>` compiled with debug symbols and no optimizations, to allow for debugging with ``gdb`` and other tools if you don't have a full 86Box development setup. Debug builds run slower than standard builds due to the removal of optimizations and addition of debugging features.
 
 Development
 -----------
@@ -23,7 +23,7 @@ Development builds (**86Box-Dev**) are compiled with ``DEV_BUILD=y``, enabling a
 Optimized
 ---------
 
-Optimized builds (**86Box-Optimized**) are :ref:`standard builds <dev/builds:Standard>` which have been optimized for use with a specific CPU family on the host machine. These provide slight performance improvements, especially on older or low-end hosts; however, the aggressive optimizations employed **may result in bugs** not present on standard builds.
+Optimized builds (**86Box-Optimized**) are :ref:`standard builds <dev/builds:Standard>` which have been optimized for use with a specific CPU family on the host machine. Optimized builds provide slight performance improvements, especially on older or low-end hosts; however, the aggressive optimizations employed **may result in bugs** not present on standard builds.
 
 There are many different optimized binaries available for each build, with each one corresponding to a CPU family. The table below lists most CPUs currently supported by optimized builds, along with the respective binaries you should use with them, as well as their codenames (as shown on an identification tool such as `CPU-Z <http://www.cpuid.com/softwares/cpu-z.html>`_).
 

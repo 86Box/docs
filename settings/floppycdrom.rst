@@ -8,7 +8,7 @@ Floppy drives
 
 Up to four floppy disk drives can be attached to the emulated system, although not all BIOSes provide support for more than two drives. The following settings apply to the selected drive:
 
-* **Type:** floppy drive to emulate. Some types have special properties and therefore should only be used if you know what you're doing:
+* **Type:** floppy drive to emulate. Some types have special properties and therefore should only be used in very specific applications:
 
    * **5.25" 1.2M PS/2** and **3.5" 1.44M PS/2:** IBM PS/2 drives, which invert the polarity of the Density Select pin.
    * **5.25" 1.2M 300/360 RPM** and **3.5" 1.44M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.

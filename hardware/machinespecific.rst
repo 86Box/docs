@@ -10,7 +10,7 @@ This page contains important notes related to specific machine models emulated b
 
 .. rubric:: IBM AT
 
-* The IBM Personal Computer Diagnostics disks will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled, due to a lack of Y2K compliance. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the ``nvr`` directory.
+* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the ``nvr`` directory.
 
 Socket 7
 --------
@@ -62,7 +62,7 @@ Slot 2
 * Hybrid motherboard supporting both Slot 1 and Slot 2 CPUs.
 * The maximum amount of RAM is limited to 2032 MB due to a BIOS bug with 2048 MB.
 * ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu on the BIOS setup.
-* Once enabled, ACPI does not work correctly if a VIA Cyrix III CPU is selected. See :ref:`brokenacpi` for more information.
+* Once enabled, ACPI :ref:`does not work correctly <brokenacpi>` if a non-Intel CPU is selected.
 
 Socket 370
 ----------
