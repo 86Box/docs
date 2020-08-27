@@ -79,6 +79,14 @@ See: :ref:`atc6310bxii`
 
 * ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
 
+Miscellaneous
+-------------
+
+.. rubric:: Microsoft Virtual PC 2007
+
+* This machine loads the American Megatrends BIOS from Virtual PC 2007 into 86Box's emulation. It does not use the virtualization engine or any other components from Virtual PC.
+* Virtual PC's special 8 MB video card, network card, WDM sound card and Guest Additions are not emulated by 86Box.
+
 ----
 
 Footnotes
