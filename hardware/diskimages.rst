@@ -23,7 +23,7 @@ Supported formats:
 |Virtual Hard Disk|.vhd          |
 +-----------------+--------------+
 
-\* Raw images come in many extensions, including: img ima
+\* Raw images come in many extensions, including .img and .ima
 
 Hard disk size limits
 ^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ There are limits to how big of a hard disk an emulated machine can accept. Such 
 |48-bit LBA     |131071 MB|Not applicable         |
 +---------------+---------+-----------------------+
 
-These limits can be worked around (with caveats) by using software such as *Ontrack Disk Manager*, except for the 131071 MB one which is a hard limit of 86Box's hard disk emulation.
+These limits can be worked around (with caveats) by using software such as *Ontrack Disk Manager*, except for the 131071 MB one, which is a hard limit of 86Box's hard disk emulation.
 
 Floppy disk images
 ------------------
@@ -56,7 +56,7 @@ Supported formats:
 +--------------------+--------------+
 ||86f|               |.86f          |
 +--------------------+--------------+
-|CopyQM              |.cqm          |
+|CopyQM              |.cq / .cqm    |
 +--------------------+--------------+
 |DiskDupe            |.ddi          |
 +--------------------+--------------+
@@ -75,7 +75,7 @@ Supported formats:
 |Teledisk            |.td0          |
 +--------------------+--------------+
 
-\* Raw images come in many extensions, including: img ima flp vfd
+\* Raw images come in many extensions; the following ones are recognized by 86Box: .001 .002 .003 .004 .005 .006 .007 .008 .009 .010 .12 .144 .360 .720 .bin .dsk .flp .hdm .ima .img .vfd .xdf
 
 Floppy disk detection
 ^^^^^^^^^^^^^^^^^^^^^
