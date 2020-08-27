@@ -17,7 +17,7 @@ Up to four floppy disk drives can be attached to the emulated system, although n
 * **Turbo timings:** run the drive mechanism as fast as possible. This decreases access time and makes some incorrectly-dumped floppies readable, but may cause issues with some operating systems and applications.
 * **Check BPB:** if unchecked, 86Box will ignore the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ when determining the physical media format for a floppy image on this drive. See :ref:`hardware/diskimages:Floppy disk detection` for more details.
 
-.. note:: Disabling "Check BPB" may be required in order to access UNIX/Linux installation floppies or other non-DOS disks, as outlined on the page linked above.
+.. note:: Disabling "Check BPB" may be required in order to access UNIX/Linux installation floppies or other non-DOS disks, as outlined on :ref:`hardware/diskimages:Floppy disk detection`.
 
 Floppy disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|floppy_35| |floppy_525| |nbsp| Floppy drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
