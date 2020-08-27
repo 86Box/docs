@@ -24,25 +24,25 @@ The *New...* button opens a new window allowing you to create an existing hard d
 * **Bus:** bus to attach the disk to.
 * **Channel**/**ID:** where to attach the disk on the selected bus. The *Channel* value for IDE has two numbers, which correspond to an IDE channel and device, respectively:
 
-+---------+-----------+------+
-|*Channel*|IDE channel|Device|
-+=========+===========+======+
-|0:0      |Primary    |Master|
-+---------+-----------+------+
-|0:1      |Primary    |Slave |
-+---------+-----------+------+
-|1:0      |Secondary  |Master|
-+---------+-----------+------+
-|1:1      |Secondary  |Slave |
-+---------+-----------+------+
-|2:0      |Tertiary   |Master|
-+---------+-----------+------+
-|2:1      |Tertiary   |Slave |
-+---------+-----------+------+
-|3:0      |Quaternary |Master|
-+---------+-----------+------+
-|3:1      |Quaternary |Slave |
-+---------+-----------+------+
++-----+----------+------+
+|Value|Channel   |Device|
++=====+==========+======+
+|0:0  |Primary   |Master|
++-----+----------+------+
+|0:1  |Primary   |Slave |
++-----+----------+------+
+|1:0  |Secondary |Master|
++-----+----------+------+
+|1:1  |Secondary |Slave |
++-----+----------+------+
+|2:0  |Tertiary  |Master|
++-----+----------+------+
+|2:1  |Tertiary  |Slave |
++-----+----------+------+
+|3:0  |Quaternary|Master|
++-----+----------+------+
+|3:1  |Quaternary|Slave |
++-----+----------+------+
 
 Press the *OK* button to create the disk image file, or *Cancel* to close the window.
 
