@@ -6,7 +6,7 @@ Networking
 SLiRP
 -----
 
-SLiRP creates a private network with a virtual router, allowing the emulated machine to reach the host, its network and the Internet; on the other hand, the host and other devices on its network cannot reach the emulated machine, unless :ref:`port forwarding <hardware/network:SLiRP port forwarding>` is configured. This is similar to the **NAT** mode on other virtualizers.
+SLiRP creates a private network with a virtual router, allowing the emulated machine to reach the host, its network and the Internet; on the other hand, the host and other devices on its network cannot reach the emulated machine, unless :ref:`port forwarding <hardware/network:SLiRP port forwarding>` is configured. This is similar to the **NAT** mode on other emulators and virtualizers.
 
 The virtual router provides automatic IP configuration to the emulated machine through DHCP. If that is not an option, use the following static IP settings:
 
@@ -22,20 +22,22 @@ The host can be reached through IP address 10.0.2.2, while other devices on the 
 PCap
 ----
 
-PCap connects directly to one of the host's network adapters. The emulated machine must be configured as if it were a real machine on your network. This is similar to the **Bridge** mode on other virtualizers.
+PCap connects directly to one of the host's network adapters. The emulated machine must be configured as if it were a real machine on your network. This is similar to the **Bridge** mode on other emulators and virtualizers.
 
-This mode requires `Npcap <https://nmap.org/npcap/>`_ (or another WinPcap-compatible driver) to be installed on the host. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated machine.
+This mode requires `Npcap <https://nmap.org/npcap/>`_ (or another WinPcap-compatible driver) to be installed on the host. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated machine's MAC address.
 
 Private PCap network
 ^^^^^^^^^^^^^^^^^^^^
 
-If you have an incompatible network connection (such as Wi-Fi), or if you wish to connect the emulated machine to the host without also connecting it to your network, a private network can be created with PCap in one of two ways:
+If you have an incompatible network connection on the host (such as Wi-Fi), or if you wish to connect the emulated machine to the host without also connecting it to your network, a private network can be created with PCap in one of two ways:
 
 * Install and configure the *Microsoft KM-TEST Loopback Adapter* included with Windows.
 
    * Guides on how to install this adapter are available online.
    * The adapter alone only provides a direct connection to the host, with no DHCP server, therefore requiring manual IP configuration on both the host and the emulated machine.
    * Windows' *Internet Connection Sharing* feature can be used to connect the emulated machine to the host's network and the Internet, with DHCP for automatic IP configuration, similarly to SLiRP but with the added benefit that the host can reach the emulated machine without port forwarding.
+
+      * Port forwarding can still be performed through Internet Connection Sharing itself.
 
 * If VMware is installed, use one of the VMnet adapters included with it.
 
@@ -50,7 +52,7 @@ The following advanced features can be accessed by directly editing the virtual 
 MAC address
 ^^^^^^^^^^^
 
-All emulated network cards store their MAC address in the ``mac`` directive of their respective configuration file section. Only the suffix (last three octets) of the MAC address is stored; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
+Every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
 
 .. rubric:: Example: MAC address 00:E0:4C:35:F4:C2 for the Realtek RTL8029AS
 
@@ -71,6 +73,8 @@ Each port forward must be assigned a number, starting at 0 and counting up (skip
 * ``X_to``: Port number on the emulated machine. If this directive is missing, use the same port number as the host.
 
 The host can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
+
+.. note:: The emulated machine's IP address must be set to 10.0.2.15 for port forwarding to work.
 
 .. rubric:: Example: forward host TCP port 8080 to guest port 80, and host UDP port 5555 to guest port 5555
 

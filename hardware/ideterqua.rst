@@ -58,7 +58,7 @@ The Windows 9x family will only detect and enable both additional channels durin
 Windows NT, 2000 and XP
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The Windows NT family (starting with 3.5) will automatically detect and enable both additional channels during installation, regardless of BIOS support. This auto-detection does not, however, work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
+The Windows NT family (from 3.5 to XP) will automatically detect and enable both additional channels during installation, regardless of BIOS support. This auto-detection does not, however, work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
 
 .. note:: If you install the system to a hard disk on one of the additional channels, it will not be bootable if the BIOS doesn't support booting from these channels.
 

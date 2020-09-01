@@ -9,8 +9,8 @@ Network type
 Network emulation mode to use. See :doc:`../hardware/network` for more information on these.
 
 * **None:** disable networking.
-* **PCap:** connects directly to a host network adapter. Similar to the **Bridge** mode on other virtualizers.
-* **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other virtualizers.
+* **PCap:** connects directly to a host network adapter. Similar to the **Bridge** mode on other emulators and virtualizers.
+* **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other emulators and virtualizers.
 
 PCap device
 -----------
