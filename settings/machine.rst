@@ -38,7 +38,7 @@ Enable the dynamic recompiler, which provides faster but less accurate CPU emula
 Time synchronization
 --------------------
 
-Automatically copies your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the guest operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
+Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
 
 * **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
 * **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.

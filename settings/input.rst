@@ -25,7 +25,7 @@ Emulate one or more game port controller(s). The following controller types are 
 * **Standard 8-button joystick:** single controller with four regular buttons, four additional buttons mapped to the third and fourth axes, and a single analog stick.
 * **4-axis 4-button joystick:** single controller with four buttons and four axes (or two analog sticks).
 * **CH Flightstick Pro:** flight controller with four buttons, three axes and a POV hat.
-* **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Requires a driver to be installed on the guest operating system.
+* **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Requires a driver to be installed on the emulated operating system.
 * **Thrustmaster Flight Control System:** flight controller with four buttons, two axes and a POV hat.
 * **No joystick:** no controller connected.
 
