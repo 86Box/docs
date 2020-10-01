@@ -13,18 +13,14 @@ The *Configure* button opens a new window with settings specific to the selected
 HD Controller
 -------------
 
-Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed.
-
-MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not necessary for machines with onboard IDE.
+Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed. MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not needed for machines with onboard IDE.
 
 The *Configure* button opens a new window with settings specific to the selected controller card, such as the BIOS option ROM address.
 
 FD Controller
 -------------
 
-Floppy disk drive controller card to emulate.
-
-Selecting a controller is not usually necessary. The DTK controllers are useful for adding high-density 1.44M floppy support to XT machines.
+Floppy disk drive controller card to emulate. Selecting a controller is not needed, unless you wish to use the DTK controllers for adding high-density 1.44M floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 
@@ -35,7 +31,7 @@ Add a third or fourth (respectively) IDE channel to the emulated machine, throug
 
 The IRQ used by each controller can be configured through its respective *Settings* button.
 
-.. note:: The tertiary and quaternary channels may require manual configuration of guest operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
+.. note:: The tertiary and quaternary controllers are not Plug and Play compliant; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
 
 ISABugger
 ---------

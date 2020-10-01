@@ -1,7 +1,7 @@
 Tertiary and quaternary IDE
 ===========================
 
-The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Peripherals settings page <settings/peripherals:Tertiary / Quaternary IDE Controller>`, are not supported by all emulated BIOSes and may require manual configuration of guest operating systems. The specific details are outlined on this page.
+The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Peripherals settings page <settings/peripherals:Tertiary / Quaternary IDE Controller>`, are not supported by all emulated BIOSes and may require manual configuration of emulated operating systems. The specific details are outlined on this page.
 
 System resources
 ----------------
@@ -67,7 +67,7 @@ On Windows 2000 only, the additional channels can be enabled after the system is
 Windows Vista and 7
 ^^^^^^^^^^^^^^^^^^^
 
-The Windows NT 6 family no longer supports legacy non-Plug-and-Play IDE controllers, and therefore cannot use the additional channels as currently emulated by 86Box.
+The Windows NT 6 family does not support legacy non-Plug-and-Play IDE controllers, and therefore cannot use the additional channels as currently emulated by 86Box.
 
 Linux
 ^^^^^

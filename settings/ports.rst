@@ -16,23 +16,25 @@ Emulated device to connect to the given parallel (LPT) port.
 
    * Printed documents are saved as .txt files in the ``printer`` directory.
 
-* **Generic ESC/P Dot-Matrix:** EPSON ESC/P compatible printer. The FreeType library file must be present in the 86Box directory for this printer to operate.
+* **Generic ESC/P Dot-Matrix:** EPSON ESC/P-compatible printer.
 
    * Printed pages are saved as .png files in the ``printer`` directory.
    * Use the **EPSON LQ-2500** printer driver for best results.
+   * This printer will not work if the included ``freetype.dll`` file is missing from the 86Box directory.
 
-* **Generic PostScript Printer:** PostScript compatible printer. The GhostScript library file must be present in the 86Box directory for this printer to output PDF files.
+* **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
-   * Printed documents are saved as .pdf (or .ps if GhostScript is missing) files in the ``printer`` directory.
+   * Printed documents are saved as .pdf files in the ``printer`` directory.
+   * Alternatively, printed documents are saved as .ps files if the PDF conversion process fails, or if the included ``gsdll32.dll`` file is missing from the 86Box directory.
    * Use the generic PostScript printer driver provided by your operating system.
    * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** or **IIg** driver instead.
 
 Serial port 1-4
 ---------------
 
-Enable emulation of serial ports ranging from COM1 to COM4. Any ports not included on the motherboard itself will be emulated as generic ISA or VLB serial cards.
+Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the motherboard itself will be emulated as generic ISA or VLB serial cards.
 
 Parallel port 1-3
 -----------------
 
-Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not included on the motherboard itself will be emulated as generic ISA or VLB parallel cards.
+Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the motherboard itself will be emulated as generic ISA or VLB parallel cards.
