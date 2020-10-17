@@ -13,14 +13,14 @@ The *Configure* button opens a new window with settings specific to the selected
 HD Controller
 -------------
 
-Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed. MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not needed for machines with onboard IDE.
+Hard disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed. MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not required for machines with onboard IDE.
 
 The *Configure* button opens a new window with settings specific to the selected controller card, such as the BIOS option ROM address.
 
 FD Controller
 -------------
 
-Floppy disk drive controller card to emulate. Selecting a controller is not needed, unless you wish to use the DTK controllers for adding high-density 1.44M floppy support to XT machines.
+Floppy disk drive controller card to emulate. Selecting a controller is not required, unless you wish to use the DTK controllers for adding high-density 1.44M floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
 

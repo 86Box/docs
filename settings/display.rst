@@ -29,5 +29,3 @@ The *Configure* button provides the following settings:
 * **Render threads:** allows the Voodoo workload to be split into multiple CPU threads. 2 render threads are recommended for host systems with more than two CPU cores.
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through Scan Line Interleave (SLI).
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
-
-.. note:: The Voodoo recompiler requires a host CPU with SSE2 support. SSE2 is present in most CPUs released since 2005.

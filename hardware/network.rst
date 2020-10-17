@@ -29,7 +29,7 @@ This mode requires `Npcap <https://nmap.org/npcap/>`_ (or another WinPcap-compat
 Private PCap network
 ^^^^^^^^^^^^^^^^^^^^
 
-If you have an incompatible network connection on the host (such as Wi-Fi), or if you wish to connect the emulated machine to the host without also connecting it to your network, a private network can be created with PCap in one of two ways:
+If you have an incompatible network connection on your host system (such as Wi-Fi), or if you wish to connect the emulated machine to the host without also connecting it to your network, a private network can be created with PCap in one of two ways:
 
 * Install and configure the *Microsoft KM-TEST Loopback Adapter* included with Windows.
 
@@ -37,12 +37,14 @@ If you have an incompatible network connection on the host (such as Wi-Fi), or i
    * The adapter alone only provides a direct connection to the host, with no DHCP server, therefore requiring manual IP configuration on both the host and the emulated machine.
    * Windows' *Internet Connection Sharing* feature can be used to connect the emulated machine to the host's network and the Internet, with DHCP for automatic IP configuration, similarly to SLiRP but with the added benefit that the host can reach the emulated machine without port forwarding.
 
-      * Port forwarding can still be performed through Internet Connection Sharing itself.
+      * Port forwarding can be performed through Internet Connection Sharing's *Settings*.
 
 * If VMware is installed, use one of the VMnet adapters included with it.
 
    * *VMnet1* (Host-only) connects to the host only.
    * *VMnet8* (NAT) connects to the host, its network and the Internet.
+
+      * Port forwarding can be performed through the Virtual Network Editor's *NAT Settings*.
 
 Advanced features
 -----------------
@@ -70,7 +72,7 @@ Each port forward must be assigned a number, starting at 0 and counting up (skip
 
 * ``X_udp``: If this directive is missing or set to 0, forward a TCP port. If set to 1, forward an UDP port.
 * ``X_from``: Port number on the host.
-* ``X_to``: Port number on the emulated machine. If this directive is missing, use the same port number as the host.
+* ``X_to``: Port number on the emulated machine. If this directive is missing, the port number from ``X_from`` will be used.
 
 The host can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
 

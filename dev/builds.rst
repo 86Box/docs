@@ -49,10 +49,10 @@ There are many different optimized binaries available for each build, with each 
   <tr><td>Bobcat</td><td>Athlon (2011+)<br/>FX<br/>A/C/E-Series APU</td><td>Ontario, Zacate, Hondo, Llano, Trinity,<br/>Richland, Kabini, Kaveri, Beema, Mullins,<br/>Carrizo, Bristol Ridge, Stoney Ridge</td></tr>
   <tr><td rowspan="2">Zen</td><td>Ryzen 1000/2000 CPU<br/>Ryzen 2000/3000 APU **</td><td>Summit Ridge, Raven Ridge, Dali,</br>Pinnacle Ridge, Picasso</td></tr>
   <tr><td>Ryzen Threadripper 1000/2000</td><td>Whitehaven, Colfax</td></tr>
-  <tr><td rowspan="2">Zen2</td><td>Ryzen 3000/4000 CPU<br/>Ryzen 4000 APU **</td><td>Matisse, Renoir, Vermeer</td></tr>
+  <tr><td rowspan="2">Zen2</td><td>Ryzen 3000 CPU<br/>Ryzen 4000 APU **<br/>Ryzen 5000 CPU</td><td>Matisse, Renoir, Vermeer</td></tr>
   <tr><td>Ryzen Threadripper 3000</td><td>Castle Peak</td></tr>
  
   </table>
 
 | \* Older K8 CPUs without SSE3 are not supported.
-| \*\* Ryzen APU = models equipped with integrated graphics, including G-series on desktop and U/H-series on mobile. These are always one generation behind; the model numbers are misleading.
+| \*\* Ryzen APU = models equipped with integrated graphics, including G-series on desktop and U/H-series on mobile, which use older cores than the CPUs of the same series.

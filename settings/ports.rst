@@ -24,17 +24,22 @@ Emulated device to connect to the given parallel (LPT) port.
 
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
-   * Printed documents are saved as .pdf files in the ``printer`` directory.
-   * Alternatively, printed documents are saved as .ps files if the PDF conversion process fails, or if the included ``gsdll32.dll`` file is missing from the 86Box directory.
+   * Printed documents are saved as .ps files in the ``printer`` directory, which are automatically converted to .pdf once printing is completed.
+   * The original .ps files may remain in the directory if PDF conversion fails, or if the included ``gsdll32.dll`` file is missing from the 86Box directory.
    * Use the generic PostScript printer driver provided by your operating system.
-   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** or **IIg** driver instead.
+   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
+
+* **PLIP Network:** A `Parallel Line Internet Protocol <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
+
+   * The :ref:`emulated network adapter <settings/network:Network adapter>` must also be set to **[LPT] PLIP**.
+   * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver. It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
 
 Serial port 1-4
 ---------------
 
-Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the motherboard itself will be emulated as generic ISA or VLB serial cards.
+Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
 
 Parallel port 1-3
 -----------------
 
-Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the motherboard itself will be emulated as generic ISA or VLB parallel cards.
+Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
