@@ -54,7 +54,7 @@ The following advanced features can be accessed by directly editing the virtual 
 MAC address
 ^^^^^^^^^^^
 
-Every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
+With the exception of PLIP, every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
 
 .. rubric:: Example: MAC address 00:E0:4C:35:F4:C2 for the Realtek RTL8029AS
 
