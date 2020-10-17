@@ -70,20 +70,20 @@ Port forwarding allows the host and other devices on its network to access TCP a
 
 Each port forward must be assigned a number, starting at 0 and counting up (skipping a number will result in all subsequent port forwards being ignored), which replaces ``X`` on the following directives:
 
-* ``X_udp``: If this directive is missing or set to 0, forward a TCP port. If set to 1, forward an UDP port.
-* ``X_from``: Port number on the host.
-* ``X_to``: Port number on the emulated machine. If this directive is missing, the port number from ``X_from`` will be used.
+* ``X_protocol``: Port type: ``tcp`` or ``udp``
+* ``X_external``: Port number on the host. If this directive is missing, the port number from ``X_internal`` will be used.
+* ``X_internal``: Port number on the emulated machine. If this directive is missing, the port number from ``X_external`` will be used.
 
 The host can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
 
 .. note:: The emulated machine's IP address must be set to 10.0.2.15 for port forwarding to work.
 
-.. rubric:: Example: forward host TCP port 8080 to guest port 80, and host UDP port 5555 to guest port 5555
+.. rubric:: Example: forward host TCP port 8080 to emulated machine port 80, and host UDP port 5555 to emulated machine port 5555
 
 .. code-block:: none
    
    [SLiRP Port Forwarding]
-   0_from = 8080
-   0_to = 80
-   1_udp = 1
-   1_from = 5555
+   0_external = 8080
+   0_internal = 80
+   1_protocol = udp
+   1_external = 5555
