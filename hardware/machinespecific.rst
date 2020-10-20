@@ -12,6 +12,13 @@ This page contains important notes related to specific machine models emulated b
 
 * The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the ``nvr`` directory.
 
+i486
+-----
+
+.. rubric:: IBM PC 330 (type 6571)
+
+* This machine can only work with the Intel 80486DX4, iDX4 and Pentium Overdrive, and compatible CPU types. Selecting otherwise will result in no video output.
+
 Socket 7
 --------
 
@@ -86,7 +93,6 @@ Miscellaneous
 
 * This machine loads the American Megatrends BIOS from Virtual PC 2007 into 86Box's emulation. It does not use the virtualization engine or any other components from Virtual PC.
 * Virtual PC's special 8 MB video card, network card, WDM sound card and Guest Additions are not emulated by 86Box.
-
 ----
 
 Footnotes
