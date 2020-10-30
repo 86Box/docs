@@ -52,7 +52,7 @@ Tools
 * **Enable Discord integration:** enable Discord Rich Presence. Other Discord users will know that you're running 86Box, as well as the emulated machine's name, model and CPU.
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as PNG images in the ``screenshots`` directory.
 
-.. note:: Discord integration will not be available if the Discord desktop app is not running, or if the ``discord_game_sdk.dll`` library is missing from the 86Box directory.
+.. note:: Discord integration will not be available if the Discord desktop app is not running, or if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 Help
 ----

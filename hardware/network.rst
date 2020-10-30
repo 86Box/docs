@@ -54,7 +54,7 @@ The following advanced features can be accessed by directly editing the virtual 
 MAC address
 ^^^^^^^^^^^
 
-With the exception of PLIP, every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
+With the exception of **[LPT] PLIP**, every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `OUI <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
 
 .. rubric:: Example: MAC address 00:E0:4C:35:F4:C2 for the Realtek RTL8029AS
 
@@ -66,17 +66,17 @@ With the exception of PLIP, every emulated network card stores its MAC address i
 SLiRP port forwarding
 ^^^^^^^^^^^^^^^^^^^^^
 
-Port forwarding allows the host and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding]`` section of the configuration file.
+Port forwarding allows the host system and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding]`` section of the configuration file.
 
 Each port forward must be assigned a number, starting at 0 and counting up (skipping a number will result in all subsequent port forwards being ignored), which replaces ``X`` on the following directives:
 
-* ``X_protocol``: Port type: ``tcp`` or ``udp``
-* ``X_external``: Port number on the host. If this directive is missing, the port number from ``X_internal`` will be used.
-* ``X_internal``: Port number on the emulated machine. If this directive is missing, the port number from ``X_external`` will be used.
+* ``X_protocol``: Port type: ``tcp`` or ``udp`` (default: ``tcp``)
+* ``X_external``: Port number on the host (default: same port number as ``X_internal``)
+* ``X_internal``: Port number on the emulated machine (default: same port number as ``X_external``)
 
-The host can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
+The host system can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
 
-.. note:: The emulated machine's IP address must be set to 10.0.2.15 for port forwarding to work.
+.. note:: The emulated machine's IP address must be set to 10.0.2.15 (the default IP provided through DHCP) for port forwarding to work.
 
 .. rubric:: Example: forward host TCP port 8080 to emulated machine port 80, and host UDP port 5555 to emulated machine port 5555
 
