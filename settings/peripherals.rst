@@ -51,7 +51,7 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
 * Port 0190h on IBM PS/1 and PS/2 machines not based on the Micro Channel Architecture;
 * Port 0680h on Micro Channel Architecture machines.
 
-.. note:: Some guest operating systems (such as Linux before kernel 3.0) and applications use port 80h - which is shared with the POST card - for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+.. note:: Some guest operating systems and applications use port 80h (which is shared with the POST card) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
 
 
 ISA RTC

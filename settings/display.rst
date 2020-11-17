@@ -13,7 +13,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Voodoo Graphics
 ---------------
 
-Emulate a **3dfx Voodoo** 3D accelerator, connected to the PCI bus and to the video card selected above.
+Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to the PCI bus and to the video card selected above.
 
 The *Configure* button provides the following settings:
 
@@ -23,9 +23,26 @@ The *Configure* button provides the following settings:
    * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
    * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
 
-* **Framebuffer memory size** / **Texture memory size**: amount of video memory to give the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
+.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected through the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
+
+* **Framebuffer memory size** / **Texture memory size**: amount of video memory for the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
 * **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on the screen.
 * **Screen Filter:** apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
-* **Render threads:** allows the Voodoo workload to be split into multiple CPU threads. 2 render threads are recommended for host systems with more than two CPU cores.
-* **SLI:** add a second Voodoo 2 card to the system, connected to the first one through Scan Line Interleave (SLI).
+* **Render threads:** split the workloads of each Voodoo card into different CPU threads for faster emulation. The recommended amount of render threads depends on your host system's CPU core count, and whether or not Voodoo 2 SLI is enabled:
+
++----------+--------------------------+
+|Host cores|Recommended render threads|
+|          +-----------+--------------+
+|          |Single card|Voodoo 2 SLI  |
++==========+===========+==============+
+|2         |1          |1             |
++----------+-----------+--------------+
+|4         |2          |1             |
++----------+-----------+--------------+
+|6 or 8    |4          |2             |
++----------+-----------+--------------+
+|10 or more|4          |4             |
++----------+-----------+--------------+
+
+* **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
