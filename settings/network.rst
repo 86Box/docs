@@ -28,4 +28,4 @@ Network card to emulate. Only cards supported by the machine's expansion buses w
 
 The *Configure* button opens a new window with settings specific to the selected network card, such as the I/O port and IRQ for ISA cards.
 
-The **[LPT] PLIP** network adapter requires a **PLIP Network** device to be attached to one of the :ref:`parallel ports <settings/ports:Parallel port 1-3>`.
+The **[LPT] Parallel Port Internet Protocol** network adapter requires a **PLIP Network** device to be attached to a :ref:`parallel port <settings/ports:Parallel port 1-3>`.

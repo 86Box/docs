@@ -1,7 +1,7 @@
 Tertiary and quaternary IDE
 ===========================
 
-The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Peripherals settings page <settings/peripherals:Tertiary / Quaternary IDE Controller>`, are not supported by all emulated BIOSes and may require manual configuration of emulated operating systems. The specific details are outlined on this page.
+The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Storage controllers <settings/storage:Tertiary / Quaternary IDE Controller>` settings page, are not supported by all emulated BIOSes and may require manual configuration of emulated operating systems. The specific details are outlined on this page.
 
 System resources
 ----------------
@@ -18,7 +18,7 @@ The following resources are used by these additional controllers:
 
 These controllers are not Plug and Play compliant. If the emulated machine supports Plug and Play (through ISA, PCI or other means), remember to mark the IRQ(s) as being used by a legacy ISA device in the BIOS setup utility.
 
-.. note:: While the IRQ for each channel can be changed through its respective *Settings* button on :ref:`settings/peripherals:Tertiary / Quaternary IDE Controller`, many operating systems do not allow legacy (ISA or VLB) IDE controllers to use custom IRQs.
+.. note:: While the IRQ for each channel can be changed through its respective *Settings* button on :ref:`settings/storage:Tertiary / Quaternary IDE Controller`, many operating systems do not allow legacy (ISA or VLB) IDE controllers to use custom IRQs.
 
 BIOS support
 ------------

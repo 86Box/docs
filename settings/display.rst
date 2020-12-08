@@ -6,14 +6,14 @@ The *Display* page contains settings related to the emulated machine's 2D and 3D
 Video
 -----
 
-Video card to emulate. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard video chip, the *Internal* option enables the onboard video.
+Video card to emulate. This box only lists cards supported by the machine's expansion buses. On machines equipped with an onboard video chip, the *Internal* option enables the onboard video.
 
-The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of installed video memory.
+The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of video memory.
 
 Voodoo Graphics
 ---------------
 
-Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to the PCI bus and to the video card selected above.
+Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected above.
 
 The *Configure* button provides the following settings:
 
@@ -23,7 +23,7 @@ The *Configure* button provides the following settings:
    * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
    * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
 
-.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected through the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
+.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory for the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
 * **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on the screen.

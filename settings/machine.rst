@@ -6,29 +6,29 @@ The *Machine* page contains settings related to the emulated machine as a whole,
 Machine type / Machine
 ----------------------
 
-Machine/motherboard model to emulate. The *Machine type* box lists all available machine classes, while the *Machine* box lists all available machine models on the selected class.
+Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box.
 
 The *Configure* button opens a new window with settings specific to the machine's onboard devices, such as the amount of installed video memory for an onboard video chip.
 
-CPU type / CPU
---------------
+CPU type / Speed
+----------------
 
-Main processor to emulate. Only processors supported by the selected machine will be listed.
+Main processor to emulate. The *Speed* box lists all available speed grades for the processor family selected on the *CPU type* box. These boxes only list processor types and speed grades supported by the machine selected above.
 
 FPU
 ---
 
-Math co-processor to emulate. This box will not be enabled if a processor with an integrated math co-processor is selected.
+Math co-processor to emulate. This box is not available if the processor selected above has an integrated co-processor or lacks support for an external one.
 
 Wait states
 -----------
 
-Number of memory wait states to use on a 286- or 386-class processor. This box will not be enabled if any other processor family is selected.
+Number of memory wait states to use on a 286- or 386-class processor. This box is not available if any other processor family is selected above.
 
 Memory
 ------
 
-Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the selected machine.
+Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the machine selected above.
 
 Dynamic Recompiler
 ------------------
