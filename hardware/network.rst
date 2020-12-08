@@ -49,7 +49,7 @@ If you have an incompatible network connection on your host system (such as Wi-F
 Advanced features
 -----------------
 
-The following advanced features can be accessed by directly editing the virtual machine configuration file, which is ``86box.cfg`` by default.
+The following advanced features can be accessed by directly editing the emulated machine's configuration file, which is ``86box.cfg`` by default.
 
 MAC address
 ^^^^^^^^^^^

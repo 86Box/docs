@@ -17,7 +17,7 @@ Once you got the romset in the right place, you can start ``86Box.exe``. The mai
 
 .. rubric:: Step 3: Configure the hardware
 
-When you start a virtual machine, you probably want to configure it with the hardware options you want. This is much like putting together the hardware components to build a PC. To do this, go to the *Tools* menu and select *Settings*. This will bring up the *Settings* window, which has many options to choose from, split into :doc:`a handful of categories <../settings/index>`.
+When you start an emulated machine, you probably want to configure it with the hardware options you want. This is much like putting together the hardware components to build a PC. To do this, go to the *Tools* menu and select *Settings*. This will bring up the *Settings* window, which has many options to choose from, split into :doc:`a handful of categories <../settings/index>`.
 
 .. rubric:: Step 4: Configure the BIOS
 
@@ -25,7 +25,7 @@ Once you've selected the hardware components you wish to emulate, you need to ma
 
 .. rubric:: Step 5: Mount some images
 
-Now that you've configured everything, you're ready to run some software in your virtual machine. Maybe you want to install an operating system or play a booter game. In any case, you'll have to mount some virtual media to get going. You can do this with the icons in the :doc:`status bar <statusbar>`. Icons representing removable media appear semi-transparent when their associated drive is empty, and fully opaque when media is inserted.
+Now that you've configured everything, you're ready to run some software in your emulated machine. Maybe you want to install an operating system or play a booter game. In any case, you'll have to mount some virtual media to get going. You can do this with the icons in the :doc:`status bar <statusbar>`. Icons representing removable media appear semi-transparent when their associated drive is empty, and fully opaque when media is inserted.
 
 When you want to eject virtual media, click on the particular icon again and select *Eject* (for floppy and ZIP disks) or *Empty* (for CD-ROMs). The icon becomes semi-transparent again.
 
@@ -39,7 +39,7 @@ To release the mouse, press F8 and F12 simultaneously. You can also use the midd
 
 .. rubric:: Step 7: What now?
 
-If you made it this far, you got the basics of using 86Box, but there's more features and options to explore. For example, you can try out `86Box Manager <https://github.com/86Box/86BoxManager>`_ for easier management of multiple virtual machines. You can see what's under the *View* menu, or look at some of the more obscure options in the *Settings* window.
+If you made it this far, you got the basics of using 86Box, but there's more features and options to explore. For example, you can try out `86Box Manager <https://github.com/86Box/86BoxManager>`_ for easier management of multiple emulated machines. You can see what's under the *View* menu, or look at some of the more obscure options in the *Settings* window.
 
 Keep in mind that because 86Box is constantly in development, various problems will come and go. If you think something's not working the way it should, consider submitting an issue here on GitHub or joining official support channels on Discord or IRC.
 

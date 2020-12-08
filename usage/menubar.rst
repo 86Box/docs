@@ -17,7 +17,7 @@ View
 ----
 
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will return the window to its normal size.
-* **Remember size & position:** automatically save the size and position of the 86Box window to the virtual machine configuration file.
+* **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended, but it may not work on some host systems, where *SDL (Software)* is the best option.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
