@@ -23,7 +23,7 @@ These controllers are not Plug and Play compliant. If the emulated machine suppo
 BIOS support
 ------------
 
-The tertiary and quaternary channels are not visible and not bootable by any BIOS currently emulated by 86Box. The only exception is **MR BIOS version 3**, which provides full support for them, including bootability and INT 13h services.
+The tertiary and quaternary controllers are not visible and not bootable by the BIOS on most machines currently emulated by 86Box. Machines with **MR BIOS version 3** are the rare exception; that BIOS provides full support for these controllers, including bootability and INT 13h services.
 
 Operating system support
 ------------------------
@@ -47,8 +47,8 @@ The Windows 9x family will only detect and enable both additional channels durin
 7. Select *Basic configuration 4* in the *Settings based on* box.
 8. Change the resource settings to match the :ref:`table above <hardware/ideterqua:System resources>`. The first *Input/Output Range* range corresponds to the **main** I/O port, the second one corresponds to the **status** I/O port, and *Interrupt Request* corresponds to the IRQ.
 
-   * The status I/O port range is off by 6 units. Select 0368 for the tertiary channel or 03E8 for the quaternary channel.
-   * The image below shows an example configuration for the tertiary channel.
+   * The status I/O port range is off by 6. Select 0368 for the tertiary channel or 03E8 for the quaternary channel.
+   * The screenshot below shows an example configuration for the tertiary channel.
 
 9. If both the tertiary and quaternary channels are enabled, repeat the steps above to add the other channel.
 
