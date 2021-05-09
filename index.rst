@@ -45,5 +45,6 @@ Contents
    :maxdepth: 1
    :caption: Development
    
+   dev/buildguide
    dev/builds
    dev/formats/index
