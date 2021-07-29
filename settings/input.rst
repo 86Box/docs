@@ -29,6 +29,8 @@ Emulate one or more game port controller(s). The following controller types are 
 * **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.
 * **Thrustmaster Flight Control System:** flight controller with four buttons, two axes and a POV hat.
 
+.. note:: A generic game port card is emulated if the machine has no game ports (either built-in or as part of a Plug and Play or PCI sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, which can be changed through ISA Plug and Play. On IBM PS/1 machines, the generic card uses port 201h only and has no Plug and Play capability.
+
 Joystick 1-4...
 ---------------
 
