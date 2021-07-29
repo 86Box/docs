@@ -23,26 +23,36 @@ Supported formats:
 |Virtual Hard Disk|.vhd          |
 +-----------------+--------------+
 
-\* Raw images come in many extensions, including .img and .ima
+\* Raw image extensions recognized by 86Box include: .hdd .ima .img
 
 Hard disk size limits
 ^^^^^^^^^^^^^^^^^^^^^
 
-There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's age. Here are a few important ones:
+There are limits to how big of a hard disk an emulated machine can accept. Such limits will vary depending on the machine's BIOS. The table below lists all important limits applicable to the IDE bus:
 
-+---------------+---------+---------+-----+-------+
-|Limit          |Disk size|Cylinders|Heads|Sectors|
-+===============+=========+=========+=====+=======+
-|20-bit CHS     |504 MB   |1024     |16   |63     |
-+---------------+---------+---------+-----+-------+
-|Extended CHS   |8032 MB  |1024     |256  |63     |
-+---------------+---------+---------+-----+-------+
-|65535 cylinders|32255 MB |65535    |16   |63     |
-+---------------+---------+---------+-----+-------+
-|48-bit LBA     |131071 MB|Not applicable         |
-+---------------+---------+-----------------------+
++----------------+---------+---------+-----+-------+
+|Limit           |Disk size|Cylinders|Heads|Sectors|
++================+=========+=========+=====+=======+
+|20-bit CHS      |504 MB   |1024     |16   |63     |
++----------------+---------+---------+-----+-------+
+|12-bit cylinder |2015 MB  |4095     |16   |63     |
++----------------+---------+---------+-----+-------+
+|ECHS translation|4032 MB  |1024     |128  |63     |
++----------------+---------+---------+-----+-------+
+|Revised ECHS    |7560 MB  |1024     |240  |63     |
++----------------+---------+---------+-----+-------+
+|LBA translation |8032 MB  |1024     |255  |63     |
++----------------+---------+---------+-----+-------+
+|16-bit cylinder |32255 MB |65535    |16   |63     |
++----------------+---------+---------+-----+-------+
+|28-bit CHS      |130558 MB|65535    |255  |63     |
++----------------+---------+---------+-----+-------+
+|86Box           |131071 MB|Not applicable         |
++----------------+---------+-----------------------+
 
-These limits can be worked around (with caveats) by using software such as *Ontrack Disk Manager*, except for the 131071 MB one, which is a hard limit of 86Box's hard disk emulation.
+The maximum supported disk image size for IDE or SCSI is 
+
+Disk overlay software such as *Ontrack Disk Manager* can work around BIOS limits and allow booting of hard drives within the 86Box limit of 131071 MB, with the same caveats as using such software on a real machine.
 
 Floppy disk images
 ------------------
@@ -75,7 +85,7 @@ Supported formats:
 |Teledisk            |.td0          |
 +--------------------+--------------+
 
-\* Raw images come in many extensions; the following ones are recognized by 86Box: .001 .002 .003 .004 .005 .006 .007 .008 .009 .010 .12 .144 .360 .720 .bin .dsk .flp .hdm .ima .img .vfd .xdf
+\* Raw image extensions recognized by 86Box include: .bin .dsk .flp .hdm .ima .img .vfd .xdf
 
 Floppy disk detection
 ^^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +96,7 @@ Floppy disk detection
 2. `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ data within the image;
 3. If all else fails, a guess is made based on the image file's size.
 
-The BIOS Parameter Block detection method may behave incorrectly with non-DOS floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS disks. Disabling :ref:`Check BPB <settings/floppycdrom:Floppy drives>` is strongly recommended for accessing these, as an inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection method may behave incorrectly with non-DOS floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS disks. Disabling :ref:`Check BPB <settings/floppycdrom:Floppy drives>` is strongly recommended when accessing these, as an inaccurate BPB detection may result in read errors, data corruption and other issues.
 
 .. note:: When using a **Raw** image of a non-DOS floppy with Check BPB disabled, make sure the image file is not truncated (smaller than its media size), otherwise incorrect behavior may still occur.
 
@@ -105,7 +115,7 @@ Supported formats:
 |                     |.zdi (ZIP)    |
 +---------------------+--------------+
 
-\* Raw images come in many extensions, including: img ima
+\* Raw image extensions recognized by 86Box include: .ima .img
 
 CD-ROM / DVD-ROM optical disc images
 ------------------------------------
@@ -123,6 +133,6 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drive is supported on **Cue sheet** images. Audio output is muted on all drives by default; it can be unmuted by unchecking the *Mute* option for the respective drive on the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** images. Audio output is unmuted on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.
