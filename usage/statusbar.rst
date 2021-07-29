@@ -38,7 +38,7 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 
 A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`.
 
-* **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive. **CD audio is muted by default on all drives.**
+* **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive's analog output.
 * **Empty:** remove any disc inserted into this drive.
 * **Reload previous image:** reinsert the last disc image file selected through the *Image* option.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive.
