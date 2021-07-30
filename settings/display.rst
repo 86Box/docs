@@ -26,7 +26,7 @@ The *Configure* button provides the following settings:
 .. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory for the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
-* **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on the screen.
+* **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on screen.
 * **Screen Filter:** apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
 * **Render threads:** split the workloads of each Voodoo card into different CPU threads for faster emulation. The recommended amount of render threads depends on your host system's CPU core count, and whether or not Voodoo 2 SLI is enabled:
 
