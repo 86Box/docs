@@ -40,10 +40,10 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 * **Fast forward to the end:** fast forward the cassette tape to its end.
 * **Eject:** remove the currently-inserted cassette tape from the deck.
 
-|cartridge| PCjr cartridge slots
---------------------------------
+|cartridge| PCjr cartridges
+---------------------------
 
-Two cartridge icons will appear if the **IBM PCjr** is being emulated.
+Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon corresponds to a cartridge slot on the PCjr's front panel.
 
 * **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr.
 * **Eject:** remove the currently-inserted cartridge from this slot.
@@ -100,7 +100,12 @@ This icon is always present. Double-clicking it opens a sound gain control, whic
 Additional information area
 ---------------------------
 
-When enabled, the :ref:`settings/peripherals:ISABugger` and :ref:`settings/peripherals:POST card` display additional information on the status bar, to the right of the icons described above.
+This area, located to the right of the icons described above, contains additional information which may be provided by components such as the :ref:`settings/peripherals:ISABugger` and :ref:`settings/peripherals:POST card`.
+
+Monitor sleep mode
+^^^^^^^^^^^^^^^^^^
+
+The *Monitor in sleep mode* message is displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
 
 ISABugger
 ^^^^^^^^^
@@ -112,4 +117,4 @@ POST card
 
 The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
-.. note:: The additional information area can only be used by one peripheral at a time. If both are enabled simultaneously, the POST card takes over whenever a POST code is reported, and the ISABugger takes over whenever one of its registers is written to.
+.. note:: The additional information area can only be used by one component at a time. If both the ISABugger and the POST card are enabled simultaneously, the POST card takes over whenever a POST code is reported, and the ISABugger takes over whenever one of its registers is written to. The *Monitor in sleep mode* message is high-priority and will override all other components.
