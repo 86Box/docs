@@ -105,7 +105,7 @@ This area, located to the right of the icons described above, contains additiona
 Monitor sleep mode
 ^^^^^^^^^^^^^^^^^^
 
-The *Monitor in sleep mode* message is displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
+The *Monitor in sleep mode* message will be displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
 
 ISABugger
 ^^^^^^^^^
