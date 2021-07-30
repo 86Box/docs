@@ -14,17 +14,17 @@ Emulated device to connect to the given parallel (LPT) port.
 * **Stereo LPT DAC:** stereo version of the LPT DAC, using the *Strobe* pin to select the active output channel.
 * **Generic Text Printer:** simple printer capable of outputting text only.
 
-   * Printed documents are saved as .txt files in the ``printer`` directory.
+   * Printed documents are saved as .txt files in the ``printer`` subdirectory found in the emulated machine's directory.
 
 * **Generic ESC/P Dot-Matrix:** EPSON ESC/P-compatible printer.
 
-   * Printed pages are saved as .png files in the ``printer`` directory.
+   * Printed pages are saved as .png files in the ``printer`` subdirectory found in the emulated machine's directory.
    * Use the **EPSON LQ-2500** printer driver for best results.
    * This printer will not work if the included ``freetype.dll`` file is missing from the 86Box directory.
 
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
-   * Printed documents are saved as .ps files in the ``printer`` directory, which are automatically converted to .pdf once printing is completed.
+   * Printed documents are saved as .ps files in the ``printer`` subdirectory found in the emulated machine's directory. These files are automatically converted to .pdf once printing is completed.
    * The original .ps files may remain in the directory if PDF conversion fails, or if the included ``gsdll32.dll`` file is missing from the 86Box directory.
    * Use the generic PostScript printer driver provided by your operating system.
    * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
