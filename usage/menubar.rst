@@ -6,6 +6,7 @@ The menu bar located at the top of the 86Box window provides controls for the em
 Action
 ------
 
+* **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while 86Box is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Hard reset:** force a reset of the emulated machine. Requires confirmation.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
@@ -18,23 +19,32 @@ View
 
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
-* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended, but it may not work on some host systems, where *SDL (Software)* is the best option.
+* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+* **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
+
+   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
+   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+   * **Remove shader:** disable the currently-loaded shader.
+
+* **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. The *Lock to this size* box, if checked, prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
-* **Enable HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI screen. This option can be used alongside *Window scale factor* above.
+* **Filter method:** select the filtering method (Nearest or Linear) to be used when scaling the emulated display.
+* **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
    * **Full screen stretch:** stretch the emulated display to completely fill the host display.
    * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
    * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
-   * **Integer scale:** scale the emulated display to the largest integer scale amount to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
    * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
    * **VGA screen type:** select the VGA monitor type to emulate. Color, grayscale, amber phosphor, green phosphor and white phosphor monitors can be selected.
-   * **Grayscale conversion type:** select the color-to-grayscale conversion profile to use when a grayscale monitor is selected.
+   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (BT.601, BT.709 or Average) to use when a grayscale monitor is selected.
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
@@ -49,11 +59,11 @@ Tools
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
-* **Enable Discord integration:** enable Discord Rich Presence. Other Discord users will know that you're running 86Box, as well as the emulated machine's name, model and CPU.
+* **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
 .. note:: Discord integration will not be available if the Discord desktop app is not running, or if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
-* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as PNG images in the ``screenshots`` directory.
+* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` directory.
 
 Help
 ----
