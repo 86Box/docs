@@ -5,6 +5,10 @@ The status bar located at the bottom of the 86Box window provides icons related 
 
 .. |nbsp| unicode:: 0xA0 0xA0
    :trim:
+.. |cassette| image:: images/cassette.png
+   :scale: 150%
+.. |cartridge| image:: images/cartridge.png
+   :scale: 150%
 .. |floppy_35| image:: images/floppy_35.png
    :scale: 150%
 .. |floppy_525| image:: images/floppy_525.png
@@ -21,6 +25,28 @@ The status bar located at the bottom of the 86Box window provides icons related 
    :scale: 150%
 .. |sound| image:: images/sound.png
    :scale: 150%
+
+|cassette| Cassette deck
+------------------------
+
+A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled.
+
+* **New image:** create a new cassette tape image file.
+* **Existing image:** insert a :ref:`cassette tape image file <hardware/diskimages:Cassette tape images>` into the deck.
+* **Existing image (Write-protected):** insert a cassette tape image file into the deck as a read-only tape.
+* **Record:** start recording data to the cassette tape. Not available if the tape is read-only.
+* **Play:** start playing the cassette tape.
+* **Rewind to the beginning:** rewind the cassette tape to its beginning.
+* **Fast forward to the end:** fast forward the cassette tape to its end.
+* **Eject:** remove the currently-inserted cassette tape from the deck.
+
+|cartridge| PCjr cartridge slots
+--------------------------------
+
+Two cartridge icons will appear if the **IBM PCjr** is being emulated.
+
+* **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr.
+* **Eject:** remove the currently-inserted cartridge from this slot.
 
 |floppy_35| |floppy_525| |nbsp| Floppy drives
 ---------------------------------------------

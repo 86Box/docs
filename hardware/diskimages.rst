@@ -1,7 +1,7 @@
 Disk images
 ===========
 
-86Box supports a large variety of disk image formats for the emulated disk drives.
+86Box supports a large variety of disk image formats for the emulated storage drives.
 
 .. |86f| replace:: :doc:`../dev/formats/86f`
 .. |hdx| replace:: :doc:`../dev/formats/hdx`
@@ -50,9 +50,7 @@ There are limits to how big of a hard disk an emulated machine can accept. Such 
 |86Box           |131071 MB|Not applicable         |
 +----------------+---------+-----------------------+
 
-The maximum supported disk image size for IDE or SCSI is 
-
-Disk overlay software such as *Ontrack Disk Manager* can work around BIOS limits and allow booting of hard drives within the 86Box limit of 131071 MB, with the same caveats as using such software on a real machine.
+The maximum supported disk image size for IDE or SCSI is 131071 MB. Disk overlay software such as *Ontrack Disk Manager* can work around BIOS limits and allow booting of IDE hard drives within the 131071 MB limit, with the same caveats as using such software on a real machine.
 
 Floppy disk images
 ------------------
@@ -133,6 +131,38 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** images. Audio output is unmuted on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 .. note:: Only raw format (.bin) tracks are supported. Compressed or otherwise encapsulated audio tracks (.wav, .mp3, .ogg, .flac and other formats) are not supported.
+
+Cassette tape images
+--------------------
+
+Supported formats:
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|**Raw PCM audio**    |Many *        |
++---------------------+--------------+
+|PCE cassette         |.cas          |
++---------------------+--------------+
+|Wave audio           |.wav          |
++---------------------+--------------+
+
+\* Raw audio extensions recognized by 86Box include: .pcm .raw
+
+PCjr cartridge images
+---------------------
+
+Supported formats:
+
++---------------------+--------------+
+|Format               |File extension|
++=====================+==============+
+|**Raw image**        |Many *        |
++---------------------+--------------+
+|JRipCart             |.jrc          |
++---------------------+--------------+
+
+\* Raw image extensions recognized by 86Box include: .a .b .bin
