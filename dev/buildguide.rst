@@ -1,6 +1,6 @@
 Build guide
 ===========
-In order to compile 86Box, please follow this step-by-step guide:
+In order to compile 86Box, please follow these steps:
 
 1. Install the `MSYS2 <https://www.msys2.org/>`_ environment. The rest of the guide will refer to the directory that you install it to (`C:\\msys32` or `C:\\msys64` by default) as the MSYS2 root.
 

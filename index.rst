@@ -1,7 +1,5 @@
 About 86Box
 ===========
-**NOTE: This documentation is a work in progress.**
-
 `86Box <https://86box.net>`_ is an IBM PC system emulator that specializes in running old
 operating systems and software designed for IBM PC systems and compatibles
 from 1981 through fairly recent system designs based on the PCI bus.
