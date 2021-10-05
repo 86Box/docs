@@ -61,7 +61,7 @@ Tools
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
-.. note:: In order to use the Discord integration, you need to download the `Discord Game SDK <https://dl-game-sdk.discordapp.net/2.5.6/discord_game_sdk.zip>`_ and copy the ``discord_game_sdk.dll`` library from the ``lib/x86`` or ``lib/x86_64`` directory (depending on whether you use the x86 or x64 build, respectively) to the 86Box directory. Discord integration will not be available if the Discord desktop app is not running.
+.. note:: Discord integration will not be available if the Discord desktop app is not running, or if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
 
