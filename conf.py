@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = '86Box'
-copyright = '2020, 86Box Project'
+copyright = '2020-2022, 86Box Project'
 author = '86Box Project'
 
 
