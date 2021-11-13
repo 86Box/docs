@@ -48,7 +48,7 @@ See: :ref:`p65up5`
 * Equipped with the obscure SMSC Victory66 southbridge instead of the regular Intel PIIX4E.
 
    * The Victory66 has faster IDE - up to Ultra ATA/66 as opposed to the PIIX4E's Ultra ATA/33 - and a different USB controller.
-   * Drivers for Windows 95, 98, Me and 2000 are available `here <http://www.attro.com/download/driver/IDE/90e66smsc.zip>`_ (TODO: mirror this). Windows XP, Vista and 7 include drivers out of the box.
+   * Drivers for Windows 95, 98, Me and 2000 are available `here <http://www.attro.com/download/driver/IDE/90e66smsc.zip>`_. Windows XP, Vista and 7 include drivers out of the box.
 
 Slot 2
 ------
