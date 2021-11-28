@@ -21,7 +21,7 @@ Up to four floppy disk drives can be attached to the emulated system, although n
 
 .. note:: Disabling "Check BPB" may be required in order to access UNIX/Linux installation floppies or other non-DOS disks, as outlined on :ref:`hardware/diskimages:Floppy disk detection`.
 
-Floppy disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|floppy_35| |floppy_525| |nbsp| Floppy drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Floppy disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|floppy_35| |floppy_525| Floppy drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 CD-ROM drives
 -------------
@@ -32,4 +32,4 @@ Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated 
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 
-CD-ROM / DVD-ROM disc images can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| |nbsp| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+CD-ROM / DVD-ROM disc images can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.

@@ -5,8 +5,8 @@ Status bar
 
 The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
 
-|cassette| |nbsp| Cassette deck
--------------------------------
+|cassette| Cassette deck
+------------------------
 
 A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled.
 
@@ -19,16 +19,16 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 * **Fast forward to the end:** fast forward the cassette tape to its end.
 * **Eject:** remove the currently-inserted cassette tape from the deck.
 
-|cartridge| |nbsp| PCjr cartridges
-----------------------------------
+|cartridge| PCjr cartridges
+---------------------------
 
 Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon corresponds to a cartridge slot on the PCjr's front panel.
 
 * **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr.
 * **Eject:** remove the currently-inserted cartridge from this slot.
 
-|floppy_35| |floppy_525| |nbsp| Floppy drives
----------------------------------------------
+|floppy_35| |floppy_525| Floppy drives
+--------------------------------------
 
 A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <settings/floppycdrom:Floppy drives>`.
 
@@ -38,8 +38,8 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
 
-|cdrom| |nbsp| CD-ROM drives
-----------------------------
+|cdrom| CD-ROM drives
+---------------------
 
 A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`.
 
@@ -48,8 +48,8 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * **Reload previous image:** reinsert the last disc image file selected through the *Image* option.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive.
 
-|zip| |mo| |nbsp| ZIP and MO drives
------------------------------------
+|zip| |mo| ZIP and MO drives
+----------------------------
 
 A ZIP or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
@@ -59,18 +59,18 @@ A ZIP or MO icon will appear for each configured :doc:`additional removable stor
 * **Eject:** remove the currently-inserted disk from this drive.
 * **Reload previous image:** reinsert the last disk image file selected through the *Existing image* options.
 
-|hard_disk| |nbsp| Hard disks
------------------------------
+|hard_disk| Hard disks
+----------------------
 
 A hard disk icon will appear for each configured :doc:`hard disk bus <../settings/hdd>`. For example, if you have both IDE and SCSI hard disks configured, two hard disk icons will appear: one representing all IDE disks, and another one representing all SCSI disks. No options are available.
 
-|network| |nbsp| Network
-------------------------
+|network| Network
+-----------------
 
 This icon will appear if :doc:`networking <../settings/network>` is enabled. No options are available.
 
-|sound| |nbsp| Sound
---------------------
+|sound| Sound
+-------------
 
 This icon is always present. Double-clicking it opens a sound gain control, which allows you to increase the loudness of all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
 

@@ -1,6 +1,3 @@
-.. |nbsp| unicode:: 0xA0 0xA0
-   :trim:
-
 .. |cartridge| image:: /usage/images/cartridge.png
 .. |cartridge_small| image:: /usage/images/cartridge_small.png
 .. |cassette| image:: /usage/images/cassette.png
@@ -42,6 +39,9 @@
 
   <style>
     div.section > h1 > img {
-      padding-right: 3px;
+      padding-right: 5px;
+    }
+    div.section > h2 > img {
+      padding-right: 5px;
     }
   </style>
