@@ -38,10 +38,10 @@
 .. raw:: html
 
   <style>
-    div.section > h1 > img {
+    h1 > img {
       padding-right: 5px;
     }
-    div.section > h2 > img {
+    h2 > img {
       padding-right: 5px;
     }
   </style>
