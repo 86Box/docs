@@ -6,28 +6,18 @@ The status bar located at the bottom of the 86Box window provides icons related 
 .. |nbsp| unicode:: 0xA0 0xA0
    :trim:
 .. |cassette| image:: images/cassette.png
-   :scale: 150%
 .. |cartridge| image:: images/cartridge.png
-   :scale: 150%
 .. |floppy_35| image:: images/floppy_35.png
-   :scale: 150%
 .. |floppy_525| image:: images/floppy_525.png
-   :scale: 150%
 .. |cdrom| image:: images/cdrom.png
-   :scale: 150%
 .. |zip| image:: images/zip.png
-   :scale: 150%
 .. |mo| image:: images/mo.png
-   :scale: 150%
 .. |hard_disk| image:: images/hard_disk.png
-   :scale: 150%
 .. |network| image:: images/network.png
-   :scale: 150%
 .. |sound| image:: images/sound.png
-   :scale: 150%
 
-|cassette| Cassette deck
-------------------------
+|cassette| |nbsp| Cassette deck
+-------------------------------
 
 A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled.
 
@@ -40,8 +30,8 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 * **Fast forward to the end:** fast forward the cassette tape to its end.
 * **Eject:** remove the currently-inserted cassette tape from the deck.
 
-|cartridge| PCjr cartridges
----------------------------
+|cartridge| |nbsp| PCjr cartridges
+----------------------------------
 
 Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon corresponds to a cartridge slot on the PCjr's front panel.
 

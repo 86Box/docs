@@ -36,4 +36,4 @@ The *Configure* buttons open a new window with settings specific to the correspo
 Cassette
 --------
 
-Enable IBM cassette tape emulation. The cassette deck can be controlled through the :ref:`status bar <usage/statusbar:|cassette| Cassette deck>` or :ref:`Media menu <usage/menubar:Media>`.
+Enable IBM cassette tape emulation. The cassette deck can be controlled through the :ref:`status bar <usage/statusbar:|cassette| |nbsp| Cassette deck>` or :ref:`Media menu <usage/menubar:Media>`.
