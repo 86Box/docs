@@ -24,7 +24,7 @@ Add a third or fourth (respectively) IDE channel to the emulated machine, throug
 
 The IRQ used by each controller can be configured through its respective *Settings* button.
 
-.. note:: The tertiary and quaternary controllers are not Plug and Play compliant; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
+.. note:: The tertiary and quaternary controllers are not Plug and Play compliant by default; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
 
 SCSI Controllers
 ----------------

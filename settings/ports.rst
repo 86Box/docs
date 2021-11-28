@@ -25,7 +25,7 @@ Emulated device to connect to the given parallel (LPT) port.
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
    * Printed documents are saved as .ps files in the ``printer`` subdirectory found in the emulated machine's directory. These files are automatically converted to .pdf once printing is completed.
-   * The original .ps files may remain in the directory if PDF conversion fails, or if the included ``gsdll32.dll`` file is missing from the 86Box directory.
+   * The original .ps files may remain in the directory if PDF conversion fails, or if the included ``gsdll32.dll`` or ``gsdll64.dll`` file is missing from the 86Box directory.
    * Use the generic PostScript printer driver provided by your operating system.
    * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
 

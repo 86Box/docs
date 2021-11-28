@@ -20,11 +20,11 @@ MIDI Out Device
 Device to output MIDI music to, for sound cards equipped with an external MIDI output.
 
 * **None:** don't output MIDI music.
-* **FluidSynth:** a software soundfont synthesizer. Selecting a soundfont file is required. There will be no synthesizer output if no soundfont is configured or if the included ``libfluidsynth.dll`` file is missing from the 86Box directory.
+* **FluidSynth:** a software soundfont synthesizer. Selecting a soundfont file is required. There will be no synthesizer output if no soundfont is configured or if the included ``libfluidsynth.dll`` or ``libfluidsynth64.dll`` file is missing from the 86Box directory.
 * **Roland MT-32**/**CM-32L Emulation:** emulate a Roland synthesizer module. Emulation is provided by the `Munt <http://munt.sourceforge.net>`_ library.
 * **System MIDI:** output to a MIDI device on the host system, such as the Windows software synthesizer or a USB MIDI adapter.
 
-The *Configure* button opens a new window with settings specific to the selected output device, such as the host MIDI device to use for *System MIDI*.
+The *Configure* button opens a new window with settings specific to the selected output device, such as the soundfont to use for *FluidSynth* and the host MIDI device to use for *System MIDI*.
 
 MIDI In Device
 --------------

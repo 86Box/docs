@@ -8,26 +8,22 @@ Action
 
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while 86Box is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
-* **Hard reset:** force a reset of the emulated machine. Requires confirmation.
+* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
 * **Pause:** pause emulation. Uncheck this option to resume emulation.
-* **Exit:** quit 86Box. Requires confirmation.
+
+.. note:: Emulation is automatically paused when the emulated machine enters ACPI sleep mode.
+
+* **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
 ----
 
-* **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will return the window to its normal size.
+* **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
-* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
-* **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
-
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
-   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
-   * **Remove shader:** disable the currently-loaded shader.
-
-* **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. The *Lock to this size* box, if checked, prevents changes in the emulated display's resolution from overriding the specified size.
+* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases.
+* **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
 * **Filter method:** select the filtering method (Nearest or Linear) to be used when scaling the emulated display.
@@ -49,6 +45,15 @@ View
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
 
+..
+  *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+  * **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
+
+   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
+   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+   * **Remove shader:** disable the currently-loaded shader.
+
 Media
 -----
 
@@ -59,11 +64,17 @@ Tools
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
+* **Preferences:** open the *Preferences* window, which provides the following options:
+
+   * **Language:** select a language for the 86Box user interface.
+   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`.
+
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
 .. note:: Discord integration will not be available if the Discord desktop app is not running, or if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
+* **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| |nbsp| Sound>`, which is also accessible through the status bar.
 
 Help
 ----

@@ -61,9 +61,9 @@ The **Windows 9x family** will automatically detect Plug and Play IDE controller
 Windows NT, 2000 and XP
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-**Windows 2000 and XP** will automatically detect Plug and Play IDE controllers on boot. Additionally, **Windows NT 3.5, 4.0, 2000 and XP** will automatically detect non-Plug and Play controllers during installation, regardless of BIOS support; this auto-detection of non-PnP controllers does not, however, work on machines with **Award BIOS**, except for the version which identifies itself as *Phoenix - AwardBIOS v6.00PG*, where it does work.
+**Windows 2000 and XP** will automatically detect Plug and Play IDE controllers on boot. Additionally, **Windows NT 3.5, 4.0, 2000 and XP** will automatically detect non-Plug and Play controllers during installation, regardless of BIOS support; however, this auto-detection of non-PnP controllers does not work on most machines with **Award BIOS**.
 
-.. note:: If you install the system to a hard disk on one of the additional controllers, it will not be bootable if the BIOS doesn't support booting from these controllers.
+.. note:: If you install the system to a hard disk on one of the additional controllers, it will not be bootable unless :ref:`the BIOS supports booting from these controllers <hardware/ideterqua:BIOS support>`.
 
 On **Windows 2000 only**, non-Plug and Play controllers can be enabled on an already-installed system through *Add New Hardware* similarly to :ref:`Windows 9x as shown above <hardware/ideterqua:Windows 95, 98 and Me>`. The resource parameters cannot be changed, and therefore, only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported. *Basic configuration 0003* corresponds to the **tertiary** channel, while *Basic configuration 0002* corresponds to the **quaternary** channel.
 
