@@ -1,29 +1,42 @@
 Advanced builds
 ===============
 
-The `86Box Jenkins <https://ci.86box.net/>`_ provides all kinds of pre-release testing builds for advanced users. These are linked to the `86Box git repository on GitHub <https://github.com/86Box/86Box>`_; a new build is produced with the latest source code every time the repository is updated.
+The `86Box Jenkins <https://ci.86box.net/job/86Box/>`_ provides all kinds of pre-release testing builds for advanced users. These are linked to the `86Box git repository on GitHub <https://github.com/86Box/86Box>`_; a new build is produced with the latest source code every time the repository is updated.
 
 .. important:: Testing builds are development snapshots which may contain bugs, unfinished features or other issues. These should only be used if you know what you're doing.
 
-Standard
+Variants
 --------
 
-Standard builds (**86Box**) are compiled with default options. Release versions of 86Box are based on standard builds.
+86Box builds are available in a number of variants. The Jenkins page will automatically detect the recommended variant for the system you're viewing it on, but if you're downloading builds for a different system (or you have disabled JavaScript), use the guide below to select a variant:
 
-Debug
------
+* The **Old Recompiler** is recommended. The **New Recompiler** is in beta; you may experience bugs and performance loss with it.
 
-Debug builds (**86Box-Debug**) are :ref:`standard builds <dev/builds:Standard>` compiled with debug symbols and no optimizations, to allow for debugging with ``gdb`` and other tools if you don't have a full 86Box development setup. Debug builds run slower than standard builds due to the removal of optimizations and addition of debugging features.
+  * The Old Recompiler is not available for the ARM architecture. You must select the New Recompiler for running 86Box on ARM Linux systems such as the Raspberry Pi.
 
-Development
------------
+* On **Windows**, **x86 (32-bit)** is recommended even if you have a 64-bit system.
 
-Development builds (**86Box-Dev**) are compiled with the ``DEV_BUILD=y`` flag, enabling additional features which are currently under development. These new features might not work, either partially or entirely, and the development team reserves the right to change or remove them at any time.
+  * x64 (64-bit) allows for emulating more than 2 GB of RAM on some later machines and using larger soundfonts with FluidSynth, at a slight performance loss.
 
-Optimized
----------
+* The regular variant (**86Box**) is recommended; it is compiled with the ``--preset=regular`` CMake flag, enabling the default feature set.
 
-Optimized builds (**86Box-Optimized**) have been discontinued as of March 18th 2021. These builds' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior. Optimized binaries can still be produced by compiling 86Box from source with the ``OPTIM=y`` flag, which enables optimizations for the build host's CPU microarchitecture.
+  * Release versions of 86Box are based on this variant.
+
+* The debug variant (**86Box-Debug**) is compiled with the ``--preset=debug`` CMake flag, which provides debug symbols and no optimizations, to allow for debugging with ``gdb`` and other tools.
+
+  * This variant runs slower than the standard one due to the removal of optimizations and addition of debugging features.
+
+Discontinued variants
+^^^^^^^^^^^^^^^^^^^^^
+
+* Dev variants (**86Box-Dev** and **86Box-DevODR**) as of November 18th 2021.
+
+  * These builds contained incomplete and experimental features subject to change at any time, with the -Dev variant also containing the New Recompiler beta.
+
+* Optimized variant (**86Box-Optimized**) as of March 18th 2021.
+
+  * These builds' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
+  * Optimized binaries can still be produced by :doc:`compiling 86Box from source <buildguide>` with the ``--preset=optimized`` CMake flag, which enables optimizations for the build host's CPU microarchitecture. No support will be provided for those.
 
 ..
   Optimized builds (**86Box-Optimized**) are :ref:`standard builds <dev/builds:Standard>` which have been optimized for use with a specific CPU family on the host machine. Optimized builds provide slight performance improvements, especially on older or  low-end hosts; however, the aggressive optimizations employed **may result in bugs** not present on standard builds.
