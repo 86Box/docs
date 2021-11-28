@@ -1,3 +1,9 @@
+.. |br| raw:: html
+
+   <br />&nbsp;
+.. |vel| unicode:: 0x22EE
+   :trim:
+
 .. |cartridge| image:: /usage/images/cartridge.png
 .. |cartridge_small| image:: /usage/images/cartridge_small.png
 .. |cassette| image:: /usage/images/cassette.png

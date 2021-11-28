@@ -5,12 +5,6 @@
 
 The *Hard disks* page contains settings related to the emulated machine's fixed disks.
 
-.. |br| raw:: html
-
-   <br />&nbsp;
-.. |vel| unicode:: 0x22EE
-   :trim:
-
 Hard disk list
 --------------
 
@@ -86,6 +80,8 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 
    * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
+
+.. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
 Press the *OK* button to create the disk image file, or *Cancel* to close the window.
 
