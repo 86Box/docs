@@ -1,20 +1,9 @@
+.. include:: /include.rst
+
 Status bar
 ==========
 
 The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
-
-.. |nbsp| unicode:: 0xA0 0xA0
-   :trim:
-.. |cassette| image:: images/cassette.png
-.. |cartridge| image:: images/cartridge.png
-.. |floppy_35| image:: images/floppy_35.png
-.. |floppy_525| image:: images/floppy_525.png
-.. |cdrom| image:: images/cdrom.png
-.. |zip| image:: images/zip.png
-.. |mo| image:: images/mo.png
-.. |hard_disk| image:: images/hard_disk.png
-.. |network| image:: images/network.png
-.. |sound| image:: images/sound.png
 
 |cassette| |nbsp| Cassette deck
 -------------------------------
