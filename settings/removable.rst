@@ -1,5 +1,7 @@
-Other removable devices
-=======================
+.. include:: /include.rst
+
+|other_removable_devices| Other removable devices
+=================================================
 
 The *Other removable devices* page contains settings related to the emulated machine's additional removable storage drives.
 

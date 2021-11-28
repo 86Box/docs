@@ -1,5 +1,7 @@
-Network
-=======
+.. include:: /include.rst
+
+|network| Network
+=================
 
 The *Network* page contains settings related to the emulated machine's network connectivity.
 

@@ -1,5 +1,7 @@
-Other peripherals
-=================
+.. include:: /include.rst
+
+|other_peripherals| Other peripherals
+=====================================
 
 The *Other peripherals* page contains settings related to disk drive controllers, memory expansions and other expansion cards.
 

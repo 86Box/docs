@@ -1,5 +1,7 @@
-Input devices
-=============
+.. include:: /include.rst
+
+|input_devices| Input devices
+=============================
 
 The *Input devices* page contains settings related to the emulated machine's mouse, joysticks and other input devices.
 

@@ -1,5 +1,7 @@
-Ports (COM & LPT)
-=================
+.. include:: /include.rst
+
+|ports| Ports (COM & LPT)
+=========================
 
 The *Ports (COM & LPT)* page contains settings related to the emulated machine's I/O ports.
 

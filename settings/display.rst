@@ -1,5 +1,7 @@
-Display
-=======
+.. include:: /include.rst
+
+|display| Display
+=================
 
 The *Display* page contains settings related to the emulated machine's 2D and 3D video cards.
 

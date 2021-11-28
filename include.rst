@@ -13,6 +13,8 @@
 .. |floppy_35_small| image:: /usage/images/floppy_35_small.png
 .. |floppy_525| image:: /usage/images/floppy_525.png
 .. |floppy_525_small| image:: /usage/images/floppy_525_small.png
+.. |floppy_and_cdrom_drives| image:: /usage/images/floppy_and_cdrom_drives.png
+.. |floppy_and_cdrom_drives_small| image:: /usage/images/floppy_and_cdrom_drives_small.png
 .. |hard_disk| image:: /usage/images/hard_disk.png
 .. |hard_disk_small| image:: /usage/images/hard_disk_small.png
 .. |input_devices| image:: /usage/images/input_devices.png
@@ -35,3 +37,11 @@
 .. |storage_controllers_small| image:: /usage/images/storage_controllers_small.png
 .. |zip| image:: /usage/images/zip.png
 .. |zip_small| image:: /usage/images/zip_small.png
+
+.. raw:: html
+
+  <style>
+    div.section > h1 > img {
+      padding-right: 3px;
+    }
+  </style>

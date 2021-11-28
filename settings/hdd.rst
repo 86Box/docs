@@ -1,5 +1,7 @@
-Hard disks
-==========
+.. include:: /include.rst
+
+|hard_disk| Hard disks
+======================
 
 The *Hard disks* page contains settings related to the emulated machine's fixed disks.
 

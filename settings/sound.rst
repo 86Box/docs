@@ -1,5 +1,7 @@
-Sound
-=====
+.. include:: /include.rst
+
+|sound| Sound
+=============
 
 The *Sound* page contains settings related to the emulated machine's audio hardware.
 
