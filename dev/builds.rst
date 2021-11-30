@@ -31,11 +31,11 @@ Discontinued variants
 
 * Dev variants (**86Box-Dev** and **86Box-DevODR**) as of November 18th 2021.
 
-  * These builds contained incomplete and experimental features subject to change at any time, with the -Dev variant also containing the New Recompiler beta.
+  * These variants contained incomplete and experimental features subject to change at any time, with the -Dev variant also containing the New Recompiler beta.
 
-* Optimized variant (**86Box-Optimized**) as of March 18th 2021.
+* Optimized variants (**86Box-Optimized**) as of March 18th 2021.
 
-  * These builds' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
+  * These variants' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
   * Optimized binaries can still be produced by :doc:`compiling 86Box from source <buildguide>` with the ``--preset=optimized`` CMake flag, which enables optimizations for the build host's CPU microarchitecture. No support will be provided for those.
 
 ..
