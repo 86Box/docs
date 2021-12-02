@@ -22,7 +22,16 @@ View
 
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
-* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases.
+* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+* **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
+
+   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
+   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+   * **Remove shader:** disable the currently-loaded shader.
+
+.. note:: Shaders that take advantage of multipass and previous frames are not supported.
+
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
@@ -44,15 +53,6 @@ View
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
-
-..
-  *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
-  * **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
-
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
-   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
-   * **Remove shader:** disable the currently-loaded shader.
 
 Media
 -----
