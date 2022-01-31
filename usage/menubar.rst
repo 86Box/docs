@@ -20,9 +20,15 @@ Action
 View
 ----
 
+* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
-* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.0 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+* **Renderer:** select a graphical renderer for the emulated display.
+
+   * **SDL (Hardware)** is recommended in most cases.
+   * **SDL (Software)** and **SDL (OpenGL)** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
+   * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+
 * **OpenGL options:** configure the *OpenGL (3.0 Core)* renderer. This submenu will be available if that renderer is selected.
 
    * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
@@ -30,12 +36,13 @@ View
    * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
    * **Remove shader:** disable the currently-loaded shader.
 
-.. note:: Shaders that take advantage of multipass and previous frames are not supported.
+.. note:: * Shaders that take advantage of multipass and previous frames are not supported.
+          * ``.cg`` and ``.cgp`` shaders are not supported either, as these formats are long deprecated.
 
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
-* **Window scale factor:** scale the emulated display to half (0.5x), normal (1x), 50% larger (1.5x) or double (2x) sizes.
-* **Filter method:** select the filtering method (Nearest or Linear) to be used when scaling the emulated display.
+* **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*) or double (*2x*) sizes.
+* **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
@@ -48,8 +55,8 @@ View
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
    * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
-   * **VGA screen type:** select the VGA monitor type to emulate. Color, grayscale, amber phosphor, green phosphor and white phosphor monitors can be selected.
-   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (BT.601, BT.709 or Average) to use when a grayscale monitor is selected.
+   * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
+   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
