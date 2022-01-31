@@ -22,8 +22,8 @@ View
 
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
-* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.3 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
-* **OpenGL options:** configure the *OpenGL (3.3 Core)* renderer. This submenu will be available if that renderer is selected.
+* **Renderer:** select a graphical renderer for the emulated display. *SDL (Hardware)* is recommended in most cases. *OpenGL (3.0 Core)* allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+* **OpenGL options:** configure the *OpenGL (3.0 Core)* renderer. This submenu will be available if that renderer is selected.
 
    * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
    * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
