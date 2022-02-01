@@ -11,16 +11,14 @@ Action
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
-* **Pause:** pause emulation. Uncheck this option to resume emulation.
-
-.. note:: Emulation is automatically paused when the emulated machine enters ACPI sleep mode.
-
+* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
 ----
 
 * **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
+* **Hide toolbar:** hides the :doc:`toolbar <toolbar>` below the menu bar.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.
@@ -69,7 +67,7 @@ This menu lists all storage drives attached to the emulated machine, and provide
 Tools
 -----
 
-* **Settings:** open the :doc:`Settings <../settings/index>` window.
+* **Settings:** open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
