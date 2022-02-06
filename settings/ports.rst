@@ -5,7 +5,7 @@
 
 The *Ports (COM & LPT)* page contains settings related to the emulated machine's I/O ports.
 
-LPT1-3 Device
+LPT1-4 Device
 -------------
 
 Emulated device to connect to the given parallel (LPT) port.
@@ -42,7 +42,9 @@ Serial port 1-4
 
 Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
 
-Parallel port 1-3
+Parallel port 1-4
 -----------------
 
 Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
+
+.. note:: The 4th parallel port is not widely supported. It is located at I/O port 268h.

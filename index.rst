@@ -26,6 +26,7 @@ Contents
    
    usage/gettingstarted
    usage/menubar
+   usage/toolbar
    usage/statusbar
    settings/index
 
