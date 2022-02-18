@@ -11,7 +11,7 @@ Action
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
-* **Pause:** pause emulation. Uncheck this option to resume emulation.
+* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation.
 
 .. note:: Emulation is automatically paused when the emulated machine enters ACPI sleep mode.
 
@@ -69,7 +69,7 @@ This menu lists all storage drives attached to the emulated machine, and provide
 Tools
 -----
 
-* **Settings:** open the :doc:`Settings <../settings/index>` window.
+* **Settings:** open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
@@ -78,7 +78,7 @@ Tools
 
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
-.. note:: Discord integration will not be available if the Discord desktop app is not running, or if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
+.. note:: Discord integration will not be available if the Discord desktop app is not running, or if (on Windows hosts) the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
