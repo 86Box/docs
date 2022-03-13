@@ -64,6 +64,8 @@ Emulate the **Gravis UltraSound** ISA sound card.
 
 The type of UltraSound to emulate (Classic or MAX), I/O port and amount of onboard RAM can be configured through the *Configure* button.
 
+.. note:: MAX support is only implemented on Dev builds at the moment.
+
 Use FLOAT32 sound
 -----------------
 
