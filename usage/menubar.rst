@@ -29,8 +29,6 @@ View
    * **SDL (Software)** and **SDL (OpenGL)** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
    * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
-.. note:: The **OpenGL (3.0 Core)** renderer and its shader support are not available on Linux in this release.
-
 * **OpenGL options:** configure the *OpenGL (3.0 Core)* renderer. This submenu will be available if that renderer is selected.
 
    * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
