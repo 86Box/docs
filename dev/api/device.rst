@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 Devices
 =======
 
@@ -113,7 +111,7 @@ Most devices need a place to store their internal state. We discourage the use o
 
     typedef struct {
         uint32_t type; /* example: copied from device_t.local */
-        uint8_t regs[256]; /* example: 256*8-bit registers */
+        uint8_t  regs[256]; /* example: 256*8-bit registers */
     } foo_t;
 
     /* ... */

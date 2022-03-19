@@ -1,0 +1,48 @@
+/* Give some spacing to icons in headings. */
+h1 > img {
+	padding-right: 5px;
+}
+h2 > img {
+	padding-right: 5px;
+}
+
+/* Remove bottom spacing from lists in tables and admonitions. */
+table.docutils > tbody > tr > td > ul, table.docutils > tbody > tr > td > ol {
+	margin-bottom: 0 !important;
+}
+div.admonition > p:nth-child(2) {
+	margin-bottom: 0;
+}
+
+/* Avoid horizontal scrolling of API documentation tables. */
+.wy-table-responsive table td {
+	white-space: normal;
+}
+
+/* Make API documentation table titles normal-monospace, and give them less spacing. */
+.rst-content table.docutils caption {
+	padding-top: 0;
+	font-family: monospace;
+	font-style: normal;
+}
+
+/* Fix font size for lists in table cells. */
+table.docutils > tbody > tr > td > ul > li > p, table.docutils > tbody > tr > td > ol > li > p {
+	font-size: inherit;
+}
+
+/* Tweak top and bottom spacing for tables in table cells. */
+table.docutils > tbody > tr > td > div.wy-table-responsive {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+/* Fix odd row background on tables in table cells. */
+tr.row-odd > td {
+	background-color: #fcfcfc !important;
+}
+
+/* Vertical text for tables. */
+div.vertical-text {
+	transform: rotate(270deg);
+}
