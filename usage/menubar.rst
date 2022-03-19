@@ -33,8 +33,8 @@ View
 
    * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
    * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Browse:** add a ``.glsl`` shader file to the list of shaders applied to the emulated display.
-   * **Remove:** remove the selected shader file from the list.
+   * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
+   * **Remove:** disable the currently-loaded shader.
 
 .. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
           * Shaders that take advantage of multipass and previous frames are not supported.
