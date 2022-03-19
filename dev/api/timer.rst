@@ -1,7 +1,7 @@
 Timers
 ======
 
-**Timers** allow for devices to perform tasks after a set period. This period is **automatically scaled** to match the emulation speed, which helps 86Box stay relatively accurate, unlike other emulators and virtualizers which may operate timers in real time independently of speed. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/timer.h``.
+**Timers** allow devices to perform tasks after a set period. This period is **automatically scaled** to match the emulation speed, which helps 86Box stay relatively accurate, unlike other emulators and virtualizers which may operate timers in real time independently of speed. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/timer.h``.
 
 .. note:: Timers are processed after each instruction in interpreter mode, or each recompiled code block in dynamic recompiler mode (unless an instruction requests a Time Stamp Counter (TSC) update). In both cases, timer accuracy **should** be in the single-digit microseconds at a minimum, which is good enough for most time-sensitive applications like 48 KHz audio playback.
 
