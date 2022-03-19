@@ -23,7 +23,7 @@ DMA
   * - **Return value**
     - 8- (channels ``0``-``3``) or 16-bit (channels ``5``-``7``) value read from the given DMA channel, or ``DMA_NODATA`` if no data was read.
 
-      May include a ``DMA_OVER`` flag (located above the most significant data bit so as to not affect the data) indicating that this was the last byte or word transferred, after which the channel is auto-initialized or masked depending on its configuration.
+      May include a ``DMA_OVER`` bit flag (located above the most significant data bit so as to not affect the data) indicating that this was the last byte or word transferred, after which the channel is auto-initialized or masked depending on its configuration.
 
 .. flat-table:: dma_channel_write
   :header-rows: 1

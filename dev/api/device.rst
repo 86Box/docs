@@ -19,7 +19,7 @@ The **device** is the main unit of emulated components in 86Box. Each device has
     - The device's internal name, used to identify the device in the emulated machine's configuration file. ``"foo1234"`` for example.
 
   * - :cspan:`1` flags
-    - One or more bitwise flags to indicate the expansion bus(es) supported by the device, for determining device eligibility on the selected machine:
+    - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining device eligibility on the selected machine:
 
       * ``DEVICE_ISA``: 8-bit ISA;
       * ``DEVICE_AT``: 16-bit ISA;
