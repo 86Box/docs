@@ -31,6 +31,7 @@ author = '86Box Project'
 extensions = [
 	'sphinx_rtd_theme',
 	'sphinx.ext.autosectionlabel',
+	'linuxdoc.rstFlatTable'
 ]
 autosectionlabel_prefix_document = True
 master_doc = 'index'

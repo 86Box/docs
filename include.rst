@@ -67,4 +67,30 @@
     div.admonition > p:nth-child(2) {
       margin-bottom: 0;
     }
+    .wy-table-responsive table td {
+      white-space: normal;
+    }
+    .rst-content table.docutils caption {
+      padding-top: 0;
+      font-family: monospace;
+      font-style: normal;
+    }
+    table.docutils > tbody > tr > td > ul {
+      margin-bottom: 0 !important;
+    }
+    table.docutils > tbody > tr > td > ul > li > p {
+      font-size: inherit;
+    }
+    table.docutils > tbody > tr > td > div.wy-table-responsive {
+      margin-top: 0.5em;
+      margin-bottom: 0;
+    }
+    tr.row-odd > td {
+      background-color: #fcfcfc !important;
+    }
+    .vertical-text {
+      transform: rotate(270deg);
+    }
   </style>
+
+.. highlight:: c

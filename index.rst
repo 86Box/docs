@@ -46,4 +46,5 @@ Contents
    
    dev/buildguide
    dev/builds
+   dev/api/index
    dev/formats/index
