@@ -163,12 +163,24 @@ Most devices need a place to store their internal state. We discourage the use o
 Registration
 ------------
 
+New devices must be **registered** before they can be selected by the user. This is usually accomplished by adding one or more ``device_t`` pointers to the **device table** for the device's class:
 
+* **Video cards:** ``video_cards`` in ``video/vid_table.c``
+* **Sound cards:** ``sound_cards`` in ``sound/sound.c``
+* **Network cards:** ``net_cards`` in ``network/network.c``
+* **Parallel port devices:** ``lpt_devices`` in ``lpt.c``
+* **Hard disk controllers:** ``controllers`` in ``disk/hdc.c``
+* **Floppy disk controllers:** ``fdc_cards`` in ``floppy/fdc.c``
+* **SCSI controllers:** ``scsi_cards`` in ``scsi/scsi.c``
+* **ISA RTC cards:** ``boards`` in ``device/isartc.c``
+* **ISA memory expansion cards:** ``boards`` in ``device/isamem.c``
+
+Devices not covered by any of the above classes may require further integration through modifications to the user interface and configuration loading/saving systems.
 
 Availability
 ------------
 
-A device will be available for selection by the user if these criteria are met:
+A device will be **available** for selection by the user if these criteria are met:
 
 1) The device is :ref:`registered <dev/api/device:Registration>`, so that the user interface knows about it;
 2) The selected machine has any of the expansion buses specified in the device's ``flags``;
