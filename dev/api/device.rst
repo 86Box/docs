@@ -16,24 +16,24 @@ The **device** is the main unit of emulated components in 86Box. Each device has
     - The device's name, displayed in the user interface. ``"Foo-1234"`` for example. Suffixes like ``"(PCI)"`` are removed at run-time.
 
   * - :cspan:`1` internal_name
-    - The device's internal name, used to identify the device in the emulated machine's configuration file. ``"foo1234"`` for example.
+    - The device's internal name, used to identify it in the emulated machine's configuration file. ``"foo1234"`` for example.
 
   * - :cspan:`1` flags
-    - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining device eligibility on the selected machine:
+    - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining :ref:`device availability <dev/api/device:Availability>` on the selected machine:
 
       * ``DEVICE_ISA``: 8-bit ISA;
       * ``DEVICE_AT``: 16-bit ISA;
       * ``DEVICE_EISA``: EISA (reserved for future use);
-      * ``DEVICE_VLB``: VESA Local Bus;
+      * ``DEVICE_VLB``: VESA Local Bus or proprietary equivalents;
       * ``DEVICE_PCI``: 32-bit PCI;
       * ``DEVICE_AGP``: AGP 3.3V;
-      * ``DEVICE_AC97``: AMR or CNR;
+      * ``DEVICE_AC97``: AMR, CNR or ACR;
       * ``DEVICE_PCJR``: IBM PCjr;
       * ``DEVICE_PS2``: IBM PS/1 or PS/2;
       * ``DEVICE_MCA``: IBM Micro Channel Architecture;
       * ``DEVICE_CBUS``: PC-98 C-BUS (reserved for future use);
-      * ``DEVICE_COM``: serial (reserved for future use);
-      * ``DEVICE_LPT``: parallel (reserved for future use).
+      * ``DEVICE_COM``: serial port (reserved for future use);
+      * ``DEVICE_LPT``: parallel port (reserved for future use).
 
   * - :cspan:`1` local
     - 32-bit value which can be read from this structure by the ``init`` callback.
@@ -79,7 +79,7 @@ The **device** is the main unit of emulated components in 86Box. Each device has
       ``int poll(int x, int y, int z, int b, void *priv)``
 
       * ``x`` and ``y``: relative mouse movement coordinates (signed);
-      * ``z``: relative wheel movement coordinate (signed);
+      * ``z``: relative scroll wheel movement coordinate (signed);
       * ``b``: button state: bit 0 (0x1) set if left button pressed, bit 1 (0x2) set if right button pressed, bit 2 (0x4) set if middle button pressed;
       * ``priv``: opaque pointer previously returned by ``init``;
       * Return value: ``0`` if the change was processed, or any other value otherwise.
@@ -88,7 +88,7 @@ The **device** is the main unit of emulated components in 86Box. Each device has
     - Reserved for future use.
 
   * - :cspan:`1` speed_changed
-    - Function called whenever the emulated CPU clock speed is changed. Can be ``NULL``. Timer intervals and anything else sensitive to the CPU clock speed should be updated in this callback. Takes the form of:
+    - Function called whenever the emulated CPU clock speed is changed. Can be ``NULL``. Timer intervals (when using the undocumented legacy timer API) and anything else sensitive to the CPU clock speed should be updated in this callback. Takes the form of:
 
       ``void speed_changed(void *priv)``
 
@@ -107,61 +107,100 @@ The **device** is the main unit of emulated components in 86Box. Each device has
 State structure
 ---------------
 
-Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating state structures dynamically in the ``init`` callback and freeing them in the ``close`` callback::
+Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating **state structures** dynamically in the ``init`` callback and freeing them in the ``close`` callback::
 
-  typedef struct {
-      uint32_t type; /* example: copied from device_t.local */
-      uint8_t regs[256]; /* example: 256*8-bit registers */
-  } foo_t;
+    #include <86box/device.h>
 
-  static void *
-  foo_init(const device_t *info)
-  {
-      /* Allocate a blank state structure. */
-      foo_t *dev = (foo_t *) malloc(sizeof(foo_t));
-      memset(dev, 0, sizeof(foo_t));
+    typedef struct {
+        uint32_t type; /* example: copied from device_t.local */
+        uint8_t regs[256]; /* example: 256*8-bit registers */
+    } foo_t;
 
-      /* Do whatever you want. */
-      dev->type = info->local; /* copy device_t.local value */
+    /* ... */
 
-      /* Return a pointer to the state structure. */
-      return dev;
-  }
+    static void *
+    foo_init(const device_t *info)
+    {
+        /* Allocate a blank state structure. */
+        foo_t *dev = (foo_t *) malloc(sizeof(foo_t));
+        memset(dev, 0, sizeof(foo_t));
 
-  static void
-  foo_close(void *priv)
-  {
-      /* Get the state structure. */
-      foo_t *dev = (foo_t *) priv;
+        /* Do whatever you want. */
+        dev->type = info->local; /* copy device_t.local value */
 
-      /* Do whatever you want, then deallocate the state structure. */
-      free(dev);
-  }
+        /* Return a pointer to the state structure. */
+        return dev;
+    }
 
-  const device_t foo1234_device = {
-      .name = "Foo-1234",
-      .internal_name = "foo1234",
-      .flags = DEVICE_AT, /* 16-bit ISA */
-      .local = 1234,
-      .init = foo_init,
-      .close = foo_close,
-      /* ... */
-  };
+    static void
+    foo_close(void *priv)
+    {
+        /* Get the state structure. */
+        foo_t *dev = (foo_t *) priv;
 
-  const device_t foo4321_device = {
-      .name = "Foo-4321",
-      .internal_name = "foo4321",
-      .flags = DEVICE_PCI, /* 32-bit PCI */
-      .local = 4321, /* different device subtype */
-      .init = foo_init,
-      .close = foo_close,
-      /* ... */
-  };
+        /* Do whatever you want, then deallocate the state structure. */
+        free(dev);
+    }
+
+    const device_t foo1234_device = {
+        .name = "Foo-1234",
+        .internal_name = "foo1234",
+        .flags = DEVICE_AT, /* 16-bit ISA */
+        .local = 1234,
+        .init = foo_init,
+        .close = foo_close,
+        /* ... */
+    };
+
+    const device_t foo4321_device = {
+        .name = "Foo-4321",
+        .internal_name = "foo4321",
+        .flags = DEVICE_PCI, /* 32-bit PCI */
+        .local = 4321, /* different device subtype */
+        .init = foo_init,
+        .close = foo_close,
+        /* ... */
+    };
+
+Registration
+------------
+
+
+
+Availability
+------------
+
+A device will be available for selection by the user if these criteria are met:
+
+1) The device is :ref:`registered <dev/api/device:Registration>`, so that the user interface knows about it;
+2) The selected machine has any of the expansion buses specified in the device's ``flags``;
+3) The device's ``available`` callback returns ``1`` to indicate the device is available (this will always be true if the ``available`` callback function is ``NULL``).
+
+The ``available`` callback can be used to verify the presence of requisite ROMs, for example::
+
+    #include <86box/device.h>
+    #include <86box/rom.h>
+
+    /* ... */
+
+    static int
+    foo1234_available()
+    {
+        return rom_present("roms/scsi/foo/foo1234.bin");
+    }
+
+    /* ... */
+
+    const device_t foo1234_device = {
+        /* ... */
+        { .available = foo1234_available }, /* must have brackets due to the union */
+        /* ... */
+    };
 
 Configuration
 -------------
 
-Devices can have any number of user-facing configuration options, usually accessed through the **Configure** button next to the selection box for the device's class. Examples for all option types currently configurable through the user interface are shown in the image below.
+Devices can have any number of user-facing configuration options, usually accessed through the **Configure** button next to the selection box for the device's class. Examples for all option types currently configurable through the user interface are shown in the image below. [TO BE UPDATED ONCE I GET OUT OF HIDPI]
 
 .. image:: images/deviceconfig.png
    :align: center
@@ -170,56 +209,62 @@ These options are stored in the emulated machine's configuration file, in a sect
 
 .. code-block:: none
 
-  [Foo-1234]
-  selection = 0
-  hex16 = 0220
-  hex20 = D8000
-  fname = D:/VMs/86Box/86Box.exe
-  binary = 1
-  spinner = 1234
-  midi_out = 0
-  midi_in = 0
+    [Foo-1234]
+    selection = 0
+    hex16 = 0220
+    hex20 = D8000
+    fname = D:/VMs/86Box/86Box.exe
+    binary = 1
+    spinner = 1234
+    midi_out = 0
+    midi_in = 0
 
 
 Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``::
 
-  static const device_config_t foo_config[] = {
-      { "selection", "Selection",   CONFIG_SELECTION, "", 0,       "", { 0 },
-          {
-              { "Option",         0 },
-              { "Another option", 1 },
-              { ""                  }
-          }
-      },
-      { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
-          {
-              { "0x220", 0x220 },
-              { "0x330", 0x330 },
-              { ""             }
-          }
-      },
-      { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
-          {
-              { "D800h", 0xd8000 },
-              { "DC00h", 0xdc000 },
-              { ""               }
-          }
-      },
-      { "string",    "String",      CONFIG_STRING,    "Default" },
-      { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
-      { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
-      { "int",       "Integer",     CONFIG_INT,       "", 1234 },
-      { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
-      { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
-      { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
-      { "midi_int",  "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
-      { "",          "",            -1 }
-  };
+    #include <86box/device.h>
 
-  const device_t foo_device = {
-      /* ... */
-      .config = foo_config
-  }
+    /* ... */
+
+    static const device_config_t foo_config[] = {
+        { "selection", "Selection",   CONFIG_SELECTION, "", 5,       "", { 0 },
+            {
+                { "IRQ 5", 5 },
+                { "IRQ 7", 7 },
+                { ""         }
+            }
+        },
+        { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
+            {
+                { "0x220", 0x220 },
+                { "0x330", 0x330 },
+                { ""             }
+            }
+        },
+        { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
+            {
+                /* While the memory *segment* is displayed to the user, we store the
+                   *linear* (segment << 4) base address in the configuration file. */
+                { "D800h", 0xd8000 },
+                { "DC00h", 0xdc000 },
+                { ""               }
+            }
+        },
+        { "string",    "String",      CONFIG_STRING,    "Default" },
+        { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
+        { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
+        { "int",       "Integer",     CONFIG_INT,       "", 1234 },
+        { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
+        { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
+        { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
+        { "midi_in",   "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
+        { "",          "",            -1 }
+    };
+
+    const device_t foo_device = {
+        /* ... */
+        .config = foo_config
+    };
 
 .. flat-table:: device_config_t
   :header-rows: 1
@@ -229,7 +274,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Description
 
   * - name
-    - Internal name for this option, stored in the emulated machine's configuration file.
+    - Internal name for this option, used to identify it in the emulated machine's configuration file.
 
   * - description
     - Description for this option, displayed in the user interface.
@@ -254,7 +299,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Default string value for a ``CONFIG_STRING`` option. Can be ``""`` if not applicable.
 
   * - default_int
-    - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be 0 if not applicable.
+    - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
 
   * - file_filter
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``""`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
@@ -294,9 +339,9 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
            - Description for this choice, displayed in the user interface.
 
          * - value
-           - Integer value corresponding to this choice, stored in the emulated machine's configuration file.
+           - Integer value corresponding to this choice, used to identify it in the emulated machine's configuration file.
 
-Configured option values can be accessed using ``device_get_config_*`` functions from within the device's ``init`` callback.
+Configured option values can be read from within the device's ``init`` callback with the ``device_get_config_*`` functions. These functions automatically operate in the context of the device currently being initialized.
 
 .. note:: ``device_get_config_*`` functions should **never** be called outside of a device's ``init`` callback. You are responsible for reading the options' configured values in the ``init`` callback and storing them in the device's :ref:`state structure <dev/api/device:State structure>` if necessary.
 

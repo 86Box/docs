@@ -13,20 +13,20 @@ Port I/O
     - Description
 
   * - base
-    - The first I/O port (0x0000-0xFFFF) to be covered by this handler.
+    - First I/O port (0x0000-0xFFFF) covered by this handler.
 
   * - size
-    - The amount of I/O ports (1-65536) starting at ``base`` to be covered by this handler.
+    - Amount of I/O ports (1-65536) covered by this handler, starting at ``base``.
 
   * - inb
     - :rspan:`2` I/O read operation callback functions. Can be ``NULL``. Each callback takes the form of:
 
       ``TYPE callback(uint16_t addr, void *priv)``
 
-      * ``TYPE``: operation width (``uint8_t`` for ``inb``, ``uint16_t`` for ``inw`` or ``uint32_t`` for ``inl``);
+      * ``TYPE``: operation width: ``uint8_t`` for ``inb``, ``uint16_t`` for ``inw``, ``uint32_t`` for ``inl``;
       * ``addr``: exact I/O port being read;
       * ``priv``: opaque pointer (see ``priv`` below);
-      * Return value: value read from this port.
+      * Return value: 8- (``inb``), 16- (``inw``) or 32-bit (``inl``) value read from this port.
 
   * - inw
 
@@ -37,9 +37,9 @@ Port I/O
 
       ``void callback(uint16_t addr, TYPE val, void *priv)``
 
-      * ``TYPE``: operation width (``uint8_t`` for ``outb``, ``uint16_t`` for ``outw`` or ``uint32_t`` for ``outl``);
       * ``addr``: exact I/O port being written;
-      * ``val``: value being written to this port;
+      * ``TYPE``: operation width: ``uint8_t`` for ``outb``, ``uint16_t`` for ``outw``, ``uint32_t`` for ``outl``;
+      * ``val``: 8- (``outb``), 16- (``outw``) or 32-bit (``outl``) value being written to this port;
       * ``priv``: opaque pointer (see ``priv`` below).
 
   * - outw
@@ -47,8 +47,8 @@ Port I/O
   * - outl
 
   * - priv
-    - Opaque pointer, passed to this handler's read/write operation callbacks.
-      Usually a pointer to the device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to this handler's read/write operation callbacks.
+      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
 I/O handlers can be added or removed at any time, although ``io_removehandler`` must be called with the **exact same** parameters that ``io_sethandler`` was originally called with. For non-Plug and Play devices, you might want to add handlers in the ``init`` callback; for ISA Plug and Play devices, you'd add and/or remove handlers on the ``config_changed`` callback; for PCI devices, you'd do the same whenever the Command register or Base Address (BAR) registers are written to; and so on.
 
@@ -112,7 +112,7 @@ This feature's main use cases are devices which store registers that are 8-bit w
         uint8_t regs[256];
     } foo_t;
 
-    uint8_t
+    static uint8_t
     foo_inb(uint16_t addr, void *priv)
     {
         foo_t *dev = (foo_t *) priv;

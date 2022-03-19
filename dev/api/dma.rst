@@ -8,7 +8,7 @@ DMA
 8237 DMA
 --------
 
-``86box/dma.h`` provides the ``dma_channel_read`` and ``dma_channel_write`` functions to read or write (respectively) a value from or to an 8237 DMA channel.
+``86box/dma.h`` provides the ``dma_channel_read`` and ``dma_channel_write`` functions to read or write (respectively) a value from or to an **8237 DMA channel**.
 
 .. flat-table:: dma_channel_read
   :header-rows: 1
@@ -23,7 +23,7 @@ DMA
   * - **Return value**
     - 8- (channels ``0``-``3``) or 16-bit (channels ``5``-``7``) value read from the given DMA channel, or ``DMA_NODATA`` if no data was read.
 
-      May include a ``DMA_OVER`` bit flag (located above the most significant data bit so as to not affect the data) indicating that this was the last byte or word transferred, after which the channel is auto-initialized or masked depending on its configuration.
+      May include a ``DMA_OVER`` bit flag (located above the most significant data bit so as to not interfere with the data) indicating that this was the last byte or word transferred, after which the channel is auto-initialized or masked depending on its configuration.
 
 .. flat-table:: dma_channel_write
   :header-rows: 1
@@ -46,7 +46,7 @@ DMA
 Direct memory read/write
 ------------------------
 
-``86box/mem.h`` provides the ``mem_read*_phys`` and ``mem_write*_phys`` functions, which directly read or write physical memory. These are useful for PCI devices, which have to perform DMA on their own.
+``86box/mem.h`` provides the ``mem_read*_phys`` and ``mem_write*_phys`` functions, which read or write physical memory directly. These are useful for **PCI devices**, which perform DMA on their own.
 
 .. flat-table:: mem_readb_phys / mem_readw_phys / mem_readl_phys
   :header-rows: 1
