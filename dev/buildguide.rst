@@ -16,7 +16,7 @@ Follow these steps to compile 86Box from source:
 4. Run the following command to install all of the dependencies: 
     .. code-block:: bash
    
-        $ pacman -S gdb make git mingw-w64-i686-toolchain mingw-w64-i686-openal mingw-w64-i686-freetype mingw-w64-i686-SDL2 mingw-w64-i686-zlib mingw-w64-i686-libpng
+        $ pacman -S gdb make git mingw-w64-i686-toolchain mingw-w64-i686-openal mingw-w64-i686-freetype mingw-w64-i686-SDL2 mingw-w64-i686-zlib mingw-w64-i686-libpng mingw-w64-i686-rtmidi
 
 5. Once the environment is fully updated and all dependencies are installed, change directory to ``src``:
     .. code-block:: bash
