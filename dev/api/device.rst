@@ -3,7 +3,7 @@
 Devices
 =======
 
-The **device** is the main unit of emulated components in 86Box. Each device has one or more ``device_t`` structures, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures and functions in this page are provided by ``86box/device.h``.
+The **device** is the main unit of emulated components in 86Box. Each device has one or more ``device_t`` structures, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/device.h``.
 
 .. flat-table:: device_t
   :header-rows: 1
@@ -40,27 +40,26 @@ The **device** is the main unit of emulated components in 86Box. Each device has
       Use this value to tell different subtypes of the same device, for example.
 
   * - :cspan:`1` init
-    - Function called whenever this device is initialized, either from starting 86Box or from a hard reset. Can be ``NULL``. Takes the form of:
+    - Function called whenever this device is initialized, either from starting 86Box or from a hard reset. Can be ``NULL``, in which case the opaque pointer passed to other callbacks will be invalid. Takes the form of:
 
       ``void *init(const struct device_t *info)``
 
-      where ``info`` is a pointer to this ``device_t`` structure, and
-      the return value is an opaque pointer passed to the other callbacks below, usually a :ref:`state structure <dev/api/device:State structure>`.
-      The opaque pointer will be invalid if this function is ``NULL``.
+      * ``info``: pointer to this ``device_t`` structure;
+      * Return value: opaque pointer passed to the other callbacks below, usually a pointer to the device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - :cspan:`1` close
     - Function called whenever this device is de-initialized, either from closing 86Box or from a hard reset. Can be ``NULL``. Takes the form of:
 
       ``void close(void *priv)``
 
-      where ``priv`` is the opaque pointer that was returned by ``init``.
+      * ``priv``: opaque pointer previously returned by ``init``.
 
   * - :cspan:`1` reset
     - Function called whenever this device undergoes a soft reset. Can be ``NULL``. Takes the form of:
 
       ``void reset(void *priv)``
 
-      where ``priv`` is the opaque pointer that was returned by ``init``.
+      * ``priv``: opaque pointer previously returned by ``init``.
   
   * - :rspan:`2`
 
@@ -68,23 +67,22 @@ The **device** is the main unit of emulated components in 86Box. Each device has
 
          <div class="vertical-text">union</div>
     - available
-    - Function called whenever this device's availability is being checked. Can be ``NULL``. Takes the form of:
+    - Function called whenever this device's availability is being checked. Can be ``NULL``, in which case the device will always be available. Takes the form of:
 
       ``int available()``
 
-      where the return value must be ``1`` if the device is available for selection, or ``0`` if it is unavailable (due to missing ROMs, for example).
-      The device will always be available if this function is ``NULL``.
+      * Return value: ``1`` if the device is available for selection, or ``0`` if it is unavailable (due to missing ROMs, for example).
 
   * - poll
     - Function called whenever the mouse position is updated. Valid for mouse devices only. Takes the form of:
 
       ``int poll(int x, int y, int z, int b, void *priv)``
 
-      where ``x`` and ``y`` are the relative movement coordinates,
-      ``z`` is the relative wheel coordinate,
-      ``b`` is the button state (bit 0 / 0x01 set for left button, bit 1 / 0x02 set for right button, bit 3 / 0x04 set for middle button),
-      ``priv`` is the opaque pointer that was returned by ``init``, and
-      the return value must be ``0`` if the change was processed or any other value otherwise.
+      * ``x`` and ``y``: relative mouse movement coordinates (signed);
+      * ``z``: relative wheel movement coordinate (signed);
+      * ``b``: button state: bit 0 (0x1) set if left button pressed, bit 1 (0x2) set if right button pressed, bit 2 (0x4) set if middle button pressed;
+      * ``priv``: opaque pointer previously returned by ``init``;
+      * Return value: ``0`` if the change was processed, or any other value otherwise.
 
   * - register_pci_slot
     - Reserved for future use.
@@ -94,17 +92,17 @@ The **device** is the main unit of emulated components in 86Box. Each device has
 
       ``void speed_changed(void *priv)``
 
-      where ``priv`` is the opaque pointer that was returned by ``init``.
+      * ``priv``: opaque pointer previously returned by ``init``.
 
   * - :cspan:`1` force_redraw
     - Function called whenever the emulated screen has to be fully redrawn. Can be ``NULL``. Only useful for video cards. Takes the form of:
 
       ``void force_redraw(void *priv)``
 
-      where ``priv`` is the opaque pointer that was returned by ``init``.
+      * ``priv``: opaque pointer previously returned by ``init``.
 
   * - :cspan:`1` config
-    - Array of device configuration options, or ``NULL`` if no options are available. See :ref:`dev/api/device:Configuration`.
+    - Array of :ref:`device configuration options <dev/api/device:Configuration>`, or ``NULL`` if no options are available.
 
 State structure
 ---------------
@@ -183,7 +181,45 @@ These options are stored in the emulated machine's configuration file, in a sect
   midi_in = 0
 
 
-Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``.
+Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``::
+
+  static const device_config_t foo_config[] = {
+      { "selection", "Selection",   CONFIG_SELECTION, "", 0,       "", { 0 },
+          {
+              { "Option",         0 },
+              { "Another option", 1 },
+              { ""                  }
+          }
+      },
+      { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
+          {
+              { "0x220", 0x220 },
+              { "0x330", 0x330 },
+              { ""             }
+          }
+      },
+      { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
+          {
+              { "D800h", 0xd8000 },
+              { "DC00h", 0xdc000 },
+              { ""               }
+          }
+      },
+      { "string",    "String",      CONFIG_STRING,    "Default" },
+      { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
+      { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
+      { "int",       "Integer",     CONFIG_INT,       "", 1234 },
+      { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
+      { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
+      { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
+      { "midi_int",  "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
+      { "",          "",            -1 }
+  };
+
+  const device_t foo_device = {
+      /* ... */
+      .config = foo_config
+  }
 
 .. flat-table:: device_config_t
   :header-rows: 1
@@ -193,7 +229,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Description
 
   * - name
-    - Internal name for this option, used in the emulated machine's configuration file.
+    - Internal name for this option, stored in the emulated machine's configuration file.
 
   * - description
     - Description for this option, displayed in the user interface.
@@ -258,11 +294,11 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
            - Description for this choice, displayed in the user interface.
 
          * - value
-           - Integer value corresponding to this choice, used in the emulated machine's configuration file.
+           - Integer value corresponding to this choice, stored in the emulated machine's configuration file.
 
 Configured option values can be accessed using ``device_get_config_*`` functions from within the device's ``init`` callback.
 
-.. note:: ``device_get_config_*`` functions should **never** be called outside of a device's ``init`` callback. You are responsible for reading the options' configured values in the ``init`` callback and storing them in your device's :ref:`state structure <dev/api/device:State structure>` if necessary.
+.. note:: ``device_get_config_*`` functions should **never** be called outside of a device's ``init`` callback. You are responsible for reading the options' configured values in the ``init`` callback and storing them in the device's :ref:`state structure <dev/api/device:State structure>` if necessary.
 
 .. flat-table:: device_get_config_string
   :header-rows: 1

@@ -23,10 +23,10 @@ Port I/O
 
       ``TYPE callback(uint16_t addr, void *priv)``
 
-      where ``TYPE`` corresponds to the operation's width (``uint8_t`` for ``inb``, ``uint16_t`` for ``inw`` or ``uint32_t`` for ``inl``),
-      ``addr`` is the exact I/O port being read,
-      ``priv`` is the opaque pointer (see ``priv`` below), and
-      the return value is the value to be read.
+      * ``TYPE``: operation width (``uint8_t`` for ``inb``, ``uint16_t`` for ``inw`` or ``uint32_t`` for ``inl``);
+      * ``addr``: exact I/O port being read;
+      * ``priv``: opaque pointer (see ``priv`` below);
+      * Return value: value read from this port.
 
   * - inw
 
@@ -37,10 +37,10 @@ Port I/O
 
       ``void callback(uint16_t addr, TYPE val, void *priv)``
 
-      where ``TYPE`` corresponds to the operation's width (``uint8_t`` for ``outb``, ``uint16_t`` for ``outw`` or ``uint32_t`` for ``outl``),
-      ``addr`` is the exact I/O port being written,
-      ``val`` is the value being written, and
-      ``priv`` is the opaque pointer (see ``priv`` below).
+      * ``TYPE``: operation width (``uint8_t`` for ``outb``, ``uint16_t`` for ``outw`` or ``uint32_t`` for ``outl``);
+      * ``addr``: exact I/O port being written;
+      * ``val``: value being written to this port;
+      * ``priv``: opaque pointer (see ``priv`` below).
 
   * - outw
 
@@ -66,7 +66,7 @@ When an I/O handler receives an operation with a width for which it has no callb
 * ``inl`` callback not present, but ``inw`` callback present::
 
     uint32_t val = inw(port);
-    val |= (inw(port + 1) << 16);
+    val |= (inw(port + 2) << 16);
 
 * ``inl`` and ``inw`` callbacks not present, but ``inb`` callback present::
 
@@ -77,9 +77,9 @@ When an I/O handler receives an operation with a width for which it has no callb
 
 * ``inl``, ``inw`` and ``inb`` callbacks not present::
 
-    uint32_t val = 0xffffffff;
+    uint32_t val = 0xffffffff; /* don't care */
 
-The same applies to write callbacks:
+The same rule applies to write callbacks:
 
 * ``outl`` callback present::
 
@@ -90,7 +90,7 @@ The same applies to write callbacks:
 
     uint32_t val = /* ... */;
     outw(port,     val & 0xffff);
-    outw(port + 1, (val >> 16) & 0xffff);
+    outw(port + 2, (val >> 16) & 0xffff);
 
 * ``outl`` and ``outw`` callbacks not present, but ``outb`` callback present::
 
@@ -102,7 +102,9 @@ The same applies to write callbacks:
 
 * ``outl``, ``outw`` and ``outb`` callbacks not present:
 
-  No operation performed.
+  Don't care, no operation performed.
+
+.. note:: Each broken-down operation triggers the I/O handlers for its respective port number, no matter which handlers are responsible for the starting port number. A handler will **never** receive callbacks for ports outside its ``base`` and ``size`` boundaries.
 
 This feature's main use cases are devices which store registers that are 8-bit wide but may be accessed with 16- or 32-bit operations::
 
@@ -117,8 +119,8 @@ This feature's main use cases are devices which store registers that are 8-bit w
         return dev->regs[addr & 0xff]; /* example: register index = I/O port's least significant byte */
     }
 
-    /* No foo_inw, so a 16-bit operation will read two 8-bit registers in succession.
-       No foo_inl, so a 32-bit operation will read four 8-bit registers in succession. */
+    /* No foo_inw, so a 16-bit read will read two 8-bit registers in succession.
+       No foo_inl, so a 32-bit read will read four 8-bit registers in succession. */
 
 Multiple I/O handlers
 ---------------------
@@ -130,4 +132,4 @@ Any given I/O port can have an **unlimited** amount of I/O handlers, such that:
 
 Read callbacks can effectively return "don't care" (without interfering with other handlers) by returning a value with all bits set: ``0xff`` with ``inb``, ``0xffff`` with ``inw`` or ``0xffffffff`` with ``inl``.
 
-.. note:: The same callback fallback rules specified above also apply with multiple handlers.
+.. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without valid callbacks for the operation's type and width are automatically skipped.
