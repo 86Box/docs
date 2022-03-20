@@ -56,12 +56,16 @@ MAC address
 
 With the exception of **[LPT] Parallel Port Internet Protocol**, every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be the card manufacturer's `Organizationally Unique Identifier <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_, such as 00:E0:4C for Realtek.
 
-.. rubric:: Example: MAC address 00:E0:4C:35:F4:C2 for the Realtek RTL8029AS
+.. container:: toggle-always-show
 
-.. code-block:: none
+    .. container:: toggle-header
 
-   [Realtek RTL8029AS]
-   mac = 35:f4:c2
+        Example: MAC address 00:E0:4C:35:F4:C2 for the Realtek RTL8029AS
+
+    .. code-block:: none
+
+        [Realtek RTL8029AS]
+        mac = 35:f4:c2
 
 SLiRP port forwarding
 ^^^^^^^^^^^^^^^^^^^^^
@@ -78,12 +82,16 @@ The host system can access forwarded ports through 127.0.0.1 or its own IP addre
 
 .. note:: The emulated machine's IP address must be set to 10.0.2.15 (the default IP provided through DHCP) for port forwarding to work.
 
-.. rubric:: Example: forward host TCP port 8080 to emulated machine port 80, and host UDP port 5555 to emulated machine port 5555
+.. container:: toggle-always-show
 
-.. code-block:: none
-   
-   [SLiRP Port Forwarding]
-   0_external = 8080
-   0_internal = 80
-   1_protocol = udp
-   1_external = 5555
+    .. container:: toggle-header
+
+        Example: forward host TCP port 8080 to emulated machine port 80, and host UDP port 5555 to emulated machine port 5555
+
+    .. code-block:: none
+
+        [SLiRP Port Forwarding]
+        0_external = 8080
+        0_internal = 80
+        1_protocol = udp
+        1_external = 5555

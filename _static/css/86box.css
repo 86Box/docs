@@ -55,8 +55,9 @@ div.bit-table > div.wy-table-responsive > table > thead > tr > th:not(.stub), di
 	padding: 0; 
 }
 
-/* Toggle containers. */
-.toggle {
+/* Toggle containers. toggle-always-show is a class that takes
+   on the look of a toggle container, but is always shown. */
+.toggle, .toggle-always-show {
 	background: #f3f6f6;
 	border: 1px solid #e1e4e5;
 	padding: 1em;
@@ -65,17 +66,45 @@ div.bit-table > div.wy-table-responsive > table > thead > tr > th:not(.stub), di
 .toggle-closed > .toggle-header, .toggle-open > .toggle-header {
 	cursor: pointer;
 }
-.toggle > .toggle-header > p {
+@media screen { /* show toggle arrows on screen only */
+	.toggle-closed > .toggle-header > p:before {
+		content: "\0025B6  ";
+	}
+	.toggle-open > .toggle-header > p:before {
+		content: "\0025BC  ";
+	}
+}
+.toggle-header > p {
 	font-weight: bold;
 	margin-bottom: 0;
 }
-.toggle > div:nth-child(2) {
+.toggle > div:nth-child(2), .toggle-always-show > div:nth-child(2) {
 	margin-top: 12px;
 	margin-bottom: 0;
 }
-.toggle-closed > .toggle-header > p:before {
-	content: "\0025B6  ";
+@media screen {
+	.toggle-closed > div:nth-child(2) {
+		display: none;
+	}
 }
-.toggle-open > .toggle-header > p:before {
-	content: "\0025BC  ";
+@media print {
+	.toggle-closed > div:nth-child(2) {
+		display: block !important;
+	}
+}
+
+/* Print stuff. */
+@media print {
+	/* Allow page breaks in the middle of code. */
+	pre {
+		break-inside: auto;
+	}
+
+	/* Fix theme bug where code blocks have blank space at the end. */
+	.rst-content div[class^=highlight] {
+		white-space: nowrap;
+	}
+	div[class*="highlight-"] {
+		white-space: pre-wrap;
+	}
 }
