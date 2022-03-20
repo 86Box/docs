@@ -792,7 +792,7 @@ The main difference between this register and BARs is that the ROM can be enable
             rom_init(&dev->rom, "roms/scsi/foo/foo4321.bin", 0, 0x8000, 0x7fff, 0, MEM_MAPPING_EXTERNAL);
 
             /* ...but don't map it right now. */
-            mem_mapping_set_addr(&dev->rom.mapping, 0, 0);
+            mem_mapping_disable(&dev->rom.mapping);
 
             return dev;
         }
