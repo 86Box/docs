@@ -23,13 +23,13 @@ The currently included files are:
 
 * ``llvm-win32-<arch>.cmake`` defines the build environment for use with LLVM/clang and vcpkg on Windows
 
-Toolchain files are consumed during the initial project generation stage by passing their path using the ``CMAKE_TOOLCHAIN_FILE`` property which can be set by using the ``--toolchain`` option, e.g.:
+Toolchain files are consumed during the initial project generation stage by passing their path in the ``CMAKE_TOOLCHAIN_FILE`` variable, e.g.:
 
 .. code-block:: bash
 
-    $ pacman -Syu
+    $ cmake … -D CMAKE_TOOLCHAIN_FILE=./cmake/flags-gcc-x86_64.cmake
 
-.. note:: When using vcpkg, which uses its own toolchain file, the 86Box toolchain files must be chainloaded using the ``VCPKG_CHAINLOAD_TOOLCHAIN_FILE`` property.
+.. note:: When using vcpkg, which uses its own toolchain file, the 86Box toolchain files must be chainloaded using the ``VCPKG_CHAINLOAD_TOOLCHAIN_FILE`` variable.
 
 Presets
 -------
@@ -69,7 +69,9 @@ The presets are consumed during the initial project generation stage by using th
 
 .. code-block:: bash
 
-    $ cmake ... --preset regular
+    $ cmake … --preset regular
+
+.. note:: Presets require CMake 3.21 or newer.
 
 Obtaining the source code
 -------------------------
@@ -159,7 +161,7 @@ Building 86Box can generally be condensed to the following steps:
 
    Appending the ``-jN`` option (where ``N`` is a number of threads you want to use for the compilation process) will run the build on multiple threads, speeding up the process some.
 
-   If you make changes to the CMake build files, running the command will automatically regenerate the project. There is no need to repeat step 1 or to delete the build directory.
+   .. note:: If you make changes to the CMake build files, running the command will automatically regenerate the project. There is no need to repeat step 1 or to delete the build directory.
 
 3. If everything succeeds, you should find the resulting executable in the build directory. Depending on the build system, it might be located in some of its subdirectories.
 
