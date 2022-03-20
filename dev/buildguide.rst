@@ -98,7 +98,6 @@ Development files for the following libraries are also needed:
 
 * FreeType
 * libpng
-* OpenAL
 * RtMidi
 * SDL2
 * FAudio (optional on Windows)
