@@ -84,7 +84,7 @@ Events
     - ``event_t`` pointer representing the event to wait for.
 
   * - timeout
-    - Maximum amount of time in **milliseconds** (not microseconds, unlike :doc:`timers <timer>`) to spend waiting for the event to be *set*. If set to ``-1``, this function will not return until the event is *set*.
+    - Maximum amount of time in **milliseconds** (not microseconds, unlike :doc:`timers <timer>`) to spend waiting for this event to be *set*. If set to ``-1``, this function will not return until the event is *set*.
 
   * - **Return value**
     - * ``0`` on success;
@@ -116,7 +116,7 @@ Mutexes
 
   * - arg
     - ``mutex_t`` pointer representing the mutex to *lock* (``thread_wait_mutex``), *release* (``thread_release_mutex``) or deallocate (``thread_close_mutex``).
-      If the mutex is locked, ``thread_wait_mutex`` will not return until the mutex is *released* by another thread.
+      If this mutex is locked, ``thread_wait_mutex`` will not return until the mutex is *released* by another thread.
 
 .. flat-table:: thread_test_mutex
   :header-rows: 1
@@ -129,5 +129,5 @@ Mutexes
     - ``mutex_t`` pointer representing the mutex to check.
 
   * - **Return value**
-    - * ``0`` if the mutex is *locked*;
+    - * ``0`` if this mutex is *locked*;
       * Any other value if the mutex is *released*.

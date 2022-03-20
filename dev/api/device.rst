@@ -139,7 +139,7 @@ Most devices need a place to store their internal state. We discourage the use o
         static void
         foo_close(void *priv)
         {
-            /* Get the state structure. */
+            /* Get the device state structure. */
             foo_t *dev = (foo_t *) priv;
 
             /* Do whatever you want, then deallocate the state structure. */

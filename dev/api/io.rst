@@ -139,3 +139,111 @@ Any given I/O port can have an **unlimited** amount of I/O handlers, such that:
 Read callbacks can effectively return "don't care" (without interfering with other handlers) by returning a value with all bits set: ``0xff`` with ``inb``, ``0xffff`` with ``inw`` or ``0xffffffff`` with ``inl``.
 
 .. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without valid callbacks for the operation's type and width are automatically skipped.
+
+I/O traps
+---------
+
+A second type of I/O handler, **I/O traps** allow a device (usually System Management Mode on chipsets and legacy compatibility on PCI sound cards) to act upon a read/write operation to an I/O port operation without affecting its result.
+
+.. container:: toggle
+
+    .. container:: toggle-header
+
+        Code example: I/O trap on ports ``0x220``-``0x22f``
+
+    .. code-block::
+
+        typedef struct {
+            void *trap_220;
+        } foo_t;
+
+        static void
+        foo_trap_220(int size, uint16_t addr, uint8_t write, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Do whatever you want. */
+            pclog("Foo: Trapped I/O %s to port %04X, size %d\n",
+                  write ? "write" : "read", addr, size);
+            if (write)
+              pclog("Foo: Written value: %02X\n", val);
+        }
+
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Add I/O trap. */
+            dev->trap_220 = io_trap_add(foo_trap_220, dev);
+
+            /* Map I/O trap to 16 ports starting at 0x220. */
+            io_trap_remap(dev->trap_220, 1, 0x220, 16);
+
+            return dev;
+        }
+
+        static void
+        foo_close(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Remove I/O trap before deallocating the device state structure. */
+            io_trap_remove(dev->trap_220);
+            free(dev);
+        }
+
+        const device_t foo4321_device = {
+            /* ... */
+            .init = foo_init,
+            .close = foo_close,
+            /* ... */
+        };
+
+.. flat-table:: io_trap_add
+  :header-rows: 1
+  :widths: 1 999
+
+  * - Parameter
+    - Description
+
+  * - func
+    - Function called whenever an I/O operation of any type or size is performed to the trap's I/O address range. Takes the form of:
+
+      ``void func(int size, uint16_t addr, uint8_t write, uint8_t val, void *priv)``
+
+      * ``size``: I/O operation width: ``1``, ``2`` or ``4``;
+      * ``addr``: I/O address the operation is being performed on;
+      * ``write``: ``0`` if this operation is a *read*, or ``1`` if it's a *write*;
+      * ``val``: value being written if this operation is a write;
+      * ``priv``: opaque pointer (see ``priv`` below).
+
+  * - priv
+    - Opaque pointer passed to the ``func`` callback above.
+      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+
+  * - **Return value**
+    - Opaque (``void``) pointer representing the newly-created I/O trap.
+
+.. flat-table:: io_trap_remap
+  :header-rows: 1
+  :widths: 1 999
+
+  * - Parameter
+    - Description
+
+  * - trap
+    - Opaque pointer representing the I/O trap to remap.
+
+  * - enable
+    - * ``1`` to enable this trap;
+      * ``0`` to disable it.
+
+  * - addr
+    - First I/O port (0x0000-0xffff) covered by this trap.
+
+  * - size
+    - Amount of I/O ports (1-65536) covered by this trap.
