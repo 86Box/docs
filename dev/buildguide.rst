@@ -149,7 +149,7 @@ Building 86Box can generally be condensed to the following steps:
 
    Build directory is where the resulting binaries and other build artifacts will be stored. Source directory is the location of the 86Box source code.
 
-   Toolchain files and presets are specified at this point by using the ``--toolchain`` and ``--preset`` options.
+   Toolchain files and presets are specified at this point by using the respective options.
 
    Other options can be specified using the ``-D`` option, e.g. ``-D NEW_DYNAREC=ON`` enables the new dynamic recompiler. See ``CMakeLists.txt`` in the root of the repository for the full list of available options.
 
