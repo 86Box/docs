@@ -162,7 +162,7 @@ Building 86Box can generally be condensed to the following steps:
 
 3. If everything succeeds, you should find the resulting executable in the build directory. Depending on the build system, it might be located in some of its subdirectories.
 
-4. `Optional:` The executable can be copied to a consistent location by running the following command:
+.. tip:: The executable can be copied to a consistent location by running the following command:
 
    .. code-block:: bash
 
