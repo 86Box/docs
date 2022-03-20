@@ -11,7 +11,7 @@ Port I/O
     - Description
 
   * - base
-    - First I/O port (0x0000-0xFFFF) covered by this handler.
+    - First I/O port (0x0000-0xffff) covered by this handler.
 
   * - size
     - Amount of I/O ports (1-65536) covered by this handler, starting at ``base``.
@@ -111,14 +111,14 @@ This feature's main use cases are devices which store registers that are 8-bit w
     } foo_t;
 
     static uint8_t
-    foo_inb(uint16_t addr, void *priv)
+    foo_io_inb(uint16_t addr, void *priv)
     {
         foo_t *dev = (foo_t *) priv;
         return dev->regs[addr & 0xff]; /* example: register index = I/O port's least significant byte */
     }
 
-    /* No foo_inw, so a 16-bit read will read two 8-bit registers in succession.
-       No foo_inl, so a 32-bit read will read four 8-bit registers in succession. */
+    /* No foo_io_inw, so a 16-bit read will read two 8-bit registers in succession.
+       No foo_io_inl, so a 32-bit read will read four 8-bit registers in succession. */
 
 Multiple I/O handlers
 ---------------------

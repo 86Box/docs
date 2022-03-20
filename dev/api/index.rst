@@ -11,3 +11,4 @@ This section documents the internal **Application Programming Interface** for ex
    thread
    io
    dma
+   pci

@@ -1,7 +1,7 @@
 Devices
 =======
 
-The **device** is the main unit of emulated components in 86Box. Each device has one or more ``device_t`` structures, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/device.h``.
+The **device** is the main unit of emulated components in 86Box. Each device is represented by one or more constant ``device_t`` objects, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/device.h``.
 
 .. flat-table:: device_t
   :header-rows: 1
@@ -78,7 +78,7 @@ The **device** is the main unit of emulated components in 86Box. Each device has
 
       * ``x`` and ``y``: relative mouse movement coordinates (signed);
       * ``z``: relative scroll wheel movement coordinate (signed);
-      * ``b``: button state: bit 0 (0x1) set if left button pressed, bit 1 (0x2) set if right button pressed, bit 2 (0x4) set if middle button pressed;
+      * ``b``: button state: bit 0 (``0x1``) set if left button pressed, bit 1 (``0x2``) set if right button pressed, bit 2 (``0x4``) set if middle button pressed;
       * ``priv``: opaque pointer previously returned by ``init``;
       * Return value: ``0`` if the change was processed, or any other value otherwise.
 
@@ -182,9 +182,9 @@ Availability
 
 A device will be **available** for selection by the user if these criteria are met:
 
-1) The device is :ref:`registered <dev/api/device:Registration>`, so that the user interface knows about it;
-2) The selected machine has any of the expansion buses specified in the device's ``flags``;
-3) The device's ``available`` callback returns ``1`` to indicate the device is available (this will always be true if the ``available`` callback function is ``NULL``).
+1. The device is :ref:`registered <dev/api/device:Registration>`, so that the user interface knows about it;
+2. The selected machine has any of the expansion buses specified in the device's ``flags``;
+3. The device's ``available`` callback returns ``1`` to indicate the device is available (this will always be true if the ``available`` callback function is ``NULL``).
 
 The ``available`` callback can be used to verify the presence of requisite ROMs, for example::
 

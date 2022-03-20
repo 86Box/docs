@@ -3,7 +3,7 @@ Timers
 
 **Timers** allow devices to perform tasks after a set period. This period is **automatically scaled** to match the emulation speed, which helps 86Box stay relatively accurate, unlike other emulators and virtualizers which may operate timers in real time independently of speed. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/timer.h``.
 
-.. note:: Timers are processed after each instruction in interpreter mode, or each recompiled code block in dynamic recompiler mode (unless an instruction requests a Time Stamp Counter (TSC) update). In both cases, timer accuracy **should** be in the single-digit microsecond range at a minimum, which is good enough for most time-sensitive applications like 48 KHz audio.
+.. note:: Timers are processed after each CPU instruction in interpreter mode, or each recompiled code block in dynamic recompiler mode (unless an instruction requests a Time Stamp Counter (TSC) update). In both cases, timer accuracy **should** be in the single-digit microsecond range at a minimum, which is good enough for most time-sensitive applications like 48 KHz audio.
 
 Adding
 ------
@@ -84,6 +84,7 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
     static void
     foo_countdown_timer(void *priv)
     {
+        /* Get the device state structure. */
         foo_t *dev = (foo_t *) priv;
 
         /* ... */
@@ -99,7 +100,9 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
     static void
     foo_outb(uint16_t addr, uint8_t val, void *priv)
     {
+        /* Get the device state structure. */
         foo_t *dev = (foo_t *) priv;
+
         /* ... */
 
         if ((addr & 0xff) == 0x80) {

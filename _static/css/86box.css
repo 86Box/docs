@@ -46,3 +46,11 @@ tr.row-odd > td {
 div.vertical-text {
 	transform: rotate(270deg);
 }
+
+/* Bitfield table. */
+div.bit-table > div.wy-table-responsive > table > thead > tr > th:not(.stub), div.bit-table > div.wy-table-responsive > table > tbody > tr > td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 26px;
+	padding: 0; 
+}
