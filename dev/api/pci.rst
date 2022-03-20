@@ -6,7 +6,74 @@ PCI
 Adding a device
 ---------------
 
-PCI devices can be added with the ``pci_add_card`` function. A slot is automatically selected according to the ``add_type``; if the emulated machine runs out of PCI slots, a **DEC 21150** PCI-PCI bridge is automatically deployed to add 9 more slots.
+PCI devices can be added with the ``pci_add_card`` function in the device's ``init`` callback. A slot is :ref:`automatically selected <dev/api/pci:Slot types>` according to the ``add_type``; if the emulated machine runs out of PCI slots, a **DEC 21150** PCI-PCI bridge is automatically deployed to add 9 more slots.
+
+.. container:: toggle
+
+    .. container:: toggle-header
+
+        Code example: adding a PCI device
+
+    .. code-block::
+
+        #include <86box/device.h>
+        #include <86box/pci.h>
+
+        #define FOO_ONBOARD 0x80000000  /* most significant bit set = on-board */
+
+        typedef struct {
+            uint8_t pci_regs[256];
+            int     slot;
+        } foo_t;
+
+        static uint8_t
+        foo_pci_read(int func, int addr, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Ignore unknown functions. */
+            if (func > 0)
+                return 0xff;
+
+            /* Read configuration space register. */
+            return dev->pci_regs[addr];
+        }
+
+        static void
+        foo_pci_write(int func, int addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Ignore unknown functions. */
+            if (func > 0)
+                return;
+
+            /* Write configuration space register. */
+            dev->pci_regs[addr] = val;
+        }
+
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Add PCI device. */
+            dev->slot = pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev);
+
+            return dev;
+        }
+
+        const device_t foo4321_device = {
+            .name = "Foo-4321",
+            .internal_name = "foo4321",
+            .flags = DEVICE_PCI,
+            .local = 4321,
+            .init = foo_init,
+            /* ... */
+        };
 
 .. flat-table:: pci_add_card
   :header-rows: 1
@@ -43,7 +110,7 @@ PCI devices can be added with the ``pci_add_card`` function. A slot is automatic
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - **Return value**
-    - ``int`` value (subject to change in the future) which uniquely identifies the newly-added device.
+    - ``int`` value (subject to change in the future) representing the newly-added device.
 
 Slot types
 ----------
@@ -59,45 +126,56 @@ A machine may declare **special PCI slots** for specific purposes, such as on-bo
 * ``PCI_ADD_NETWORK``: on-board network controller;
 * ``PCI_ADD_NORTHBRIDGE``, ``PCI_ADD_AGPBRIDGE``, ``PCI_ADD_SOUTHBRIDGE``: reserved for the chipset.
 
-A device available both as a discrete card and as an on-board device should have different ``device_t`` objects with unique ``local`` values to set both variants apart::
+A device available both as a discrete card and as an on-board device should have different ``device_t`` objects with unique ``local`` values to set both variants apart.
 
-    #include <86box/device.h>
-    #include <86box/pci.h>
+.. container:: toggle
 
-    #define FOO_ONBOARD 0x80000000  /* example: most significant bit set = on-board */
+    .. container:: toggle-header
 
-    /* ... */
+        Code example: device available as both discrete and on-board
 
-    static void *
-    foo_init(const device_t *info)
-    {
-        foo_t *dev = /* ... */
+    .. code-block::
 
-        /* Add PCI device. The normal variant goes in any normal slot,
-           and the on-board variant goes in the on-board SCSI "slot". */
-        pci_add_slot((info->local & FOO_ONBOARD) ? PCI_ADD_SCSI : PCI_ADD_NORMAL,
-                     foo_pci_read, foo_pci_write, dev);
+        #include <86box/device.h>
+        #include <86box/pci.h>
 
-        /* ... */
-    }
+        #define FOO_ONBOARD 0x80000000  /* most significant bit set = on-board */
 
-    const device_t foo1234_device = {
-        .name = "Foo-1234",
-        .internal_name = "foo1234",
-        .flags = DEVICE_PCI,
-        .local = 1234, /* on-board bit not set */
-        .init = foo_init,
-        /* ... */
-    };
+        typedef struct {
+            int slot;
+        } foo_t;
 
-    const device_t foo1234_onboard_device = {
-        .name = "Foo-1234 (On-Board)",
-        .internal_name = "foo1234_onboard",
-        .flags = DEVICE_PCI,
-        .local = 1234 | FOO_ONBOARD, /* on-board bit set */
-        .init = foo_init,
-        /* ... */
-    };
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Add PCI device. The normal variant goes in any normal slot,
+               and the on-board variant goes in the on-board SCSI "slot". */
+            dev->slot = pci_add_card((info->local & FOO_ONBOARD) ? PCI_ADD_SCSI : PCI_ADD_NORMAL,
+                                     foo_pci_read, foo_pci_write, dev);
+
+            return dev;
+        }
+
+        const device_t foo4321_device = {
+            .name = "Foo-4321",
+            .internal_name = "foo4321",
+            .flags = DEVICE_PCI,
+            .local = 4321, /* on-board bit not set */
+            .init = foo_init,
+            /* ... */
+        };
+
+        const device_t foo4321_onboard_device = {
+            .name = "Foo-4321 (On-Board)",
+            .internal_name = "foo4321_onboard",
+            .flags = DEVICE_PCI,
+            .local = 4321 | FOO_ONBOARD, /* on-board bit set */
+            .init = foo_init,
+            /* ... */
+        };
 
 Configuration space
 -------------------
@@ -188,69 +266,80 @@ The ``func`` parameter passed to a device's configuration space read/write callb
 1. The first function (function ``0``) must have bit 7 (``0x80``) of the Header Type (``0x0e``) register set;
 2. Unused functions must return ``0xff`` on all configuration register reads and should ignore writes.
 
-.. code-block::
 
-    typedef struct {
-        /* ... */
-        uint8_t pci_regs[2][256];
-    } foo_t;
+.. container:: toggle
 
-    /* ... */
+    .. container:: toggle-header
 
-    static uint8_t
-    foo_pci_read(int func, int addr, void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) dev;
+        Code example: device with two functions
 
-        /* Read from a register on the given function. */
-        switch (func) {
-            case 0: /* function 0 */
-                return dev->pci_regs[0][addr];
+    .. code-block::
 
-            case 1: /* function 1 */
-                return dev->pci_regs[1][addr];
+        typedef struct {
+            uint8_t pci_regs[2][256]; /* two 256*8-bit register arrays, one for each function */
+        } foo_t;
 
-            default: /* out of range */
-                return 0xff;
+        static uint8_t
+        foo_pci_read(int func, int addr, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Read configuration space register on the given function. */
+            switch (func) {
+                case 0: /* function 0 */
+                    return dev->pci_regs[0][addr];
+
+                case 1: /* function 1 */
+                    return dev->pci_regs[1][addr];
+
+                default: /* out of range */
+                    return 0xff;
+            }
         }
-    }
 
-    static void
-    foo_pci_write(int func, int addr, uint8_t val, void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) dev;
+        static void
+        foo_pci_write(int func, int addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-        /* Write to a register on the given function. */
-        switch (func) {
-            case 0: /* function 0 */
-                dev->pci_regs[0][addr] = val;
-                break;
+            /* Write configuration space register on the given function. */
+            switch (func) {
+                case 0: /* function 0 */
+                    dev->pci_regs[0][addr] = val;
+                    break;
 
-            case 1: /* function 1 */
-                dev->pci_regs[1][addr] = val;
-                break;
+                case 1: /* function 1 */
+                    dev->pci_regs[1][addr] = val;
+                    break;
 
-            default: /* out of range */
-                break;
+                default: /* out of range */
+                    break;
+            }
         }
-    }
 
-    /* ... */
+        static void
+        foo_reset(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-    static void
-    foo_reset(void *priv)
-    {
-        foo_t *dev = /* ... */
+            /* Reset PCI configuration registers. */
+            memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
+            memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
 
-        /* Flag this device as multi-function. */
-        dev->pci_regs[0][0x0e] = 0x80;
+            /* Write default vendor IDs, device IDs, etc. */
 
-        /* ... */
-    }
+            /* Flag this device as multi-function. */
+            dev->pci_regs[0][0x0e] = 0x80;
+        }
 
-    /* ... */
+        const device_t foo4321_device = {
+            /* ... */
+            .reset = foo_reset,
+            /* ... */
+        };
 
 Base Address Registers
 ----------------------
@@ -270,15 +359,15 @@ The aforementioned base address alignment allows software (BIOSes and operating 
 
 .. container:: bit-table
 
-  .. flat-table:: Memory BAR (example: 4 KB large)
+  .. flat-table:: Memory BAR (example: 4 KB large, starting at 0x10)
     :header-rows: 2
     :stub-columns: 1
 
     * - Byte
-      - :cspan:`7` BAR+3
-      - :cspan:`7` BAR+2
-      - :cspan:`7` BAR+1
-      - :cspan:`7` BAR+0
+      - :cspan:`7` 0x13
+      - :cspan:`7` 0x12
+      - :cspan:`7` 0x11
+      - :cspan:`7` 0x10
 
     * - Bit
       - 31
@@ -317,18 +406,22 @@ The aforementioned base address alignment allows software (BIOSes and operating 
     * - Value
       - :cspan:`19` Base memory address (4096-byte aligned)
       - :cspan:`7` Always ``0``
-      - :cspan:`2` Flags
+      - :cspan:`2`
+
+        .. raw:: html
+
+          Flags (<abbr title="Read-only">RO</span>)
       - ``0``
 
-  .. flat-table:: I/O BAR (64 ports large)
+  .. flat-table:: I/O BAR (example: 64 ports large, starting at 0x14)
     :header-rows: 2
     :stub-columns: 1
 
     * - Byte
-      - :cspan:`7` BAR+3
-      - :cspan:`7` BAR+2
-      - :cspan:`7` BAR+1
-      - :cspan:`7` BAR+0
+      - :cspan:`7` 0x17
+      - :cspan:`7` 0x16
+      - :cspan:`7` 0x15
+      - :cspan:`7` 0x14
 
     * - Bit
       - 31
@@ -370,165 +463,168 @@ The aforementioned base address alignment allows software (BIOSes and operating 
       - :cspan:`3` Always ``0``
       - .. raw:: html
 
-          <abbr title="Reserved">R</abbr>
+          <abbr title="Reserved (read-only)">R</abbr>
       - ``1``
 
-.. code-block::
+.. container:: toggle
 
-    #include <86box/io.h>
-    #include <86box/mem.h>
+    .. container:: toggle-header
 
-    typedef struct {
-        /* ... */
-        uint8_t       pci_regs[256]; /* note: 1D array as this example is not multi-function */
-        uint16_t      io_base;
-        mem_mapping_t mem_mapping;
-    } foo_t;
+        Code example: memory and I/O BARs descibed above
 
-    /* ... */
+    .. code-block::
 
-    static void
-    foo_remap_mem(foo_t *dev)
-    {
-        if (dev->pci_regs[0x04] & 0x02) {
-            /* Memory Space bit set, apply the base address.
-               Least significant bits are masked off to maintain 4096-byte alignment.
-               We skip reading dev->pci_regs[0x10] as it contains nothing of interest. */
-            mem_mapping_set_addr(&dev->mem_mapping,
-                                 ((dev->pci_regs[0x11] << 8) | (dev->pci_regs[0x12] << 16) | (dev->pci_regs[0x13] << 24)) & 0xfffff000,
-                                 4096);
-        } else {
-            /* Memory Space bit not set, disable the mapping. */
-            mem_mapping_set_addr(&dev->mem_mapping, 0, 0);
-        }
-    }
+        #include <86box/io.h>
+        #include <86box/mem.h>
 
-    static void
-    foo_remap_io(foo_t *dev)
-    {
-        /* Remove existing I/O handler if present. */
-        if (dev->io_base)
-            io_removehandler(dev->io_base, 64,
-                             foo_io_inb, foo_io_inw, foo_io_inl,
-                             foo_io_outb, foo_io_outw, foo_io_outl, dev);
+        typedef struct {
+            uint8_t       pci_regs[256];
+            uint16_t      io_base;
+            mem_mapping_t mem_mapping;
+        } foo_t;
 
-        if (dev->pci_regs[0x04] & 0x01) {
-            /* I/O Space bit set, read the base address.
-               Least significant bits are masked off to maintain 64-byte alignment. */
-            dev->io_base = (dev->pci_regs[0x14] | (dev->pci_regs[0x15] << 8)) & 0xffc0;
-        } else {
-            /* I/O Space bit not set, don't do anything. */
-            dev->io_base = 0;
+        static void
+        foo_remap_mem(foo_t *dev)
+        {
+            if (dev->pci_regs[0x04] & 0x02) {
+                /* Memory Space bit set, apply the base address.
+                   Least significant bits are masked off to maintain 4096-byte alignment.
+                   We skip reading dev->pci_regs[0x10] as it contains nothing of interest. */
+                mem_mapping_set_addr(&dev->mem_mapping,
+                                     ((dev->pci_regs[0x11] << 8) | (dev->pci_regs[0x12] << 16) | (dev->pci_regs[0x13] << 24)) & 0xfffff000,
+                                     4096);
+            } else {
+                /* Memory Space bit not set, disable the mapping. */
+                mem_mapping_set_addr(&dev->mem_mapping, 0, 0);
+            }
         }
 
-        /* Add new I/O handler if required. */
-        if (dev->io_base)
-            io_sethandler(dev->io_base, 64,
-                          foo_io_inb, foo_io_inw, foo_io_inl,
-                          foo_io_outb, foo_io_outw, foo_io_outl, dev);
-    }
+        static void
+        foo_remap_io(foo_t *dev)
+        {
+            /* Remove existing I/O handler if present. */
+            if (dev->io_base)
+                io_removehandler(dev->io_base, 64,
+                                 foo_io_inb, foo_io_inw, foo_io_inl,
+                                 foo_io_outb, foo_io_outw, foo_io_outl, dev);
 
-    /* ... */
+            if (dev->pci_regs[0x04] & 0x01) {
+                /* I/O Space bit set, read the base address.
+                   Least significant bits are masked off to maintain 64-byte alignment. */
+                dev->io_base = (dev->pci_regs[0x14] | (dev->pci_regs[0x15] << 8)) & 0xffc0;
+            } else {
+                /* I/O Space bit not set, don't do anything. */
+                dev->io_base = 0;
+            }
 
-    static void
-    foo_pci_write(int func, int addr, uint8_t val, void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) dev;
-
-        /* Ignore unknown functions. */
-        if (func > 0)
-            return;
-
-        /* Write register. */
-        switch (addr) {
-            case 0x04:
-                /* Our device only supports the I/O and Memory Space bits of the Command register. */
-                dev->pci_regs[addr] = val & 0x03;
-
-                /* Update memory and I/O spaces. */
-                foo_remap_mem(dev);
-                foo_remap_io(dev);
-                break;
-
-            case 0x10:
-                /* Least significant byte of the memory BAR is read-only. */
-                break;
-
-            case 0x11:
-                /* 2nd byte of the memory BAR is masked to maintain 4096-byte alignment. */
-                dev->pci_regs[addr] = val & 0xf0;
-
-                /* Update memory space. */
-                foo_remap_mem(dev);
-                break;
-
-            case 0x12: case 0x13:
-                /* 3rd and most significant bytes of the memory BAR are fully writable. */
-                dev->pci_regs[addr] = val;
-
-                /* Update memory space. */
-                foo_remap_mem(dev);
-                break;
-
-            case 0x14:
-                /* Least significant byte of the I/O BAR is masked to maintain 64-byte alignment, and
-                   ORed with the default value's least significant bits so that the flags stay in place. */
-                dev->pci_regs[addr] = (val & 0xc0) | (dev->pci_regs[addr] & 0x03);
-
-                /* Update I/O space. */
-                foo_remap_io(dev);
-                break;
-
-            case 0x15:
-                /* Most significant byte of the I/O BAR is fully writable. */
-                dev->pci_regs[addr] = val;
-
-                /* Update I/O space. */
-                foo_remap_io(dev);
-                break;
-
-            case 0x16: case 0x17:
-                /* I/O BARs are only 2 bytes long, ignore the rest. */
-                break;
+            /* Add new I/O handler if required. */
+            if (dev->io_base)
+                io_sethandler(dev->io_base, 64,
+                              foo_io_inb, foo_io_inw, foo_io_inl,
+                              foo_io_outb, foo_io_outw, foo_io_outl, dev);
         }
-    }
 
-    /* ... */
+        static void
+        foo_pci_write(int func, int addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-    static void
-    foo_reset(void *priv)
-    {
-        foo_t *dev = /* ... */
+            /* Ignore unknown functions. */
+            if (func > 0)
+                return;
 
-        /* Example: the BAR at 0x10-0x13 is a memory BAR. */
-        dev->pci_regs[0x10] = 0x00; /* least significant bit not set = memory */
-        dev->pci_regs[0x11] = 0x00;
-        dev->pci_regs[0x12] = 0x00;
-        dev->pci_regs[0x13] = 0x00;
+            /* Write configuration space register. */
+            switch (addr) {
+                case 0x04:
+                    /* Our device only supports the I/O and Memory Space bits of the Command register. */
+                    dev->pci_regs[addr] = val & 0x03;
 
-        /* Example: the BAR at 0x14-0x17 is an I/O BAR. */
-        dev->pci_regs[0x14] = 0x01; /* least significant bit set = I/O */
-        dev->pci_regs[0x15] = 0x00;
-        dev->pci_regs[0x16] = 0x00;
-        dev->pci_regs[0x17] = 0x00;
+                    /* Update memory and I/O spaces. */
+                    foo_remap_mem(dev);
+                    foo_remap_io(dev);
+                    break;
 
-        /* Clear all BAR memory mappings and I/O handlers. */
-        dev->pci_regs[0x04] = 0x00;
-        foo_remap_mem(dev);
-        foo_remap_io(dev);
+                case 0x10:
+                    /* Least significant byte of the memory BAR is read-only. */
+                    break;
 
-        /* ... */
-    }
+                case 0x11:
+                    /* 2nd byte of the memory BAR is masked to maintain 4096-byte alignment. */
+                    dev->pci_regs[addr] = val & 0xf0;
+
+                    /* Update memory space. */
+                    foo_remap_mem(dev);
+                    break;
+
+                case 0x12: case 0x13:
+                    /* 3rd and most significant bytes of the memory BAR are fully writable. */
+                    dev->pci_regs[addr] = val;
+
+                    /* Update memory space. */
+                    foo_remap_mem(dev);
+                    break;
+
+                case 0x14:
+                    /* Least significant byte of the I/O BAR is masked to maintain 64-byte alignment, and
+                       ORed with the default value's least significant bits so that the flags stay in place. */
+                    dev->pci_regs[addr] = (val & 0xc0) | (dev->pci_regs[addr] & 0x03);
+
+                    /* Update I/O space. */
+                    foo_remap_io(dev);
+                    break;
+
+                case 0x15:
+                    /* Most significant byte of the I/O BAR is fully writable. */
+                    dev->pci_regs[addr] = val;
+
+                    /* Update I/O space. */
+                    foo_remap_io(dev);
+                    break;
+
+                case 0x16: case 0x17:
+                    /* I/O BARs are only 2 bytes long, ignore the rest. */
+                    break;
+            }
+        }
+
+        static void
+        foo_reset(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) dev;
+
+            /* Reset PCI configuration registers. */
+            memset(dev->pci_regs, 0, sizeof(dev->pci_regs));
+
+            /* Write default vendor ID, device ID, etc. */
+
+            /* The BAR at 0x10-0x13 is a memory BAR. */
+            //dev->pci_regs[0x10] = 0x00; /* least significant bit already not set = memory */
+
+            /* The BAR at 0x14-0x17 is an I/O BAR. */
+            dev->pci_regs[0x14] = 0x01; /* least significant bit set = I/O */
+
+            /* Clear all BAR memory mappings and I/O handlers. */
+            //dev->pci_regs[0x04] = 0x00; /* Memory and I/O Space bits already cleared */
+            foo_remap_mem(dev);
+            foo_remap_io(dev);
+        }
+
+        const device_t foo4321_device = {
+            /* ... */
+            .reset = foo_reset,
+            /* ... */
+        };
 
 Option ROM
 ----------
 
-A PCI function can have an **option ROM**, which behaves similarly to a :ref:`memory BAR <dev/api/pci:Base Address Registers>` in that the ROM can be mapped to any address in 32-bit memory space. As with BARs, the BIOS and/or operating system takes care of mapping; for example, a BIOS will map the primary PCI video card's ROM to the legacy ``0xc0000`` address.
+A PCI function may have an **option ROM**, which behaves similarly to a :ref:`memory BAR <dev/api/pci:Base Address Registers>` in that the ROM can be mapped to any address in 32-bit memory space, aligned to its size. As with BARs, the BIOS and/or operating system takes care of mapping; for example, a BIOS will map the primary PCI video card's ROM to the legacy ``0xc0000`` address.
 
-The main difference between this register and BARs is that the ROM can be enabled or disabled through this register's least significant bit. Both that bit and the Command (``0x04``) register's Memory Space bit (bit 1 or ``0x02``) must be set for the ROM to be accessible.
+The main difference between this register and BARs is that the ROM can be enabled or disabled through bit 0 (``0x01``) of this register. Both that bit and the Command (``0x04``) register's Memory Space bit (bit 1 or ``0x02``) must be set for the ROM to be accessible.
 
-.. note:: The minimum size for an option ROM is 4 KB (see the note about 86Box memory limitations on the :ref:`BAR <dev/api/pci:Base Address Registers>` section), and the maximum size is 16 MB.
+.. note:: The minimum size for an option ROM is 4 KB (see the note about 86Box memory limitations in the :ref:`BAR <dev/api/pci:Base Address Registers>` section), and the maximum size is 16 MB.
 
 .. container:: bit-table
 
@@ -581,121 +677,132 @@ The main difference between this register and BARs is that the ROM can be enable
       - :cspan:`13` Always ``0``
       - .. raw:: html
 
-          <abbr title="Enable">E</span>
+          <abbr title="ROM Enable">E</span>
 
-.. code-block::
+.. container:: toggle
 
-    #include <86box/mem.h>
-    #include <86box/rom.h>
+    .. container:: toggle-header
 
-    typedef struct {
-        /* ... */
-        uint8_t pci_regs[256]; /* note: 1D array as this example is not multi-function */
-        rom_t   rom;
-    } foo_t;
+        Code example: 32 KB option ROM
 
-    /* ... */
+    .. code-block::
 
-    static void
-    foo_remap_rom(foo_t *dev)
-    {
-        if ((dev->pci_regs[0x30] & 0x01) && (dev->pci_regs[0x04] & 0x02)) {
-            /* Expansion ROM Enable and Memory Space bits set, apply the base address.
-               Least significant bits are masked off to maintain 32768-byte alignment.
-               We skip reading dev->pci_regs[0x30] as it contains nothing of interest. */
-            mem_mapping_set_addr(&dev->rom.mapping,
-                                 ((dev->pci_regs[0x31] << 8) | (dev->pci_regs[0x32] << 16) | (dev->pci_regs[0x33] << 24)) & 0xffff8000,
-                                 4096);
-        } else {
-            /* Expansion ROM Enable and/or Memory Space bits not set, disable the mapping. */
+        #include <86box/mem.h>
+        #include <86box/rom.h>
+
+        typedef struct {
+            uint8_t pci_regs[256];
+            rom_t   rom;
+        } foo_t;
+
+        static void
+        foo_remap_rom(foo_t *dev)
+        {
+            if ((dev->pci_regs[0x30] & 0x01) && (dev->pci_regs[0x04] & 0x02)) {
+                /* Expansion ROM Enable and Memory Space bits set, apply the base address.
+                   Least significant bits are masked off to maintain 32768-byte alignment.
+                   We skip reading dev->pci_regs[0x30] as it contains nothing of interest. */
+                mem_mapping_set_addr(&dev->rom.mapping,
+                                     ((dev->pci_regs[0x31] << 8) | (dev->pci_regs[0x32] << 16) | (dev->pci_regs[0x33] << 24)) & 0xffff8000,
+                                     4096);
+            } else {
+                /* Expansion ROM Enable and/or Memory Space bits not set, disable the mapping. */
+                mem_mapping_set_addr(&dev->rom.mapping, 0, 0);
+            }
+        }
+
+        static void
+        foo_pci_write(int func, int addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Ignore unknown functions. */
+            if (func > 0)
+                return;
+
+            /* Write configuration space register. */
+            switch (addr) {
+                case 0x04:
+                    /* Our device only supports the Memory Space bit of the Command register. */
+                    dev->pci_regs[addr] = val & 0x02;
+
+                    /* Update ROM space. */
+                    foo_remap_rom(dev);
+                    break;
+
+                case 0x30:
+                    /* Least significant byte of the ROM address is read-only, except for the enable bit. */
+                    dev->pci_regs[addr] = val & 0x01;
+
+                    /* Update ROM space. */
+                    foo_remap_rom(dev);
+                    break;
+
+                case 0x31:
+                    /* 2nd byte of the ROM address is masked to maintain 32768-byte alignment. */
+                    dev->pci_regs[addr] = val & 0x80;
+
+                    /* Update ROM space. */
+                    foo_remap_rom(dev);
+                    break;
+
+                case 0x32: case 0x33:
+                    /* 3rd and most significant bytes of the ROM address are fully writable. */
+                    dev->pci_regs[addr] = val;
+
+                    /* Update ROM space. */
+                    foo_remap_rom(dev);
+                    break;
+            }
+        }
+
+        static void
+        foo_reset(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) dev;
+
+            /* Reset PCI configuration registers. */
+            memset(dev->pci_regs, 0, sizeof(dev->pci_regs));
+
+            /* Clear ROM memory mapping. */
+            //dev->pci_regs[0x04] = 0x00; /* Memory Space bit already cleared */
+            //dev->pci_regs[0x30] = 0x00; /* Expansion ROM Enable bit already cleared */
+            foo_remap_rom(dev);
+        }
+
+        static int
+        foo_available()
+        {
+            /* This device can only be used if its ROM is present. */
+            return rom_present("roms/scsi/foo/foo4321.bin");
+        }
+
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Don't forget to add the PCI device. */
+
+            /* Load 32 KB ROM... */
+            rom_init(&dev->rom, "roms/scsi/foo/foo4321.bin", 0, 0x8000, 0x7fff, 0, MEM_MAPPING_EXTERNAL);
+
+            /* ...but don't map it right now. */
             mem_mapping_set_addr(&dev->rom.mapping, 0, 0);
+
+            return dev;
         }
-    }
 
-    /* ... */
-
-    static void
-    foo_pci_write(int func, int addr, uint8_t val, void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) dev;
-
-        /* Ignore unknown functions. */
-        if (func > 0)
-            return;
-
-        /* Write register. */
-        switch (addr) {
-            case 0x04:
-                /* Our device only supports the Memory Space bit of the Command register. */
-                dev->pci_regs[addr] = val & 0x02;
-
-                /* Update ROM space. */
-                foo_remap_rom(dev);
-                break;
-
-            case 0x30:
-                /* Least significant byte of the ROM address is read-only, except for the enable bit. */
-                dev->pci_regs[addr] = val & 0x01;
-
-                /* Update ROM space. */
-                foo_remap_rom(dev);
-                break;
-
-            case 0x31:
-                /* 2nd byte of the ROM address is masked to maintain 32768-byte alignment. */
-                dev->pci_regs[addr] = val & 0x80;
-
-                /* Update ROM space. */
-                foo_remap_rom(dev);
-                break;
-
-            case 0x32: case 0x33:
-                /* 3rd and most significant bytes of the ROM address are fully writable. */
-                dev->pci_regs[addr] = val;
-
-                /* Update ROM space. */
-                foo_remap_rom(dev);
-                break;
-        }
-    }
-
-    /* ... */
-
-    static void
-    foo_reset(void *priv)
-    {
-        foo_t *dev = /* ... */
-
-        /* Clear ROM memory mapping. */
-        dev->pci_regs[0x04] = 0x00;
-        foo_remap_rom(dev);
-
-        /* ... */
-    }
-
-    static int
-    foo_available()
-    {
-        /* This device can only be used if its ROM is present. */
-        return rom_present("roms/scsi/foo/foo4321.bin");
-    }
-
-    static void *
-    foo_init(const device_t *info)
-    {
-        foo_t *dev = /* ... */
-
-        /* Example: load 32 KB ROM... */
-        rom_init(&dev->rom, "roms/scsi/foo/foo4321.bin", 0, 0x8000, 0x7fff, 0, MEM_MAPPING_EXTERNAL);
-
-        /* ...but don't map it right now. */
-        mem_mapping_set_addr(&dev->rom.mapping, 0, 0);
-
-        /* ... */
-    }
-
-    /* ... */
+        const device_t foo4321_device = {
+            /* ... */
+            .init = foo_init,
+            .reset = foo_reset,
+            { .available = foo_available },
+            /* ... */
+        };
 
 Interrupts
 ----------

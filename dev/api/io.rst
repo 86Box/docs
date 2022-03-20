@@ -104,21 +104,29 @@ The same rule applies to write callbacks:
 
 .. note:: Each broken-down operation triggers the I/O handlers for its respective port number, no matter which handlers are responsible for the starting port number. A handler will **never** receive callbacks for ports outside its ``base`` and ``size`` boundaries.
 
-This feature's main use cases are devices which store registers that are 8-bit wide but may be accessed with 16- or 32-bit operations::
+This feature's main use cases are devices which store registers that are 8-bit wide but may be accessed with 16- or 32-bit operations:
 
-    typedef struct {
-        uint8_t regs[256];
-    } foo_t;
+.. container:: toggle
 
-    static uint8_t
-    foo_io_inb(uint16_t addr, void *priv)
-    {
-        foo_t *dev = (foo_t *) priv;
-        return dev->regs[addr & 0xff]; /* example: register index = I/O port's least significant byte */
-    }
+    .. container:: toggle-header
 
-    /* No foo_io_inw, so a 16-bit read will read two 8-bit registers in succession.
-       No foo_io_inl, so a 32-bit read will read four 8-bit registers in succession. */
+        Code example: ``inb`` handler for reading 8-bit registers
+
+    .. code-block::
+
+        typedef struct {
+            uint8_t regs[256];
+        } foo_t;
+
+        static uint8_t
+        foo_io_inb(uint16_t addr, void *priv)
+        {
+            foo_t *dev = (foo_t *) priv;
+            return dev->regs[addr & 0xff]; /* register index = I/O port's least significant byte */
+        }
+
+        /* No foo_io_inw, so a 16-bit read will read two 8-bit registers in succession.
+           No foo_io_inl, so a 32-bit read will read four 8-bit registers in succession. */
 
 Multiple I/O handlers
 ---------------------

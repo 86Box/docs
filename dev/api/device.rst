@@ -105,60 +105,66 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 State structure
 ---------------
 
-Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating **state structures** dynamically in the ``init`` callback and freeing them in the ``close`` callback::
+Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating **state structures** dynamically in the ``init`` callback and freeing them in the ``close`` callback:
 
-    #include <86box/device.h>
+.. container:: toggle
 
-    typedef struct {
-        uint32_t type; /* example: copied from device_t.local */
-        uint8_t  regs[256]; /* example: 256*8-bit registers */
-    } foo_t;
+    .. container:: toggle-header
 
-    /* ... */
+        Code example: allocating and freeing a state structure
 
-    static void *
-    foo_init(const device_t *info)
-    {
-        /* Allocate a blank state structure. */
-        foo_t *dev = (foo_t *) malloc(sizeof(foo_t));
-        memset(dev, 0, sizeof(foo_t));
+    .. code-block::
 
-        /* Do whatever you want. */
-        dev->type = info->local; /* copy device_t.local value */
+        #include <86box/device.h>
 
-        /* Return a pointer to the state structure. */
-        return dev;
-    }
+        typedef struct {
+            uint32_t type; /* example: copied from device_t.local */
+            uint8_t  regs[256]; /* example: 256*8-bit registers */
+        } foo_t;
 
-    static void
-    foo_close(void *priv)
-    {
-        /* Get the state structure. */
-        foo_t *dev = (foo_t *) priv;
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = (foo_t *) malloc(sizeof(foo_t));
+            memset(dev, 0, sizeof(foo_t)); /* blank structure */
 
-        /* Do whatever you want, then deallocate the state structure. */
-        free(dev);
-    }
+            /* Do whatever you want. */
+            dev->type = info->local; /* copy device_t.local value */
 
-    const device_t foo1234_device = {
-        .name = "Foo-1234",
-        .internal_name = "foo1234",
-        .flags = DEVICE_AT, /* 16-bit ISA */
-        .local = 1234,
-        .init = foo_init,
-        .close = foo_close,
-        /* ... */
-    };
+            /* Return a pointer to the state structure. */
+            return dev;
+        }
 
-    const device_t foo4321_device = {
-        .name = "Foo-4321",
-        .internal_name = "foo4321",
-        .flags = DEVICE_PCI, /* 32-bit PCI */
-        .local = 4321, /* different device subtype */
-        .init = foo_init,
-        .close = foo_close,
-        /* ... */
-    };
+        static void
+        foo_close(void *priv)
+        {
+            /* Get the state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Do whatever you want, then deallocate the state structure. */
+            free(dev);
+        }
+
+        const device_t foo1234_device = {
+            .name = "Foo-1234",
+            .internal_name = "foo1234",
+            .flags = DEVICE_AT, /* 16-bit ISA */
+            .local = 1234,
+            .init = foo_init,
+            .close = foo_close,
+            /* ... */
+        };
+
+        const device_t foo4321_device = {
+            .name = "Foo-4321",
+            .internal_name = "foo4321",
+            .flags = DEVICE_PCI, /* 32-bit PCI */
+            .local = 4321, /* different device subtype */
+            .init = foo_init,
+            .close = foo_close,
+            /* ... */
+        };
 
 Registration
 ------------
@@ -186,26 +192,30 @@ A device will be **available** for selection by the user if these criteria are m
 2. The selected machine has any of the expansion buses specified in the device's ``flags``;
 3. The device's ``available`` callback returns ``1`` to indicate the device is available (this will always be true if the ``available`` callback function is ``NULL``).
 
-The ``available`` callback can be used to verify the presence of requisite ROMs, for example::
+The ``available`` callback can be used to verify the presence of ROM files if any ROMs are required by the device:
 
-    #include <86box/device.h>
-    #include <86box/rom.h>
+.. container:: toggle
 
-    /* ... */
+    .. container:: toggle-header
 
-    static int
-    foo1234_available()
-    {
-        return rom_present("roms/scsi/foo/foo1234.bin");
-    }
+        Code example: ``available`` checking for the presence of a ROM
 
-    /* ... */
+    .. code-block::
 
-    const device_t foo1234_device = {
-        /* ... */
-        { .available = foo1234_available }, /* must have brackets due to the union */
-        /* ... */
-    };
+        #include <86box/device.h>
+        #include <86box/rom.h>
+
+        static int
+        foo1234_available()
+        {
+            return rom_present("roms/scsi/foo/foo1234.bin");
+        }
+
+        const device_t foo1234_device = {
+            /* ... */
+            { .available = foo1234_available }, /* must have brackets due to the union */
+            /* ... */
+        };
 
 Configuration
 -------------
@@ -230,51 +240,57 @@ These options are stored in the emulated machine's configuration file, in a sect
     midi_in = 0
 
 
-Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``::
+Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``:
 
-    #include <86box/device.h>
+.. container:: toggle
 
-    /* ... */
+    .. container:: toggle-header
 
-    static const device_config_t foo_config[] = {
-        { "selection", "Selection",   CONFIG_SELECTION, "", 5,       "", { 0 },
-            {
-                { "IRQ 5", 5 },
-                { "IRQ 7", 7 },
-                { ""         }
-            }
-        },
-        { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
-            {
-                { "0x220", 0x220 },
-                { "0x330", 0x330 },
-                { ""             }
-            }
-        },
-        { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
-            {
-                /* While the memory *segment* is displayed to the user, we store the
-                   *linear* (segment << 4) base address in the configuration file. */
-                { "D800h", 0xd8000 },
-                { "DC00h", 0xdc000 },
-                { ""               }
-            }
-        },
-        { "string",    "String",      CONFIG_STRING,    "Default" },
-        { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
-        { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
-        { "int",       "Integer",     CONFIG_INT,       "", 1234 },
-        { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
-        { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
-        { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
-        { "midi_in",   "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
-        { "",          "",            -1 }
-    };
+        Code example: device configuration options
 
-    const device_t foo_device = {
-        /* ... */
-        .config = foo_config
-    };
+    .. code-block::
+
+        #include <86box/device.h>
+
+        static const device_config_t foo_config[] = {
+            { "selection", "Selection",   CONFIG_SELECTION, "", 5,       "", { 0 },
+                {
+                    { "IRQ 5", 5 },
+                    { "IRQ 7", 7 },
+                    { ""         }
+                }
+            },
+            { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
+                {
+                    { "0x220", 0x220 },
+                    { "0x330", 0x330 },
+                    { ""             }
+                }
+            },
+            { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
+                {
+                    /* While the memory *segment* is displayed to the user, we store the
+                       *linear* (segment << 4) base address in the configuration file. */
+                    { "D800h", 0xd8000 },
+                    { "DC00h", 0xdc000 },
+                    { ""               }
+                }
+            },
+            { "string",    "String",      CONFIG_STRING,    "Default" },
+            { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
+            { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
+            { "int",       "Integer",     CONFIG_INT,       "", 1234 },
+            { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
+            { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
+            { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
+            { "midi_in",   "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
+            { "",          "",            -1 }
+        };
+
+        const device_t foo_device = {
+            /* ... */
+            .config = foo_config
+        };
 
 .. flat-table:: device_config_t
   :header-rows: 1

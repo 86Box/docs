@@ -8,39 +8,48 @@ Timers
 Adding
 ------
 
-Timers can be added with the ``timer_add`` function. The best place for adding a timer is in a :doc:`device <device>`'s ``init`` callback, storing the ``pc_timer_t`` object in the :ref:`state structure <dev/api/device:State structure>`::
+Timers can be added with the ``timer_add`` function. The best place for adding a timer is in a :doc:`device <device>`'s ``init`` callback, storing the ``pc_timer_t`` object in the :ref:`state structure <dev/api/device:State structure>`.
 
-    #include <86box/device.h>
-    #include <86box/timer.h>
+.. container:: toggle
 
-    typedef struct {
-    	/* ... */
-    	pc_timer_t countdown_timer;
-    } foo_t;
+    .. container:: toggle-header
 
-    /* ... */
+        Code example: adding a timer
 
-    /* Called once the timer period is reached. */
-    static void
-    foo_countdown_timer(void *priv)
-    {
-        foo_t *dev = (foo_t *) priv;
+    .. code-block::
 
-        /* Do whatever you want. */
-    }
+        #include <86box/device.h>
+        #include <86box/timer.h>
 
-    /* ... */
+        typedef struct {
+            pc_timer_t countdown_timer;
+        } foo_t;
 
-    static void *
-    foo_init(const device_t *info)
-    {
-        foo_t *dev = /* ... */
+        /* Called once the timer period is reached. */
+        static void
+        foo_countdown_timer(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-        /* Add timer. */
-        timer_add(&dev->countdown_timer, foo_countdown_timer, foo, 0);
+            /* Do whatever you want. */
+        }
 
-        /* ... */
-    }
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Add timer. */
+            timer_add(&dev->countdown_timer, foo_countdown_timer, foo, 0);
+        }
+
+        const foo1234_device = {
+          /* ... */
+          .init = foo_init,
+          /* ... */
+        };
 
 .. flat-table:: timer_add
   :header-rows: 1
@@ -69,54 +78,52 @@ Timers can be added with the ``timer_add`` function. The best place for adding a
 Triggering
 ----------
 
-The ``timer_on_auto`` function can be used to start (with the provided microsecond period) or stop a timer. It can also be called from a timer callback to restart the timer::
+The ``timer_on_auto`` function can be used to start (with the provided microsecond period) or stop a timer. It can also be called from a timer callback to restart the timer:
 
-    #include <86box/timer.h>
+.. container:: toggle
 
-    typedef struct {
-        /* ... */
-        uint8_t regs[256];
-        pc_timer_t countdown_timer;
-    } foo_t;
+    .. container:: toggle-header
 
-    /* ... */
+        Code example: starting, restarting and stopping a timer
 
-    static void
-    foo_countdown_timer(void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) priv;
+    .. code-block::
 
-        /* ... */
+        #include <86box/timer.h>
 
-        /* Example: restart timer automatically if bit 1 (0x02) of register 0x80 is set. */
-        if (dev->regs[0x80] & 0x02)
-            timer_on_auto(&dev->countdown_timer, 100.0);
-    }
+        typedef struct {
+            uint8_t    regs[256];
+            pc_timer_t countdown_timer; /* remember to timer_add on init, per the example above */
+        } foo_t;
 
-    /* Example: writing to I/O port register 0x__80:
-       - Bit 0 (0x01) set: start 100-microsecond countdown timer;
-       - Bit 0 (0x01) clear: stop countdown timer. */
-    static void
-    foo_outb(uint16_t addr, uint8_t val, void *priv)
-    {
-        /* Get the device state structure. */
-        foo_t *dev = (foo_t *) priv;
+        static void
+        foo_countdown_timer(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-        /* ... */
-
-        if ((addr & 0xff) == 0x80) {
-            dev->regs[0x80] = val;
-            if (val & 0x01)
+            /* Restart timer automatically if bit 1 (0x02) of register 0x80 is set. */
+            if (dev->regs[0x80] & 0x02)
                 timer_on_auto(&dev->countdown_timer, 100.0);
-            else
-                timer_on_auto(&dev->countdown_timer, 0.0);
         }
 
-        /* ... */
-    }
+        /* Example: writing to I/O port register 0x__80:
+           - Bit 0 (0x01) set: start 100-microsecond countdown timer;
+           - Bit 0 (0x01) clear: stop countdown timer. */
+        static void
+        foo_outb(uint16_t addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
 
-    /* ... */
+            /* Handle writes to register 0x80. */
+            if ((addr & 0xff) == 0x80) {
+                dev->regs[0x80] = val;
+                if (val & 0x01)
+                    timer_on_auto(&dev->countdown_timer, 100.0);
+                else
+                    timer_on_auto(&dev->countdown_timer, 0.0);
+            }
+        }
 
 .. flat-table:: timer_on_auto
   :header-rows: 1

@@ -61,4 +61,8 @@ html_css_files = [
 	'css/86box.css',
 ]
 
+html_js_files = [
+	'js/86box.js',
+]
+
 highlight_language = 'c'
