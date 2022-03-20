@@ -105,13 +105,13 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 State structure
 ---------------
 
-Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating **state structures** dynamically in the ``init`` callback and freeing them in the ``close`` callback:
+Most devices need a place to store their internal state. We discourage the use of global structures, and instead recommend allocating a **state structure** dynamically in the ``init`` callback and freeing it in the ``close`` callback.
 
 .. container:: toggle
 
     .. container:: toggle-header
 
-        Code example: allocating and freeing a state structure
+        Code example: allocating and deallocating a state structure
 
     .. code-block::
 
@@ -192,7 +192,7 @@ A device will be **available** for selection by the user if these criteria are m
 2. The selected machine has any of the expansion buses specified in the device's ``flags``;
 3. The device's ``available`` callback returns ``1`` to indicate the device is available (this will always be true if the ``available`` callback function is ``NULL``).
 
-The ``available`` callback can be used to verify the presence of ROM files if any ROMs are required by the device:
+The ``available`` callback can be used to verify the presence of ROM files if any ROMs are required by the device.
 
 .. container:: toggle
 
@@ -220,10 +220,12 @@ The ``available`` callback can be used to verify the presence of ROM files if an
 Configuration
 -------------
 
-Devices can have any number of user-facing configuration options, usually accessed through the **Configure** button next to the selection box for the device's class. Examples for all option types currently configurable through the user interface are shown in the image below. [TO BE UPDATED ONCE I GET OUT OF HIDPI]
+Devices can have any number of user-facing configuration options, usually accessed through the **Configure** button next to the selection box for the device's class:
 
-.. image:: images/deviceconfig.png
+.. figure:: images/deviceconfig.png
    :align: center
+
+   All option types currently configurable through the user interface. [TO BE UPDATED ONCE I GET OUT OF HIDPI]
 
 These options are stored in the emulated machine's configuration file, in a section identified by the device's ``name``:
 
@@ -240,7 +242,7 @@ These options are stored in the emulated machine's configuration file, in a sect
     midi_in = 0
 
 
-Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``:
+Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``.
 
 .. container:: toggle
 

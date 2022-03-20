@@ -22,7 +22,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
         #define FOO_ONBOARD 0x80000000  /* most significant bit set = on-board */
 
         typedef struct {
-            uint8_t pci_regs[256];
+            uint8_t pci_regs[256]; /* 256*8-bit configuration register array */
             int     slot;
         } foo_t;
 
@@ -259,7 +259,7 @@ The most important registers in the standard set are:
 Multi-function devices
 ----------------------
 
-PCI defines the concept of **functions**, which allow a physical device to contain up to 8 sub-devices (numbered from ``0`` to ``7``), each one with their own configuration space and set of resources controlled by :ref:`dev/api/pci:Base Address Registers`. Most (but not all) multi-function devices are chipset southbridges, which may implement a function for the PCI-ISA bridge, another one for the IDE controller, one or more for USB and so on.
+PCI defines the concept of **functions**, which allow a physical device to contain up to 8 sub-devices (numbered from ``0`` to ``7``), each with their **own configuration space**, and their **own resources** controlled by :ref:`dev/api/pci:Base Address Registers`. Most (but not all) multi-function PCI devices are chipset southbridges, which may implement a function for the PCI-ISA bridge (and general configuration), another one for the IDE controller, one or more for USB and so on.
 
 The ``func`` parameter passed to a device's configuration space read/write callbacks provides the **function number** for which the configuration space is being accessed. There are two main requirements for implementing multi-function devices:
 
@@ -276,7 +276,8 @@ The ``func`` parameter passed to a device's configuration space read/write callb
     .. code-block::
 
         typedef struct {
-            uint8_t pci_regs[2][256]; /* two 256*8-bit register arrays, one for each function */
+            uint8_t pci_regs[2][256]; /* two 256*8-bit configuration register arrays,
+                                         one for each function */
         } foo_t;
 
         static uint8_t
@@ -773,7 +774,7 @@ The main difference between this register and BARs is that the ROM can be enable
         }
 
         static int
-        foo_available()
+        foo4321_available()
         {
             /* This device can only be used if its ROM is present. */
             return rom_present("roms/scsi/foo/foo4321.bin");
@@ -800,7 +801,7 @@ The main difference between this register and BARs is that the ROM can be enable
             /* ... */
             .init = foo_init,
             .reset = foo_reset,
-            { .available = foo_available },
+            { .available = foo4321_available },
             /* ... */
         };
 
