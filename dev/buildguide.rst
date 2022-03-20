@@ -113,12 +113,9 @@ MSYS2
 
 .. code-block:: bash
 
-    $ pacman -Syuu mingw-w64-<arch>-ninja mingw-w64-<arch>-cmake mingw-w64-<arch>-gcc mingw-w64-<arch>-pkg-config mingw-w64-<arch>-openal mingw-w64-<arch>-freetype mingw-w64-<arch>-SDL2 mingw-w64-<arch>-zlib mingw-w64-<arch>-libpng mingw-w64-<arch>-rtmidi mingw-w64-<arch>-qt5-static mingw-w64-<arch>-qt5-translations
+    $ pacman -Syu $MINGW_PACKAGE_PREFIX-ninja $MINGW_PACKAGE_PREFIX-cmake $MINGW_PACKAGE_PREFIX-gcc $MINGW_PACKAGE_PREFIX-pkg-config $MINGW_PACKAGE_PREFIX-openal $MINGW_PACKAGE_PREFIX-freetype $MINGW_PACKAGE_PREFIX-SDL2 $MINGW_PACKAGE_PREFIX-zlib $MINGW_PACKAGE_PREFIX-libpng $MINGW_PACKAGE_PREFIX-rtmidi $MINGW_PACKAGE_PREFIX-qt5-static $MINGW_PACKAGE_PREFIX-qt5-translations
 
-Replace ``<arch>`` with:
-
-* ``i686`` for 32-bit builds (MinGW 32-bit environment)
-* ``x86_64`` for 64-bit builds (MinGW 64-bit environment)
+.. note:: The command installs the packages only for the currently used MinGW environment, therefore you will need to repeat the procedure for every target you plan to build for.
 
 Ubuntu, Debian
 """"""""""""""
