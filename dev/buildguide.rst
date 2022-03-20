@@ -78,7 +78,7 @@ There are multiple ways to obtain the 86Box source code in order to build it:
 
 * Use the ``git`` command line. The utility needs to be installed and present in the search path.
 
-    .. code-block:: bash
+  .. code-block:: bash
 
         $ git clone https://github.com/86Box/86Box.git
 
@@ -141,7 +141,7 @@ Building 86Box can generally be condensed to the following steps:
 
 1. Generate the project. This generally involves invoking the following base command line with additional options according to the development environment:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         $ cmake -B <build directory> -S <source directory>
 
@@ -154,7 +154,7 @@ Building 86Box can generally be condensed to the following steps:
 
 2. Build the project itself. This can be done by changing to the chosen build directory and invoking the chosen build system, or you can use the following universal CMake command:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         $ cmake --build <build directory>
 
@@ -166,7 +166,7 @@ Building 86Box can generally be condensed to the following steps:
 
 4. `Optional:` The executable can be copied to a consistent location by running the following command:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         $ cmake --install <build directory> --prefix <destination>
 
