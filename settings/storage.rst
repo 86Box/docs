@@ -3,7 +3,7 @@
 |storage_controllers| Storage controllers
 =========================================
 
-The *Storage controllers* page contains settings related to the emulated machine's disk drive controllers.
+The **Storage controllers** page contains settings related to the emulated machine's disk drive controllers.
 
 HD Controller
 -------------

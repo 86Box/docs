@@ -22,8 +22,8 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
         #define FOO_ONBOARD 0x80000000  /* most significant bit set = on-board */
 
         typedef struct {
-            uint8_t pci_regs[256]; /* 256*8-bit configuration register array */
             int     slot;
+            uint8_t pci_regs[256]; /* 256*8-bit configuration register array */
         } foo_t;
 
         static uint8_t
@@ -75,17 +75,17 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
             /* ... */
         };
 
-.. flat-table:: pci_add_card
+.. flat-table:: ``pci_add_card``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - add_type
+  * - ``add_type``
     - :ref:`PCI slot type <dev/api/pci:Slot types>` to add this card to.
 
-  * - read
+  * - ``read``
     - :ref:`Configuration space <dev/api/pci:Configuration space>` register read callback. Takes the form of:
 
       ``uint8_t read(int func, int addr, void *priv)``
@@ -95,7 +95,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
       * ``priv``: opaque pointer (see ``priv`` below);
       * Return value: 8-bit value read from this register index.
 
-  * - write
+  * - ``write``
     - :ref:`Configuration space <dev/api/pci:Configuration space>` register write callback. Takes the form of:
 
       ``void write(int func, int addr, uint8_t val, void *priv)``
@@ -105,7 +105,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
       * ``val``: 8-bit value being written from this register index.
       * ``priv``: opaque pointer (see ``priv`` below);
 
-  * - priv
+  * - ``priv``
     - Opaque pointer passed to this device's configuration space register read/write callbacks.
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
@@ -194,59 +194,49 @@ The most important registers in the standard set are:
     - Register
     - Description
 
-  * - 0x00 - 0x01
+  * - ``0x00 - 0x01``
     - Vendor ID
     - :rspan:`1` Unique IDs assigned to the device's vendor (2 bytes) and the device itself (2 more bytes). The `PCI ID Repository <https://pci-ids.ucw.cz>`_ is a comprehensive repository of many (but not all) known PCI IDs.
 
-  * - 0x02 - 0x03
+  * - ``0x02 - 0x03``
     - Device ID
 
-  * - 0x04 - 0x05
+  * - ``0x04 - 0x05``
     - Command
     - Control several core aspects of the PCI device:
 
-      * **I/O Space** (bit 0 or 0x0001) should enable all I/O base address registers if set, or disable them if cleared;
-      * **Memory Space** (bit 1 or 0x0002) should enable all memory base address registers if set, or disable them if cleared;
-      * **Interrupt Disable** (bit 10 or 0x0400) should prevent the device from triggering interrupts if set.
+      * **I/O Space** (bit 0 or ``0x0001``) should enable all I/O base address registers if set, or disable them if cleared;
+      * **Memory Space** (bit 1 or ``0x0002``) should enable all memory base address registers if set, or disable them if cleared;
+      * **Interrupt Disable** (bit 10 or ``0x0400``) should prevent the device from triggering interrupts if set.
  
-  * - 0x0e
+  * - ``0x0e``
     - Header type
     - Usually ``0`` to indicate a normal PCI header.
       Bit 7 (``0x80``) must be set if this is the first function (function ``0``) of a :ref:`multi-function device <dev/api/pci:Multi-function devices>`.
 
-  * - 0x10 - 0x13
-    - :rspan:`5` :ref:`dev/api/pci:Base Address Registers`
-    - :rspan:`5` Sets the base address for each memory or :doc:`I/O <io>` range provided by this device.
+  * - ``0x10 - 0x27``
+    - :ref:`dev/api/pci:Base Address Registers`
+    - Sets the base address for each memory or :doc:`I/O <io>` range provided by this device.
 
-  * - 0x14 - 0x17
-
-  * - 0x18 - 0x1b
-
-  * - 0x1c - 0x1f
-
-  * - 0x20 - 0x23
-
-  * - 0x24 - 0x27
-
-  * - 0x2c - 0x2d
+  * - ``0x2c - 0x2d``
     - Subvendor ID
     - :rspan:`1` Unique vendor (2 bytes) and device (2 bytes) IDs sometimes assigned to different implementations of the same PCI device without having to change the main Vendor and Device IDs.
       Usually all ``0`` if the device doesn't call for such IDs.
 
-  * - 0x2e - 0x2f
+  * - ``0x2e - 0x2f``
     - Subsystem ID
 
-  * - 0x30 - 0x33
+  * - ``0x30 - 0x33``
     - Expansion ROM
     - Base address and enable bit for the device's :ref:`option ROM <dev/api/pci:Option ROM>`.
       Must be read-only if the device does not provide an option ROM.
 
-  * - 0x3c
+  * - ``0x3c``
     - Interrupt Line
     - The PIC IRQ number assigned to this device's :ref:`interrupt pin <dev/api/pci:Interrupts>` (see ``Interrupt Pin`` below).
       This register's contents should be ignored by the device; however, the register itself **must be writable** if the device uses interrupts, since 86Box actively uses its value to route interrupts on machines with early PCI chipsets not capable of IRQ steering.
 
-  * - 0x3d
+  * - ``0x3d``
     - Interrupt Pin
     - Read-only value indicating the PCI :ref:`interrupt pin <dev/api/pci:Interrupts>` (``INTx#``) used by this device:
 
@@ -276,6 +266,7 @@ The ``func`` parameter passed to a device's configuration space read/write callb
     .. code-block::
 
         typedef struct {
+            int     slot;
             uint8_t pci_regs[2][256]; /* two 256*8-bit configuration register arrays,
                                          one for each function */
         } foo_t;
@@ -336,8 +327,24 @@ The ``func`` parameter passed to a device's configuration space read/write callb
             dev->pci_regs[0][0x0e] = 0x80;
         }
 
+        static void *
+        foo_init(const device_t *info)
+        {
+            /* Allocate the device state structure. */
+            foo_t *dev = /* ... */
+
+            /* Add PCI device. No changes are required here for multi-function devices. */
+            dev->slot = pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev);
+
+            /* Initialize PCI configuration registers. */
+            foo_reset(dev);
+
+            return dev;
+        }
+
         const device_t foo4321_device = {
             /* ... */
+            .init = foo_init,
             .reset = foo_reset,
             /* ... */
         };
@@ -360,15 +367,15 @@ The aforementioned base address alignment allows software (BIOSes and operating 
 
 .. container:: bit-table
 
-  .. flat-table:: Memory BAR (example: 4 KB large, starting at 0x10)
+  .. flat-table:: Memory BAR (example: 4 KB large, starting at ``0x10``)
     :header-rows: 2
     :stub-columns: 1
 
     * - Byte
-      - :cspan:`7` 0x13
-      - :cspan:`7` 0x12
-      - :cspan:`7` 0x11
-      - :cspan:`7` 0x10
+      - :cspan:`7` ``0x13``
+      - :cspan:`7` ``0x12``
+      - :cspan:`7` ``0x11``
+      - :cspan:`7` ``0x10``
 
     * - Bit
       - 31
@@ -411,18 +418,18 @@ The aforementioned base address alignment allows software (BIOSes and operating 
 
         .. raw:: html
 
-          Flags (<abbr title="Read-only">RO</span>)
+          <abbr title="Read-only">Flags</span>
       - ``0``
 
-  .. flat-table:: I/O BAR (example: 64 ports large, starting at 0x14)
+  .. flat-table:: I/O BAR (example: 64 ports large, starting at ``0x14``)
     :header-rows: 2
     :stub-columns: 1
 
     * - Byte
-      - :cspan:`7` 0x17
-      - :cspan:`7` 0x16
-      - :cspan:`7` 0x15
-      - :cspan:`7` 0x14
+      - :cspan:`7` ``0x17``
+      - :cspan:`7` ``0x16``
+      - :cspan:`7` ``0x15``
+      - :cspan:`7` ``0x14``
 
     * - Bit
       - 31
@@ -612,6 +619,8 @@ The aforementioned base address alignment allows software (BIOSes and operating 
             foo_remap_io(dev);
         }
 
+        /* Don't forget to add the PCI device on init first. */
+
         const device_t foo4321_device = {
             /* ... */
             .reset = foo_reset,
@@ -634,10 +643,10 @@ The main difference between this register and BARs is that the ROM can be enable
     :stub-columns: 1
 
     * - Byte
-      - :cspan:`7` 0x33
-      - :cspan:`7` 0x32
-      - :cspan:`7` 0x31
-      - :cspan:`7` 0x30
+      - :cspan:`7` ``0x33``
+      - :cspan:`7` ``0x32``
+      - :cspan:`7` ``0x31``
+      - :cspan:`7` ``0x30``
 
     * - Bit
       - 31
@@ -786,13 +795,16 @@ The main difference between this register and BARs is that the ROM can be enable
             /* Allocate the device state structure. */
             foo_t *dev = /* ... */
 
-            /* Don't forget to add the PCI device. */
+            /* Don't forget to add the PCI device first. */
 
             /* Load 32 KB ROM... */
             rom_init(&dev->rom, "roms/scsi/foo/foo4321.bin", 0, 0x8000, 0x7fff, 0, MEM_MAPPING_EXTERNAL);
 
             /* ...but don't map it right now. */
             mem_mapping_disable(&dev->rom.mapping);
+
+            /* Initialize PCI configuration registers. */
+            foo_reset(dev);
 
             return dev;
         }

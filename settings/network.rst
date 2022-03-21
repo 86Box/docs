@@ -3,7 +3,7 @@
 |network| Network
 =================
 
-The *Network* page contains settings related to the emulated machine's network connectivity.
+The **Network** page contains settings related to the emulated machine's network connectivity.
 
 Network type
 ------------

@@ -3,20 +3,20 @@ Devices
 
 The **device** is the main unit of emulated components in 86Box. Each device is represented by one or more constant ``device_t`` objects, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/device.h``.
 
-.. flat-table:: device_t
+.. flat-table:: ``device_t``
   :header-rows: 1
   :widths: 1 1 999
 
   * - :cspan:`1` Member
     - Description
 
-  * - :cspan:`1` name
+  * - :cspan:`1` ``name``
     - The device's name, displayed in the user interface. ``"Foo-1234"`` for example. Suffixes like ``"(PCI)"`` are removed at run-time.
 
-  * - :cspan:`1` internal_name
+  * - :cspan:`1` ``internal_name``
     - The device's internal name, used to identify it in the emulated machine's configuration file. ``"foo1234"`` for example.
 
-  * - :cspan:`1` flags
+  * - :cspan:`1` ``flags``
     - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining :ref:`device availability <dev/api/device:Availability>` on the selected machine:
 
       * ``DEVICE_ISA``: 8-bit ISA;
@@ -33,11 +33,11 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_COM``: serial port (reserved for future use);
       * ``DEVICE_LPT``: parallel port (reserved for future use).
 
-  * - :cspan:`1` local
+  * - :cspan:`1` ``local``
     - 32-bit value which can be read from this structure by the ``init`` callback.
       Use this value to tell different subtypes of the same device, for example.
 
-  * - :cspan:`1` init
+  * - :cspan:`1` ``init``
     - Function called whenever this device is initialized, either from starting 86Box or from a hard reset. Can be ``NULL``, in which case the opaque pointer passed to other callbacks will be invalid. Takes the form of:
 
       ``void *init(const struct device_t *info)``
@@ -45,14 +45,14 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``info``: pointer to this ``device_t`` structure;
       * Return value: opaque pointer passed to the other callbacks below, usually a pointer to the device's :ref:`state structure <dev/api/device:State structure>`.
 
-  * - :cspan:`1` close
+  * - :cspan:`1` ``close``
     - Function called whenever this device is de-initialized, either from closing 86Box or from a hard reset. Can be ``NULL``. Takes the form of:
 
       ``void close(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` reset
+  * - :cspan:`1` ``reset``
     - Function called whenever this device undergoes a soft reset. Can be ``NULL``. Takes the form of:
 
       ``void reset(void *priv)``
@@ -64,14 +64,14 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       .. raw:: html
 
          <div class="vertical-text">union</div>
-    - available
+    - ``available``
     - Function called whenever this device's availability is being checked. Can be ``NULL``, in which case the device will always be available. Takes the form of:
 
       ``int available()``
 
       * Return value: ``1`` if the device is available for selection, or ``0`` if it is unavailable (due to missing ROMs, for example).
 
-  * - poll
+  * - ``poll``
     - Function called whenever the mouse position is updated. Valid for mouse devices only. Takes the form of:
 
       ``int poll(int x, int y, int z, int b, void *priv)``
@@ -82,24 +82,24 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``priv``: opaque pointer previously returned by ``init``;
       * Return value: ``0`` if the change was processed, or any other value otherwise.
 
-  * - register_pci_slot
+  * - ``register_pci_slot``
     - Reserved for future use.
 
-  * - :cspan:`1` speed_changed
+  * - :cspan:`1` ``speed_changed``
     - Function called whenever the emulated CPU clock speed is changed. Can be ``NULL``. Timer intervals (when using the undocumented legacy timer API) and anything else sensitive to the CPU clock speed should be updated in this callback. Takes the form of:
 
       ``void speed_changed(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` force_redraw
+  * - :cspan:`1` ``force_redraw``
     - Function called whenever the emulated screen has to be fully redrawn. Can be ``NULL``. Only useful for video cards. Takes the form of:
 
       ``void force_redraw(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` config
+  * - :cspan:`1` ``config``
     - Array of :ref:`device configuration options <dev/api/device:Configuration>`, or ``NULL`` if no options are available.
 
 State structure
@@ -171,15 +171,15 @@ Registration
 
 New devices must be **registered** before they can be selected by the user. This is usually accomplished by adding one or more ``device_t`` pointers to the **device table** for the device's class:
 
-* **Video cards:** ``video_cards`` in ``video/vid_table.c``
-* **Sound cards:** ``sound_cards`` in ``sound/sound.c``
-* **Network cards:** ``net_cards`` in ``network/network.c``
-* **Parallel port devices:** ``lpt_devices`` in ``lpt.c``
-* **Hard disk controllers:** ``controllers`` in ``disk/hdc.c``
-* **Floppy disk controllers:** ``fdc_cards`` in ``floppy/fdc.c``
-* **SCSI controllers:** ``scsi_cards`` in ``scsi/scsi.c``
-* **ISA RTC cards:** ``boards`` in ``device/isartc.c``
-* **ISA memory expansion cards:** ``boards`` in ``device/isamem.c``
+* **Video cards:** ``video_cards`` in ``src/video/vid_table.c``
+* **Sound cards:** ``sound_cards`` in ``src/sound/sound.c``
+* **Network cards:** ``net_cards`` in ``src/network/network.c``
+* **Parallel port devices:** ``lpt_devices`` in ``src/lpt.c``
+* **Hard disk controllers:** ``controllers`` in ``src/disk/hdc.c``
+* **Floppy disk controllers:** ``fdc_cards`` in ``src/floppy/fdc.c``
+* **SCSI controllers:** ``scsi_cards`` in ``src/scsi/scsi.c``
+* **ISA RTC cards:** ``boards`` in ``src/device/isartc.c``
+* **ISA memory expansion cards:** ``boards`` in ``src/device/isamem.c``
 
 Devices not covered by any of the above classes may require further integration through modifications to the user interface and configuration loading/saving systems.
 
@@ -294,20 +294,20 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
             .config = foo_config
         };
 
-.. flat-table:: device_config_t
+.. flat-table:: ``device_config_t``
   :header-rows: 1
   :widths: 1 999
 
   * - Member
     - Description
 
-  * - name
+  * - ``name``
     - Internal name for this option, used to identify it in the emulated machine's configuration file.
 
-  * - description
+  * - ``description``
     - Description for this option, displayed in the user interface.
 
-  * - type
+  * - ``type``
     - One of the following option types:
 
       * ``CONFIG_SELECTION``: combobox containing a list of values specified by the ``selection`` member;
@@ -323,18 +323,18 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_MIDI_IN``: combobox containing a list of system MIDI input devices;
       * ``-1``: **mandatory** terminator to indicate the end of the option list.
 
-  * - default_string
+  * - ``default_string``
     - Default string value for a ``CONFIG_STRING`` option. Can be ``""`` if not applicable.
 
-  * - default_int
+  * - ``default_int``
     - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
 
-  * - file_filter
+  * - ``file_filter``
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``""`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
 
       ``"Raw image (*.img)|*.img|Virtual Hard Disk (*.vhd)|*.vhd"``
 
-  * - spinner
+  * - ``spinner``
     - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ 0 }`` if not applicable.
 
       .. flat-table::
@@ -344,16 +344,16 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
          * - Member
            - Description
 
-         * - min
+         * - ``min``
            - Minimum selectable value.
 
-         * - max
+         * - ``max``
            - Maximum selectable value.
 
-         * - step
+         * - ``step``
            - Units to be incremented/decremented with the arrow buttons. Note that the user can still type in arbitrary numbers that are within ``min`` and ``max`` but not aligned to ``step``.
 
-  * - selection
+  * - ``selection``
     - Array of ``device_config_selection_t`` sub-structures containing the choices for a ``CONFIG_SELECTION``, ``CONFIG_HEX16`` or ``CONFIG_HEX20`` option. Can be ``{ 0 }`` if not applicable. Must be terminated with an object with a ``description`` of ``""``.
 
       .. flat-table::
@@ -363,37 +363,37 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
          * - Member
            - Description
 
-         * - description
+         * - ``description``
            - Description for this choice, displayed in the user interface.
 
-         * - value
+         * - ``value``
            - Integer value corresponding to this choice, used to identify it in the emulated machine's configuration file.
 
 Configured option values can be read from within the device's ``init`` callback with the ``device_get_config_*`` functions. These functions automatically operate in the context of the device currently being initialized.
 
 .. note:: ``device_get_config_*`` functions should **never** be called outside of a device's ``init`` callback. You are responsible for reading the options' configured values in the ``init`` callback and storing them in the device's :ref:`state structure <dev/api/device:State structure>` if necessary.
 
-.. flat-table:: device_get_config_string
+.. flat-table:: ``device_get_config_string``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - name
+  * - ``name``
     - The option's ``name``. Accepted option types are ``CONFIG_STRING`` and ``CONFIG_FNAME``.
 
   * - **Return value**
     - The option's configured string value, or its ``default_string`` if no value is present. Note that a ``const char *`` is returned.
 
-.. flat-table:: device_get_config_int / device_get_config_hex16 / device_get_config_hex20
+.. flat-table:: ``device_get_config_int`` / ``device_get_config_hex16`` / ``device_get_config_hex20``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - name
+  * - ``name``
     - The option's ``name``. Accepted option types are:
 
       * ``device_get_config_int``: ``CONFIG_SELECTION``, ``CONFIG_BINARY``, ``CONFIG_INT``, ``CONFIG_SPINNER``, ``CONFIG_MIDI_OUT``, ``CONFIG_MIDI_IN``
@@ -403,20 +403,20 @@ Configured option values can be read from within the device's ``init`` callback 
   * - **Return value**
     - The option's configured integer value (``CONFIG_BINARY`` returns 1 if checked or 0 otherwise), or its ``default_int`` if no value is present.
 
-.. flat-table:: device_get_config_int_ex / device_get_config_mac
+.. flat-table:: ``device_get_config_int_ex`` / ``device_get_config_mac``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - name
+  * - ``name``
     - The option's ``name``. Accepted option types are:
 
       * ``device_get_config_int_ex``: ``CONFIG_SELECTION``, ``CONFIG_BINARY``, ``CONFIG_INT``, ``CONFIG_SPINNER``, ``CONFIG_MIDI_OUT``, ``CONFIG_MIDI_IN``
       * ``device_get_config_mac``: ``CONFIG_MAC``
 
-  * - dflt_int
+  * - ``dflt_int``
     - The default value to return if no configured value is present.
 
   * - **Return value**

@@ -51,28 +51,28 @@ Timers can be added with the ``timer_add`` function. The best place for adding a
           /* ... */
         };
 
-.. flat-table:: timer_add
+.. flat-table:: ``timer_add``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - timer
+  * - ``timer``
     - Pointer to a ``pc_timer_t`` object stored somewhere, usually in a device's :ref:`state structure <dev/api/device:State structure>`.
 
-  * - callback
+  * - ``callback``
     - Function called every time the timer's period is reached. Takes the form of:
 
       ``void callback(void *priv)``
 
       * ``priv``: opaque pointer (see ``priv`` below).
 
-  * - priv
+  * - ``priv``
     - Opaque pointer passed to the ``callback`` above.
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
-  * - start_timer
+  * - ``start_timer``
     - Part of the :ref:`legacy API <dev/api/timer:Legacy API>`, should always be ``0``.
 
 Triggering
@@ -92,7 +92,7 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
 
         typedef struct {
             uint8_t    regs[256];
-            pc_timer_t countdown_timer; /* remember to timer_add on init, per the example above */
+            pc_timer_t countdown_timer; /* don't forget to timer_add on init, per the example above */
         } foo_t;
 
         static void
@@ -101,14 +101,16 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
             /* Get the device state structure. */
             foo_t *dev = (foo_t *) priv;
 
-            /* Restart timer automatically if bit 1 (0x02) of register 0x80 is set. */
+            /* Restart timer automatically if the relevant
+               bit (see register description below) is set. */
             if (dev->regs[0x80] & 0x02)
                 timer_on_auto(&dev->countdown_timer, 100.0);
         }
 
-        /* Example: writing to I/O port register 0x__80:
+        /* Our device handles I/O port register 0x__80 like this:
            - Bit 0 (0x01) set: start 100-microsecond countdown timer;
-           - Bit 0 (0x01) clear: stop countdown timer. */
+           - Bit 0 (0x01) clear: stop countdown timer;
+           - Bit 1 (0x02) set: automatically restart timer. */
         static void
         foo_outb(uint16_t addr, uint8_t val, void *priv)
         {
@@ -118,24 +120,24 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
             /* Handle writes to register 0x80. */
             if ((addr & 0xff) == 0x80) {
                 dev->regs[0x80] = val;
-                if (val & 0x01)
+                if (val & 0x01) /* bit 0 set */
                     timer_on_auto(&dev->countdown_timer, 100.0);
-                else
+                else /* bit 0 clear */
                     timer_on_auto(&dev->countdown_timer, 0.0);
             }
         }
 
-.. flat-table:: timer_on_auto
+.. flat-table:: ``timer_on_auto``
   :header-rows: 1
   :widths: 1 999
 
   * - Parameter
     - Description
 
-  * - timer
+  * - ``timer``
     - Pointer to the timer's ``pc_timer_t`` object.
 
-  * - period
+  * - ``period``
     - Period after which the timer callback is called, in microseconds (1/1,000,000th of a second or 1/1,000th of a millisecond) as a ``double``.
       A period of ``0.0`` stops the timer if it's active.
 

@@ -3,7 +3,7 @@
 |other_removable_devices| Other removable devices
 =================================================
 
-The *Other removable devices* page contains settings related to the emulated machine's additional removable storage drives.
+The **Other removable devices** page contains settings related to the emulated machine's additional removable storage drives.
 
 MO / ZIP drives
 ---------------

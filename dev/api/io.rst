@@ -10,13 +10,13 @@ Port I/O
   * - Parameter
     - Description
 
-  * - base
+  * - ``base``
     - First I/O port (0x0000-0xffff) covered by this handler.
 
-  * - size
+  * - ``size``
     - Amount of I/O ports (1-65536) covered by this handler, starting at ``base``.
 
-  * - inb
+  * - ``inb``
     - :rspan:`2` I/O read operation callback functions. Can be ``NULL``. Each callback takes the form of:
 
       ``TYPE callback(uint16_t addr, void *priv)``
@@ -26,11 +26,11 @@ Port I/O
       * ``priv``: opaque pointer (see ``priv`` below);
       * Return value: 8- (``inb``), 16- (``inw``) or 32-bit (``inl``) value read from this port.
 
-  * - inw
+  * - ``inw``
 
-  * - inl
+  * - ``inl``
 
-  * - outb
+  * - ``outb``
     - :rspan:`2` I/O write operation callback functions. Can be ``NULL``. Each callback takes the form of:
 
       ``void callback(uint16_t addr, TYPE val, void *priv)``
@@ -40,11 +40,11 @@ Port I/O
       * ``val``: 8- (``outb``), 16- (``outw``) or 32-bit (``outl``) value being written to this port;
       * ``priv``: opaque pointer (see ``priv`` below).
 
-  * - outw
+  * - ``outw``
 
-  * - outl
+  * - ``outl``
 
-  * - priv
+  * - ``priv``
     - Opaque pointer passed to this handler's read/write operation callbacks.
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
@@ -136,14 +136,14 @@ Any given I/O port can have an **unlimited** amount of I/O handlers, such that:
 * when a **read** operation occurs, all read callbacks will be called, and their return values will be logically **AND**\ ed together;
 * when a **write** operation occurs, all write callbacks will be called with the same written value.
 
-Read callbacks can effectively return "don't care" (without interfering with other handlers) by returning a value with all bits set: ``0xff`` with ``inb``, ``0xffff`` with ``inw`` or ``0xffffffff`` with ``inl``.
+Read callbacks can effectively return "don't care" (without interfering with other handlers) by returning a value with all bits set: ``0xff`` for ``inb``, ``0xffff`` for ``inw`` or ``0xffffffff`` for ``inl``.
 
 .. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without valid callbacks for the operation's type and width are automatically skipped.
 
 I/O traps
 ---------
 
-A second type of I/O handler, **I/O traps** allow a device (usually System Management Mode on chipsets and legacy compatibility on PCI sound cards) to act upon a read/write operation to an I/O port operation without affecting its result.
+A second type of I/O handler, **I/O traps** allow a device (usually System Management Mode on chipsets or legacy compatibility mechanisms on PCI sound cards) to act upon a read/write operation to an I/O port operation without affecting its result.
 
 .. container:: toggle
 
@@ -210,7 +210,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
   * - Parameter
     - Description
 
-  * - func
+  * - ``func``
     - Function called whenever an I/O operation of any type or size is performed to the trap's I/O address range. Takes the form of:
 
       ``void func(int size, uint16_t addr, uint8_t write, uint8_t val, void *priv)``
@@ -221,7 +221,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
       * ``val``: value being written if this operation is a write;
       * ``priv``: opaque pointer (see ``priv`` below).
 
-  * - priv
+  * - ``priv``
     - Opaque pointer passed to the ``func`` callback above.
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
@@ -235,15 +235,15 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
   * - Parameter
     - Description
 
-  * - trap
+  * - ``trap``
     - Opaque pointer representing the I/O trap to remap.
 
-  * - enable
+  * - ``enable``
     - * ``1`` to enable this trap;
       * ``0`` to disable it.
 
-  * - addr
+  * - ``addr``
     - First I/O port (0x0000-0xffff) covered by this trap.
 
-  * - size
+  * - ``size``
     - Amount of I/O ports (1-65536) covered by this trap.
