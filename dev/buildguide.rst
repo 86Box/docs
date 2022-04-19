@@ -130,7 +130,7 @@ macOS (Homebrew)
 
 .. code-block:: bash
 
-    $ brew install freetype sdl2 libpng openal-soft rtmidi faudio qt@5
+    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi faudio qt@5
 
 Building
 --------
