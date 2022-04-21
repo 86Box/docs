@@ -138,7 +138,7 @@ Any given I/O port can have an **unlimited** amount of I/O handlers, such that:
 
 Read callbacks can effectively return "don't care" (without interfering with other handlers) by returning a value with all bits set: ``0xff`` for ``inb``, ``0xffff`` for ``inw`` or ``0xffffffff`` for ``inl``.
 
-.. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without valid callbacks for the operation's type and width are automatically skipped.
+.. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without callbacks for the operation's type and (same or lower) width are automatically skipped.
 
 I/O traps
 ---------

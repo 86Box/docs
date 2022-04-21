@@ -6,7 +6,7 @@ PCI
 Adding a device
 ---------------
 
-PCI devices can be added with the ``pci_add_card`` function in the device's ``init`` callback. A slot is :ref:`automatically selected <dev/api/pci:Slot types>` according to the ``add_type``; if the emulated machine runs out of PCI slots, a **DEC 21150** PCI-PCI bridge is automatically deployed to add 9 more slots.
+PCI devices can be added with the ``pci_add_card`` function in the device's ``init`` callback. A PCI slot is :ref:`automatically selected <dev/api/pci:Slot types>` for the device according to the ``add_type``; if the emulated machine runs out of slots, a **DEC 21150** PCI-PCI bridge is automatically deployed to add 9 more slots, and new devices are placed in the secondary PCI bus under it.
 
 .. container:: toggle
 

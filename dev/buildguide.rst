@@ -122,7 +122,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qttools5-dev libevdev-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qttools5-dev libevdev-dev
 
 
 macOS (Homebrew)
@@ -130,7 +130,7 @@ macOS (Homebrew)
 
 .. code-block:: bash
 
-    $ brew install freetype sdl2 libpng openal-soft rtmidi faudio qt@5
+    $ brew install cmake pkg-config ninja freetype sdl2 libpng openal-soft rtmidi faudio qt@5
 
 Building
 --------

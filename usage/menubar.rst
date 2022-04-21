@@ -3,6 +3,8 @@ Menu bar
 
 The menu bar located at the top of the 86Box window provides controls for the emulated machine as a whole, its display, and the 86Box user interface.
 
+.. important:: On macOS, the **Exit** (Quit), **Preferences** and **About 86Box** options are found in the **86Box** application menu instead of the locations outlined here.
+
 Action
 ------
 
