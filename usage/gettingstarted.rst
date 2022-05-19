@@ -3,9 +3,9 @@ Getting started
 
 Here are the basic steps to help you get started with 86Box. The user interface has been designed to resemble Virtual PC, VirtualBox and other virtualizers, so if you used those programs before, this should all look familiar to you.
 
-.. rubric:: Step 1: Get the romset
+.. rubric:: Step 1: Get the ROM set
 
-86Box relies on a bunch of external binary files, called ROMs, to emulate various hardware. Together, these files are known as the *romset*. If you try to start 86Box without one, you'll receive an error and 86Box will close. You need to download the romset from `here <https://github.com/86Box/roms/releases/latest>`_. If you're using a Windows machine, create a subfolder named ``roms`` in the folder where ``86Box.exe`` is located, and extract the romset there. If you're using a macOS machine, create a folder with the following path ``~/Library/Application Support/net.86box.86box/roms`` and extract the romset into it.
+86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by extension cards. If you try to start 86Box without one, you'll receive an error and 86Box will close. You need to download the ROM set from `here <https://github.com/86Box/roms/releases/latest>`_, and extract it into one of the :doc:`supported locations <roms>`.
 
 .. rubric:: Step 2: Meet the main window
 
