@@ -225,7 +225,7 @@ Devices can have any number of user-facing configuration options, usually access
 .. figure:: images/deviceconfig.png
    :align: center
 
-   All option types currently configurable through the user interface. [TO BE UPDATED ONCE I GET OUT OF HIDPI]
+   All option types currently configurable through the user interface.
 
 These options are stored in the emulated machine's configuration file, in a section identified by the device's ``name``:
 
@@ -242,7 +242,7 @@ These options are stored in the emulated machine's configuration file, in a sect
     midi_in = 0
 
 
-Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``-1``.
+Configuration options can be specified in the ``config`` member of ``device_t``, as a pointer to a ``const`` array of ``device_config_t`` objects terminated by an object of ``type`` ``CONFIG_END``.
 
 .. container:: toggle
 
@@ -283,10 +283,10 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
             { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
             { "int",       "Integer",     CONFIG_INT,       "", 1234 },
             { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
-            { "mac",       "MAC address", CONFIG_MAC,       "", 0 }
+            { "mac",       "MAC address", CONFIG_MAC,       "", 0 },
             { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
             { "midi_in",   "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
-            { "",          "",            -1 }
+            { "",          "",            CONFIG_END }
         };
 
         const device_t foo_device = {
@@ -321,7 +321,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_MAC``: last 3 octets of a MAC address, currently **not visible nor configurable** in the user interface;
       * ``CONFIG_MIDI_OUT``: combobox containing a list of system MIDI output devices;
       * ``CONFIG_MIDI_IN``: combobox containing a list of system MIDI input devices;
-      * ``-1``: **mandatory** terminator to indicate the end of the option list.
+      * ``CONFIG_END``: **mandatory** terminator to indicate the end of the option list.
 
   * - ``default_string``
     - Default string value for a ``CONFIG_STRING`` option. Can be ``""`` if not applicable.

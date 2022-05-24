@@ -36,7 +36,8 @@ div.admonition > p:nth-child(2) {
 .rst-content table.docutils li > p {
 	font-size: inherit;
 }
-.rst-content :not(.bit-table) > .wy-table-responsive > table.docutils td:not(:last-child) > p:only-child > code:only-child {
+.rst-content :not(.bit-table) > .wy-table-responsive > table.docutils td:not(:last-child) > p:only-child > code:only-child,
+.rst-content :not(.bit-table) > .wy-table-responsive > table.docutils tr > td:only-child > p:only-child > code:only-child {
 	font-size: inherit;
 
 	/* Additional tweaks for literal values alone in table cells. */
