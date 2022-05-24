@@ -79,11 +79,7 @@ Tools
 
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
-.. note:: Discord integration:
-          
-          * requires the Discord desktop app, and will not work with the browser app;
-          * will be unavailable on Windows hosts if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory;
-          * only supports the ``x86_64`` host architecture on Linux builds, as Discord does not provide integration components for other architectures.
+.. note:: Integration requires the Discord desktop app, running on x86 or x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for the browser app and other operating systems or architectures. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
