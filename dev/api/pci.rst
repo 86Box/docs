@@ -184,6 +184,8 @@ The PCI configuration space is split into a `standard register set <https://wiki
 
 .. note:: The documentation for some devices may treat configuration space registers as 16- or 32-bit-wide. Since 86Box works with 8-bit-wide registers, make sure to translate all wider register offsets and bit numbers into individual bytes (in little endian / least significant byte first).
 
+.. important:: Aside from the configuration space, devices will very often have a different set of registers in :ref:`I/O or memory space <dev/api/pci:Base Address Registers>`; from now on, "registers" will refer to configuration space registers.
+
 The most important registers in the standard set are:
 
 .. flat-table::
@@ -234,7 +236,7 @@ The most important registers in the standard set are:
   * - ``0x3c``
     - Interrupt Line
     - The PIC IRQ number assigned to this device's :ref:`interrupt pin <dev/api/pci:Interrupts>` (see ``Interrupt Pin`` below).
-      This register's contents should be ignored by the device; however, the register itself **must be writable** if the device uses interrupts, since 86Box actively uses its value to route interrupts on machines with early PCI chipsets not capable of IRQ steering.
+      While this register's contents should not be used by the device, the register itself **must be writable** if the device uses interrupts.
 
   * - ``0x3d``
     - Interrupt Pin
@@ -478,7 +480,7 @@ The aforementioned base address alignment allows software (BIOSes and operating 
 
     .. container:: toggle-header
 
-        Code example: memory and I/O BARs descibed above
+        Code example: memory and I/O BARs described above
 
     .. code-block::
 
@@ -776,6 +778,8 @@ The main difference between this register and BARs is that the ROM can be enable
             /* Reset PCI configuration registers. */
             memset(dev->pci_regs, 0, sizeof(dev->pci_regs));
 
+            /* Write default vendor ID, device ID, etc. */
+
             /* Clear ROM memory mapping. */
             //dev->pci_regs[0x04] = 0x00; /* Memory Space bit already cleared */
             //dev->pci_regs[0x30] = 0x00; /* Expansion ROM Enable bit already cleared */
@@ -820,4 +824,107 @@ The main difference between this register and BARs is that the ROM can be enable
 Interrupts
 ----------
 
-[TO BE WRITTEN]
+PCI devices can assert an interrupt on one of four **interrupt pins** called ``INTA#``, ``INTB#``, ``INTC#`` and ``INTD#``. Each function can only use one of these pins, specified by read-only register ``0x3d``. Each pin is connected to a system-wide **interrupt lane** (most chipsets provide 4 lanes), which is then routed to a PIC or APIC IRQ at boot time by the BIOS and/or operating system, through a process called **steering**. Different interrupt pins on different devices may share the same lane, and more than one lane may share the same PIC IRQ (or APIC IRQ if the APIC has no dedicated PCI interrupt inputs).
+
+The diagram below exemplifies a system with **interrupt steering performed by the chipset**. Early PCI chipsets are not capable of steering by themselves, instead requiring interrupt lanes to be manually routed to PIC IRQs using **jumpers** and the BIOS to be configured accordingly. On machines with non-steering-capable chipsets, 86Box skips the jumpers and uses the IRQs configured in the BIOS; this is done by snooping on the values the BIOS writes to register ``0x3c``.
+
+.. figure:: images/pciint.png
+   :align: center
+
+   PCI interrupt topology example. IRQ 10 is shared by two interrupt lanes. The machine is free to route any ``INTx#`` pin to any lane (sequentially or not), and free to route any lane to any available IRQ.
+
+An emulated PCI device can assert or de-assert an interrupt on any pin with the ``pci_set_irq`` and ``pci_clear_irq`` functions respectively. The PCI subsystem transparently handles interrupt lane routing (using the per-machine PCI slot table), sharing and steering. Once an interrupt is asserted, a device usually de-asserts it when an **interrupt flag** is cleared or an **interrupt mask flag** is set in its configuration, I/O or memory register space.
+
+.. container:: toggle
+
+    .. container:: toggle-header
+
+        Code example: PCI interrupts
+
+    .. code-block::
+
+        #include <86box/pci.h>
+
+        static void
+        foo_pci_write(int func, int addr, uint8_t val, void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) priv;
+
+            /* Ignore unknown functions. */
+            if (func > 0)
+                return;
+
+            /* The Interrupt Line register must be writable for 86Box to
+               know the IRQ to use on machines with non-steering chipsets. */
+            if (addr == 0x3c) {
+                dev->pci_regs[0x3c] = val;
+                return;
+            }
+
+            /* Example: PCI configuration register 0x40:
+               - Bit 0 (0x01) set: manually assert interrupt;
+               - Bit 0 (0x01) clear: de-assert interrupt. */
+            if (addr == 0x40) {
+                dev->pci_regs[0x40] = val;
+                if (val & 0x01)
+                    pci_set_irq(dev->slot, PCI_INTA);
+                else
+                    pci_clear_irq(dev->slot, PCI_INTA);
+            }
+        }
+
+        static void
+        foo_reset(void *priv)
+        {
+            /* Get the device state structure. */
+            foo_t *dev = (foo_t *) dev;
+
+            /* Reset PCI configuration registers. */
+            memset(dev->pci_regs, 0, sizeof(dev->pci_regs));
+
+            /* Write default vendor ID, device ID, etc. */
+
+            /* Our device uses the INTA# interrupt line. */
+            dev->pci_regs[0x3d] = PCI_INTA;
+        }
+
+        /* Don't forget to add the PCI device on init first, and to save
+           the return value of pci_add_card (to dev->slot in this case). */
+
+        const device_t foo4321_device = {
+            /* ... */
+            .reset = foo_reset,
+            /* ... */
+        };
+
+.. flat-table:: ``pci_set_irq`` / ``pci_clear_irq``
+  :header-rows: 1
+  :widths: 1 999
+
+  * - Parameter
+    - Description
+
+  * - ``card``
+    - Value representing this PCI device, returned by ``pci_add_card``.
+
+  * - ``pci_int``
+    - Interrupt pin to assert (``pci_set_irq``) or de-assert (``pci_clear_irq``): ``PCI_INTA``, ``PCI_INTB``, ``PCI_INTC`` or ``PCI_INTD``.
+
+Motherboard interrupts
+^^^^^^^^^^^^^^^^^^^^^^
+
+Some chipsets may provide steerable **motherboard IRQ** (MIRQ) lines for on-board devices to use. The amount of available lines depends on the chipset, and the purposes for those lines depend on the machine. 86Box supports up to 8 MIRQ lines, which can be asserted or de-asserted with the ``pci_set_mirq`` and ``pci_clear_mirq`` functions respectively.
+
+.. flat-table:: ``pci_set_mirq`` / ``pci_clear_mirq``
+  :header-rows: 1
+  :widths: 1 999
+
+  * - Parameter
+    - Description
+
+  * - ``mirq``
+    - MIRQ line to assert (``pci_set_mirq``) or de-assert (``pci_clear_mirq``): ``PCI_MIRQ0`` through ``PCI_MIRQ7``.
+
+  * - ``level``
+    - ``1`` if this MIRQ should be level-triggered, ``0`` if it should be edge-triggered.
