@@ -25,6 +25,7 @@ Contents
    :caption: Using 86Box
    
    usage/gettingstarted
+   usage/roms
    usage/menubar
    usage/toolbar
    usage/statusbar
@@ -46,4 +47,5 @@ Contents
    
    dev/buildguide
    dev/builds
+   dev/api/index
    dev/formats/index

@@ -3,7 +3,7 @@
 |ports| Ports (COM & LPT)
 =========================
 
-The *Ports (COM & LPT)* page contains settings related to the emulated machine's I/O ports.
+The **Ports (COM & LPT)** page contains settings related to the emulated machine's I/O ports.
 
 LPT1-4 Device
 -------------

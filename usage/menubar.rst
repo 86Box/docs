@@ -3,6 +3,8 @@ Menu bar
 
 The menu bar located at the top of the 86Box window provides controls for the emulated machine as a whole, its display, and the 86Box user interface.
 
+.. important:: On macOS, the **Exit** (Quit), **Preferences** and **About 86Box** options are found in the **86Box** application menu instead of the locations outlined here.
+
 Action
 ------
 
@@ -24,17 +26,18 @@ View
 * **Renderer:** select a graphical renderer for the emulated display.
 
    * **SDL (Hardware)** is recommended in most cases.
-   * **SDL (Software)** and **SDL (OpenGL)** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
+   * **SDL (Software)**, **SDL (OpenGL)** and **Vulkan** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
    * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
-* **OpenGL options:** configure the *OpenGL (3.0 Core)* renderer. This submenu will be available if that renderer is selected.
+* **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
 
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Sync with video* uses the emulated display's current refresh rate.
+   * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
    * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Select shader:** load a .glsl shader file to apply on the emulated display. Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
-   * **Remove shader:** disable the currently-loaded shader.
+   * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
+   * **Remove:** disable the currently-loaded shader.
 
-.. note:: * Shaders that take advantage of multipass and previous frames are not supported.
+.. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+          * Shaders that take advantage of multipass and previous frames are not supported.
           * ``.cg`` and ``.cgp`` shaders are not supported either, as these formats are long deprecated.
 
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
@@ -76,7 +79,7 @@ Tools
 
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
-.. note:: Discord integration will not be available if the Discord desktop app is not running, if (on Windows hosts) the included ``discord_game_sdk.dll`` file is missing from the 86Box directory, or (on Linux hosts) non-x86_64 builds.
+.. note:: Integration requires the Discord desktop app, running on x86 or x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.

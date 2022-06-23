@@ -3,7 +3,7 @@
 |sound| Sound
 =============
 
-The *Sound* page contains settings related to the emulated machine's audio hardware.
+The **Sound** page contains settings related to the emulated machine's audio hardware.
 
 Parallel port sound devices such as the **Disney Sound Source** and **Covox Speech Thing** are not present on this page; they can be configured through the :ref:`Ports page <settings/ports:LPT1-4 Device>`.
 

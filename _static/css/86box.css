@@ -1,0 +1,132 @@
+/* Give some spacing to icons in headings. */
+h1 > img,
+h2 > img {
+	padding-right: 5px;
+}
+
+/* Remove bottom spacing from lists in tables and admonitions. */
+table.docutils ul, table.docutils ol {
+	margin-bottom: 0 !important;
+}
+div.admonition > p:nth-child(2) {
+	margin-bottom: 0;
+}
+
+/* Avoid horizontal scrolling of API documentation tables. */
+.wy-table-responsive table td {
+	white-space: normal;
+}
+
+/* Tweak API documentation table titles. */
+.rst-content table.docutils caption,
+.rst-content table.docutils caption span {
+	padding-top: 0;
+	font-style: normal;
+}
+.rst-content table.docutils caption code {
+	font-size: inherit;
+	font-style: normal;
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+/* Fix font size for some elements in table cells. */
+.rst-content table.docutils li > p,
+.rst-content table.docutils li > p {
+	font-size: inherit;
+}
+.rst-content :not(.bit-table) > .wy-table-responsive > table.docutils td:not(:last-child) > p:only-child > code:only-child,
+.rst-content :not(.bit-table) > .wy-table-responsive > table.docutils tr > td:only-child > p:only-child > code:only-child {
+	font-size: inherit;
+
+	/* Additional tweaks for literal values alone in table cells. */
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+/* Tweaks for nested tables. */
+.rst-content table.docutils td .wy-table-responsive {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+.rst-content tr.row-odd > td {
+	background-color: #fcfcfc !important; /* originally transparent */
+}
+
+/* Text transformation for tables. */
+div.vertical-text {
+	transform: rotate(270deg);
+}
+
+/* Bitfield table. */
+.rst-content .bit-table table th:not(.stub),
+.rst-content .bit-table table td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 26px; /* two numeric digits */
+	padding: 0; /* only eliminates side padding, but good enough */
+}
+.rst-content .bit-table table th code:only-child {
+	font-size: inherit;
+	font-weight: normal;
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+/* Toggle containers. toggle-always-show is a class that takes
+   on the look of a toggle container, but is always shown. */
+.rst-content .toggle,
+.rst-content .toggle-always-show {
+	background: #f3f6f6;
+	border: 1px solid #e1e4e5;
+	padding: 1em;
+	margin: 0 0 24px;
+}
+.rst-content .toggle-closed > .toggle-header,
+.rst-content .toggle-open > .toggle-header {
+	cursor: pointer;
+}
+@media screen { /* show toggle arrows and hide toggle contents on screen only */
+	.rst-content .toggle-closed > .toggle-header > p:before {
+		content: "\0025B6  ";
+	}
+	.rst-content .toggle-open > .toggle-header > p:before {
+		content: "\0025BC  ";
+	}
+	.rst-content .toggle-closed > div:nth-child(2) {
+		display: none;
+	}
+}
+.rst-content .toggle-header > p {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.rst-content .toggle > div:nth-child(2),
+.rst-content .toggle-always-show > div:nth-child(2) {
+	margin-top: 12px;
+	margin-bottom: 0;
+}
+
+/* Print stuff. */
+@media print {
+	/* Allow page breaks in the middle of code. */
+	pre {
+		break-inside: auto;
+	}
+
+	/* Fix theme bug where code blocks have blank space at the end. */
+	.rst-content div[class^=highlight] {
+		white-space: nowrap;
+	}
+	.rst-content div[class*="highlight-"] {
+		white-space: pre-wrap;
+	}
+
+	/* Always show toggle containers. */
+	.rst-content .toggle-closed > div:nth-child(2) {
+		display: block !important;
+	}
+}

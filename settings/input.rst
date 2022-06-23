@@ -3,7 +3,7 @@
 |input_devices| Input devices
 =============================
 
-The *Input devices* page contains settings related to the emulated machine's mouse, joysticks and other input devices.
+The **Input devices** page contains settings related to the emulated machine's mouse, joysticks and other input devices.
 
 Mouse
 -----
@@ -22,10 +22,12 @@ Joystick
 Emulate one or more game port controller(s). The following controller types are supported:
 
 * **None:** no controller connected.
-* **Standard 2-button joystick(s):** up to two controllers, each with two buttons and an analog stick.
-* **Standard 4-button joystick:** single controller with four buttons and an analog stick.
-* **Standard 6-button joystick:** single controller with four regular buttons, two additional buttons mapped to the third and fourth axes, and an analog stick.
-* **Standard 8-button joystick:** single controller with four regular buttons, four additional buttons mapped to the third and fourth axes, and an analog stick.
+* **2-axis, 2-button joystick(s):** up to two controllers, each with two buttons and an analog stick.
+* **2-axis, 4-button joystick:** single controller with four buttons and an analog stick.
+* **3-axis, 2-button joystick:** single controller with two buttons and an analog stick and a throttle.
+* **3-axis, 4-button joystick:** single controller with four buttons and an analog stick and a throttle.
+* **2-axis, 6-button joystick:** single controller with four regular buttons, two additional buttons mapped to the third and fourth axes, and an analog stick.
+* **2-axis, 8-button joystick:** single controller with four regular buttons, four additional buttons mapped to the third and fourth axes, and an analog stick.
 * **4-axis 4-button joystick:** single controller with four buttons and two analog sticks (or four axes).
 * **CH Flightstick Pro:** flight controller with four buttons, three axes and a POV hat.
 * **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.

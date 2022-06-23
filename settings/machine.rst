@@ -3,7 +3,7 @@
 |machine| Machine
 =================
 
-The *Machine* page contains settings related to the emulated machine as a whole, such as the machine type, CPU type and amount of memory.
+The **Machine** page contains settings related to the emulated machine as a whole, such as the machine type, CPU type and amount of memory.
 
 Machine type / Machine
 ----------------------

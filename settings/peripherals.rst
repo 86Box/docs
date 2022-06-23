@@ -3,7 +3,7 @@
 |other_peripherals| Other peripherals
 =====================================
 
-The *Other peripherals* page contains settings related to disk drive controllers, memory expansions and other expansion cards.
+The **Other peripherals** page contains settings related to disk drive controllers, memory expansions and other expansion cards.
 
 
 ISA RTC
@@ -32,11 +32,29 @@ Emulate a diagnostic POST card, which displays POST code values issued by the em
 
 The POST card will automatically use the correct diagnostic I/O port for the emulated machine:
 
-* Port 10h on the IBM PCjr;
-* Port 60h on the IBM XT;
-* Port 80h on the IBM AT, clones and the XT-based Xi 8088;
-* Port 84h on early Compaq machines;
-* Port 0190h on IBM PS/1 and PS/2 machines not based on the Micro Channel Architecture;
-* Port 0680h on Micro Channel Architecture machines.
+.. flat-table::
+  :header-rows: 1
+  :widths: 1 999
 
-.. note:: Some operating systems and applications use port 80h (which is shared with the POST card on most machines) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+  * - Port
+    - Machine types
+
+  * - ``0x10``
+    - IBM PCjr
+
+  * - ``0x60``
+    - IBM XT
+
+  * - ``0x80``
+    - IBM AT, clones and the XT-based Xi 8088
+
+  * - ``0x84``
+    - Early Compaq
+
+  * - ``0x190``
+    - IBM PS/1 and PS/2 not based on the Micro Channel Architecture
+
+  * - ``0x680``
+    - Micro Channel Architecture
+
+.. note:: Some operating systems and applications use port ``0x80`` (which is shared with the POST card on most machines) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.

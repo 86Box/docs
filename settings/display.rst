@@ -3,7 +3,7 @@
 |display| Display
 =================
 
-The *Display* page contains settings related to the emulated machine's 2D and 3D video cards.
+The **Display** page contains settings related to the emulated machine's 2D and 3D video cards.
 
 Video
 -----
@@ -48,3 +48,10 @@ The *Configure* button provides the following settings:
 
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
+
+8514/A
+------
+
+Emulate an **IBM 8514/A** add-on graphics accelerator. Both the original IBM card for the MCA bus and a generic clone card for the ISA bus are available; the correct card is automatically selected based on the machine's supported expansion buses.
+
+.. note:: Pairing the 8514/A with a video card from **S3** may result in compatibility issues, as those cards implement a subset of the 8514/A's features.

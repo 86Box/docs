@@ -54,14 +54,3 @@
 .. |storage_controllers_small| image:: /usage/images/storage_controllers_small.png
 .. |zip| image:: /usage/images/zip.png
 .. |zip_small| image:: /usage/images/zip_small.png
-
-.. raw:: html
-
-  <style>
-    h1 > img {
-      padding-right: 5px;
-    }
-    h2 > img {
-      padding-right: 5px;
-    }
-  </style>
