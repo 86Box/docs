@@ -54,4 +54,4 @@ The *Configure* button provides the following settings:
 
 Emulate an **IBM 8514/A** or **XGA** add-on graphics accelerator. Both the original IBM cards for the MCA bus and generic clone cards for the ISA bus are available; the correct card is automatically selected based on the machine's supported expansion buses.
 
-.. note:: Pairing the 8514/A or XGA with a video card from **S3** may result in compatibility issues, as S3 cards implement a subset of 8514/A features.
+.. note:: Pairing the 8514/A and XGA with each other or with a video card from **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
