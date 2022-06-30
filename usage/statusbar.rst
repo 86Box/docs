@@ -3,7 +3,7 @@
 Status bar
 ==========
 
-The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
+The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below, and image files can be dropped on the icons for removable media devices such as floppy and CD-ROM drives. Additionally, a green indicator light will appear on an icon when its device is in use, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
 
 |cassette| Cassette deck
 ------------------------
@@ -11,7 +11,7 @@ The status bar located at the bottom of the 86Box window provides icons related 
 A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled.
 
 * **New image:** create a new cassette tape image file.
-* **Existing image:** insert a :ref:`cassette tape image file <hardware/diskimages:Cassette tape images>` into the deck.
+* **Existing image:** insert a :ref:`cassette tape image file <hardware/diskimages:Cassette tape images>` into the deck. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a cassette tape image file into the deck as a read-only tape.
 * **Record:** start recording data to the cassette tape. Not available if the tape is read-only.
 * **Play:** start playing the cassette tape.
@@ -24,7 +24,7 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 
 Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon corresponds to a cartridge slot on the PCjr's front panel.
 
-* **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr.
+* **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr. Dragging and dropping an image file on the icon will also load it.
 * **Eject:** remove the currently-inserted cartridge from this slot.
 
 |floppy_35| |floppy_525| Floppy drives
@@ -33,7 +33,7 @@ Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon
 A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <settings/floppycdrom:Floppy drives>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
-* **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive.
+* **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
@@ -46,7 +46,7 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
 * **Empty:** remove any disc inserted into this drive.
 * **Reload previous image:** reinsert the last disc image file selected through the *Image* option.
-* **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive.
+* **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 
 |zip| |mo| ZIP and MO drives
 ----------------------------
@@ -54,7 +54,7 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 A ZIP or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
-* **Existing image:** insert a :ref:`disk image file <hardware/diskimages:MO / ZIP removable disk images>` into this drive.
+* **Existing image:** insert a :ref:`disk image file <hardware/diskimages:MO / ZIP removable disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * **Eject:** remove the currently-inserted disk from this drive.
 * **Reload previous image:** reinsert the last disk image file selected through the *Existing image* options.
