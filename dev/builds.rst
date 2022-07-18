@@ -18,13 +18,13 @@ Variants
 
   * x64 (64-bit) allows for emulating more than 2 GB of RAM on some later machines and using larger soundfonts with FluidSynth, at a slight performance loss.
 
-* The regular variant (**86Box**) is recommended; it is compiled with the ``--preset=regular`` CMake flag, enabling the default feature set.
+* On **Linux**, select the correct architecture for your system, as most distributions lack x64-to-x86 and ARM64-to-ARM32 backwards compatibility by default.
 
-  * Release versions of 86Box are based on this variant.
+* On **macOS**, **Universal** supports both Intel and Apple Silicon Macs.
 
-* The debug variant (**86Box-Debug**) is compiled with the ``--preset=debug`` CMake flag, which provides debug symbols and no optimizations, to allow for debugging with ``gdb`` and other tools.
+  * The New Recompiler is always used on Apple Silicon due to its ARM architecture, even if the Old Recompiler is selected.
 
-  * This variant runs slower than the standard one due to the removal of optimizations and addition of debugging features.
+.. note:: Debug variants have been moved to a `special page on the 86Box website <//86box.net/debug.html>`_ as of July 18th 2022 due to constant misuse.
 
 Discontinued variants
 ^^^^^^^^^^^^^^^^^^^^^
