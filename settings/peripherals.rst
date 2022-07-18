@@ -32,7 +32,7 @@ Emulate a diagnostic POST card, which displays POST code values issued by the em
 
 The POST card will automatically use the correct diagnostic I/O port for the emulated machine:
 
-.. flat-table::
+.. list-table::
   :header-rows: 1
   :widths: 1 999
 
