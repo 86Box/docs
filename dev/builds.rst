@@ -24,7 +24,7 @@ Variants
 
   * The New Recompiler is always used on Apple Silicon due to its ARM architecture, even if the Old Recompiler is selected.
 
-.. note:: Debug variants have been moved to a `special page on the 86Box website <//86box.net/debug.html>`_ as of July 18th 2022 due to constant misuse.
+.. note:: Debug variants have been moved to a `special page on the 86Box website <//86box.net/debug.html>`_ as of July 18th 2022.
 
 Discontinued variants
 ^^^^^^^^^^^^^^^^^^^^^
