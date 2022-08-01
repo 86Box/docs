@@ -19,8 +19,9 @@ Action
 View
 ----
 
-* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
 * **Hide toolbar:** hides the :doc:`toolbar <toolbar>` below the menu bar.
+* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
+* **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.

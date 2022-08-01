@@ -15,6 +15,13 @@ All hard disks attached to the emulated system are listed, with the following in
 * **C/H/S:** disk size in cylinders, heads and sectors, respectively.
 * **MB:** disk size in megabytes.
 
+Speed profiles
+--------------
+
+The *Speed* box below the hard disk list controls the **emulated speed profile** for the selected disk. Speed emulation takes the rotation speed, physical layout and cache size of an average period-correct drive into account. The **RAM Disk** profile runs the drive as fast as the host can manage.
+
+.. note:: Speed profiles are currently only available for **IDE** and **ESDI** hard disks. The RAM Disk profile is always used on other disk types.
+
 Adding a new disk
 -----------------
 

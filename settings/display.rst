@@ -12,6 +12,13 @@ Video card to emulate. This box only lists cards supported by the machine's expa
 
 The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of video memory.
 
+Video #2
+--------
+
+Optional secondary video card to emulate. Only the **MDA**, **Hercules** and **Hercules Plus** monochrome cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
+
+As with the primary card above, the *Configure* button can be used to configure the selected card.
+
 Voodoo Graphics
 ---------------
 
@@ -53,5 +60,7 @@ The *Configure* button provides the following settings:
 ------------
 
 Emulate an **IBM 8514/A** or **XGA** add-on graphics accelerator. Both the original IBM cards for the MCA bus and generic clone cards for the ISA bus are available; the correct card is automatically selected based on the machine's supported expansion buses.
+
+The *Configure* button next to the XGA opens a new window where the card type (**XGA-1** or **XGA-2**) and initial BIOS address can be configured.
 
 .. note:: Pairing the 8514/A and XGA with each other or with a video card from **S3** may result in compatibility issues, as each card implements a set of 8514/A features.

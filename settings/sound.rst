@@ -62,11 +62,14 @@ Gravis Ultrasound
 
 Emulate the **Gravis UltraSound** ISA sound card.
 
-The type of UltraSound to emulate (Classic or MAX), I/O port and amount of onboard RAM can be configured through the *Configure* button.
-
-.. note:: MAX support is only implemented on Dev builds at the moment.
+The I/O port and amount of onboard RAM can be configured through the *Configure* button.
 
 Use FLOAT32 sound
 -----------------
 
 Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
+
+FM synth driver
+---------------
+
+OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
