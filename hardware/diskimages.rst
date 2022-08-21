@@ -271,3 +271,100 @@ Supported formats:
   * - JRipCart
     - .jrc
     -
+
+Creating and using disk images
+------------------------------
+
+Disk images are a convenient way to transfer files in and out of your machine without the need to configure networking. Perhaps your OS doesn't support networking or you don't want to deal with the added complexity of configuring networking on legacy operating systems.
+
+The tooling available varies by host operating system, ranging from command-line tools to full GUI.
+
+Floppy: mtools (Linux, macOS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `mtools <https://www.gnu.org/software/mtools/>`_ suite is "a collection of utilities to access MS-DOS disks from GNU and Unix without mounting them." With ``mtools`` you can create floppy disk images and copy files to the image. The resulting image can be mounted in 86Box. ``mtools`` can be installed via homebrew on macOS and is available in the standard package repositories on linux.
+
+.. warning:: Never use a tool or utility to write to a disk image that is currently mounted by 86Box. Doing so can lead to unpredictable results, including filesystem corruption.
+
+Creating floppy images
+**********************
+
+The following command will create a 1.4M (1440K, double-sided, 18 sectors per track, 80 cylinders) floppy image named ``floppy.img`` with a label of ``LABEL``:
+
+.. code-block::
+
+  mformat -f 1440 -v LABEL -C -i floppy.img ::
+
+The ``-f`` option specifies the format of the floppy being created. The command can be adjusted for format, label, and image name as needed.
+
+Please see the `mtools documentation <https://www.gnu.org/software/mtools/manual/mtools.html#mformat>`_ for more information on the supported formats.
+
+Copying files to floppy images
+******************************
+
+The following command will copy ``file1`` and ``file2`` to the floppy image ``floppy.img``:
+
+.. code-block::
+
+  mcopy -i floppy.img file1 file2 ::
+
+Wildcards are also supported with ``mcopy``.
+
+.. note:: The ``::`` is required to let ``mtools`` know there are no more files to copy or arguments to process.
+
+CD-ROM: macOS
+^^^^^^^^^^^^^
+
+macOS can natively mount CD-ROM ISOs, but to create them you'll need to open up the terminal.
+
+The following command creates an ISO file named ``cdrom.iso`` with the volume name ``CDROM``.
+
+.. code-block::
+
+  hdiutil makehybrid -iso -joliet -joliet-volume-name "CDROM" -o /path/to/cdrom.iso /path/to/cd/root
+
+In the above example the directory ``/path/to/cd/root`` becomes the root directory of the ISO image.
+
+If you wanted your current working directory to be the ISO root filesystem you could use the following command:
+
+.. code-block::
+
+  hdiutil makehybrid -iso -joliet -joliet-volume-name "CDROM" -o ../cdrom.iso .
+
+.. note:: Make sure the output filename with ``-o`` has a path outside of the filesystem root.
+
+CD-ROM: Linux
+^^^^^^^^^^^^^
+
+Linux provides the ``mkisofs`` tool in order to easily create ISO images. The following command creates the ISO file ``cdrom.iso`` which contains the contents of the directory ``/path/to/cd/root``:
+
+.. code-block::
+
+  mkisofs -o cdrom.iso /path/to/cd/root
+
+.. note::
+  This package is available in the standard distribution repositories, generally under the ``mkisofs`` or ``genisoimage`` package names.
+
+Disk Image: macOS
+^^^^^^^^^^^^^^^^^
+
+macOS can natively mount raw disk images (floppy or hard disk) of types ``FAT16`` and ``FAT32``. Simply double click the file in Finder to mount the image.
+
+For fixed-size ``vhd`` files the following command may work depending your your macOS version:
+
+.. code-block::
+
+  hdiutil attach -imagekey diskimage-class=CRawDiskImage /path/to/your/vhd
+
+.. note:: As with any image file in macOS, the image can only be mounted if macOS can read the underlying filesystem. macOS can read both ``FAT16`` and ``FAT32``.
+
+Various: Windows
+^^^^^^^^^^^^^^^^^
+
+On Windows you can use WinImage to create and manipulate disk images.
+
+Windows will also allow you to directly mount a ``vhd`` file in order to copy files. The ``Disk Management`` utility allows you to attach a ``vhd`` file by selecting ``Action -> Attach VHD`` from the menu.
+
+.. warning:: As above, make sure that two different applications never mount the same image file simultaneously. For example, do not mount a ``vhd`` with Windows that is currently mounted by 86Box.
+
+Windows also provides command-line functionality via the ``diskpart`` command. The documentation can located `here <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>`_.
