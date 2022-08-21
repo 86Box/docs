@@ -361,7 +361,7 @@ For fixed-size ``vhd`` files the following command may work depending your your 
 Various: Windows
 ^^^^^^^^^^^^^^^^^
 
-On Windows you can use WinImage (paid software) to create and manipulate disk images.
+On Windows you can use WinImage to create and manipulate disk images.
 
 Windows will also allow you to directly mount a ``vhd`` file in order to copy files. The ``Disk Management`` utility allows you to attach a ``vhd`` file by selecting ``Action -> Attach VHD`` from the menu.
 
