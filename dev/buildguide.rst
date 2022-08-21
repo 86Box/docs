@@ -125,6 +125,16 @@ Ubuntu, Debian
     $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev
 
 
+Arch
+"""""""""""""
+
+* Make sure to enable the multilib repository in your pacman.conf
+
+.. code-block:: bash
+  
+    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkg-config ninja libfreetype sdl2 libpng lib32-openal rtmidi faudio qt5-base qt5-xcb-private-headers qt5-tools libevdev vulkan-devel
+
+
 macOS (Homebrew)
 """"""""""""""""
 
