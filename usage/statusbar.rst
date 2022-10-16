@@ -35,6 +35,7 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
+* A history of the last few images that were loaded into this drive. Click on an entry to load it back.
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
 
@@ -44,9 +45,10 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`.
 
 * **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
-* **Empty:** remove any disc inserted into this drive.
-* **Reload previous image:** reinsert the last disc image file selected through the *Image* option.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.
+* **Folder:** insert a virtual CD-ROM or DVD-ROM with the contents of a host folder into this drive. Dragging and dropping a folder on the icon will also load it.
+* A history of the last few images or folders that were loaded into this drive. Click on an entry to load it back.
+* **Eject:** remove any disc inserted into this drive.
 
 |zip| |mo| ZIP and MO drives
 ----------------------------
@@ -67,7 +69,9 @@ A hard disk icon will appear for each configured :doc:`hard disk bus <../setting
 |network| Network
 -----------------
 
-This icon will appear if :doc:`networking <../settings/network>` is enabled. No options are available.
+A network icon will appear for each configured :doc:`network card <../settings/network>`.
+
+* **Connected:** connect this card to its network. Network cards with link state detection support will report a disconnected cable if this option is unchecked.
 
 |sound| Sound
 -------------

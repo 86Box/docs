@@ -46,6 +46,9 @@ View
 * **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*) or double (*2x*) sizes.
 * **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
+
+.. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
+
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
@@ -66,7 +69,7 @@ View
 Media
 -----
 
-This menu lists all storage drives attached to the emulated machine, and provides the same controls that are accessible by clicking the respective drive's icon on the :doc:`status bar <statusbar>`.
+This menu lists all storage drives and network cards attached to the emulated machine, and provides the same controls that are accessible by clicking the respective device's icon on the :doc:`status bar <statusbar>`.
 
 Tools
 -----
@@ -77,7 +80,7 @@ Tools
 
 .. note:: Integration requires the Discord desktop app, running on x86 or x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
-* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
+* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below.
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
@@ -87,6 +90,7 @@ Tools
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
+* **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
 
 Help
 ----

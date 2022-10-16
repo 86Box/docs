@@ -45,6 +45,6 @@ Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provid
 Parallel port 1-4
 -----------------
 
-Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
+Enable emulation of parallel ports ranging from LPT1 to LPT4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
 
 .. note:: The 4th parallel port is not widely supported. It is located at I/O port 268h.
