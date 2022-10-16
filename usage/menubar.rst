@@ -45,6 +45,9 @@ View
 * **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*) or double (*2x*) sizes.
 * **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
+
+.. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
+
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
