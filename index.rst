@@ -25,6 +25,7 @@ Contents
    :caption: Using 86Box
    
    usage/gettingstarted
+   usage/faq
    usage/roms
    usage/menubar
    usage/toolbar
