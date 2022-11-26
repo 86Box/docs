@@ -28,8 +28,8 @@ The IRQ used by each controller can be configured through its respective *Settin
 
 .. note:: The tertiary and quaternary controllers are not Plug and Play compliant by default; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
 
-SCSI Controllers
-----------------
+SCSI
+----
 
 SCSI host bus adapter cards to emulate. Up to 4 SCSI cards are supported. The selection boxes only list cards supported by the machine's expansion buses.
 
