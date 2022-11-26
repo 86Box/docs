@@ -5,6 +5,51 @@ This page contains important notes related to specific machine models emulated b
 
 ----
 
+8088
+----
+
+.. _t1000:
+.. rubric:: Toshiba T1000
+
+The function keys can be accessed by holding Right Alt or Right Ctrl:
+
+* ``Right Alt/Ctrl + Num Lock``: Show/hide numeric keypad overlay
+* ``Right Alt/Ctrl + Right``: Change internal display font
+* ``Right Alt/Ctrl + Home``: Use internal display
+* ``Right Alt/Ctrl + End``: Use external display
+
+8086
+----
+
+.. _m24:
+.. rubric:: Olivetti M21/24/24SP
+
+The special keys on Olivetti keyboards are mapped as such:
+
+* ``Page Up``: CLEAR
+* ``Page Down``: BREAK
+* ``Print Screen``: SCR PRT
+* ``Menu``: HELP
+* ``Left Windows``: 00
+* ``Insert``: F13
+* ``Home``: F14
+* ``Del``: F15
+* ``End``: F16
+* ``Right Alt``: F17
+* ``Right Win``: F18
+
+.. rubric:: Olivetti M240
+
+See: :ref:`m24`
+
+.. rubric:: Toshiba T1200
+
+All function keys from the :ref:`T1000 <t1000>` are present, plus:
+
+* ``Right Alt/Ctrl + Page Up``: Turbo mode on
+* ``Right Alt/Ctrl + Page Down``: Turbo mode off
+* ``Right Alt/Ctrl + Print Screen``: Show/hide pop-up window
+
 80286
 -----
 
@@ -20,8 +65,8 @@ Socket 7
 
 * Modular motherboard, consisting of a **P/I-P65UP5** baseboard and one of the following CPU cards:
 
-   * **C-P55T2D:** Socket 7 with Intel 430HX northbridge.
-   * **C-P6ND:** Socket 8 with Intel 440FX northbridge.
+   * **C-P55T2D:** Socket 7 with Intel 430HX northbridge;
+   * **C-P6ND:** Socket 8 with Intel 440FX northbridge;
    * **C-PKND:** Slot 1 with Intel 440FX northbridge.
 
 * While the northbridge depends on the selected CPU card, the southbridge always remains the Intel PIIX3, as it is located on the baseboard.
