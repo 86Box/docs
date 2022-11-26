@@ -14,7 +14,7 @@ Sound card to emulate. Only cards supported by the machine's expansion buses wil
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
-Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ library.
+Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`.
 
 MIDI Out Device
 ---------------
@@ -72,4 +72,6 @@ Use the 32-bit floating point (instead of 16-bit integer) data type for audio ou
 FM synth driver
 ---------------
 
-OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
+Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
+
+.. note:: **YMFM** is always used for OPL4 emulation on sound cards equipped with that synthesizer.
