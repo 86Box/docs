@@ -13,7 +13,7 @@ Toolchain files
 
 Toolchain files are contained in the ``cmake`` directory. They define compiler flags and the 86Box-specific ``Release``, ``Debug`` and ``Optimized`` build types.
 
-It is not required to required to use the included toolchain files, but it is highly recommended to make sure your build is compiled with the same configuration as used by the rest of the team and our userbase.
+It is not required to use the included toolchain files, but it is highly recommended to make sure your build is compiled with the same configuration as used by the rest of the team and our userbase.
 
 The currently included files are:
 
