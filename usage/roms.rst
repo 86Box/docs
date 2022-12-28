@@ -1,7 +1,7 @@
 ROM set
 =======
 
-86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by extension cards.
+86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by expansion cards.
 
 The ROM set is organized into several directories for each device type, each of which contains futher subdirectories for each machine or device model or category.
 
