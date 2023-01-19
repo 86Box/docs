@@ -70,7 +70,7 @@ With the exception of **[LPT] Parallel Port Internet Protocol**, every emulated 
 SLiRP port forwarding
 ^^^^^^^^^^^^^^^^^^^^^
 
-Port forwarding allows the host system and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding]`` section of the configuration file.
+Port forwarding allows the host system and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding #x]`` section of the configuration file, where x is the number of the emulated network card, in the range of 1 to 4.
 
 Each port forward must be assigned a number, starting at 0 and counting up (skipping a number will result in all subsequent port forwards being ignored), which replaces ``X`` on the following directives:
 
