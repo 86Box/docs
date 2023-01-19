@@ -90,7 +90,7 @@ The host system can access forwarded ports through 127.0.0.1 or its own IP addre
 
     .. code-block:: none
 
-        [SLiRP Port Forwarding]
+        [SLiRP Port Forwarding #1]
         0_external = 8080
         0_internal = 80
         1_protocol = udp
