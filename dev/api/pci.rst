@@ -319,7 +319,7 @@ The ``func`` parameter passed to a device's configuration space read/write callb
 
             /* Reset PCI configuration registers. */
             memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
-            memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
+            memset(dev->pci_regs[1], 0, sizeof(dev->pci_regs[1]));
 
             /* Write default vendor IDs, device IDs, etc. */
 
