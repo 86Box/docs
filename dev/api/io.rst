@@ -3,7 +3,7 @@ Port I/O
 
 86Box handles the x86 port I/O space through **I/O handlers**. These handlers can be added with the ``io_sethandler`` function and removed with the ``io_removehandler`` function, both provided by ``86box/io.h``.
 
-.. flat-table:: io_sethandler / io_removehandler
+.. flat-table:: ``io_sethandler`` / ``io_removehandler``
   :header-rows: 1
   :widths: 1 999
 
@@ -203,7 +203,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
             /* ... */
         };
 
-.. flat-table:: io_trap_add
+.. flat-table:: ``io_trap_add``
   :header-rows: 1
   :widths: 1 999
 
@@ -228,7 +228,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
   * - **Return value**
     - Opaque (``void``) pointer representing the newly-created I/O trap.
 
-.. flat-table:: io_trap_remap
+.. flat-table:: ``io_trap_remap``
   :header-rows: 1
   :widths: 1 999
 
