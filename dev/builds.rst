@@ -24,10 +24,14 @@ Variants
 
   * The New Recompiler is always used on Apple Silicon due to its ARM architecture, even if the Old Recompiler is selected.
 
-.. note:: Debug variants have been moved to a `special page on the 86Box website <//86box.net/debug.html>`_ as of July 18th 2022.
-
 Discontinued variants
 ^^^^^^^^^^^^^^^^^^^^^
+
+These variants are no longer built by Jenkins and can only be :doc:`compiled from source <buildguide>`.
+
+* Debug variants (**86Box-Debug**) as of April 2nd 2023.
+
+  * These variants were compiled with debug symbols and reduced optimizations to help with running the emulator under ``gdb`` or other debuggers. They were eliminated as the setup process for debugging grew closer to just compiling from source instead.
 
 * Dev variants (**86Box-Dev** and **86Box-DevODR**) as of November 18th 2021.
 
@@ -36,4 +40,3 @@ Discontinued variants
 * Optimized variants (**86Box-Optimized**) as of March 18th 2021.
 
   * These variants' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
-  * Optimized binaries can still be produced by :doc:`compiling 86Box from source <buildguide>` with the ``--preset=optimized`` CMake flag, which enables optimizations for the build host's CPU microarchitecture. No support will be provided for those.
