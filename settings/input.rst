@@ -8,13 +8,16 @@ The **Input devices** page contains settings related to the emulated machine's m
 Mouse
 -----
 
-Emulate a pointing device. The following mouse types are supported:
+Emulate a pointing device. The following types are supported:
 
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
-* **Serial mouse:** connected to the serial port of your choosing. The selected serial port must be enabled on the :ref:`Ports tab <settings/ports:Serial port 1-4>`.
+* **Serial mouse:** connected to the serial port of your choosing.
 * **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
+* **Wacom tablet:** connected to the serial port of your choosing. Currently cannot be used alongside a mouse.
 
-The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
+The *Configure* button opens a new window with settings specific to the selected device type, such as the number of buttons, or the serial port for a serial mouse or tablet.
+
+.. note:: Serial pointing devices require the configured serial port to be enabled on the :ref:`Ports tab <settings/ports:Serial port 1-4>`. 
 
 Joystick
 --------
@@ -33,7 +36,7 @@ Emulate one or more game port controller(s). The following controller types are 
 * **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.
 * **Thrustmaster Flight Control System:** flight controller with four buttons, two axes and a POV hat.
 
-.. note:: A generic game port card is emulated if the machine has no game ports (either built-in or as part of a Plug and Play or PCI sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, which can be changed through ISA Plug and Play. On IBM PS/1 machines, the generic card uses port 201h only and has no Plug and Play capability.
+.. note:: A generic game port card is emulated if the machine has no game ports (either built-in or as part of a Plug and Play or PCI sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, which can be changed through ISA Plug and Play. On IBM PCjr and PS/1 machines, the generic card uses port 201h only and has no Plug and Play capability.
 
 Joystick 1-4...
 ---------------
