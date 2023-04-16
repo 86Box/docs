@@ -25,8 +25,8 @@ View
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.
 
-   * **SDL (Hardware)** is recommended in most cases.
-   * **SDL (Software)** and **SDL (OpenGL)** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
+   * **SDL (Hardware)** (on Windows) or **Qt (Software)** (on Linux) is recommended in most cases.
+   * **SDL (Software)**, **SDL (OpenGL)** (both Windows only) and **Qt (OpenGL)** (Linux only) are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
    * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
 .. note:: The **OpenGL (3.0 Core)** renderer and its shader support are not available on Linux in this release.
