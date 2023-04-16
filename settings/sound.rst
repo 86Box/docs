@@ -7,14 +7,16 @@ The **Sound** page contains settings related to the emulated machine's audio har
 
 Parallel port sound devices such as the **Disney Sound Source** and **Covox Speech Thing** are not present on this page; they can be configured through the :ref:`Ports page <settings/ports:LPT1-4 Device>`.
 
-Sound card
-----------
+Sound card #1-#4
+----------------
 
-Sound card to emulate. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard sound chip, the *Internal* option enables the onboard sound.
+Sound cards to emulate. Up to 4 independent sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard sound chip, the *Internal* option for sound card #1 enables the onboard sound.
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
 Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`.
+
+.. note:: The **Innovation SSI-2001**, **CMS / Game Blaster** and **Gravis Ultrasound** are now selectable here, replacing the previous separate options for each.
 
 MIDI Out Device
 ---------------
@@ -44,25 +46,6 @@ Standalone MPU-401
 Emulate a standalone **Roland MIDI Processing Unit** ISA card, which allows for MIDI input and output without a MPU-401-equipped sound card.
 
 The I/O port and IRQ can be configured through the *Configure* button.
-
-Innovation SSI-2001
--------------------
-
-Emulate the **Innovation SSI-2001** ISA sound card, based on the MOS Technology 6581 chip (commonly known as the Commodore SID) and supported by a limited number of games.
-
-SID emulation is provided by the `reSID <http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/resid/>`_ library.
-
-CMS / Game Blaster
-------------------
-
-Emulate the **Creative Music System** or **Game Blaster** ISA sound card, based on dual Philips SAA1099 chips and supported by some games.
-
-Gravis Ultrasound
------------------
-
-Emulate the **Gravis UltraSound** ISA sound card.
-
-The I/O port and amount of onboard RAM can be configured through the *Configure* button.
 
 Use FLOAT32 sound
 -----------------
