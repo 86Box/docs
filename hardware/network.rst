@@ -80,7 +80,7 @@ Each port forward must be assigned a number, starting at 0 and counting up (skip
 
 The host system can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
 
-.. note:: The emulated machine's IP address must be set to 10.0.2.15 (the default IP provided through DHCP) for port forwarding to work.
+.. note:: The emulated machine's IP address must be set to 10.0.\ *x*\ .15 (the default IP provided through DHCP) for port forwarding to work.
 
 .. container:: toggle-always-show
 
