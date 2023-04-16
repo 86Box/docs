@@ -5,8 +5,8 @@
 
 The **Network** page contains settings related to the emulated machine's network connectivity.
 
-Network Interface Controllers
------------------------------
+Network Card #1-#4
+------------------
 
 Network interface cards to emulate. Up to 4 independent network cards are supported.
 
