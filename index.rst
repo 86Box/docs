@@ -1,3 +1,4 @@
+===========
 About 86Box
 ===========
 `86Box <https://86box.net>`_ is an IBM PC system emulator that specializes in running old
@@ -12,11 +13,13 @@ The project maintainer is `OBattler <https://github.com/OBattler>`_.
 If you need a configuration manager for 86Box, use the `86Box Manager <https://github.com/86Box/86BoxManager>`_, our
 officially endorsed 86Box configuration manager, developed by Overdoze (`daviunic <https://github.com/daviunic>`_).
 
+=========
 Community
 =========
 We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related 
 to retro computing and, of course, 86Box. We look forward to hearing from you!
 
+========
 Contents
 ========
 
