@@ -13,12 +13,12 @@ If you need a configuration manager for 86Box, use the `86Box Manager <https://g
 officially endorsed 86Box configuration manager, developed by Overdoze (`daviunic <https://github.com/daviunic>`_).
 
 Community
----------
+=========
 We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related 
 to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 Contents
---------
+========
 
 .. toctree::
    :maxdepth: 1
