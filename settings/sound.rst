@@ -10,7 +10,7 @@ Parallel port sound devices such as the **Disney Sound Source** and **Covox Spee
 Sound card #1-#4
 ----------------
 
-Sound cards to emulate. Up to 4 independent sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard sound chip, the *Internal* option for sound card #1 enables the onboard sound.
+Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an onboard sound chip, the *Internal* option for sound card #1 enables the onboard sound.
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
@@ -24,7 +24,7 @@ MIDI Out Device
 Device to output MIDI music to, for sound cards equipped with an external MIDI output.
 
 * **None:** don't output MIDI music.
-* **FluidSynth:** a software soundfont synthesizer. Selecting a soundfont file is required. There will be no synthesizer output if no soundfont is configured, or (on Windows hosts) if the included ``libfluidsynth.dll`` or ``libfluidsynth64.dll`` file is missing from the 86Box directory.
+* **FluidSynth:** a software soundfont synthesizer. Selecting a soundfont file is required; there will be no synthesizer output if no soundfont is configured.
 * **Roland MT-32**/**CM-32L Emulation:** emulate a Roland synthesizer module. Emulation is provided by the `Munt <http://munt.sourceforge.net>`_ library.
 * **System MIDI:** output to a MIDI device on the host system, such as the Windows software synthesizer or a USB MIDI adapter.
 
@@ -43,7 +43,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Standalone MPU-401
 ------------------
 
-Emulate a standalone **Roland MIDI Processing Unit** ISA card, which allows for MIDI input and output without a MPU-401-equipped sound card.
+Emulate a standalone **Roland MIDI Processing Unit** ISA card, which allows for MIDI input and output without a MPU-401-equipped sound card, and for running the few applications which require *intelligent mode* capability.
 
 The I/O port and IRQ can be configured through the *Configure* button.
 

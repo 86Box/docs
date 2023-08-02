@@ -15,7 +15,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Video #2
 --------
 
-Optional secondary video card to emulate. Only the **MDA**, **Hercules** and **Hercules Plus** monochrome cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
+Optional secondary video card to emulate. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
 
 As with the primary card above, the *Configure* button can be used to configure the selected card.
 
@@ -24,6 +24,8 @@ Voodoo Graphics
 
 Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected above.
 
+.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above, and this Voodoo Graphics option **must be disabled**. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
+
 The *Configure* button provides the following settings:
 
 * **Voodoo type:** type of Voodoo card to emulate.
@@ -31,8 +33,6 @@ The *Configure* button provides the following settings:
    * **Voodoo Graphics:** the original Voodoo model, with a single Texture Mapping Unit operating at 50 MHz.
    * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
    * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
-
-.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory for the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
 * **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on screen.
@@ -63,4 +63,4 @@ Emulate an **IBM 8514/A** or **XGA** add-on graphics accelerator. Both the origi
 
 The *Configure* button next to the XGA opens a new window where the card type (**XGA-1** or **XGA-2**) and initial BIOS address can be configured.
 
-.. note:: Pairing the 8514/A and XGA with each other or with a video card from **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
+.. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.

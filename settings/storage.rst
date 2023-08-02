@@ -38,6 +38,4 @@ The *Configure* buttons open a new window with settings specific to the correspo
 Cassette
 --------
 
-Enable IBM cassette tape emulation. The cassette deck can be controlled through the :ref:`status bar <usage/statusbar:|cassette| Cassette deck>` or :ref:`Media menu <usage/menubar:Media>`.
-
-.. note:: While cassette emulation can be enabled on any machine, it is only usable on the IBM PC, PCjr and other machines with an IBM cassette port.
+Enable IBM cassette tape emulation. Only available on machines with a cassette port. The cassette deck can be controlled through the :ref:`status bar <usage/statusbar:|cassette| Cassette deck>` or :ref:`Media menu <usage/menubar:Media>`.

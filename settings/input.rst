@@ -13,7 +13,6 @@ Emulate a pointing device. The following types are supported:
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
 * **Serial mouse:** connected to the serial port of your choosing.
 * **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
-* **Wacom tablet:** connected to the serial port of your choosing. Currently cannot be used alongside a mouse.
 
 The *Configure* button opens a new window with settings specific to the selected device type, such as the number of buttons, or the serial port for a serial mouse or tablet.
 

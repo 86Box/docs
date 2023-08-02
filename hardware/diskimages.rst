@@ -359,12 +359,8 @@ For fixed-size ``vhd`` files the following command may work depending your your 
 .. note:: As with any image file in macOS, the image can only be mounted if macOS can read the underlying filesystem. macOS can read both ``FAT16`` and ``FAT32``.
 
 Various: Windows
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
-On Windows you can use WinImage to create and manipulate disk images.
-
-Windows will also allow you to directly mount a ``vhd`` file in order to copy files. The ``Disk Management`` utility allows you to attach a ``vhd`` file by selecting ``Action -> Attach VHD`` from the menu.
+**WinImage** can be used to create and manipulate disk images on Windows. Additionally, the **Disk Management** tool (``diskmgmt.msc``) allows for mounting VHD images through the *Action* > *Attach VHD* option, and the ``diskpart`` `command line utility <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>`_ also provides similar functionality.
 
 .. warning:: As above, make sure that two different applications never mount the same image file simultaneously. For example, do not mount a ``vhd`` with Windows that is currently mounted by 86Box.
-
-Windows also provides command-line functionality via the ``diskpart`` command. The documentation can located `here <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>`_.

@@ -22,7 +22,6 @@ Emulated device to connect to the given parallel (LPT) port.
 
    * Printed pages are saved as .png files in the ``printer`` subdirectory found in the emulated machine's directory.
    * Use the **EPSON LQ-2500** printer driver for best results.
-   * This printer will not work on Windows hosts if the included ``freetype.dll`` file is missing from the 86Box directory.
 
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 

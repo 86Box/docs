@@ -37,6 +37,11 @@ Dynamic Recompiler
 
 Enable the dynamic recompiler, which provides faster but less accurate CPU emulation. The recompiler is available as an option for 486-class processors, and is mandatory starting with the Pentium.
 
+Softfloat FPU
+-------------
+
+Enable a slower but more accurate math co-processor emulation, for running a limited set of operating systems and applications which demand full 80-bit precision from the floating point unit.
+
 Time synchronization
 --------------------
 
