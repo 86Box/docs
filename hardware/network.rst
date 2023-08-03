@@ -6,11 +6,9 @@ Networking
 Null Driver
 -----------
 
-The default mode. Network cards will be available to the virtual machine but all packets sent by the emulated network card will be dropped by 86Box.
+Default mode. The selected network card will be available to the emulated machine, but any packets sent through it will be dropped.
 
-The virtual NIC will be in a *cable disconnected* state at machine startup.
-
-.. note:: In this mode connecting the cable will have no impact on the card's ability to send packets. Network cards that support cable detection will still be able to determine link or cable connection status.
+In this mode, the network card will default to a disconnected cable on startup; if the cable is connected through the :ref:`status bar <usage/statusbar:|network| Network>` or :ref:`Media menu <usage/menubar:Media>`, cards with link state detection support will report a connection, but packets will still be dropped.
 
 SLiRP
 -----
@@ -26,14 +24,14 @@ The virtual router provides automatic IP configuration to the emulated machine t
 
 The host can be reached through IP address 10.0.\ *x*\ .2, while other devices on the host's network can be reached through their normal IP addresses.
 
-.. note:: SLiRP is only capable of routing TCP and UDP traffic. Other protocols such as IPX and NetBEUI can only be used with :ref:`hardware/network:PCap` or :ref:`hardware/network:VDE` networking.
+.. note:: SLiRP is only capable of routing TCP and UDP traffic, with limited ICMP ping support. Other protocols such as IPX and NetBEUI can only be used with :ref:`hardware/network:PCap` or :ref:`hardware/network:VDE` networking.
 
 PCap
 ----
 
 PCap connects directly to one of the host's network adapters. The emulated machine must be configured as if it were a real machine on your network. This is similar to the **Bridge** mode on other emulators and virtualizers.
 
-This mode requires `Npcap <https://nmap.org/npcap/>`_ (or another WinPcap-compatible driver) to be installed on the host. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated card's MAC address.
+This mode requires `Npcap <https://npcap.com/>`_ (or another WinPcap-compatible driver) to be installed on Windows hosts, or the correct permissions to be set for accessing ``pcap`` on Linux or ``bpf`` on macOS hosts. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated card's MAC address.
 
 Private PCap network
 ^^^^^^^^^^^^^^^^^^^^
@@ -58,38 +56,21 @@ If you have an incompatible network connection on your host system (such as Wi-F
 VDE
 ---
 
-VDE stands for `Virtual Distributed Ethernet <https://github.com/virtualsquare/vde-2>`_. It works by creating a virtual ethernet switch on your computer. See the `VDE basics page <http://wiki.virtualsquare.org/#!tutorials/vdebasics.md>`_ for a brief overview.
+`Virtual Distributed Ethernet <https://github.com/virtualsquare/vde-2>`_ is a virtual Ethernet switch system for connecting different applications such as 86Box to each other. See `VDE Basic Networking <http://wiki.virtualsquare.org/#!tutorials/vdebasics.md>`_ for a brief overview.
 
-.. note:: VDE is only supported on **macOS** and **Linux** hosts
+.. note:: VDE is only available on **Linux** and **macOS** hosts.
 
-One of the core concepts of VDE is the *plug*. 86Box supports VDE by being able to *plug* the virtual machine into a virtual switch created by VDE.
-
-VDE functions as a layer 2 switch which allows non-TCP protocols such as IPX and NetBEUI.
+One of VDE's core concepts is the *plug*. 86Box allows for *plug*\ ging an emulated machine into a virtual switch created by VDE; this virtual layer 2 switch is capable of carrying any Ethernet-based protocols such as IP and IPX.
 
 Installing VDE tools
 ^^^^^^^^^^^^^^^^^^^^
 
-You will need to ensure the VDE tools are installed on your system. The tools are required to create the virtual switch that 86Box attaches to with a virtual cable.
-
-macOS
-"""""
-
-VDE is available in homebrew for macOS:
-
-.. code-block:: shell
-
-  brew install vde
-
-VDE is also available in macports:
-
-.. code-block:: shell
-
-  port install vde2
+The VDE tools are required to create the virtual switch that 86Box attaches to with a virtual cable.
 
 Linux
 """""
 
-For debian and derivatives, VDE and some of the associated commands are split into various packages. You'll need to install the libraries along with the associated tools:
+On Debian, Ubuntu and derivatives, VDE and some of its associated commands are split into different packages. Install the libraries and their associated tools:
 
 .. code-block:: shell
 
@@ -97,12 +78,25 @@ For debian and derivatives, VDE and some of the associated commands are split in
 
 .. note:: Other distributions should have similar package names.
 
+macOS
+"""""
+
+VDE is available through Homebrew or MacPorts.
+
+.. code-block:: shell
+
+  brew install vde
+
+.. code-block:: shell
+
+  port install vde2
+
 Creating the virtual switch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to use VDE with 86Box you must first create the virtual switch with ``vde_switch``.
+Before connecting 86Box, a virtual switch must be created with the ``vde_switch`` tool.
 
-.. note:: ``vde_switch`` requires root privileges to *create* the switch. Applications will be able to connect to the switch with standard (non-root) permissions.
+.. note:: ``vde_switch`` requires root privileges to *create* the switch. Applications will be able to connect to the switch with unprivileged (non-root) permissions.
 
 .. code-block:: shell
 
@@ -112,36 +106,28 @@ This command:
 
 * Creates the *management* socket at ``/tmp/vde.mgmt``
 * Creates the *control* socket at ``/tmp/vde.ctl``
-* Sets the socket permissions to world read/write to allow non-privileged access
-* Sets the number of ports to 8
+* Sets the sockets' permissions to world read/write to allow unprivileged access
+* Sets the number of switch ports to 8
 
-If you'd like to run ``vde_switch`` in the background add the ``--daemon`` option to the command.
+Adding ``--daemon`` to the command will run ``vde_switch`` in the background.
 
-The important part to note here is the control socket ``/tmp/vde.ctl``. This is the socket name we will provide to 86Box in the network configuration.
+Note the ``/tmp/vde.ctl`` path for the control socket, which is what should be provided in the :ref:`network settings <settings/network:VDE Socket>`.
 
-.. note:: You can adjust the file paths or permissions as necessary. For more information on the various options see ``vde_switch -h``.
+.. note:: You can adjust the file paths or permissions as necessary. Refer to ``vde_switch -h`` for more information on available options.
 
-Configuring 86Box to use VDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring 86Box for VDE
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From the Machine settings in 86Box (*Tools -> Settings*) choose *Network*. In the network card section there will be a drop-down list next to *Mode*. Choose **VDE**.
+Go to the emulated machine's :doc:`network settings <../settings/network>` and select *VDE* as the mode for the emulated network card. Enter the *control* socket path, which is ``/tmp/vde.ctl`` for the example above, in the *VDE Socket* box.
 
-In the *VDE Socket* section you will need to supply the name of the control socket. Using the above command as an example, place ``/tmp/vde.ctl`` in the *VDE Socket* section.
-
-Once the settings are saved the virtual machine should be connected to the VDE switch.
-
-.. warning:: Make sure the network cable is connected! Click on the network icon in the status bar and ensure there is a check by *Connected*.
+Once these settings are saved, the machine should automatically connect to the VDE switch. Check the :ref:`status bar <usage/statusbar:|network| Network>` or :ref:`Media menu <usage/menubar:Media>` to make sure the emulated network cable is actually connected.
 
 VDE switch status
 ^^^^^^^^^^^^^^^^^
 
-The ``vdeterm`` command can be used to view the status of the virtual switch. In order to use ``vdeterm`` you will need to supply the name of the *management* socket (not the *control* socket) that was specified when the switch was created.
+The ``vdeterm`` command can be used to view the status of the virtual switch. It requires the path to the *management* socket (instead of the *control* socket) created alongside the switch; the command would be ``vdeterm /tmp/vde.mgmt`` for the example above.
 
-In the above example the command would be ``vdeterm /tmp/vde.mgmt``.
-
-The ``vdeterm`` command provides you with a command interface. Type ``help`` to view the available commands.
-
-One helpful command is ``port/allprint``. This will print the status of the in-use ports along with all active processes that are currently plugged into the virtual switch. Example:
+Once in the command line, enter ``help`` to view a list of available commands. One helpful command is ``port/allprint`` which displays a list of all virtual switch ports and the processes attached to them:
 
 .. code-block::
 
@@ -152,20 +138,17 @@ One helpful command is ``port/allprint``. This will print the status of the in-u
     -- endpoint ID 0003 module unix prog   : 86Box virtual card user=myusername PID=12345
   Success
 
-.. note:: If you did not pass the ``--daemon`` flag to ``vde_switch`` you can just hit enter to enter a shell identical to ``vdeterm`` and execute the same commands.
+In addition to ``vdeterm``, the command line interface can be accessed through ``vde_switch`` if it was started without the ``--daemon`` option, by pressing Enter on its terminal.
 
 Other VDE features
 ^^^^^^^^^^^^^^^^^^
 
-This documentation only covers the basics of VDE use. There are many additional features not covered here and left as an exercise to the reader.
+This guide only covers the basics of VDE. It provides many more useful features such as:
 
-Some examples include:
-
-* Using ``vde_cryptcab`` to connect virtual switches across physical machines
-* Bridging VDE switches with network interfaces to provide access to the internet or other networks
-* Establishing communication with other software that natively supports VDE such as *qemu* and *virtualbox*
-* Creating VLANs and assigning them to a port on the switch
-* Creating access control policies and assigning them to a port on the switch
+* Connecting virtual switches **across host machines** with ``vde_cryptcab``
+* Bridging virtual switches with **network interfaces** to provide access to the Internet and other networks
+* Connecting to **other emulators and virtualizers** with VDE support such as QEMU and VirtualBox
+* Creating **VLANs and access control policies** which can be assigned to switch ports
 
 Advanced networking features
 ----------------------------

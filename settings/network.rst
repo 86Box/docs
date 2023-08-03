@@ -18,7 +18,7 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 * **Null Driver:** emulate an empty network. All packets are dropped.
 * **PCap:** connects directly to a host network adapter. Similar to the **Bridge** mode on other emulators and virtualizers.
 * **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other emulators and virtualizers.
-* **VDE:** attaches the system to a virtual switch created by :ref:`hardware/network:VDE`. Only available on Linux and macOS hosts.
+* **VDE:** attaches to a virtual switch created by :ref:`hardware/network:VDE`. Only available on Linux and macOS hosts.
 
 Interface
 ^^^^^^^^^
