@@ -47,3 +47,12 @@ Parallel port 1-4
 Enable emulation of parallel ports ranging from LPT1 to LPT4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
 
 .. note:: The 4th parallel port is not widely supported. It is located at I/O port 268h.
+
+Serial port passthrough 1-4
+---------------------------
+
+Connect emulated serial ports to named pipes or serial ports on the host. Each instance corresponds to one of the 4 emulates serial ports.
+
+The *Configure* button next to each passthrough instance opens a new window with settings specific to it, such as the named pipe or serial port to use.
+
+.. note:: Passthrough will not operate correctly if the selected serial port is taken by a :ref:`serial mouse <settings/input:Mouse>`.
