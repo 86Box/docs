@@ -27,6 +27,11 @@ Wait states
 
 Number of memory wait states to use on a 286- or 386-class processor. This box is not available if any other processor family is selected above.
 
+PIT mode
+--------
+
+Programmable Interval Timer emulation mode. **Auto** should cover most use cases, automatically selecting **Fast** mode on 486-class and newer processors or **Slow** mode on older ones. A limited set of timing-sensitive applications require **Slow** mode, which is slower but more accurate.
+
 Memory
 ------
 
