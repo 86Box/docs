@@ -144,7 +144,7 @@ Fedora
 .. code-block:: bash
 
     $ sudo dnf groupinstall "C Development Tools and Libraries"
-    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libXi-devel openal-soft-devel rtmidi-devel libFAudio-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel
+    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel libFAudio-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel
 
 
 macOS (Homebrew)
