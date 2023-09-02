@@ -95,11 +95,14 @@ The build process requires the following tools:
 
 * CMake (>= 3.15)
 * ``pkg-config``
+* libatomic
 
 Development files for the following libraries are also needed:
 
+* FluidSynth
 * FreeType
 * libpng
+* libslirp
 * RtMidi
 * SDL2
 * FAudio (optional on Windows)
@@ -133,6 +136,15 @@ Arch
     $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkg-config ninja libfreetype sdl2 libpng lib32-openal rtmidi faudio qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
 
 .. note:: Make sure to enable the multilib repository in your ``pacman.conf`` file.
+
+
+Fedora
+""""""
+
+.. code-block:: bash
+
+    $ sudo dnf groupinstall "C Development Tools and Libraries"
+    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libXi-devel openal-soft-devel rtmidi-devel libFAudio-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel
 
 
 macOS (Homebrew)
