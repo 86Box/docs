@@ -319,3 +319,41 @@ The following command will copy ``file1`` and ``file2`` to the floppy image ``fl
 Wildcards are also supported with ``mcopy``.
 
 .. note:: The ``::`` is required to let ``mtools`` know there are no more files to copy or arguments to process.
+
+Mounting on Linux
+*****************
+
+Linux can natively mount raw disk images (floppy or hard disk) of most types (``FAT`` and ``NTFS`` included).  The easiest path is to use `losetup <https://manpages.debian.org/bookworm/mount/losetup.8.en.html>`_ so that partitions can be properly recognized.  Floppies are not normally partitioned, and you can use `mount <https://manpages.debian.org/bookworm/mount/mount.8.en.html>`_ directly.
+
+All following commands must be run as root:
+
+.. code-block::
+
+   losetup -fP /path/to/86box/hdd
+   losetup                         # to verify which loopback device was set up.
+                                   # Assuming /dev/loop0 was selected:
+   mount /dev/loop0p1 /mnt         # Mount the first partition at /mnt
+
+Disk images should at least be unmounted before running 86Box again, and preferably detached too:
+
+.. code-block::
+
+   umount /mnt
+   losetup -d /dev/loop0
+
+Partitionless media can be mounted directly:
+
+.. code-block::
+
+   mount /path/to/86box/fdd /mnt
+
+VHD images may be mounted via `qemu-nbd <https://manpages.debian.org/bookworm/qemu-utils/qemu-nbd.8.en.html>`_:
+
+.. code-block::
+
+   modprobe nbd max_part=16
+   qemu-nbd -f vpc -c /dev/nbd0 /path/to/86box/hdd
+   mount /dev/nbd0p1 /mnt
+     # After doing some work...
+   umount /mnt
+   qemu-nbd -d /dev/nbd0
