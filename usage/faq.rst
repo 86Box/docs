@@ -49,4 +49,4 @@ Are you going to add emulation of the Pentium 3 and/or newer CPUs?
 
 In short, no. Newer CPUs are way too powerful and even the top-end systems that are currently on the market are not nearly performant enough to be able to emulate them at usable speeds. In fact, we already had to add some low-clocked variants of the Pentium 2 that never actually existed, just so more people could use it!
 
-For further reading, team member RichardG wrote a `blog post <86box.net/2022/03/21/why-not-p3>`_ that goes into the details of what makes the emulation of newer CPUs so controversial.
+For further reading, team member RichardG wrote a `blog post <https://86box.net/2022/03/21/why-not-p3>`_ that goes into the details of what makes the emulation of newer CPUs so controversial.
