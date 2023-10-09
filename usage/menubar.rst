@@ -10,7 +10,6 @@ Action
 
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while 86Box is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
-* **Tablet tool:** select the pointing tool to use on the :ref:`drawing tablet <settings/input:Mouse>`. This option will only be available when emulating a tablet.
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
@@ -44,7 +43,7 @@ View
 
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
-* **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*) or double (*2x*) sizes.
+* **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
 * **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
 
@@ -58,6 +57,7 @@ View
    * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
    * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
 
+* **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
    * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.

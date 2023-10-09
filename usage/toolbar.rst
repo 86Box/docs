@@ -17,6 +17,11 @@ Pause emulation of the machine. Press again to resume emulation.
 
 Force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
+|acpi_shutdown| ACPI shutdown
+-----------------------------
+
+Send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
+
 |send_cad| |send_cae| Press Ctrl+Alt+Del/Ctrl+Alt+Esc
 -------------------------------------------------------
 

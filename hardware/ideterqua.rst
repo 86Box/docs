@@ -11,10 +11,12 @@ The following resources are used by these additional controllers:
 +----------+-------------+---------------+---+
 |Channel   |Main I/O port|Status I/O port|IRQ|
 +==========+=============+===============+===+
-|Tertiary  |0168h        |036Eh          |10 |
+|Tertiary  |01E8h        |03EEh          |11 |
 +----------+-------------+---------------+---+
-|Quaternary|01E8h        |03EEh          |11 |
+|Quaternary|0168h        |036Eh          |10 |
 +----------+-------------+---------------+---+
+
+.. important:: The tertiary and quaternary I/O ports and IRQs were incorrectly switched in older 86Box versions; the table above applies to **4.0.1 and higher**.
 
 Each controller's IRQ can be configured through its respective *Settings* button on :ref:`settings/storage:Tertiary / Quaternary IDE Controller`. The *Plug and Play* option on the *IRQ* box enables Plug and Play functionality, allowing a PnP compliant operating system to automatically set the controller's IRQ, while all other options set a static IRQ with no Plug and Play.
 
@@ -50,7 +52,7 @@ The **Windows 9x family** will automatically detect Plug and Play IDE controller
 7. Select *Basic configuration 4* in the *Settings based on* box.
 8. Change the resource settings to match the I/O ports on the :ref:`table above <hardware/ideterqua:System resources>` and the configured IRQ. The first *Input/Output Range* range corresponds to the **main** I/O port, the second one corresponds to the **status** I/O port, and *Interrupt Request* corresponds to the IRQ.
 
-   * The status I/O port range is off by 6. Select 0368 for the tertiary channel or 03E8 for the quaternary channel.
+   * The status I/O port range is off by 6. Select 03E8 for the tertiary channel or 0368 for the quaternary channel.
    * The screenshot below shows an example configuration for the tertiary channel.
 
 9. If both the tertiary and quaternary channels are enabled, repeat the steps above to enable the other controller.
@@ -65,7 +67,7 @@ Windows NT, 2000 and XP
 
 .. note:: If you install the system to a hard disk on one of the additional controllers, it will not be bootable unless :ref:`the BIOS supports booting from these controllers <hardware/ideterqua:BIOS support>`.
 
-On **Windows 2000 only**, non-Plug and Play controllers can be enabled on an already-installed system through *Add New Hardware* similarly to :ref:`Windows 9x as shown above <hardware/ideterqua:Windows 95, 98 and Me>`. The resource parameters cannot be changed, and therefore, only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported. *Basic configuration 0003* corresponds to the **tertiary** channel, while *Basic configuration 0002* corresponds to the **quaternary** channel.
+On **Windows 2000 only**, non-Plug and Play controllers can be enabled on an already-installed system through *Add New Hardware* similarly to :ref:`Windows 9x as shown above <hardware/ideterqua:Windows 95, 98 and Me>`. The resource parameters cannot be changed, and therefore, only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported. *Basic configuration 0002* corresponds to the **tertiary** channel, while *Basic configuration 0003* corresponds to the **quaternary** channel.
 
 Windows Vista and 7
 ^^^^^^^^^^^^^^^^^^^
@@ -79,17 +81,17 @@ There are different steps for enabling additional IDE controllers on Linux, depe
 
 Modules can be loaded at any time with the ``modprobe`` command, or loaded on boot by adding the module's name (and parameters if required) to a file in ``/etc/modules-load.d`` on newer systemd-based distributions, or the ``/etc/modules`` file on older distributions.
 
-* **libATA** (typically kernels **2.6.19 and above**):
-
-   * Load the ``pata_isapnp`` module to enable Plug and Play controllers.
-   * Load the ``pata_legacy`` module with the ``probe_all=1`` parameter to automatically detect and enable non-Plug and Play controllers. Only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported.
-
 * **Legacy IDE** (typically kernels **older than 2.6.19**):
 
    * Load the ``ide-pnp`` module to enable Plug and Play controllers.
    * Non-Plug and Play controllers require editing the kernel command line on your bootloader to add each controller's I/O ports and IRQ:
 
-      * **Tertiary:** ``ide2=0x168,0x36e,10`` (assuming IRQ 10)
-      * **Quaternary:** ``ide3=0x1e8,0x3ee,11`` (assuming IRQ 11)
+      * **Tertiary:** ``ide2=0x1e8,0x3ee,11`` (assuming IRQ 11)
+      * **Quaternary:** ``ide3=0x168,0x36e,10`` (assuming IRQ 10)
+
+* **libATA** (typically kernels **2.6.19 and above**):
+
+   * Load the ``pata_isapnp`` module to enable Plug and Play controllers.
+   * Load the ``pata_legacy`` module with the ``probe_all=1`` parameter to automatically detect and enable non-Plug and Play controllers. Only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported.
 
 .. note:: Some distributions may automatically detect additional IDE controllers; however, that is very rarely the case.
