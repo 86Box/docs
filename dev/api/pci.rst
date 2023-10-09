@@ -59,7 +59,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
             foo_t *dev = /* ... */
 
             /* Add PCI device. */
-            dev->slot = pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev);
+            pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev, &dev->slot);
 
             return dev;
         }
@@ -107,8 +107,9 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
     - Opaque pointer passed to this device's configuration space register read/write callbacks.
       Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
-  * - **Return value**
-    - ``int`` value (subject to change in the future) representing the newly-added device.
+  * - ``slot``
+    - Pointer to an ``int`` in the state structure, which will store a value representing the newly-added device.
+      That value is subject to change if the PCI slot manager sees fit to move the device after it has been added.
 
 Slot types
 ----------
@@ -118,10 +119,14 @@ A machine may declare **special PCI slots** for specific purposes, such as on-bo
 * ``PCI_ADD_NORMAL``: normal 32-bit PCI slot;
 * ``PCI_ADD_AGP``: AGP slot (AGP is a superset of PCI);
 * ``PCI_ADD_VIDEO``: on-board video controller;
+* ``PCI_ADD_HANGUL``: on-board supplementary language-specific video controller;
+* ``PCI_ADD_IDE``: on-board IDE controller;
 * ``PCI_ADD_SCSI``: on-board SCSI controller;
 * ``PCI_ADD_SOUND``: on-board sound controller;
-* ``PCI_ADD_IDE``: on-board IDE controller;
+* ``PCI_ADD_MODEM``: on-board modem controller;
 * ``PCI_ADD_NETWORK``: on-board network controller;
+* ``PCI_ADD_UART``: on-board serial port controller;
+* ``PCI_ADD_USB``: on-board USB controller;
 * ``PCI_ADD_NORTHBRIDGE``, ``PCI_ADD_AGPBRIDGE``, ``PCI_ADD_SOUTHBRIDGE``: reserved for the chipset.
 
 A device available both as a discrete card and as an on-board device should have different ``device_t`` objects with unique ``local`` values to set both variants apart.
@@ -151,8 +156,8 @@ A device available both as a discrete card and as an on-board device should have
 
             /* Add PCI device. The normal variant goes in any normal slot,
                and the on-board variant goes in the on-board SCSI "slot". */
-            dev->slot = pci_add_card((info->local & FOO_ONBOARD) ? PCI_ADD_SCSI : PCI_ADD_NORMAL,
-                                     foo_pci_read, foo_pci_write, dev);
+            pci_add_card((info->local & FOO_ONBOARD) ? PCI_ADD_SCSI : PCI_ADD_NORMAL,
+                         foo_pci_read, foo_pci_write, dev, &dev->slot);
 
             return dev;
         }
@@ -334,7 +339,7 @@ The ``func`` parameter passed to a device's configuration space read/write callb
             foo_t *dev = /* ... */
 
             /* Add PCI device. No changes are required here for multi-function devices. */
-            dev->slot = pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev);
+            pci_add_card(PCI_ADD_NORMAL, foo_pci_read, foo_pci_write, dev, &dev->slot);
 
             /* Initialize PCI configuration registers. */
             foo_reset(dev);
@@ -843,6 +848,12 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
 
         #include <86box/pci.h>
 
+        typedef struct {
+            int     slot;
+            uint8_t irq_state;
+            uint8_t pci_regs[256];
+        } foo_t;
+
         static void
         foo_pci_write(int func, int addr, uint8_t val, void *priv)
         {
@@ -866,9 +877,9 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
             if (addr == 0x40) {
                 dev->pci_regs[0x40] = val;
                 if (val & 0x01)
-                    pci_set_irq(dev->slot, PCI_INTA);
+                    pci_set_irq(dev->slot, PCI_INTA, &dev->irq_state);
                 else
-                    pci_clear_irq(dev->slot, PCI_INTA);
+                    pci_clear_irq(dev->slot, PCI_INTA, &dev->irq_state);
             }
         }
 
@@ -878,7 +889,8 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
             /* Get the device state structure. */
             foo_t *dev = (foo_t *) dev;
 
-            /* Reset PCI configuration registers. */
+            /* Reset PCI configuration registers. Clearing active
+               interrupts is left as an exercise to the reader. */
             memset(dev->pci_regs, 0, sizeof(dev->pci_regs));
 
             /* Write default vendor ID, device ID, etc. */
@@ -887,8 +899,8 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
             dev->pci_regs[0x3d] = PCI_INTA;
         }
 
-        /* Don't forget to add the PCI device on init first, and to save
-           the return value of pci_add_card (to dev->slot in this case). */
+        /* Don't forget to add the PCI device on init first. This example uses
+           the slot value, which is provided to pci_add_card as a pointer. */
 
         const device_t foo4321_device = {
             /* ... */
@@ -903,11 +915,14 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
   * - Parameter
     - Description
 
-  * - ``card``
-    - Value representing this PCI device, returned by ``pci_add_card``.
+  * - ``slot``
+    - Value representing this PCI device, stored in the ``int`` passed to ``pci_add_card``.
 
   * - ``pci_int``
     - Interrupt pin to assert (``pci_set_irq``) or de-assert (``pci_clear_irq``): ``PCI_INTA``, ``PCI_INTB``, ``PCI_INTC`` or ``PCI_INTD``.
+
+  * - ``irq_state``
+    - Pointer to an ``uint8_t`` in the state structure, which is used internally by the interrupt manager. The stored value is opaque and should not be used or changed.
 
 Motherboard interrupts
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -926,3 +941,6 @@ Some chipsets may provide steerable **motherboard IRQ** (MIRQ) lines for on-boar
 
   * - ``level``
     - ``1`` if this MIRQ should be level-triggered, ``0`` if it should be edge-triggered.
+
+  * - ``irq_state``
+    - Pointer to an ``uint8_t`` in the state structure, which is used internally by the interrupt manager. The stored value is opaque and should not be used or changed.
