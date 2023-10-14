@@ -8,12 +8,13 @@ The menu bar located at the top of the 86Box window provides controls for the em
 Action
 ------
 
-* **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while 86Box is focused.
+* **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
+* **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
+* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation.
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
-* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
@@ -56,6 +57,7 @@ View
    * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
    * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
    * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+   * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
 
 * **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
