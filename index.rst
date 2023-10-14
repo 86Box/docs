@@ -44,6 +44,7 @@ Contents
    :caption: Emulated hardware
    
    hardware/machinespecific
+   hardware/keyboard
    hardware/diskimages
    hardware/ideterqua
    hardware/network
