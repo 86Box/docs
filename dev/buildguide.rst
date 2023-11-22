@@ -125,7 +125,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev libfluidsynth-dev
 
 
 Arch
