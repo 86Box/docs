@@ -12,7 +12,7 @@ Machine/motherboard model to emulate. The *Machine* box lists all available mode
 
 The *Configure* button opens a new window with settings specific to the machine, such as BIOS type selection.
 
-.. note:: **86Box 4.0.1:** Settings for the machine's onboard devices have been moved to the *Configure* buttons at the devices' respective locations; for instance, configuring the amount of installed video memory for an onboard video chip is now done through the *Configure* button next to the :ref:`Display page's Video box <settings/display:Video>` when the *Internal* option is selected there.
+.. note:: Settings for the machine's onboard devices have been moved to the *Configure* buttons at the devices' respective locations; for instance, configuring the amount of installed video memory for an onboard video chip is now done through the *Configure* button next to the :ref:`Display page's Video box <settings/display:Video>` when the *Internal* option is selected there.
 
 CPU type / Speed
 ----------------
