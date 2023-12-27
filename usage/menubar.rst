@@ -101,4 +101,4 @@ Help
 ----
 
 * **Documentation:** open the very documentation you're reading.
-* **About 86Box:** show credits and license information about 86Box.
+* **About 86Box:** show credits, license and build information about 86Box.
