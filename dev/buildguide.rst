@@ -105,7 +105,7 @@ Development files for the following libraries are also needed:
 * libslirp
 * RtMidi
 * SDL2
-* FAudio (optional on Windows)
+* OpenAL (by default) or FAudio (installing FAudio is optional on Windows)
 * Qt5 or Qt6 (optional, can be disabled)
 
 Obtaining the dependencies
@@ -116,7 +116,7 @@ MSYS2
 
 .. code-block:: bash
 
-    $ pacman -Syu $MINGW_PACKAGE_PREFIX-ninja $MINGW_PACKAGE_PREFIX-cmake $MINGW_PACKAGE_PREFIX-gcc $MINGW_PACKAGE_PREFIX-pkg-config $MINGW_PACKAGE_PREFIX-openal $MINGW_PACKAGE_PREFIX-freetype $MINGW_PACKAGE_PREFIX-SDL2 $MINGW_PACKAGE_PREFIX-zlib $MINGW_PACKAGE_PREFIX-libpng $MINGW_PACKAGE_PREFIX-rtmidi $MINGW_PACKAGE_PREFIX-qt5-static $MINGW_PACKAGE_PREFIX-qt5-translations
+    $ pacman -Syu $MINGW_PACKAGE_PREFIX-ninja $MINGW_PACKAGE_PREFIX-cmake $MINGW_PACKAGE_PREFIX-gcc $MINGW_PACKAGE_PREFIX-pkgconf $MINGW_PACKAGE_PREFIX-openal $MINGW_PACKAGE_PREFIX-freetype $MINGW_PACKAGE_PREFIX-SDL2 $MINGW_PACKAGE_PREFIX-zlib $MINGW_PACKAGE_PREFIX-libpng $MINGW_PACKAGE_PREFIX-rtmidi $MINGW_PACKAGE_PREFIX-fluidsynth $MINGW_PACKAGE_PREFIX-libslirp $MINGW_PACKAGE_PREFIX-qt5-static $MINGW_PACKAGE_PREFIX-qt5-translations
 
 .. note:: The command installs the packages only for the currently used MinGW environment, therefore you will need to repeat the procedure for every target you plan to build for.
 
@@ -125,7 +125,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev libfluidsynth-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev libfluidsynth-dev
 
 
 Arch
@@ -133,9 +133,7 @@ Arch
 
 .. code-block:: bash
   
-    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkg-config ninja libfreetype sdl2 libpng lib32-openal rtmidi faudio qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
-
-.. note:: Make sure to enable the multilib repository in your ``pacman.conf`` file.
+    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 libpng openal rtmidi libslirp fluidsynth qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
 
 
 Fedora
@@ -144,7 +142,7 @@ Fedora
 .. code-block:: bash
 
     $ sudo dnf groupinstall "C Development Tools and Libraries"
-    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel libFAudio-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel
+    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel
 
 
 macOS (Homebrew)
@@ -152,7 +150,7 @@ macOS (Homebrew)
 
 .. code-block:: bash
 
-    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi faudio qt@5
+    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth qt@5
 
 Building
 --------
