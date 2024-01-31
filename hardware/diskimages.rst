@@ -282,9 +282,9 @@ Disk images are a convenient way to transfer files in and out of emulated machin
 Editing and mounting on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**WinImage** can be used to create and manipulate disk images on Windows.
+**WinImage** and can be used to create and manipulate disk images on Windows. **PowerISO** can also be used to create IMG files of different sizes as well as mounting them.
 
-VHD images can be natively mounted through the **Disk Management** tool (``diskmgmt.msc``): select *Action* > *Attach VHD* to mount an image, and eject the drive through File Explorer to unmount. The ``diskpart`` `command line utility <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>`_ also provides VHD mounting/unmounting functionality.
+VHD images can be natively mounted through the **Disk Management** tool (``diskmgmt.msc``): select *Action* > *Attach VHD* to mount an image, and eject the drive through File Explorer to unmount. The ``diskpart`` `command line utility <https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart>`_ also provides VHD mounting/unmounting functionality. On Windows 11, VHD files can be mounted by double-clicking on them (in Explorer) as well.
 
 Mounting on macOS
 ^^^^^^^^^^^^^^^^^
