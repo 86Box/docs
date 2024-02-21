@@ -10,10 +10,14 @@ This page contains important notes related to specific machine models emulated b
 
 .. rubric:: IBM AT
 
-* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the ``nvr`` directory.
+* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
 
 Socket 7
 --------
+
+.. rubric:: MSI MS-5119
+
+* 86Box versions prior to 4.0.1 used BIOS version *A37E*, which has PS/2 mouse issues. The fixed *A37EB* BIOS is not applied automatically to existing setups; it can be applied by deleting ``ms5119.bin`` from the machine's ``nvr`` directory.
 
 .. _p65up5:
 .. rubric:: ASUS P/I-P65UP5 (C-P55T2D)
@@ -50,19 +54,26 @@ See: :ref:`p65up5`
    * The Victory66 has faster IDE - up to Ultra ATA/66 as opposed to the PIIX4E's Ultra ATA/33 - and a different USB controller.
    * Drivers for Windows 95, 98, Me and 2000 are available `here <https://essentials.86box.net/drivers/chipset/SMSC%20SLC90E66%20%28Victory66%29%20%28Windows%209x%20and%202000%29.zip>`_. Windows XP, Vista and 7 include drivers out of the box.
 
+.. rubric:: NEC Mate NX MA30D/23D
+
+* Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear, then once a different line of text appears, press the **right arrow** key to enter the setup utility.
+* The first setup option below the date and time can be used to change the BIOS language to English.
+
+Slot 1/2
+--------
+
+.. rubric:: Freeway FW-6400GX
+
+* The maximum amount of RAM is limited to 2032 MB due to a BIOS bug with 2048 MB.
+* ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu on the BIOS setup.
+* Once enabled, ACPI :ref:`does not work correctly <brokenacpi>` if a non-Intel CPU is selected.
+
 Slot 2
 ------
 
 .. rubric:: Gigabyte GA-6GXU
 
 * The BIOS display will corrupt itself during the memory test if the maximum of 2048 MB RAM is selected. This is a visual glitch which does not otherwise negatively impact the machine.
-
-.. rubric:: Freeway FW-6400GX
-
-* Hybrid motherboard supporting both Slot 1 and Slot 2 CPUs.
-* The maximum amount of RAM is limited to 2032 MB due to a BIOS bug with 2048 MB.
-* ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu on the BIOS setup.
-* Once enabled, ACPI :ref:`does not work correctly <brokenacpi>` if a non-Intel CPU is selected.
 
 Socket 370
 ----------
@@ -85,7 +96,7 @@ Miscellaneous
 .. rubric:: Microsoft Virtual PC 2007
 
 * This machine loads the American Megatrends BIOS from Virtual PC 2007 into 86Box's emulation. It does not use the virtualization engine or any other components from Virtual PC.
-* Virtual PC's special 8 MB video card, network card, WDM sound card and Guest Additions are not emulated by 86Box.
+* Virtual PC's special 8 MB video card, WDM sound card and Guest Additions are not emulated by 86Box.
 
 ----
 

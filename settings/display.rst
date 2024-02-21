@@ -56,8 +56,8 @@ The *Configure* button provides the following settings:
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
 * **Recompiler:** enable the Voodoo recompiler for faster emulation.
 
-8514/A / XGA
-------------
+IBM 8514/A / XGA Graphics
+-------------------------
 
 Emulate an **IBM 8514/A** or **XGA** add-on graphics accelerator. Both the original IBM cards for the MCA bus and generic clone cards for the ISA bus are available; the correct card is automatically selected based on the machine's supported expansion buses.
 

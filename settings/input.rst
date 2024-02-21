@@ -42,6 +42,6 @@ Joystick 1-4...
 
 Configure the mappings for each emulated game port controller. The *Device* box lists all game controllers connected to the host, while the other boxes allow you to map each axis or button of the emulated controller to the real controller.
 
-If you're not sure as to what axis or button numbers map to which sticks and buttons on the real controller, use the *Test* feature of Windows' *Game Controllers* control panel (``joy.cpl``). Keep in mind 86Box's button numbers start with 0, whereas the control panel's numbers start with 1.
+If you're not sure as to what axis or button numbers map to which sticks and buttons on the real controller, use the *Test* feature of Windows' *Game Controllers* control panel (``joy.cpl``) or another controller testing utility for your platform.
 
 .. note:: XInput controllers are accessed through their DInput emulation mode at the moment.

@@ -11,14 +11,14 @@ ISA RTC
 
 Emulate an ISA real-time clock card, for machines without an integrated real-time clock.
 
-The I/O port and/or IRQ used by the selected controller can be configured through the *Settings* button.
+The I/O port and/or IRQ used by the selected controller can be configured through the *Configure* button.
 
 ISA Memory Expansion
 --------------------
 
 Add up to four ISA-based memory expansion cards, for machines which support memory expansion through the ISA bus.
 
-The memory start address and size for each expansion card can be configured through its respective *Settings* button.
+The memory start address and size for each expansion card can be configured through its respective *Configure* button.
 
 ISABugger
 ---------
@@ -58,3 +58,10 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
     - Micro Channel Architecture
 
 .. note:: Some operating systems and applications use port ``0x80`` (which is shared with the POST card on most machines) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
+
+86Box Unit Tester
+-----------------
+
+Emulate a special device for software in the emulated machine to control 86Box for testing purposes. The *Configure* button provides settings specific to this device.
+
+.. note:: Documentation to be concluded.
