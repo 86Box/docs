@@ -12,6 +12,13 @@ This page contains important notes related to specific machine models emulated b
 
 * The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
 
+i486
+----
+
+.. rubric:: IBM Aptiva 510/710/Vision
+
+* The BIOS is only available in Japanese. For English, use the otherwise identical **IBM PC 330 (type 6573)**.
+
 Socket 7
 --------
 
@@ -31,6 +38,12 @@ Socket 7
 * While the northbridge depends on the selected CPU card, the southbridge always remains the Intel PIIX3, as it is located on the baseboard.
 * The real CPU cards support dual CPUs. As 86Box does not emulate multiprocessing, only a single CPU will be present.
 * Due to a lack of I/O APIC emulation at the moment, 86Box will patch the MultiProcessor Specification tables out of RAM during boot, so that operating systems will not hang or exhibit other erratic behavior due to the missing I/O APIC.
+
+.. _ma23c:
+.. rubric:: NEC Mate NX MA23C
+
+* Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear; once a different line of text appears, press the **right arrow** key to enter the setup utility.
+* The first setup option below the date and time can be used to change the BIOS language to English.
 
 Socket 8
 --------
@@ -56,8 +69,7 @@ See: :ref:`p65up5`
 
 .. rubric:: NEC Mate NX MA30D/23D
 
-* Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear, then once a different line of text appears, press the **right arrow** key to enter the setup utility.
-* The first setup option below the date and time can be used to change the BIOS language to English.
+See: :ref:`ma23c`
 
 Slot 1/2
 --------
