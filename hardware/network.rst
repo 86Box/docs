@@ -31,7 +31,7 @@ PCap
 
 PCap connects directly to one of the host's network adapters. The emulated machine must be configured as if it were a real machine on your network. This is similar to the **Bridge** mode on other emulators and virtualizers.
 
-This mode requires `Npcap <https://npcap.com/>`_ (or another WinPcap-compatible driver) to be installed on Windows hosts, or the correct permissions to be set for accessing ``pcap`` on Linux or ``bpf`` on macOS hosts. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated card's MAC address.
+On Windows hosts, this mode requires `Npcap <https://npcap.com/>`_ to be installed with **WinPcap API-compatible Mode enabled** (or use another WinPcap-compatible driver), or the correct permissions to be set for accessing ``pcap`` on Linux or ``bpf`` on macOS hosts. **Only wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated card's MAC address.
 
 Private PCap network
 ^^^^^^^^^^^^^^^^^^^^

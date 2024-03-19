@@ -152,6 +152,14 @@ macOS (Homebrew)
 
     $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth qt@5
 
+
+FreeBSD
+"""""""
+
+.. code-block:: bash
+
+    $ pkg install pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth
+
 Building
 --------
 
