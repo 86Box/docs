@@ -17,7 +17,7 @@ i486
 
 .. rubric:: IBM Aptiva 510/710/Vision
 
-* The BIOS is only available in Japanese. For English, use the otherwise identical **IBM PC 330 (type 6573)**.
+* The BIOS setup utility is only available in Japanese. For English, use the otherwise identical **IBM PC 330 (type 6573)**.
 
 Socket 7
 --------
