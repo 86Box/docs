@@ -327,7 +327,7 @@ Linux can natively mount raw disk images (floppy or hard disk) of most types (``
 
 All following commands must be run as root:
 
-.. code-block::
+.. code-block:: sh
 
    losetup -fP /path/to/86box/hdd
    losetup                         # to verify which loopback device was set up.

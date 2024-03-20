@@ -55,7 +55,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
      |3:1  |Quaternary|Slave |
      +-----+----------+------+
    
-   * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI Controllers>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
+   * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
 
      +-----+------------+-------+
      |Value|Controller  |SCSI ID|
