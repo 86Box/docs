@@ -44,7 +44,12 @@ Socket 7
 
 * Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear; once a different line of text appears, press the **right arrow** key to enter the setup utility.
 * The first setup option below the date and time can be used to change the BIOS language to English.
+* If BIOS can't find operating system,you can't see Japanese text so you cannot access BIOS setup Utility.
 
+.. _v35n:
+.. rubric:: Acer V35N
+* To access the BIOS setup utility,press **Ctrl+Alt+ESC** during the ACER logo.
+* To save data to CMOS,press ESC and select 'Yes'. **You can't use F10 to save cmos data.**
 Socket 8
 --------
 
@@ -125,3 +130,4 @@ Some machines may have faulty or otherwise incomplete `Advanced Configuration an
 * Booting Windows Vista or 7 (which require ACPI) will also result in a STOP 0x000000A5 blue screen, or a Windows Boot Manager 0xc0000225 error.
 
 There is no solution to this issue, as none of the currently emulated machines with broken ACPI ever received a BIOS update to fix it.
+
