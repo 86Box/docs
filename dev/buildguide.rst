@@ -160,7 +160,7 @@ FreeBSD
 
     $ pkg install pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth
 
-.. note:: On FreeBSD, you might need to edit the ``libevdev.h`` file, resides in ``/usr/local/include/libevdev/`` and replace the following ``linux/input.h`` file with ``dev/evdev/input.h``. After that run the ``make`` command once again.
+.. note:: If you get an error about ``linux/input.h``, edit ``/usr/local/include/libevdev/libevdev.h`` to replace the ``linux/input.h`` reference with ``dev/evdev/input.h`` and try building again.
 
 Building
 --------
