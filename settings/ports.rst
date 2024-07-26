@@ -34,7 +34,7 @@ Emulated device to connect to the given parallel (LPT) port.
 
    * The :ref:`emulated network adapter <settings/network:Adapter>` must also be set to **[LPT] PLIP**.
    * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
-   * PLIP works best with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
+   * PLIP only works with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
 
 Serial port 1-4
 ---------------
