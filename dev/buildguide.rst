@@ -103,6 +103,7 @@ Development files for the following libraries are also needed:
 * FreeType
 * libpng
 * libslirp
+* libsndfile
 * RtMidi
 * SDL2
 * OpenAL (by default) or FAudio (installing FAudio is optional on Windows)
@@ -116,7 +117,7 @@ MSYS2
 
 .. code-block:: bash
 
-    $ pacman -Syu $MINGW_PACKAGE_PREFIX-ninja $MINGW_PACKAGE_PREFIX-cmake $MINGW_PACKAGE_PREFIX-gcc $MINGW_PACKAGE_PREFIX-pkgconf $MINGW_PACKAGE_PREFIX-openal $MINGW_PACKAGE_PREFIX-freetype $MINGW_PACKAGE_PREFIX-SDL2 $MINGW_PACKAGE_PREFIX-zlib $MINGW_PACKAGE_PREFIX-libpng $MINGW_PACKAGE_PREFIX-rtmidi $MINGW_PACKAGE_PREFIX-fluidsynth $MINGW_PACKAGE_PREFIX-libslirp $MINGW_PACKAGE_PREFIX-qt5-static $MINGW_PACKAGE_PREFIX-qt5-translations $MINGW_PACKAGE_PREFIX-vulkan-headers
+    $ pacman -Syu $MINGW_PACKAGE_PREFIX-ninja $MINGW_PACKAGE_PREFIX-cmake $MINGW_PACKAGE_PREFIX-gcc $MINGW_PACKAGE_PREFIX-pkgconf $MINGW_PACKAGE_PREFIX-openal $MINGW_PACKAGE_PREFIX-freetype $MINGW_PACKAGE_PREFIX-SDL2 $MINGW_PACKAGE_PREFIX-zlib $MINGW_PACKAGE_PREFIX-libpng $MINGW_PACKAGE_PREFIX-rtmidi $MINGW_PACKAGE_PREFIX-fluidsynth $MINGW_PACKAGE_PREFIX-libslirp $MINGW_PACKAGE_PREFIX-libsndfile $MINGW_PACKAGE_PREFIX-qt5-static $MINGW_PACKAGE_PREFIX-qt5-translations $MINGW_PACKAGE_PREFIX-vulkan-headers
 
 .. note:: The command installs the packages only for the currently used MinGW environment, therefore you will need to repeat the procedure for every target you plan to build for.
 
@@ -125,7 +126,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev libfluidsynth-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfluidsynth-dev libsndfile1-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev
 
 
 Arch
@@ -133,7 +134,7 @@ Arch
 
 .. code-block:: bash
   
-    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 libpng openal rtmidi libslirp fluidsynth qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
+    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 libpng openal rtmidi libslirp fluidsynth libsndfile qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
 
 
 Fedora
@@ -142,7 +143,7 @@ Fedora
 .. code-block:: bash
 
     $ sudo dnf groupinstall "C Development Tools and Libraries"
-    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
+    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
 
 
 macOS (Homebrew)
@@ -150,7 +151,7 @@ macOS (Homebrew)
 
 .. code-block:: bash
 
-    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth qt@5
+    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth libsndfile qt@5
 
 
 FreeBSD
@@ -158,7 +159,7 @@ FreeBSD
 
 .. code-block:: bash
 
-    $ pkg install pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth
+    $ pkg install pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth libsndfile
 
 .. note:: If you get an error about ``linux/input.h``, edit ``/usr/local/include/libevdev/libevdev.h`` to replace the ``linux/input.h`` reference with ``dev/evdev/input.h`` and try building again.
 
