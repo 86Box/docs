@@ -31,7 +31,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 * **Cylinders/Heads/Sectors:** CHS parameters for the disk image. These boxes control the *Size (MB)* box below.
 * **Size (MB):** the disk image's size in MB. This box controls the *Cylinders*, *Heads* and *Sectors* boxes above. There are limits to how big a hard disk image can be; see :ref:`hardware/diskimages:Hard disk size limits` for more information.
 * **Bus:** storage bus to attach the disk to.
-* **Channel**/**ID:** where to attach the disk on the selected storage bus.
+* **Channel**/**ID:** where to attach the disk on the selected storage bus. Channels/IDs that are already in use cannot be selected.
 
    * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
 
@@ -55,7 +55,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
      |3:1  |Quaternary|Slave |
      +-----+----------+------+
    
-   * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
+   * On SCSI disks, the first number corresponds to the controller's index, starting from 0 and following the order of: on-board SCSI controllers if present, then :ref:`sound cards <settings/sound:Sound card #1-#4>` with SCSI if present, then :ref:`configured SCSI controllers <settings/storage:SCSI>`; the second number is the SCSI ID within that controller:
 
      +-----+------------+-------+
      |Value|Controller  |SCSI ID|

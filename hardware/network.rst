@@ -150,26 +150,15 @@ This guide only covers the basics of VDE. It provides many more useful features 
 * Connecting to **other emulators and virtualizers** with VDE support such as QEMU and VirtualBox
 * Creating **VLANs and access control policies** which can be assigned to switch ports
 
+Modem
+-----
+
+.. note:: Documentation coming soon.
+
 Advanced networking features
 ----------------------------
 
 The following advanced features can be accessed by directly editing the emulated machine's configuration file, which is ``86box.cfg`` by default.
-
-MAC address
-^^^^^^^^^^^
-
-With the exception of **[LPT] Parallel Port Internet Protocol**, every emulated network card stores its MAC address in the ``mac`` directive of its respective configuration file section. Only the suffix (last three octets) of the MAC address can be edited; the prefix (first three octets) will always be an `Organizationally Unique Identifier <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_ belonging to the manufacturer, such as ``00:E0:4C`` for Realtek.
-
-.. container:: toggle-always-show
-
-    .. container:: toggle-header
-
-        Example: MAC address ``00:E0:4C:35:F4:C2`` for the Realtek RTL8029AS
-
-    .. code-block:: none
-
-        [Realtek RTL8029AS]
-        mac = 35:f4:c2
 
 SLiRP port forwarding
 ^^^^^^^^^^^^^^^^^^^^^

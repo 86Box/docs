@@ -156,7 +156,7 @@ Supported formats:
 
   * - PCjs JSON
     - .json
-    - Read only. PCjs 1.0 format only; 2.0 not supported yet.
+    - Read only. 86Box 4.2 added support for the v2 format, replacing v1 which is no longer in circulation.
 
   * - Teledisk
     - .td0
