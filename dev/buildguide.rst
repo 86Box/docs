@@ -41,26 +41,25 @@ The ``CMakePresets.json`` file contains several common compilation options for 8
 
     * - Build name
       - Debug
-      - New dynarec
       - Dev. branch
       - Optimized
     * - ``regular`` 
       - ❌
       - ❌
       - ❌
+    * - ``development`` 
+      - ❌
+      - ✅
       - ❌
     * - ``debug``
       - ✅
       - ❌
       - ❌
-      - ❌
-    * - ``experimental``
-      - ✅
+    * - ``dev_debug``
       - ✅
       - ✅
       - ❌
     * - ``optimized``
-      - ❌
       - ❌
       - ❌
       - ✅
