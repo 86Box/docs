@@ -56,7 +56,7 @@ If you have an incompatible network connection on your host system (such as Wi-F
 VDE
 ---
 
-`Virtual Distributed Ethernet <https://github.com/virtualsquare/vde-2>`_ is a virtual Ethernet switch system for connecting different applications such as 86Box to each other. See `VDE Basic Networking <http://wiki.virtualsquare.org/#!tutorials/vdebasics.md>`_ for a brief overview.
+`Virtual Distributed Ethernet <https://github.com/virtualsquare/vde-2>`_ is a virtual Ethernet switch system for connecting different applications such as 86Box to each other. See `VDE Basic Networking <http://wiki.virtualsquare.org/#/tutorials/vdebasics>`_ for a brief overview.
 
 .. note:: VDE is only available on **Linux** and **macOS** hosts.
 
