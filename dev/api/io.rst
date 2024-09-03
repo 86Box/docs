@@ -140,6 +140,32 @@ Read callbacks can effectively return "don't care" (without interfering with oth
 
 .. note:: The same callback fallback rules specified above also apply with multiple handlers. Handlers without callbacks for the operation's type and (same or lower) width are automatically skipped.
 
+I/O tracing
+-----------
+
+The I/O module provides a compile-time option to unconditionally log every port operation performed by the emulated machine. Add ``#define ENABLE_IO_LOG 1`` to the top of ``src/io.c`` to enable global I/O tracing.
+
+One trace entry is output per line, formatted as such::
+
+  [E000:0000C0A6] (0, 1, 0001) in b(0061) = 2C
+  [E000:0000C0AC] (0, 0, 0000) outb(00EB, 3C)
+  [E000:0000C16A] (0, 2, 0002) outl(C808, 000CF000)
+  [E000:0000C142] (0, 1, 0002) in w(C400) = 0000
+  [E000:0000C15E] (0, 2, 0001) outw(C400, 0001)
+
+* In brackets: current ``CS:(E)IP``, pointing past the I/O instruction
+* In parentheses:
+
+  * SMM flag: **1** if the CPU is in System Management Mode, **0** otherwise
+  * Handler types found: as byte widths **OR**\ ed together; for example, 3 indicates both 8-bit (1) and 16-bit (2) handlers were found for this port
+  * Total handler count for this port (sum of all types)
+
+* Operation type: ``in`` or ``out`` followed by ``b``, ``w`` or ``l``
+* Port being accessed (in hexadecimal)
+* Value being read or written (in hexadecimal)
+
+.. note:: I/O tracing incurs a heavy load on the standard output, which can bottleneck emulation to a near halt in I/O-heavy workloads such as POST when outputting to a terminal. Using the ``-L`` command line option to redirect logging to a file on solid state storage is highly recommended.
+
 I/O traps
 ---------
 
