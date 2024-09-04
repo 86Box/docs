@@ -8,17 +8,47 @@ This page contains important notes related to specific machine models emulated b
 8088
 ----
 
+.. rubric:: IBM PC
+
+* The 1981 and 1982 variants correspond to the `earlier 16KB-64KB and later 64KB-256KB revisions of the motherboard <https://www.minuszerodegrees.net/5150/motherboard/5150_motherboard_revisions.htm>`_, with different BIOS versions and memory size limits.
+
+  * Those limits apply to on-board RAM; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
+
 .. rubric:: IBM PCjr
 
 * Some applications may shift the display slightly to one side due to unconventional use of the PCjr video hardware. Unchecking the **Apply overscan deltas** option accessible through the internal video's :ref:`Configure button <settings/display:Video>` can help bring the display back into position.
 * Hard disks are not supported, as a PCjr-compatible hard disk controller is not emulated by 86Box.
 
+.. rubric:: IBM XT
+
+* The 1982 and 1986 variants correspond to the `earlier 64-256KB and later 256-640KB revisions of the motherboard <https://www.minuszerodegrees.net/5160/motherboard/5160_motherboard_revisions.htm>`_, with different BIOS versions and memory size limits.
+
+  * Those limits apply to on-board RAM; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
+
 80286
 -----
 
+.. _ibmat:
 .. rubric:: IBM AT
 
+* On-board RAM is limited to 512 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
 * The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
+
+.. rubric:: IBM XT Model 286
+
+* On-board RAM is limited to 640 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
+
+.. rubric:: AMI IBM AT
+
+See: :ref:`ibmat`
+
+.. rubric:: Phoenix IBM AT
+
+See: :ref:`ibmat`
+
+.. rubric:: Quadtel IBM AT
+
+See: :ref:`ibmat`
 
 i486
 ----
