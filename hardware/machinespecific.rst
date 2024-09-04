@@ -5,6 +5,13 @@ This page contains important notes related to specific machine models emulated b
 
 ----
 
+8088
+----
+
+.. rubric:: IBM PCjr
+
+* Some applications may shift the display slightly to one side due to unconventional use of the PCjr video hardware. Unchecking the **Apply overscan deltas** option accessible through the internal video's :ref:`Configure button <settings/display:Video>` can help bring the display back into position.
+
 80286
 -----
 
