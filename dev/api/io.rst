@@ -158,13 +158,13 @@ One trace entry is output per line, formatted as such::
 
   * SMM flag: **1** if the CPU is in System Management Mode, **0** otherwise
   * Handler types found: as byte widths **OR**\ ed together; for example, 3 indicates both 8-bit (1) and 16-bit (2) handlers were found for this port
-  * Total handler count for this port (sum of all types)
+  * Call count: total amount of callbacks called in this operation; fallbacks count as multiple calls
 
 * Operation type: ``in`` or ``out`` followed by ``b``, ``w`` or ``l``
 * Port being accessed (in hexadecimal)
 * Value being read or written (in hexadecimal)
 
-.. note:: I/O tracing incurs a heavy load on the standard output, which can bottleneck emulation to a near halt in I/O-heavy workloads such as POST when outputting to a terminal. Using the ``-L`` command line option to redirect logging to a file on solid state storage is highly recommended.
+.. note:: I/O tracing incurs a heavy load on stderr output, which can bottleneck emulation to a near halt in I/O-heavy workloads (such as POST) when outputting to a terminal. Using the ``-L`` command line option to redirect logging to a file on solid state storage is highly recommended.
 
 I/O traps
 ---------
