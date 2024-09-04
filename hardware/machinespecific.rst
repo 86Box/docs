@@ -27,6 +27,10 @@ i486
 
 * The BIOS setup utility is only available in Japanese. For English, use the otherwise identical **IBM PC 330 (type 6573)**.
 
+.. rubric:: Zida Tomato 4DP
+
+* Floppy drive support is completely disabled by default. It can be enabled through the *Onboard FDD Controller* option of the *Chipset Features Setup* menu on the BIOS setup; the floppy drives themselves must also be configured in the *Standard CMOS Setup* menu.
+
 Socket 7
 --------
 
