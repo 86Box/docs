@@ -11,6 +11,7 @@ This page contains important notes related to specific machine models emulated b
 .. rubric:: IBM PCjr
 
 * Some applications may shift the display slightly to one side due to unconventional use of the PCjr video hardware. Unchecking the **Apply overscan deltas** option accessible through the internal video's :ref:`Configure button <settings/display:Video>` can help bring the display back into position.
+* Hard disks are not supported, as a PCjr-compatible hard disk controller is not emulated by 86Box.
 
 80286
 -----
