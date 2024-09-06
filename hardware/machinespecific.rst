@@ -50,6 +50,13 @@ See: :ref:`ibmat`
 
 See: :ref:`ibmat`
 
+i386SX
+------
+
+.. rubric:: Amstrad MegaPC
+
+* The BIOS does not configure itself on first boot or after clearing CMOS; the machine will not work properly until an automatic configuration is performed by pressing **F9** on the BIOS setup's main *Setup* menu, then saving with **F10** and exiting with **Esc**.
+
 i486
 ----
 
