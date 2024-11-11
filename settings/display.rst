@@ -54,7 +54,7 @@ The *Configure* button provides the following settings:
 +----------+-----------+--------------+
 
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
-* **Recompiler:** enable the Voodoo recompiler for faster emulation.
+* **Dynamic Recompiler:** enable the Voodoo recompiler for faster emulation.
 
 IBM 8514/A / XGA Graphics
 -------------------------
