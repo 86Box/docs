@@ -8,6 +8,7 @@ This page contains important notes related to specific machine models emulated b
 8088
 ----
 
+.. _ibmpc:
 .. rubric:: IBM PC
 
 * The 1981 and 1982 variants correspond to the `earlier 16KB-64KB and later 64KB-256KB revisions of the motherboard <https://www.minuszerodegrees.net/5150/motherboard/5150_motherboard_revisions.htm>`_, with different BIOS versions and memory size limits.
@@ -19,6 +20,7 @@ This page contains important notes related to specific machine models emulated b
 * Some applications may shift the display slightly to one side due to unconventional use of the PCjr video hardware. Unchecking the **Apply overscan deltas** option accessible through the internal video's :ref:`Configure button <settings/display:Video>` can help bring the display back into position.
 * Hard disks are not supported, as a PCjr-compatible hard disk controller is not emulated by 86Box.
 
+.. _ibmxt:
 .. rubric:: IBM XT
 
 * The 1982 and 1986 variants correspond to the `earlier 64-256KB and later 256-640KB revisions of the motherboard <https://www.minuszerodegrees.net/5160/motherboard/5160_motherboard_revisions.htm>`_, with different BIOS versions and memory size limits.
