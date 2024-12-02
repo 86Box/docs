@@ -12,7 +12,6 @@ Up to four floppy disk drives can be attached to the emulated system, although n
 
 * **Type:** floppy drive to emulate. Some types have special properties and should only be used in very specific applications:
 
-   * **5.25" 1.2M PS/2** and **3.5" 1.44M PS/2:** IBM PS/2 drives, which invert the polarity of the Density Select pin.
    * **5.25" 1.2M 300/360 RPM** and **3.5" 1.44M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or NEC PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.
    * **3.5" 1.44M PC-98:** NEC PC-98 drive, which is 3-mode and inverts the polarity of the Density Select pin.
 
