@@ -50,7 +50,7 @@ Innovation SSI-2001
 
 Emulate the **Innovation SSI-2001** ISA sound card, based on the MOS Technology 6581 chip (commonly known as the Commodore SID) and supported by a limited number of games.
 
-SID emulation is provided by the `reSID <http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/resid/>`_ library.
+SID emulation is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library.
 
 CMS / Game Blaster
 ------------------
