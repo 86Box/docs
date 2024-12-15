@@ -20,6 +20,8 @@ Speed profiles
 
 The *Speed* box below the hard disk list controls the **emulated speed profile** for the selected disk. Speed emulation takes the rotation speed, physical layout and cache size of an average period-correct drive into account. The **RAM Disk** profile runs the drive as fast as the host can manage.
 
+The special **Conner** profiles are specifically designed to get around the :ref:`GRiDcase 1520 <grid1520>`'s hard disk model restriction, and should not be used on any other machines.
+
 .. note:: Speed profiles are currently only available for **IDE** and **ESDI** hard disks. The RAM Disk profile is always used on other disk types.
 
 Adding a new disk
