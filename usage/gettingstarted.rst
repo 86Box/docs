@@ -35,7 +35,7 @@ Now you're ready to do some stuff inside the emulated machine. Keyboard input is
 
 Mouse input has to be manually "captured" and "released". To capture the mouse in the emulated mahine, simply click inside the renderer area. Your host mouse cursor will disappear and your mouse movement and clicks will be redirected into the emulated machine. Now you can use the mouse inside the emulated machine - if the software and hardware configuration supports it, of course.
 
-To release the mouse, press :kbd:`F8 + F12` simultaneously (on Windows) or :kbd:`Ctrl + End` (on Linux). You can also use the middle mouse button for this if the emulated mouse only has two buttons.
+To release the mouse, press :kbd:`F8 + F12` simultaneously. You can also use the middle mouse button for this if the emulated mouse only has two buttons.
 
 .. rubric:: Step 7: What now?
 
