@@ -11,10 +11,14 @@ Mouse
 Emulate a pointing device. The following mouse types are supported:
 
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
-* **Serial mouse:** connected to the serial port of your choosing. The selected serial port must be enabled on the :ref:`Ports tab <settings/ports:Serial port 1-4>`.
+* **Serial mouse:** connected to the serial port of your choosing.
 * **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
 
 The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
+
+.. note:: 
+  * Serial pointing devices require the configured serial port to be enabled on the :ref:`Ports page <settings/ports:Serial port 1-4>`.
+  * The middle button cannot be used to release mouse capture when emulating a mouse with 3 or more buttons.
 
 Joystick
 --------
