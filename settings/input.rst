@@ -16,7 +16,9 @@ Emulate a pointing device. The following types are supported:
 
 The *Configure* button opens a new window with settings specific to the selected device type, such as the number of buttons, or the serial port for a serial mouse or tablet.
 
-.. note:: Serial pointing devices require the configured serial port to be enabled on the :ref:`Ports tab <settings/ports:Serial port 1-4>`. 
+.. note:: 
+  * Serial pointing devices require the configured serial port to be enabled on the :ref:`Ports page <settings/ports:Serial port 1-4>`.
+  * The middle button cannot be used to release mouse capture when emulating a mouse with 3 or more buttons.
 
 Joystick
 --------
