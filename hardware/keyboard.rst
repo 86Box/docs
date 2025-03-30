@@ -9,7 +9,7 @@ Host systems
 Windows
 ^^^^^^^
 
-* Multimedia keys such as **Volume Up/Down** cannot be passed through to the emulated machine due to a Windows limitation.
+* Not all multimedia function keys can be passed through to the emulated machine due to a Windows limitation.
 * System-wide key remapping through the **Scancode Map** registry key (as performed by applications such as SharpKeys) is fully supported.
 
 macOS
