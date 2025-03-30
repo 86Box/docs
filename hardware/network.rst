@@ -96,18 +96,15 @@ Creating the virtual switch
 
 Before connecting 86Box, a virtual switch must be created with the ``vde_switch`` tool.
 
-.. note:: ``vde_switch`` requires root privileges to *create* the switch. Applications will be able to connect to the switch with unprivileged (non-root) permissions.
-
 .. code-block:: shell
 
-  vde_switch --mode 666 --numports 8 --mgmt /tmp/vde.mgmt --mgmtmode 666 -s /tmp/vde.ctl
+  vde_switch --numports 8 --mgmt /tmp/vde.mgmt -s /tmp/vde.ctl
 
 This command:
 
 * Creates the *management* socket at ``/tmp/vde.mgmt``
 * Creates the *control* socket at ``/tmp/vde.ctl``
-* Sets the sockets' permissions to world read/write to allow unprivileged access
-* Sets the number of switch ports to 8
+* Sets the number of switch ports to 8 (default is 32)
 
 Adding ``--daemon`` to the command will run ``vde_switch`` in the background.
 

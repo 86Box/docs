@@ -106,6 +106,7 @@ Development files for the following libraries are also needed:
 * RtMidi
 * SDL2
 * OpenAL (by default) or FAudio (installing FAudio is optional on Windows)
+* libserialport (optional, needed for external OPL2Board support)
 * Qt5 or Qt6 (optional, can be disabled)
 
 Obtaining the dependencies
@@ -125,7 +126,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfluidsynth-dev libsndfile1-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfluidsynth-dev libsndfile1-dev libserialport-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev
 
 
 Arch
@@ -133,7 +134,7 @@ Arch
 
 .. code-block:: bash
   
-    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 libpng openal rtmidi libslirp fluidsynth libsndfile qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
+    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 libpng openal rtmidi libslirp fluidsynth libsndfile libserialport qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
 
 
 Fedora
@@ -142,7 +143,7 @@ Fedora
 .. code-block:: bash
 
     $ sudo dnf groupinstall "C Development Tools and Libraries"
-    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
+    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
 
 
 macOS (Homebrew)
@@ -150,7 +151,7 @@ macOS (Homebrew)
 
 .. code-block:: bash
 
-    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth libsndfile qt@5
+    $ brew install cmake ninja pkg-config freetype sdl2 libpng openal-soft rtmidi libslirp fluid-synth libsndfile libserialport qt@5
 
 
 FreeBSD
