@@ -33,10 +33,13 @@ View
 
 * **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
 
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
+   * **Synchronize with video:** update the emulated display at its current refresh rate.
+   * **Use target framerate:** update the emulated display at the selected refresh rate.
    * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
-   * **Remove:** disable the currently-loaded shader.
+   * **Add:** add a ``.glsl`` or ``.glslp`` file to the list of shaders to apply on the emulated display.
+   * **Remove:** remove the selected shader from the list.
+   * **Configure:** open a window to configure parameters on the selected shader.
+   * **Move up/down:** move the selected shader up or down in the processing order.
 
 .. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
           * Shaders that take advantage of multipass and previous frames are not supported.
