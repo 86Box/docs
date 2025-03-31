@@ -20,14 +20,12 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 * **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other emulators and virtualizers.
 * **VDE:** attaches to a virtual switch created by :ref:`hardware/network:VDE`. Only available on Linux and macOS hosts.
 
-Interface
-^^^^^^^^^
+.. note::
+  If PCap mode is not listed, make sure that:
 
-Host network adapter to use for PCap mode on this card. If no adapters appear on this list, make sure that:
-
-* A WinPcap-compatible driver is installed;
-* The installed driver is compatible with your version of Windows;
-* At least one compatible (wired) network adapter is present.
+  * A WinPcap-compatible driver is installed;
+  * The installed driver is compatible with your version of Windows;
+  * At least one compatible (wired) network adapter is present.
 
 Adapter
 ^^^^^^^
@@ -41,9 +39,10 @@ The *Configure* button opens a new window with settings specific to the selected
   * The **[LPT] Parallel Port Internet Protocol** network adapter requires a **PLIP Network** device to be attached to a :ref:`parallel port <settings/ports:Parallel port 1-4>`.
   * Settings for the **[COM] Standard Hayes-compliant Modem** are described on :ref:`Networking <hardware/network:Modem>`.
 
-VDE Socket
-^^^^^^^^^^
+Options
+^^^^^^^
 
-The socket name specified when creating the VDE virtual switch. Only used in **VDE** mode.
+Settings for the network emulation mode selected above. Only settings relevant to the selected mode will be shown.
 
-See the :ref:`VDE setup guide <hardware/network:VDE>` for more information.
+* **Interface:** host network adapter to use in **PCap** mode.
+* **VDE Socket:** virtual switch socket path to use in **VDE** mode. See the :ref:`VDE setup guide <hardware/network:VDE>` for more information.
