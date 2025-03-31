@@ -10,6 +10,7 @@ Windows
 ^^^^^^^
 
 * Not all multimedia function keys can be passed through to the emulated machine due to a Windows limitation.
+* Multimedia key passthrough can be disabled entirely through the *Inhibit multimedia keys on Windows* option on the :ref:`Preferences window <usage/menubar:Tools>`.
 * System-wide key remapping through the **Scancode Map** registry key (as performed by applications such as SharpKeys) is fully supported.
 
 macOS

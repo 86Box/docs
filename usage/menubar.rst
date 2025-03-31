@@ -41,9 +41,9 @@ View
    * **Configure:** open a window to configure parameters on the selected shader.
    * **Move up/down:** move the selected shader up or down in the processing order.
 
-.. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
-          * Shaders that take advantage of multipass and previous frames are not supported.
-          * ``.cg`` and ``.cgp`` shaders are not supported either, as these formats are long deprecated.
+.. note::
+  * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+  * ``.cg`` and ``.cgp`` shaders are not supported, as these formats are long deprecated.
 
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
@@ -93,9 +93,9 @@ Tools
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
    * **Language:** select a language for the 86Box user interface.
-   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`.
    * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
+   * **Inhibit multimedia keys on Windows:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine. This option is only available on Windows.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
