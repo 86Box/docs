@@ -108,7 +108,7 @@ This command:
 
 Adding ``--daemon`` to the command will run ``vde_switch`` in the background.
 
-Note the ``/tmp/vde.ctl`` path for the control socket, which is what should be provided in the :ref:`network settings <settings/network:VDE Socket>`.
+Note the ``/tmp/vde.ctl`` path for the control socket, which is what should be provided in the :ref:`network settings <settings/network:Options>`.
 
 .. note:: You can adjust the file paths or permissions as necessary. Refer to ``vde_switch -h`` for more information on available options.
 
@@ -197,9 +197,11 @@ Example configuration for Windows 98
 7. Select *Connect using my phone line* and click *Next*.
 8. Enter ``0.0.0.0`` as the phone number and **uncheck** *Dial using the area code and country code*.
 9. Click *Advanced...* and perform these changes:
+
   * On the *Connection* tab, set the **connection type** to *SLIP (Serial Line Internet Protocol)*.
   * On the *Addresses* tab, set the IP and DNS addresses **manually** according to :ref:`the SLiRP rules above <hardware/network:SLiRP>`. For the first SLiRP instance, these are 10.0.2.15 for IP and 10.0.2.3 for DNS.
   * Click *OK* then *Next*.
+
 10. Leave the username and password **blank** and click *Next* then *Yes* on both warnings.
 11. Set the connection name (or leave the default alone) and click *Next*.
 12. Skip setting up an e-mail account and click *Next* then *Finish*.
