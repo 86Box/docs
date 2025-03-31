@@ -32,4 +32,4 @@ Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated 
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided. Some emulated machines have manufacturer restore discs locked to a specific drive model.
 
-CD-ROM / DVD-ROM disc images can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
