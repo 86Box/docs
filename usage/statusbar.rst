@@ -47,8 +47,9 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Folder:** insert a virtual CD-ROM or DVD-ROM with the contents of a host folder into this drive. Dragging and dropping a folder on the icon will also load it.
-* A history of the last few images or folders that were loaded into this drive. Click on an entry to load it back.
-* **Eject:** remove any disc inserted into this drive.
+* A history of the last few images, folders or host drives that were loaded into this drive. Click on an entry to load it back.
+* A list of host CD-ROM or DVD-ROM drives available for passthrough. Click on an entry to attach it to the emulated drive.
+* **Eject:** remove any disc inserted into this drive, or detach a host drive.
 
 |zip| |mo| ZIP and MO drives
 ----------------------------
