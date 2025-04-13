@@ -3,7 +3,7 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-import sphinx_rtd_theme
+import sphinx_rtd_theme, time
 
 # -- Path setup --------------------------------------------------------------
 
@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = '86Box'
-copyright = '2020-2023, 86Box Project'
+copyright = f'2020-{time.strftime("%Y")}, 86Box Project'
 author = '86Box Project'
 
 
