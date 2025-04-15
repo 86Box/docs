@@ -13,11 +13,14 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 * **New image:** create a new cassette tape image file.
 * **Existing image:** insert a :ref:`cassette tape image file <hardware/diskimages:Cassette tape images>` into the deck. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a cassette tape image file into the deck as a read-only tape.
+* A history of the last few images that were loaded into the deck. Click on an entry to load it back.
 * **Record:** start recording data to the cassette tape. Not available if the tape is read-only.
 * **Play:** start playing the cassette tape.
 * **Rewind to the beginning:** rewind the cassette tape to its beginning.
 * **Fast forward to the end:** fast forward the cassette tape to its end.
 * **Eject:** remove the currently-inserted cassette tape from the deck.
+
+.. note:: **86Box 4.2.1:** The image history has been added.
 
 |cartridge| PCjr cartridges
 ---------------------------
@@ -25,7 +28,10 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon corresponds to a cartridge slot on the PCjr's front panel.
 
 * **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr. Dragging and dropping an image file on the icon will also load it.
+* A history of the last few images that were loaded into this slot. Click on an entry to load it back.
 * **Eject:** remove the currently-inserted cartridge from this slot.
+
+.. note:: **86Box 4.2.1:** The image history has been added.
 
 |floppy_35| |floppy_525| Floppy drives
 --------------------------------------
@@ -59,8 +65,10 @@ A ZIP or MO icon will appear for each configured :doc:`additional removable stor
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:MO / ZIP removable disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
+* A history of the last few images that were loaded into this drive. Click on an entry to load it back.
 * **Eject:** remove the currently-inserted disk from this drive.
-* **Reload previous image:** reinsert the last disk image file selected through the *Existing image* options.
+
+.. note:: **86Box 4.2.1:** The image history has replaced the **Reload previous image** option.
 
 |hard_disk| Hard disks
 ----------------------
