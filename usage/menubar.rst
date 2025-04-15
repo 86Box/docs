@@ -74,7 +74,7 @@ Media
 
 This menu lists all storage drives and network cards attached to the emulated machine, and provides the same controls that are accessible by clicking the respective device's icon on the :doc:`status bar <statusbar>`.
 
-The **Clear image history** option empties the list of recently-loaded image files or folders on all storage drives.
+The **Clear image history** option empties the list of recently-loaded images on all storage drives.
 
 Tools
 -----
