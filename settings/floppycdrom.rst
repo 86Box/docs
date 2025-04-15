@@ -25,7 +25,7 @@ Floppy disk images can be inserted and removed through the :ref:`status bar <usa
 CD-ROM drives
 -------------
 
-Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated system. The following settings apply to the selected drive:
+Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated system. The following settings apply to the selected drive:
 
 * **Bus:** storage bus to attach the drive to. ATAPI (IDE) and SCSI are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
