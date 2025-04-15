@@ -20,8 +20,6 @@ A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/stora
 * **Fast forward to the end:** fast forward the cassette tape to its end.
 * **Eject:** remove the currently-inserted cassette tape from the deck.
 
-.. note:: **86Box 4.2.1:** The image history has been added.
-
 |cartridge| PCjr cartridges
 ---------------------------
 
@@ -30,8 +28,6 @@ Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon
 * **Image:** insert a :ref:`cartridge image file <hardware/diskimages:PCjr cartridge images>` into this slot. Inserting a cartridge will reset the PCjr. Dragging and dropping an image file on the icon will also load it.
 * A history of the last few images that were loaded into this slot. Click on an entry to load it back.
 * **Eject:** remove the currently-inserted cartridge from this slot.
-
-.. note:: **86Box 4.2.1:** The image history has been added.
 
 |floppy_35| |floppy_525| Floppy drives
 --------------------------------------
@@ -67,8 +63,6 @@ A ZIP or MO icon will appear for each configured :doc:`additional removable stor
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * A history of the last few images that were loaded into this drive. Click on an entry to load it back.
 * **Eject:** remove the currently-inserted disk from this drive.
-
-.. note:: **86Box 4.2.1:** The image history has replaced the **Reload previous image** option.
 
 |hard_disk| Hard disks
 ----------------------
