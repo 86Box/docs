@@ -52,10 +52,9 @@ See: :ref:`ibmat`
 
 See: :ref:`ibmat`
 
-.. _grid1520:
 .. rubric:: GRiD GRiDcase 1520
 
-* The BIOS is locked to specific Conner IDE hard disk models. Any hard disks must be set to one of the special **Conner** :ref:`speed profiles <settings/hdd:Speed profiles>`, which also change the disk's identification to match.
+* The BIOS is locked to specific Conner IDE hard disk models. Any hard disks must be set to the **Conner CP3024**, **CP3044** or **CP3104** :ref:`model profiles <settings/hdd:Model>`.
 * The Yamaha V6366 video chip is not emulated by 86Box. An **IBM CGA** set to amber monochrome mode (through the :ref:`Configure button <settings/display:Video>`) is recommended as an approximation.
 
 i386SX
