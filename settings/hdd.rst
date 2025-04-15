@@ -14,15 +14,12 @@ All hard disks attached to the emulated system are listed, with the following in
 * **File:** path to the disk image file.
 * **C/H/S:** disk size in cylinders, heads and sectors, respectively.
 * **MB:** disk size in megabytes.
+* **Model:** :ref:`emulated model profile <settings/hdd:Model>` for the disk.
 
-Speed profiles
---------------
+Model
+-----
 
-The *Speed* box below the hard disk list controls the **emulated speed profile** for the selected disk. Speed emulation takes the rotation speed, physical layout and cache size of an average period-correct drive into account. The **RAM Disk** profile runs the drive as fast as the host can manage.
-
-The special **Conner** profiles are specifically designed to get around the :ref:`GRiDcase 1520 <grid1520>`'s hard disk model restriction, and should not be used on any other machines.
-
-.. note:: Speed profiles are currently only available for **IDE** and **ESDI** hard disks. The RAM Disk profile is always used on other disk types.
+The *Model* box below the hard disk list determines the **disk model** to emulate. Model profiles adjust the disk's identification data, as well as its performance according to rotation speed, physical layout and cache size. Generic profiles adjust performance to match an average period-correct disk, while the **RAM Disk** profile runs the disk as fast as the host can manage.
 
 Adding a new disk
 -----------------
@@ -92,14 +89,14 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
-Press the *OK* button to create the disk image file, or *Cancel* to close the window.
+Press the *OK* button to create the disk image file, or *Cancel* to close the window without adding the disk.
 
 Adding an existing disk
 -----------------------
 
 The *Existing...* button opens a similar window to the *New...* button, except that it lets you select an existing disk image file. The CHS parameters are guessed from the image's file size, or the file header if the image is of a format which contains a header.
 
-After selecting the image file and checking if the parameters are correct, select the *Bus* and *Channel*/*ID* for the hard disk and press *OK* to add it. Press *Cancel* to close the window.
+After selecting the image file and checking if the parameters are correct, select the *Bus* and *Channel*/*ID* for the hard disk and press *OK* to add it. Press *Cancel* to close the window without adding the disk.
 
 Removing a disk
 ---------------
