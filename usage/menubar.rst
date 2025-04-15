@@ -75,7 +75,7 @@ View
 Media
 -----
 
-This menu lists all storage drives and network cards attached to the emulated machine, and provides the same controls that are accessible by clicking the respective device's icon on the :doc:`status bar <statusbar>`.
+This menu lists all storage drives and network cards attached to the emulated machine, and provides the same options that are accessible by clicking the respective device's icon on the :doc:`status bar <statusbar>`.
 
 The **Clear image history** option empties the list of recently-loaded image files or folders on all storage drives.
 
@@ -89,7 +89,7 @@ Tools
 .. note:: Integration requires the Discord desktop app, running on x86 or x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below.
-* **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
+* **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
    * **Language:** select a language for the 86Box user interface.
