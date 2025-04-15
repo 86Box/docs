@@ -46,5 +46,3 @@ Vision Systems LBA Enhancer
 Add an IDE Enhancer option ROM card, which can help work around the :ref:`hard disk size limits <hardware/diskimages:Hard disk size limits>` on many older machines. Hard disks up to 8055 MB (16367 cylinders, 16 heads, 63 sectors) in size are supported; they must be manually configured to **8 cylinders, 8 heads and 8 sectors** on the machine's BIOS setup utility for the Enhancer to handle them.
 
 The BIOS option ROM address used can be configured through the *Settings* button.
-
-.. note:: Added in **86Box 4.1.1**.
