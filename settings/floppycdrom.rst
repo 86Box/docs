@@ -30,6 +30,11 @@ Up to four CD-ROM / DVD-ROM optical disc drives can be attached to the emulated 
 * **Bus:** storage bus to attach the drive to. ATAPI (IDE) and SCSI are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
-* **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided. Some emulated machines have manufacturer restore discs locked to a specific drive model.
+* **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided.
+
+.. note::
+  * Some emulated machines have manufacturer restore discs locked to a specific drive model.
+  * The default **86Box 86B_CD 3.50** model also supports DVDs; the **86B_DVD 4.30** differs only in model name.
+  * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
 
 CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
