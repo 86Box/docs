@@ -99,6 +99,11 @@ Monitor sleep mode
 
 The *Monitor in sleep mode* message will be displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
 
+MT-32 display
+^^^^^^^^^^^^^
+
+Any text messages sent to the LCD screen of an :ref:`emulated Roland MT-32/CM-32L synthesizer <settings/sound:MIDI Out Device>` are displayed here.
+
 ISABugger
 ^^^^^^^^^
 
@@ -109,4 +114,4 @@ POST card
 
 The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
-.. note:: The additional information area can only be used by one component at a time. If both the ISABugger and the POST card are enabled simultaneously, the POST card takes over whenever a POST code is reported, and the ISABugger takes over whenever one of its registers is written to. The *Monitor in sleep mode* message is high-priority and will override all other components.
+.. note:: The additional information area can only be used by one component at a time. The MT-32 display has the highest priority, followed by the monitor sleep mode message, then the ISABugger and POST card with the same priority (taking over whenever they're written to).
