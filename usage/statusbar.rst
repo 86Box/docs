@@ -96,4 +96,4 @@ POST card
 
 The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
-.. note:: The additional information area can only be used by one component at a time. If both the ISABugger and the POST card are enabled simultaneously, the POST card takes over whenever a POST code is reported, and the ISABugger takes over whenever one of its registers is written to. The *Monitor in sleep mode* message is high-priority and will override all other components.
+.. note:: The additional information area can only be used by one component at a time. The monitor sleep mode message takes priority over the ISABugger and POST card, which have the same priority (taking over whenever they're written to).
