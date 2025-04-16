@@ -91,8 +91,6 @@ MT-32 display
 
 Any text messages sent to the LCD screen of an :ref:`emulated Roland MT-32/CM-32L synthesizer <settings/sound:MIDI Out Device>` are displayed here.
 
-.. note:: MT-32 display functionality is currently only available on **Linux** hosts.
-
 ISABugger
 ^^^^^^^^^
 
