@@ -10,9 +10,9 @@ For more information, see the `COPYING file <https://github.com/86Box/86Box/blob
 
 The project maintainer is `OBattler <https://github.com/OBattler>`_.
 
-If you need a configuration manager for 86Box, use the `86Box Manager <https://github.com/86Box/86BoxManager>`_, our
-officially endorsed 86Box configuration manager, developed by Overdoze (`daviunic <https://github.com/daviunic>`_).
-Please note that 86Box Manager is currently Windows-exclusive.
+If you need a configuration manager for 86Box, use the `Avalonia 86 <https://github.com/notBald/Avalonia86>`_, our
+officially endorsed 86Box configuration manager, developed by notBald (`notBald <https://github.com/notBald>`_).
+Please note that Avalonia 86 currently only works on Windows and Linux.
 
 =========
 Community
