@@ -39,7 +39,7 @@ To release the mouse, press :kbd:`F8 + F12` simultaneously. You can also use the
 
 .. rubric:: Step 7: What now?
 
-If you made it this far, you got the basics of using 86Box, but there's more features and options to explore. For example, you can try out `86Box Manager <https://github.com/86Box/86BoxManager>`_ for easier management of multiple emulated machines. You can see what's under the *View* menu, or look at some of the more obscure options in the *Settings* window.
+If you made it this far, you got the basics of using 86Box, but there's more features and options to explore. For example, you can try out `Avalonia86 <https://github.com/notBald/Avalonia86>`_ for easier management of multiple emulated machines. You can see what's under the *View* menu, or look at some of the more obscure options in the *Settings* window.
 
 You may eventually encounter the need to get files *into* your machine. Please see :ref:`this section for information on disk image formats<hardware/diskimages:Disk images>` and :ref:`this section on creating and using disk images<hardware/diskimages:Creating and using disk images>`.
 
