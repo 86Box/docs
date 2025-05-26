@@ -48,3 +48,10 @@ Configure the mappings for each emulated game port controller. The *Device* box 
 If you're not sure as to what axis or button numbers map to which sticks and buttons on the real controller, use the *Test* feature of Windows' *Game Controllers* control panel (``joy.cpl``) or another controller testing utility for your platform.
 
 .. note:: XInput controllers are accessed through their DInput emulation mode at the moment.
+
+Key bindings
+------------
+
+View and change keyboard shortcuts for common emulator actions. The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
+
+.. note:: The F8 + F12 key combination used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
