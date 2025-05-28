@@ -12,14 +12,14 @@ magick=magick
 $magick >/dev/null 2>&1 || magick=magick.exe
 
 # Convert icons to PNG.
-for i in "$1/src/win/icons/"*.ico
+for i in "$1/src/qt/icons/"*.ico
 do
 	$magick convert "$i" "usage/images/$(basename $i | sed -e 's/.ico$//').png"
 done
 
 # Remove unnecessary icons.
 cd usage/images
-rm -f 86Box-* *_empty* *_active* *_disabled* *-1.png *-2.png
+rm -f 86Box-* *active* *disabled* *mute* *-1.png *-2.png
 
 # Get small and big icons.
 for i in *-0.png
