@@ -51,6 +51,9 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
   * - ``0x84``
     - Early Compaq
 
+  * - ``0xE0 0xE4``
+    - Dell (4-character text display after the port ``0x80`` hex display)
+
   * - ``0x190``
     - IBM PS/1 and PS/2 not based on the Micro Channel Architecture
 
