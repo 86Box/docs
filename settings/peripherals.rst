@@ -30,7 +30,7 @@ POST card
 
 Emulate a diagnostic POST card, which displays POST code values issued by the emulated machine's BIOS on the status bar. See :ref:`Status bar: POST card <usage/statusbar:POST card>` for more information.
 
-The POST card will automatically use the correct diagnostic I/O port for the emulated machine:
+The POST card will automatically use the correct diagnostic I/O ports for the emulated machine:
 
 .. list-table::
   :header-rows: 1
@@ -39,7 +39,7 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
   * - Port
     - Machine types
 
-  * - ``0x10``
+  * - ``0x10 0x11 0x12``
     - IBM PCjr
 
   * - ``0x60``
