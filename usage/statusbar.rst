@@ -112,3 +112,10 @@ POST card
 The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
 .. note:: The additional information area can only be used by one component at a time. The MT-32 display has the highest priority, followed by the monitor sleep mode message, then the ISABugger and POST card with the same priority (taking over whenever they're written to).
+
+|num_lock_off| |caps_lock_off| |scroll_lock_off| Keyboard indicators
+--------------------------------------------------------------------
+
+Indicator lights for |num_lock_off_small| Num Lock, |caps_lock_off_small| Caps Lock and |scroll_lock_off_small| Scroll Lock on the emulated keyboard are displayed on the right side of the status bar.
+
+A |kana_lock_off_small| Kana Lock indicator is also displayed when emulating a machine with a Japanese AX keyboard.
