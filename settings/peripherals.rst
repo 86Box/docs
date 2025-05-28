@@ -54,6 +54,9 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
   * - ``0x190``
     - IBM PS/1 and PS/2 not based on the Micro Channel Architecture
 
+  * - ``0x378``
+    - Olivetti
+
   * - ``0x680``
     - Micro Channel Architecture
 
