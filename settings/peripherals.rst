@@ -60,6 +60,9 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
   * - ``0x680``
     - Micro Channel Architecture
 
+  * - ``0x5080``
+    - ASUS ISA-486C
+
 .. note:: Some operating systems and applications use port ``0x80`` (which is shared with the POST card on most machines) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
 
 86Box Unit Tester
