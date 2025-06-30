@@ -33,6 +33,8 @@ PCap connects directly to one of the host's network adapters. The emulated machi
 
 This mode requires `Npcap <https://npcap.com/>`_ (or another WinPcap-compatible driver) to be installed on Windows hosts, or the correct permissions to be set for accessing ``pcap`` on Linux or ``bpf`` on macOS hosts. Only **wired Ethernet network connections** are compatible; Wi-Fi and other connections will not work at all, as they do not allow PCap to listen for packets bound to the emulated card's MAC address.
 
+.. note:: PCap is not supported on the **Linux AppImage**, as the ``cap_net_raw`` and ``cap_net_admin`` permissions cannot be passed through to it. Extracting the AppImage or running it as root is not recommended.
+
 Private PCap network
 ^^^^^^^^^^^^^^^^^^^^
 
