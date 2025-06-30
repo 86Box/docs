@@ -19,6 +19,7 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 * **PCap:** connects directly to a host network adapter. Similar to the **Bridge** mode on other emulators and virtualizers.
 * **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other emulators and virtualizers.
 * **VDE:** attaches to a virtual switch created by :ref:`hardware/network:VDE`. Only available on Linux and macOS hosts.
+* **TAP:** creates or attaches to a virtual bridge through :ref:`hardware/network:TAP`. Only available on Linux hosts.
 
 .. note::
   If PCap mode is not listed, make sure that:
@@ -46,3 +47,4 @@ Settings for the network emulation mode selected above. Only settings relevant t
 
 * **Interface:** host network adapter to use in **PCap** mode.
 * **VDE Socket:** virtual switch socket path to use in **VDE** mode. See the :ref:`VDE setup guide <hardware/network:VDE>` for more information.
+* **TAP Bridge Device:** virtual bridge name to use in **TAP** mode. See :ref:`hardware/network:TAP` for more information.

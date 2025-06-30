@@ -147,6 +147,15 @@ This guide only covers the basics of VDE. It provides many more useful features 
 * Connecting to **other emulators and virtualizers** with VDE support such as QEMU and VirtualBox
 * Creating **VLANs and access control policies** which can be assigned to switch ports
 
+TAP
+---
+
+TAP is a simpler method for connecting 86Box machines and other applications together without the complexity of :ref:`hardware/network:VDE`.
+
+.. note:: TAP is only available on **Linux** hosts.
+
+The bridge name specified in the :ref:`network settings <settings/network:Options>` represents a virtual network: all applications set to the same bridge name will be connected to the same network. 86Box will automatically create the bridge if it doesn't already exist.
+
 Modem
 -----
 
