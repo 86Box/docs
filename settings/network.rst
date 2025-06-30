@@ -21,12 +21,7 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 * **VDE:** attaches to a virtual switch created by :ref:`hardware/network:VDE`. Only available on Linux and macOS hosts.
 * **TAP:** creates or attaches to a virtual bridge through :ref:`hardware/network:TAP`. Only available on Linux hosts.
 
-.. note::
-  If PCap mode is not listed, make sure that:
-
-  * A WinPcap-compatible driver is installed;
-  * The installed driver is compatible with your version of Windows;
-  * At least one compatible (wired) network adapter is present.
+.. note:: If PCap mode is not listed, make sure PCap is :ref:`enabled on your host and a supported network connection is present <hardware/network:PCap>`.
 
 Adapter
 ^^^^^^^
