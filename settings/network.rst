@@ -17,11 +17,7 @@ Network emulation mode to use. See :doc:`../hardware/network` for more informati
 PCap device
 -----------
 
-Host network adapter to use for PCap mode. If no adapters appear on this list, make sure that:
-
-* A WinPcap-compatible driver is installed;
-* The installed driver is compatible with your version of Windows;
-* At least one compatible (wired) network adapter is present.
+Host network adapter to use for PCap mode. If no adapters appear in this list, make sure PCap is :ref:`enabled on your host and a supported network connection is present <hardware/network:PCap>`.
 
 Network adapter
 ---------------
