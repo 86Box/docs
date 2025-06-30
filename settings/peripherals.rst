@@ -18,7 +18,14 @@ ISA Memory Expansion
 
 Add up to four ISA-based memory expansion cards, for machines which support memory expansion through the ISA bus.
 
-The memory start address and size for each expansion card can be configured through its respective *Configure* button.
+The memory start address and size for each card can be configured through its respective *Configure* button.
+
+ISA ROM Cards
+-------------
+
+Add up to four ROM expansion cards, which can load a BIOS option ROM directly into the emulated machine.
+
+The ROM file, base address and effective size for each card can be configured through its respective *Configure* button.
 
 ISABugger
 ---------
