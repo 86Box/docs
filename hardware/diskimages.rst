@@ -103,7 +103,7 @@ There are limits to how big of a hard disk an emulated machine can accept. Such 
     - 16
     - 256
 
-Disk overlay software such as the :ref:`settings/storage:Vision Systems LBA Enhancer` or *Ontrack Disk Manager* can work around BIOS limits and allow booting of larger IDE hard drives, with the same caveats as using such software on a real machine. The maximum supported disk image size for IDE or SCSI is 131071 MB.
+Disk overlay software such as the :ref:`Vision Systems LBA Enhancer <settings/peripherals:ISA ROM Cards>` or *Ontrack Disk Manager* can work around BIOS limits and allow booting of larger IDE hard drives, with the same caveats as using such software on a real machine. The maximum supported disk image size for IDE or SCSI is 131071 MB.
 
 Floppy disk images
 ------------------

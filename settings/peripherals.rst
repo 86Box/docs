@@ -23,9 +23,11 @@ The memory start address and size for each card can be configured through its re
 ISA ROM Cards
 -------------
 
-Add up to four ROM expansion cards, which can load a BIOS option ROM directly into the emulated machine.
+Add up to four ROM expansion cards, which can load a predefined or custom BIOS option ROM directly into the emulated machine.
 
-The ROM file, base address and effective size for each card can be configured through its respective *Configure* button.
+The **Vision Systems LBA Enhancer** ROM can help work around the :ref:`hard disk size limits <hardware/diskimages:Hard disk size limits>` on many older machines. Hard disks up to 8055 MB (16367 cylinders, 16 heads, 63 sectors) in size are supported; they must be manually configured to **8 cylinders, 8 heads and 8 sectors** on the machine's BIOS setup utility for the Enhancer to handle them.
+
+The base address for each card, as well as the ROM file and size for a generic card, can be configured through its respective *Configure* button.
 
 ISABugger
 ---------

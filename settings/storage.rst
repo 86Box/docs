@@ -5,6 +5,8 @@
 
 The **Storage controllers** page contains settings related to the emulated machine's disk drive controllers.
 
+.. note:: The **Vision Systems LBA Enhancer** previously available here is now an ISA ROM card, which can be enabled through the :ref:`Other peripherals page <settings/peripherals:ISA ROM Cards>`.
+
 HD Controller
 -------------
 
@@ -39,10 +41,3 @@ Cassette
 --------
 
 Enable IBM cassette tape emulation. Only available on machines with a cassette port. The cassette deck can be controlled through the :ref:`status bar <usage/statusbar:|cassette| Cassette deck>` or :ref:`Media menu <usage/menubar:Media>`.
-
-Vision Systems LBA Enhancer
----------------------------
-
-Add an IDE Enhancer option ROM card, which can help work around the :ref:`hard disk size limits <hardware/diskimages:Hard disk size limits>` on many older machines. Hard disks up to 8055 MB (16367 cylinders, 16 heads, 63 sectors) in size are supported; they must be manually configured to **8 cylinders, 8 heads and 8 sectors** on the machine's BIOS setup utility for the Enhancer to handle them.
-
-The BIOS option ROM address used can be configured through the *Settings* button.
