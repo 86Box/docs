@@ -14,6 +14,7 @@ Up to four floppy disk drives can be attached to the emulated system, although n
 
    * **5.25" 1.2M 300/360 RPM** and **3.5" 1.44M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or NEC PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.
    * **3.5" 1.44M PC-98:** NEC PC-98 drive, which is 3-mode and inverts the polarity of the Density Select pin.
+   * The special **PS/2** drive types have been removed, as the required inversion of the Density Select pin is now performed automatically on IBM PS/2 machines.
 
 * **Turbo timings:** run the drive mechanism as fast as possible. This decreases access times and makes some incorrectly-dumped floppies readable, but may cause issues with some operating systems and applications.
 * **Check BPB:** if unchecked, 86Box will ignore the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ when determining the physical media format for a floppy image on this drive. See :ref:`hardware/diskimages:Floppy disk detection` for more details.
