@@ -57,3 +57,11 @@ Automatically copy your host system's date and time over to the emulated machine
 * **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
 * **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
 * **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+
+CPU frame size
+--------------
+
+Change the emulator's frame timing behavior. This mostly affects the smoothness of the emulated mouse and other input peripherals.
+
+* **Larger frames (less smooth):** same behavior as previous 86Box versions. Switching to it may improve performance on low-end host systems, at the expense of reduced input smoothness.
+* **Smaller frames (smoother):** the new default behavior, which improves input smoothness.
