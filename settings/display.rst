@@ -56,11 +56,11 @@ The *Configure* button provides the following settings:
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
 * **Dynamic Recompiler:** enable the Voodoo recompiler for faster emulation.
 
-IBM 8514/A / XGA Graphics
--------------------------
+IBM 8514/A / XGA / PS/55 Display Adapter Graphics
+-------------------------------------------------
 
-Emulate an **IBM 8514/A** or **XGA** add-on graphics accelerator. Both the original IBM cards for the MCA bus and generic clone cards for the ISA bus are available; the correct card is automatically selected based on the machine's supported expansion buses.
+Emulate an **IBM 8514/A**, **XGA** or **PS/55 Display Adapter** add-on graphics accelerator. The 8514/A is available for both MCA and ISA buses (emulating a generic clone card on the latter), while the other two are available for the MCA bus only.
 
-The *Configure* button next to the XGA opens a new window where the card type (**XGA-1** or **XGA-2**) and initial BIOS address can be configured.
+The *Configure* buttons next to each card open a new window with settings specific to that card, such as the amount of video memory for the 8514/A and model type for the XGA.
 
 .. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
