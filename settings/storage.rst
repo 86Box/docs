@@ -19,14 +19,14 @@ FD Controller
 
 Floppy disk drive controller card to emulate. Selecting a controller is not required, unless you wish to use one of the add-on controllers for adding high-density 1.44M floppy support to XT machines.
 
-The BIOS option ROM address used by the selected controller can be configured through the *Settings* button.
+The BIOS option ROM address used by the selected controller can be configured through the *Configure* button.
 
 Tertiary / Quaternary IDE Controller
 ------------------------------------
 
 Add a third or fourth (respectively) IDE channel to the emulated machine, through a generic ISA or VLB IDE controller card.
 
-The IRQ used by each controller can be configured through its respective *Settings* button.
+The IRQ used by each controller can be configured through its respective *Configure* button.
 
 .. note:: The tertiary and quaternary controllers are not Plug and Play compliant by default; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
 
