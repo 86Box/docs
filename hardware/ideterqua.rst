@@ -16,7 +16,7 @@ The following resources are used by these additional controllers:
 |Quaternary|01E8h        |03EEh          |11 |
 +----------+-------------+---------------+---+
 
-Each controller's IRQ can be configured through its respective *Settings* button on :ref:`settings/storage:Tertiary / Quaternary IDE Controller`. The *Plug and Play* option on the *IRQ* box enables Plug and Play functionality, allowing a PnP compliant operating system to automatically set the controller's IRQ, while all other options set a static IRQ with no Plug and Play.
+Each controller's IRQ can be configured through its respective *Configure* button on :ref:`settings/storage:Tertiary / Quaternary IDE Controller`. The *Plug and Play* option on the *IRQ* box enables Plug and Play functionality, allowing a PnP compliant operating system to automatically set the controller's IRQ, while all other options set a static IRQ with no Plug and Play.
 
 .. note:: * When using a non-Plug and Play IDE controller on an emulated machine which supports Plug and Play, remember to mark the IRQ as being used by a legacy ISA device in the BIOS setup utility.
           * Many operating systems do not allow non-Plug and Play IDE controllers to use IRQs outside of the default ones listed on the table above.
