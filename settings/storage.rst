@@ -7,13 +7,6 @@ The **Storage controllers** page contains settings related to the emulated machi
 
 .. note:: The **Vision Systems LBA Enhancer** previously available here is now an ISA ROM card, which can be enabled through the :ref:`Other peripherals page <settings/peripherals:ISA ROM Cards>`.
 
-HD Controller
--------------
-
-Hard disk drive controller card to emulate. This box only lists cards supported by the machine's expansion buses. MFM, RLL, ESDI and IDE controllers are available. Selecting an IDE controller is not required for machines with onboard IDE.
-
-The *Configure* button opens a new window with settings specific to the selected controller card, such as the BIOS option ROM address.
-
 FD Controller
 -------------
 
@@ -21,14 +14,21 @@ Floppy disk drive controller card to emulate. Selecting a controller is not requ
 
 The BIOS option ROM address used by the selected controller can be configured through the *Configure* button.
 
-Tertiary / Quaternary IDE Controller
-------------------------------------
+CD-ROM Controller
+-----------------
 
-Add a third or fourth (respectively) IDE channel to the emulated machine, through a generic ISA or VLB IDE controller card.
+Standalone CD-ROM controller card to emulate. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk>` or :ref:`settings/storage:SCSI`.
 
-The IRQ used by each controller can be configured through its respective *Configure* button.
+The I/O port used by the selected controller can be configured through the *Configure* button.
 
-.. note:: The tertiary and quaternary controllers are not Plug and Play compliant by default; they may require manual configuration of emulated operating systems, and may not be bootable. See :doc:`../hardware/ideterqua` for more information.
+Hard disk
+---------
+
+MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. The selection boxes only list cards supported by the machine's expansion buses. On machines equipped with an on-board disk controller, the *Internal* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
+
+The *Configure* buttons open a new window with settings specific to the corresponding controller card, such as the I/O port and IRQ for ISA cards.
+
+.. note:: The **tertiary and quaternary IDE controllers** are now selectable here, replacing the previous separate options for each. These controllers are not Plug and Play compliant by default, potentially requiring manual configuration of the emulated operating system, and may not be bootable; see :doc:`../hardware/ideterqua` for more information.
 
 SCSI
 ----
