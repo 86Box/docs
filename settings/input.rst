@@ -8,7 +8,7 @@ The **Input devices** page contains settings related to the emulated machine's m
 Keyboard
 --------
 
-Select the keyboard type to emulate.
+Select the keyboard type to emulate. This box only lists keyboards supported by the machine.
 
 The *Configure* button opens a new window with settings specific to the selected keyboard type, such as the number of keys.
 
@@ -35,7 +35,7 @@ Emulate one or more game port controller(s). The following types are supported:
 
 * Generic **joysticks**, **gamepads**, **flight yokes** and a **steering wheel**, all with a variable number of buttons and analog axes (two axes make one analog stick).
 * **CH Flightstick Pro:** flight controller with four buttons, three or four axes and a POV hat.
-* **Microsoft SideWinder Pad:** up to four gamepads, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.
+* **Microsoft SideWinder Pad:** up to four gamepads, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated operating system.
 * **Thrustmaster Flight Control System:** flight controller with four buttons, two or three axes and a POV hat.
 
 .. note:: A **generic game port card** is emulated if the machine has no game ports (either built-in or as part of a sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, configurable through ISA Plug and Play, except on IBM PCjr and PS/1 machines where it uses port 201h only with no Plug and Play capability.

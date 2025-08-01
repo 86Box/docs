@@ -8,7 +8,7 @@ The **Hard disks** page contains settings related to the emulated machine's fixe
 Hard disk list
 --------------
 
-All hard disks attached to the emulated system are listed, with the following information:
+All hard disks attached to the emulated machine are listed, with the following information:
 
 * **Bus:** storage bus the disk is attached to, as well as the disk's bus channel or ID. These can be changed through the *Bus* and *Channel*/*ID* boxes below the list.
 * **File:** path to the disk image file.

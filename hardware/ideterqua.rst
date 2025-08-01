@@ -1,7 +1,7 @@
 Tertiary and quaternary IDE
 ===========================
 
-The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Storage controllers <settings/storage:Tertiary / Quaternary IDE Controller>` settings page, are not supported by all emulated BIOSes and may require manual configuration of emulated operating systems. The specific details are outlined on this page.
+The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Storage controllers <settings/storage:Tertiary / Quaternary IDE Controller>` settings page, are not supported by all emulated BIOSes and may require manual configuration of the emulated operating system. The specific details are outlined on this page.
 
 System resources
 ----------------

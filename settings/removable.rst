@@ -8,7 +8,7 @@ The **Other removable devices** page contains settings related to the emulated m
 MO / Removable disk drives
 --------------------------
 
-Up to four Magneto-Optical and four removable disk drives can be attached to the emulated system. The following settings apply to the selected drive:
+Up to four Magneto-Optical and four removable disk drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
 * **Bus:** storage bus to attach the drive to. ATAPI (IDE) and SCSI are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
