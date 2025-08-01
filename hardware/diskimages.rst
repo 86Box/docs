@@ -175,8 +175,8 @@ The BIOS Parameter Block detection method may behave incorrectly with non-DOS fl
 
 .. note:: When using a **Raw** image of a non-DOS floppy with Check BPB disabled, make sure the image file is not truncated (smaller than its media size), otherwise incorrect behavior may still occur.
 
-MO / ZIP removable disk images
-------------------------------
+MO / removable disk images
+--------------------------
 
 Supported formats:
 
@@ -194,7 +194,7 @@ Supported formats:
 
   * - Japanese FDI
     - .mdi / .zdi
-    - .mdi for MO, .zdi for ZIP.
+    -
 
 CD-ROM / DVD-ROM optical disc images
 ------------------------------------

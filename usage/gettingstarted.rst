@@ -27,7 +27,7 @@ Once you've selected the hardware components you wish to emulate, you need to ma
 
 Now that you've configured everything, you're ready to run some software in your emulated machine. Maybe you want to install an operating system or play a booter game. In any case, you'll have to mount some virtual media to get going. You can do this with the icons in the :doc:`status bar <statusbar>`. Icons representing removable media appear semi-transparent when their associated drive is empty, and fully opaque when media is inserted.
 
-When you want to eject virtual media, click on the particular icon again and select *Eject* (for floppy and ZIP disks) or *Empty* (for CD-ROMs). The icon becomes semi-transparent again.
+When you want to eject virtual media, click on the particular icon again and select *Eject* (for floppy and removable disks) or *Empty* (for CD-ROMs). The icon becomes semi-transparent again.
 
 .. rubric:: Step 6: Mouse and keyboard interaction
 
