@@ -10,7 +10,7 @@ Parallel port sound devices such as the **Disney Sound Source** and **Covox Spee
 Sound card #1-#4
 ----------------
 
-Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an on-board sound chip, the *Internal* option for sound card #1 enables the on-board sound.
+Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an on-board sound chip, the *Internal device* option for sound card #1 enables the on-board sound.
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 

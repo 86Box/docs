@@ -24,7 +24,7 @@ The I/O port used by the selected controller can be configured through the *Conf
 Hard disk
 ---------
 
-MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. The selection boxes only list cards supported by the machine's expansion buses. On machines equipped with an on-board disk controller, the *Internal* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
+MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. The selection boxes only list cards supported by the machine's expansion buses. On machines equipped with an on-board disk controller, the *Internal device* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
 
 The *Configure* buttons open a new window with settings specific to the corresponding controller card, such as the I/O port and IRQ for ISA cards.
 
