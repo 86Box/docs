@@ -5,6 +5,13 @@
 
 The **Input devices** page contains settings related to the emulated machine's mouse, joysticks and other input devices.
 
+Keyboard
+--------
+
+Select the keyboard type to emulate.
+
+The *Configure* button opens a new window with settings specific to the selected keyboard type, such as the number of keys.
+
 Mouse
 -----
 
