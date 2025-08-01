@@ -25,27 +25,20 @@ Emulate a pointing device. The following types are supported:
 The *Configure* button opens a new window with settings specific to the selected device type, such as the number of buttons, or the serial port for a serial mouse or tablet.
 
 .. note:: 
-  * Serial pointing devices require the configured serial port to be enabled on the :ref:`Ports page <settings/ports:Serial port 1-4>`.
-  * The middle button cannot be used to release mouse capture when emulating a mouse with 3 or more buttons.
+  * **Serial pointing devices** require the configured serial port to be enabled on the :ref:`Ports page <settings/ports:Serial port 1-4>`.
+  * The **middle mouse button** cannot be used to release mouse capture when emulating a pointing device with 3 or more buttons.
 
 Joystick
 --------
 
-Emulate one or more game port controller(s). The following controller types are supported:
+Emulate one or more game port controller(s). The following types are supported:
 
-* **None:** no controller connected.
-* **2-axis, 2-button joystick(s):** up to two controllers, each with two buttons and an analog stick.
-* **2-axis, 4-button joystick:** single controller with four buttons and an analog stick.
-* **3-axis, 2-button joystick:** single controller with two buttons and an analog stick and a throttle.
-* **3-axis, 4-button joystick:** single controller with four buttons and an analog stick and a throttle.
-* **2-axis, 6-button joystick:** single controller with four regular buttons, two additional buttons mapped to the third and fourth axes, and an analog stick.
-* **2-axis, 8-button joystick:** single controller with four regular buttons, four additional buttons mapped to the third and fourth axes, and an analog stick.
-* **4-axis 4-button joystick:** single controller with four buttons and two analog sticks (or four axes).
-* **CH Flightstick Pro:** flight controller with four buttons, three axes and a POV hat.
-* **Microsoft SideWinder Pad:** up to four controllers, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.
-* **Thrustmaster Flight Control System:** flight controller with four buttons, two axes and a POV hat.
+* Generic **joysticks**, **gamepads**, **flight yokes** and a **steering wheel**, all with a variable number of buttons and analog axes (two axes make one analog stick).
+* **CH Flightstick Pro:** flight controller with four buttons, three or four axes and a POV hat.
+* **Microsoft SideWinder Pad:** up to four gamepads, each with 10 buttons and a directional pad. Not compatible with standard game port joysticks; requires a driver in the emulated machine.
+* **Thrustmaster Flight Control System:** flight controller with four buttons, two or three axes and a POV hat.
 
-.. note:: A generic game port card is emulated if the machine has no game ports (either built-in or as part of a Plug and Play or PCI sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, which can be changed through ISA Plug and Play. On IBM PCjr and PS/1 machines, the generic card uses port 201h only and has no Plug and Play capability.
+.. note:: A **generic game port card** is emulated if the machine has no game ports (either built-in or as part of a sound card) to accomodate the selected controller. This generic card uses the default I/O ports 200-207h, configurable through ISA Plug and Play, except on IBM PCjr and PS/1 machines where it uses port 201h only with no Plug and Play capability.
 
 Joystick 1-4...
 ---------------
@@ -54,11 +47,11 @@ Configure the mappings for each emulated game port controller. The *Device* box 
 
 If you're not sure as to what axis or button numbers map to which sticks and buttons on the real controller, use the *Test* feature of Windows' *Game Controllers* control panel (``joy.cpl``) or another controller testing utility for your platform.
 
-.. note:: XInput controllers are accessed through their DInput emulation mode at the moment.
+.. note:: **XInput controllers** are accessed through their DInput emulation mode at the moment.
 
 Key bindings
 ------------
 
 View and change keyboard shortcuts for common emulator actions. The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
 
-.. note:: The F8 + F12 key combination used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
+.. note:: The **F8 + F12 key combination** used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
