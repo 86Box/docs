@@ -158,6 +158,10 @@ See: :ref:`atc6310bxii`
 
 * ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
 
+.. rubric:: ASUS CUBX
+
+* Equipped with an on-board CMD PCI-0648 IDE controller on the :ref:`tertiary and quaternary channels <settings/hdd:Adding a new disk>`, on top of the PIIX4E southbridge controller on the primary and secondary channels.
+
 Miscellaneous
 -------------
 
