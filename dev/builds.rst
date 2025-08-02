@@ -1,14 +1,14 @@
 Advanced builds
 ===============
 
-The `86Box Jenkins <https://ci.86box.net/job/86Box/>`_ provides all kinds of pre-release testing builds for advanced users. These are linked to the `86Box git repository on GitHub <https://github.com/86Box/86Box>`_; a new build is produced with the latest source code every time the repository is updated.
+The `experimental builds page <https://86box.net/builds>`_, backed by the `86Box Jenkins <https://ci.86box.net/job/86Box/>`_, provides pre-release testing builds for advanced users. These are linked to the `86Box git repository on GitHub <https://github.com/86Box/86Box>`_; a new build is produced from the latest source code every time the repository is updated.
 
-.. important:: Testing builds are development snapshots which may contain bugs, unfinished features or other issues. These should only be used if you know what you're doing.
+.. important:: Testing builds are development snapshots which may contain bugs, unfinished features, reduced performance or other issues. These should only be used if you know what you're doing.
 
 Variants
 --------
 
-86Box builds are available in a number of variants. The Jenkins page will automatically detect the recommended variant for the system you're viewing it on, but if you're downloading builds for a different system (or you have disabled JavaScript), use the guide below to select a variant:
+86Box builds are available in a number of variants. The experimental builds page will automatically detect the recommended variant for the system you're viewing it on, but if you're downloading builds for a different system or directly through Jenkins, use the guide below to select a variant:
 
 * The **Old Recompiler** is recommended. The **New Recompiler** is in beta; you may experience bugs and performance loss with it.
 
