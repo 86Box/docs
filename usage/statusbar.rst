@@ -118,4 +118,4 @@ The leftmost hexadecimal value is the most recent POST code reported, while the 
 
 Indicator lights for |num_lock_off_small| Num Lock, |caps_lock_off_small| Caps Lock and |scroll_lock_off_small| Scroll Lock on the emulated keyboard are displayed on the right side of the status bar.
 
-A |kana_lock_off_small| Kana Lock indicator is also displayed when emulating a machine with a Japanese AX keyboard.
+A |kana_lock_off_small| Kana Lock indicator is also displayed when emulating a :ref:`Japanese AX keyboard <settings/input:Keyboard>`.
