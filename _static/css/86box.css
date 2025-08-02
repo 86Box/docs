@@ -4,6 +4,32 @@ h2 > img {
 	padding-right: 5px;
 }
 
+/* Hover for keyboard indicators. */
+img[alt="num_lock_off"]:hover {
+	content: url("../../_images/num_lock_on.png");
+}
+img[alt="caps_lock_off"]:hover {
+	content: url("../../_images/caps_lock_on.png");
+}
+img[alt="scroll_lock_off"]:hover {
+	content: url("../../_images/scroll_lock_on.png");
+}
+img[alt="kana_lock_off"]:hover {
+	content: url("../../_images/kana_lock_on.png");
+}
+img[alt="num_lock_off_small"]:hover {
+	content: url("../../_images/num_lock_on_small.png");
+}
+img[alt="caps_lock_off_small"]:hover {
+	content: url("../../_images/caps_lock_on_small.png");
+}
+img[alt="scroll_lock_off_small"]:hover {
+	content: url("../../_images/scroll_lock_on_small.png");
+}
+img[alt="kana_lock_off_small"]:hover {
+	content: url("../../_images/kana_lock_on_small.png");
+}
+
 /* Remove bottom spacing from lists in tables and admonitions. */
 table.docutils ul, table.docutils ol {
 	margin-bottom: 0 !important;
