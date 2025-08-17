@@ -95,10 +95,11 @@ Tools
    * **Language:** select a language for the 86Box user interface.
    * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
-   * **Inhibit multimedia keys on Windows:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine. This option is only available on Windows.
+   * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine. This option is only available on Windows.
    * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
+* **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4 Device>` are saved.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
 
 Help
