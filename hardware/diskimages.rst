@@ -217,9 +217,9 @@ Supported formats:
     - .iso
     -
 
-  * - Daemon Tools
+  * - Alcohol 120%
     - .mds + .mdf
-    - v2 / encrypted images are not supported.
+    - Daemon Tools v2 / encrypted images are not supported.
 
 CD audio
 ^^^^^^^^
