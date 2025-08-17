@@ -113,6 +113,11 @@ The leftmost hexadecimal value is the most recent POST code reported, while the 
 
 .. note:: The additional information area can only be used by one component at a time. The MT-32 display has the highest priority, followed by the monitor sleep mode message, then the ISABugger and POST card with the same priority (taking over whenever they're written to).
 
+Refresh rate indicator
+----------------------
+
+The emulated monitor's current refresh rate, as defined by the :doc:`display hardware <../settings/display>`.
+
 |num_lock_off| |caps_lock_off| |scroll_lock_off| Keyboard indicators
 --------------------------------------------------------------------
 
