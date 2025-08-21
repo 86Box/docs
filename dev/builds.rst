@@ -8,7 +8,7 @@ The `86Box Jenkins <https://ci.86box.net/job/86Box/>`_ provides all kinds of pre
 Variants
 --------
 
-86Box builds are available in a number of variants. The Jenkins page will automatically detect the recommended variant for the system you're viewing it on, but if you're downloading builds for a different system (or you have disabled JavaScript), use the guide below to select a variant:
+86Box builds are available in a number of variants. Use the guide below to select a variant:
 
 * The **Old Recompiler** is recommended. The **New Recompiler** is in beta; you may experience bugs and performance loss with it.
 
