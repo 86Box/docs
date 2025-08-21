@@ -25,20 +25,20 @@ Variants
 Discontinued variants
 ^^^^^^^^^^^^^^^^^^^^^
 
-These variants are no longer built by Jenkins and can only be :doc:`compiled from source <buildguide>`.
+The following variants are no longer built by Jenkins and can only be :doc:`compiled from source <buildguide>`:
 
-* 32-bit variants (**x86** and **ARM32**) as of September 3rd 2024.
+* 32-bit architectures (**x86** and **ARM32**) as of September 3rd 2024.
 
-  * These variants were eliminated to better focus development on relevant 64-bit architectures, since systems old enough to be 32-bit-only lack the performance for a satisfactory emulation experience.
+  * These were eliminated to better focus development on relevant 64-bit architectures, since systems old enough to be 32-bit-only lack the performance for a satisfactory emulation experience.
 
 * Debug variants (**86Box-Debug**) as of April 2nd 2023.
 
-  * These variants were compiled with debug symbols and reduced optimizations to help with running the emulator under ``gdb`` or other debuggers. They were eliminated as the setup process for debugging grew closer to just compiling from source instead.
+  * These were compiled with debug symbols and reduced optimizations to help with running the emulator under ``gdb`` or other debuggers. They were eliminated as the setup process for debugging grew closer to just compiling from source instead.
 
 * Dev variants (**86Box-Dev** and **86Box-DevODR**) as of November 18th 2021.
 
-  * These variants contained incomplete and experimental features subject to change at any time, with the -Dev variant also containing the New Recompiler beta.
+  * These contained incomplete and experimental features subject to change at any time, with the -Dev variant also containing the New Recompiler beta.
 
 * Optimized variants (**86Box-Optimized**) as of March 18th 2021.
 
-  * These variants' aggressive microarchitecture-specific optimizations provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
+  * These had aggressive microarchitecture-specific optimizations which provided very little performance improvement (within margin of error on modern CPUs) while introducing bugs and other incorrect behavior.
