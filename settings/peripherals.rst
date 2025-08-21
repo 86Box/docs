@@ -83,3 +83,10 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
 Emulate a special device for software in the emulated machine to control 86Box for testing purposes. The *Configure* button provides settings specific to this device.
 
 .. note:: Documentation to be concluded.
+
+Novell NetWare 2.x Key Card
+---------------------------
+
+Emulate the hardware license key card required by Novell NetWare 2.0a among other versions.
+
+The serial number displayed in software can be configured through the *Configure* button.
