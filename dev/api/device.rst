@@ -19,17 +19,22 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
   * - :cspan:`1` ``flags``
     - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining :ref:`device availability <dev/api/device:Availability>` on the selected machine:
 
+      * ``DEVICE_PCJR``: IBM PCjr sidecar;
       * ``DEVICE_ISA``: 8-bit ISA;
       * ``DEVICE_AT``: 16-bit ISA;
       * ``DEVICE_EISA``: EISA (reserved for future use);
-      * ``DEVICE_VLB``: VESA Local Bus or proprietary equivalents;
+      * ``DEVICE_VLB``: VESA Local Bus;
+      * ``DEVICE_OLB``: OPTi Local Bus;
       * ``DEVICE_PCI``: 32-bit PCI;
       * ``DEVICE_AGP``: AGP 3.3V;
+      * ``DEVICE_PCMCIA``: PCMCIA (reserved for future use);
+      * ``DEVICE_CARDBUS``: CardBus (reserved for future use);
       * ``DEVICE_AC97``: AMR, CNR or ACR;
       * ``DEVICE_PCJR``: IBM PCjr;
       * ``DEVICE_PS2``: IBM PS/1 or PS/2;
       * ``DEVICE_MCA``: IBM Micro Channel Architecture;
       * ``DEVICE_CBUS``: PC-98 C-BUS (reserved for future use);
+      * ``DEVICE_HIL``: HP HIL (reserved for future use);
       * ``DEVICE_COM``: serial port (reserved for future use);
       * ``DEVICE_LPT``: parallel port (reserved for future use).
 
