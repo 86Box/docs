@@ -19,7 +19,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
   * - :cspan:`1` ``flags``
     - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining :ref:`device availability <dev/api/device:Availability>` on the selected machine:
 
-      * ``DEVICE_PCJR``: IBM PCjr sidecar;
+      * ``DEVICE_SIDECAR``: IBM PCjr sidecar;
       * ``DEVICE_ISA``: 8-bit ISA;
       * ``DEVICE_AT``: 16-bit ISA;
       * ``DEVICE_EISA``: EISA (reserved for future use);
