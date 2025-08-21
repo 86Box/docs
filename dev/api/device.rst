@@ -25,6 +25,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_EISA``: EISA (reserved for future use);
       * ``DEVICE_VLB``: VESA Local Bus;
       * ``DEVICE_OLB``: OPTi Local Bus;
+      * ``DEVICE_AT32``: Mylex AT32 local bus;
       * ``DEVICE_PCI``: 32-bit PCI;
       * ``DEVICE_AGP``: AGP 3.3V;
       * ``DEVICE_PCMCIA``: PCMCIA (reserved for future use);
