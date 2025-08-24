@@ -10,11 +10,12 @@ fi
 # Determine the ImageMagick executable.
 magick=magick
 $magick >/dev/null 2>&1 || magick=magick.exe
+$magick >/dev/null 2>&1 || magick=$(ls /c/Program\ Files/ImageMagick-*/magick.exe)
 
 # Convert icons to PNG.
 for i in "$1/src/qt/icons/"*.ico
 do
-	$magick convert "$i" "usage/images/$(basename $i | sed -e 's/.ico$//').png"
+	"$magick" convert "$i" "usage/images/$(basename $i | sed -e 's/.ico$//').png"
 done
 
 # Remove unnecessary icons.

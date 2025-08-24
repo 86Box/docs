@@ -53,8 +53,8 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * A list of host CD-ROM or DVD-ROM drives available for passthrough. Click on an entry to attach it to the emulated drive.
 * **Eject:** remove any disc inserted into this drive, or detach a host drive.
 
-|zip| |mo| Removable disk and MO drives
----------------------------------------
+|rdisk| |mo| Removable disk and MO drives
+-----------------------------------------
 
 A removable disk or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
