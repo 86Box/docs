@@ -3,6 +3,8 @@ Getting started
 
 Here are the basic steps to help you get started with 86Box. The user interface has been designed to resemble Virtual PC, VirtualBox and other virtualizers, so if you used those programs before, this should all look familiar to you.
 
+.. important:: The steps on this guide are outdated and will be updated soon to reflect the :doc:`manager`.
+
 .. rubric:: Step 1: Get the ROM set
 
 86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by expansion cards. If you try to start 86Box without one, you'll receive an error and 86Box will close. You need to download the ROM set from `here <https://github.com/86Box/roms/releases/latest>`_, and extract it into one of the :doc:`supported locations <roms>`.
@@ -35,7 +37,7 @@ Now you're ready to do some stuff inside the emulated machine. Keyboard input is
 
 Mouse input has to be manually "captured" and "released". To capture the mouse in the emulated mahine, simply click inside the renderer area. Your host mouse cursor will disappear and your mouse movement and clicks will be redirected into the emulated machine. Now you can use the mouse inside the emulated machine - if the software and hardware configuration supports it, of course.
 
-To release the mouse, press :kbd:`F8 + F12` simultaneously. You can also use the middle mouse button for this if the emulated mouse only has two buttons.
+To release the mouse, press :kbd:`Ctrl` + :kbd:`End` simultaneously. You can also use the middle mouse button for this if the emulated mouse only has two buttons.
 
 .. rubric:: Step 7: What now?
 

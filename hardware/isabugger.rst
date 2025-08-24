@@ -3,7 +3,7 @@ ISABugger
 
 The ISABugger card provides a debugging interface for software developers, consisting of two 8-bit hexadecimal displays and two banks of 8 LEDs, all controlled by the emulated machine. It can be enabled through the :ref:`Peripherals settings page <settings/peripherals:ISABugger>`.
 
-These displays and LEDs are displayed on the :ref:`status bar <usage/statusbar:ISABugger>` as described in the diagram below:
+These displays and LEDs are displayed in the :ref:`status bar <usage/statusbar:ISABugger>` as described in the diagram below:
 
 .. image:: images/isabugger.png
    :align: center

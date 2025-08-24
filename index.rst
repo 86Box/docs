@@ -34,6 +34,7 @@ Contents
    usage/gettingstarted
    usage/faq
    usage/roms
+   usage/manager
    usage/menubar
    usage/toolbar
    usage/statusbar

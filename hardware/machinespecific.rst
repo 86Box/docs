@@ -34,7 +34,7 @@ This page contains important notes related to specific machine models emulated b
 .. rubric:: IBM AT
 
 * On-board RAM is limited to 512 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
-* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then clearing the CMOS by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
+* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then wiping NVRAM :ref:`through the VM manager <usage/manager:Machine list>` or by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
 
 .. rubric:: IBM XT Model 286
 
@@ -80,7 +80,7 @@ Socket 7
 
 .. rubric:: MSI MS-5119
 
-* 86Box versions prior to 4.0.1 used BIOS version *A37E*, which has PS/2 mouse issues. The fixed *A37EB* BIOS is not applied automatically to existing setups; it can be applied by deleting ``ms5119.bin`` from the machine's ``nvr`` directory.
+* 86Box versions prior to 4.0.1 used BIOS version *A37E*, which has PS/2 mouse issues. The fixed *A37EB* BIOS is not applied automatically to existing setups; it can be applied by wiping NVRAM :ref:`through the VM manager <usage/manager:Machine list>` or deleting ``ms5119.bin`` from the machine's ``nvr`` directory.
 
 .. _p65up5:
 .. rubric:: ASUS P/I-P65UP5 (C-P55T2D)
