@@ -10,14 +10,13 @@ Windows
 ^^^^^^^
 
 * Not all multimedia function keys can be passed through to the emulated machine due to a Windows limitation.
-* Multimedia key passthrough can be disabled entirely through the *Inhibit multimedia keys on Windows* option on the :ref:`Preferences window <usage/menubar:Tools>`.
 * System-wide key remapping through the **Scancode Map** registry key (as performed by applications such as SharpKeys) is fully supported.
 
 macOS
 ^^^^^
 
 * Apple keyboards with **European or other ISO layouts** may have *the key below Esc* and *the key to the right of Left Shift* switch places in the emulated machine, due to a hardware quirk in many of those keyboards (both internal and external) and a limitation in the way macOS corrects it.
-* The **Num =** key is only usable in operating systems which recognize that key on Microsoft PS/2 multimedia keyboards.
+* The :kbd:`Num =` key is only usable in operating systems which recognize that key on Microsoft PS/2 multimedia keyboards.
 * Mac special keys are mapped to their PC equivalents where possible:
 
 .. list-table::
@@ -59,7 +58,12 @@ Linux
 Special keys
 ------------
 
-Some machines provide additional function or otherwise special keys on top of the standard PC layout. Those keys are mapped to ones present on modern keyboards within reason.
+Some keyboards provide additional function or otherwise special keys on top of the standard PC layout. Those keys are mapped to ones present on modern keyboards within reason.
+
+Multimedia keys
+^^^^^^^^^^^^^^^
+
+Passthrough of Microsoft multimedia function keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` can be disabled through the *Inhibit multimedia keys* option in the :ref:`Preferences window <usage/menubar:Tools>`.
 
 Olivetti
 ^^^^^^^^
