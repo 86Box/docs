@@ -140,10 +140,19 @@ Arch
 Fedora
 """"""
 
-.. code-block:: bash
+* Fedora 41 and newer (DNF5)
 
-    $ sudo dnf groupinstall "C Development Tools and Libraries"
-    $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
+  .. code-block:: bash
+
+        $ sudo dnf group install c-development
+        $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
+
+* Fedora 40 and older (DNF4)
+
+  .. code-block:: bash
+
+        $ sudo dnf groupinstall "C Development Tools and Libraries"
+        $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL2-devel libatomic libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static
 
 
 macOS (Homebrew)
