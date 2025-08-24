@@ -54,4 +54,4 @@ Key bindings
 
 View and change keyboard shortcuts for common emulator actions. The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
 
-.. note:: The **F8 + F12 key combination** used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
+.. note:: The :kbd:`F8`\ +\ :kbd:`F12` key combination used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.

@@ -12,10 +12,10 @@ Action
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
 * **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
-* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press *Ctrl+Alt+F1* (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
-* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press *Ctrl+Alt+F12* (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
-* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
-* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press *Ctrl+F10* (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
+* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
@@ -54,7 +54,7 @@ View
 
 .. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
 
-* **Fullscreen:** enter full screen mode. You can press *Ctrl+Alt+Page Up* (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
    * **Full screen stretch:** stretch the emulated display to completely fill the host display.
@@ -90,7 +90,7 @@ Tools
 
 .. note:: Integration requires the Discord desktop app, running on x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
-* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press *Ctrl+F11* (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
+* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
