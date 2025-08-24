@@ -8,9 +8,10 @@ The menu bar located at the top of the 86Box window provides controls for the em
 Action
 ------
 
-* **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
+* **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
+* **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
 * **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press *Ctrl+Alt+F1* (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press *Ctrl+Alt+F12* (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
@@ -63,6 +64,7 @@ View
    * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
 
 * **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
+* **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
    * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
@@ -95,8 +97,10 @@ Tools
    * **Language:** select a language for the 86Box user interface.
    * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
-   * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine. This option is only available on Windows.
+   * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
    * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
+
+.. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4 Device>` are saved.
