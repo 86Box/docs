@@ -6,6 +6,11 @@ Opening 86Box will start the **virtual machine manager**, which allows for creat
 .. note::
   * This manager is currently a preview, with a limited feature set expanding upon the previous standalone `86Box Manager <https://github.com/86Box/86BoxManager>`_ app. Other managers with more features can still be used.
   * Running 86Box directly no longer creates or starts an emulated machine in the current folder like on previous versions. The ``-P``/``--vmpath`` command line option can be used to start a machine directly instead.
+  * The manager can be fully disabled (restoring the behavior of previous 86Box versions when launched without specifying a virtual machine path on the command line) by adding ``vmm_disabled = 1`` to the global configuration file, which is stored at one of the following locations based on the platform:
+
+    * **Windows**: ``C:\Users\[username]\AppData\Local\86Box\86box_global.cfg``
+    * **Linux**: ``~/.config/86Box/86box_global.cfg``
+    * **macOS**: ``~/Library/Preferences/86Box/86box_global.cfg``
 
 Machine list
 ------------
