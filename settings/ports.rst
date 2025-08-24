@@ -5,6 +5,11 @@
 
 The **Ports (COM & LPT)** page contains settings related to the emulated machine's I/O ports.
 
+Internal LPT ECP DMA
+--------------------
+
+ISA DMA channel number to use for the on-board parallel port's Extended Capabilities Port mode. Only available on machines with physical DMA configuration jumpers for an on-board ECP-capable parallel port.
+
 LPT1-4 Device
 -------------
 
@@ -30,7 +35,7 @@ Emulated device to connect to the given parallel (LPT) port.
    * Use the generic PostScript printer driver provided by your operating system.
    * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
 
-* **PLIP Network:** A `Parallel Line Internet Protocol <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
+* **Parallel Line Internet Protocol:** A `PLIP <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
 
    * The :ref:`emulated network adapter <settings/network:Adapter>` must also be set to **[LPT] PLIP**.
    * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.

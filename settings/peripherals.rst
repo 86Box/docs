@@ -5,7 +5,6 @@
 
 The **Other peripherals** page contains settings related to disk drive controllers, memory expansions and other expansion cards.
 
-
 ISA RTC
 -------
 
