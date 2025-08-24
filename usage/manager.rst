@@ -31,7 +31,7 @@ The following options are available by **right-clicking** a machine:
 Search
 ^^^^^^
 
-The **search box** at the bottom of the machine list allows for filtering the machine list by any of the following criteria:
+The **search box** at the bottom of the machine list allows for filtering the list by any of the following criteria:
 
 * **Display name** and **folder name**.
 * Names of **hardware components** present in the machines, as displayed in the :ref:`details pane <usage/manager:Machine details>`.
