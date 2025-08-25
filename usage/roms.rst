@@ -18,6 +18,8 @@ The emulator utilizes a search path mechanism to locate ROMs. By default, the fo
 
 A custom location can be specified by using the ``-R`` or ``--rompath`` command line argument, which then precedes any other considered locations.
 
+.. tip:: The list of all paths searched when loading ROMs is printed to the log and standard output when 86Box starts.
+
 .. rubric:: Windows
 
 The following locations are searched on Windows:
@@ -36,11 +38,9 @@ This usually resolves to ``~/.local/share/86Box/roms``, ``/usr/local/share/86Box
 
 .. rubric:: macOS
 
-.. warning:: If 86Box cannot find any ROMs even after you extracted the ROM set into one of the supported directories, please make sure that the ``roms`` folder name does not contain a hidden extension. This can be fixed via the terminal, or by selecting the folder in Finder, choosing **Get Info** in the context menu or the **File** menu, and checking the *Name & Extension* section in the information window. Downloading ROM sets for stable 86Box releases from GitHub in particular may be affected by extension hiding in the Finder due to the file name format used for these.
+.. note:: If 86Box cannot find any ROM dumps even after you extracted the set into one of the supported directories, please make sure that the ``roms`` folder name does not contain a hidden extension. This can be fixed via the terminal, or by selecting the folder in Finder, choosing *Get Info* in the context menu or the *File* menu, and checking the *Name & Extension* section in the information window. Downloading ROM sets for stable 86Box releases from GitHub in particular may be affected by extension hiding in the Finder due to the file name format used for these.
 
 The following locations are searched on macOS:
 
 1. ``~/Library/Application Support/86Box/roms``
 2. ``/Library/Application Support/86Box/roms``
-
-.. tip:: The list of all paths searched when loading ROMs is printed to the log and standard output when 86Box starts.
