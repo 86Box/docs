@@ -50,6 +50,7 @@ Contents
    hardware/ideterqua
    hardware/network
    hardware/isabugger
+   hardware/externalopl
 
 .. toctree::
    :maxdepth: 1
