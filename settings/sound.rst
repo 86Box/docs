@@ -16,6 +16,9 @@ The *Configure* button opens a new window with settings specific to the selected
 
 Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`. MOS Technology 6581 SID emulation for the Innovation SSI-2001 and The Entertainer is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library. General Instrument AY-3-8913 emulation for the Mindscape Music Board is provided by the `Ayumi <http://sovietov.com/app/ayumi/ayumi.html>`_ library.
 
+You can also select an external OPL sound card by choosing the sound cards that have **(External Device)** at the end of their name.  
+See more information in the :ref:`External OPL audio device documentation </hardware/externalopl:External OPL Audio Support>`.
+
 MIDI Out Device
 ---------------
 
