@@ -25,7 +25,7 @@ View
 * **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
 * **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
-* **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
+* **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
 * **Renderer:** select a graphical renderer for the emulated display.
 
    * **Qt (Software)** is recommended in most cases.
@@ -99,6 +99,7 @@ Tools
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
    * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
    * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
+   * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
 
 .. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
 
