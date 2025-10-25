@@ -5,10 +5,10 @@
 
 The **Machine** page contains settings related to the emulated machine as a whole, such as the machine type, CPU type and amount of memory.
 
-Machine type / Machine
-----------------------
+Search / Machine type / Machine
+-------------------------------
 
-Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box.
+Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box, while the *Search* box allows for finding and selecting a model from any class directly by name.
 
 The *Configure* button opens a new window with settings specific to the machine, such as BIOS type selection.
 
@@ -49,14 +49,6 @@ Softfloat FPU
 
 Enable a slower but more accurate math co-processor emulation, for running a limited set of operating systems and applications which demand full 80-bit precision from the floating point unit.
 
-CPU frame size
---------------
-
-Change the emulator's frame timing behavior. This mostly affects the smoothness of the emulated mouse and other input peripherals.
-
-* **Larger frames (less smooth):** same behavior as 86Box 4.2.1 and older. Switching to it may improve performance on low-end host systems, at the expense of reduced input smoothness.
-* **Smaller frames (smoother):** the new default behavior introduced in 86Box 5.0, which improves input smoothness.
-
 Time synchronization
 --------------------
 
@@ -65,3 +57,11 @@ Automatically copy your host system's date and time over to the emulated machine
 * **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
 * **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
 * **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+
+CPU frame size
+--------------
+
+Change the emulator's frame timing behavior. This mostly affects the smoothness of the emulated mouse and other input peripherals.
+
+* **Larger frames (less smooth):** same behavior as 86Box 4.2.1 and older. Switching to it may improve performance on low-end host systems, at the expense of reduced input smoothness.
+* **Smaller frames (smoother):** the new default behavior introduced in 86Box 5.0, which improves input smoothness.
