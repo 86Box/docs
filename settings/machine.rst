@@ -54,8 +54,8 @@ CPU frame size
 
 Change the emulator's frame timing behavior. This mostly affects the smoothness of the emulated mouse and other input peripherals.
 
-* **Larger frames (less smooth):** same behavior as previous 86Box versions. Switching to it may improve performance on low-end host systems, at the expense of reduced input smoothness.
-* **Smaller frames (smoother):** the new default behavior, which improves input smoothness.
+* **Larger frames (less smooth):** same behavior as 86Box 4.2.1 and older. Switching to it may improve performance on low-end host systems, at the expense of reduced input smoothness.
+* **Smaller frames (smoother):** the new default behavior introduced in 86Box 5.0, which improves input smoothness.
 
 Time synchronization
 --------------------
