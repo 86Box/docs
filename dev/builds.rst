@@ -25,11 +25,12 @@ Variants
 Discontinued variants
 ^^^^^^^^^^^^^^^^^^^^^
 
-The following variants are no longer built by Jenkins and can only be :doc:`compiled from source <buildguide>`:
+The following variants are no longer built by Jenkins and can only be :doc:`compiled from source <buildguide>` where applicable:
 
 * 32-bit architectures (**x86** and **ARM32**) as of September 3rd 2024.
 
   * These were eliminated to better focus development on relevant 64-bit architectures, since systems old enough to be 32-bit-only lack the performance for a satisfactory emulation experience.
+  * The dynamic recompiler and other components no longer support 32-bit architectures as of September 13th 2025.
 
 * Debug variants (**86Box-Debug**) as of April 2nd 2023.
 
