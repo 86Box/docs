@@ -44,6 +44,17 @@ There is no formula that would tell you this. In general, the higher the host's 
 
 Therefore, the best way to optimize your virtual machine configuration is simply trial and error.
 
+Can I use 86Box to run a Windows XP system?
+-------------------------------------------
+
+We strongly discourage the use of 86Box to run Windows XP or newer Windows operating systems.
+
+While the operating system does run, the Windows XP system requirements are steep compared to what 86Box can offer, and what most host systems are capable of running at 100%. Microsoft publishes the *minimum* system requirements of Windows XP to include a 233 MHz Pentium.  The recommended requirements of Windows XP bump the requirements up to include a 300 MHz Pentium or better.
+
+Even though these requirements seem modest in the present day, only some of the newest AMD (Ryzen 5000 series or better), Intel (Core 12th generation or better), and Apple (M2 or better) processors are capable of meeting the bare minimum Windows XP requirements under 86Box’s full system emulation.  On top of the operating system requirements, most software and games that require Windows XP will demand even more out of the hardware than Windows XP alone, reducing the utility of Windows XP in 86Box to a very narrow set of software.
+
+It is almost always better to run Windows XP in a different virtualizer or emulator.  On AMD and Intel based PCs, software such as VirtualBox or Hyper-V can run Windows XP close to bare-metal performance, as most CPU instructions can run unmodified.  On Apple macOS computers, UTM is capable of either running Windows XP in full hardware virtualization on Intel Macs, or with highly optimized x86 emulation on M-series Macs.  UTM does not chase the fine-detail historic accuracy of 86Box and as such, is able to take “shortcuts” that can allow Windows XP and software on it to run with acceptable performance even under x86 emulation.
+
 Are you going to add emulation of the Pentium 3 and/or newer CPUs?
 ------------------------------------------------------------------
 
