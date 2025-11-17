@@ -168,9 +168,9 @@ FreeBSD
 
 .. code-block:: bash
 
-    $ pkg install pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth libsndfile
+    $ pkg install cmake pkgconf freetype-gl sdl2 libspng openal-soft rtmidi qt5 libslirp fluidsynth libsndfile
 
-.. note:: If you get an error about ``linux/input.h``, edit ``/usr/local/include/libevdev/libevdev.h`` to replace the ``linux/input.h`` reference with ``dev/evdev/input.h`` and try building again.
+.. note:: If you get an error about ``linux/input.h`` while building, this is due to ``libevdev.h`` mistakenly importing a Linux header file on FreeBSD. Copy the full path of ``libevdev.h`` from the error and open it with an editor. Within the file, replace the ``linux/input.h`` reference with ``dev/evdev/input.h`` and try building again.
 
 Building
 --------

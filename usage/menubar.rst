@@ -25,7 +25,7 @@ View
 * **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
 * **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
-* **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
+* **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
 * **Renderer:** select a graphical renderer for the emulated display.
 
    * **Qt (Software)** is recommended in most cases.
@@ -88,7 +88,7 @@ Tools
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
-.. note:: Integration requires the Discord desktop app, running on x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
+.. note:: Integration requires the Discord desktop app, running on Windows, Linux (``x86_64`` only) or macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
 * **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
@@ -99,6 +99,7 @@ Tools
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
    * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
    * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
+   * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
 
 .. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
 

@@ -19,6 +19,11 @@ The **left-hand side** of the manager window displays a list of all machines fou
 
 The following options are available by **right-clicking** a machine:
 
+* **Start:** start the machine.
+* **Hard reset:** force a reset of the machine.
+* **Force shutdown:** force a shutdown of the machine. If this fails due to a frozen 86Box process, try *Kill*.
+* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the machine.
+* **Settings:** open the :doc:`Settings <../settings/index>` window to configure the machine.
 * **Change display name:** change the name by which the machine is identified on the manager and 86Box window. Changing this will not rename the machine's folder.
 * **Set icon:** change the icon displayed next to the machine on the list.
 
@@ -75,8 +80,10 @@ Tools
 
   * **System Directory:** view or change the folder where emulated machines are stored.
   * **Language:** select a language for the 86Box user interface.
+  * **Remember size & position:** automatically save the manager window's size and position and the machine list's width.
   * **Check for updates on startup:** automatically check for 86Box updates when starting the manager.
   * **Use regular expressions in search box:** enable the use of Perl-syntax regexes to perform more complex searches with the search box.
+  * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
 
 .. note::
   * The manager **must be restarted** for any changes to the system directory to take effect.
