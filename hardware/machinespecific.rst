@@ -162,6 +162,12 @@ See: :ref:`atc6310bxii`
 
 * Equipped with an on-board CMD PCI-0648 IDE controller on the :ref:`tertiary and quaternary channels <settings/hdd:Adding a new disk>`, on top of the PIIX4E southbridge controller on the primary and secondary channels.
 
+.. rubric:: MSI MS-6318
+
+* Two on-board sound options are available: VIA AC'97 (referred to by the manual as "software audio") when :ref:`Sound card #1 <settings/sound:Sound card #1-#4>` is set to *None*, or Creative CT5880 ("hardware audio") when set to *Internal*.
+
+  * VIA AC'97 audio is only supported by the **Revision 7.x** BIOS variants, selectable through the :ref:`Configure button <settings/machine:Search / Machine type / Machine>` next to the machine selector.
+
 Miscellaneous
 -------------
 
