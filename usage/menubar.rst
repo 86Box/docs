@@ -8,6 +8,7 @@ The menu bar located at the top of the 86Box window provides controls for the em
 Action
 ------
 
+* **Force interpretation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.

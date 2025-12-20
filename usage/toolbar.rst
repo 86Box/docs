@@ -5,6 +5,12 @@ Toolbar
 
 The toolbar located at the top of the 86Box window (right below the :doc:`menu bar <menubar>`) has two purposes: it provides quick actions for the emulated machine on its left hand side, and displays status information on its right hand side.
 
+|interpreter| |recompiler| Toggle recompilation
+-----------------------------------------------
+
+Temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Press again to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
+
+
 |pause| |run| Pause/resume execution
 ------------------------------------
 

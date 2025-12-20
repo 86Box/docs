@@ -44,6 +44,8 @@ Dynamic Recompiler
 
 Enable the dynamic recompiler, which provides faster but less accurate CPU emulation. The recompiler is available as an option for 486-class processors, and is mandatory starting with the Pentium.
 
+.. note:: The recompiler can be disabled temporarily (even on processors where it is mandatory) through an option on the :ref:`toolbar <usage/toolbar:|interpreter| |recompiler| Toggle recompilation>` and :ref:`Action menu <usage/menubar:Action>`, in the unlikely event that an application performs worse with the recompiler enabled. Selecting this temporary option again or restarting 86Box will reenable the recompiler.
+
 Softfloat FPU
 -------------
 
