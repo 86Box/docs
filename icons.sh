@@ -20,7 +20,7 @@ done
 
 # Remove unnecessary icons.
 cd usage/images
-rm -f 86Box-* *active* *disabled* *mute* *-1.png *-2.png
+rm -f 86Box-* *active* *disabled* *mute* *-1.png *-2.png *-4.png *-5.png *-6.png
 
 # Get small and big icons.
 for i in *-0.png
@@ -30,10 +30,6 @@ done
 for i in *-3.png
 do
 	mv "$i" "$(echo $i | sed -e 's/-3//')"
-done
-for i in *-4.png
-do
-	mv "$i" "$(echo $i | sed -e 's/-4//')"
 done
 
 # Create include.rst entries.
