@@ -17,6 +17,7 @@ Action
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+* **ACPI shutdown:** send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
