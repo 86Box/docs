@@ -30,7 +30,6 @@ This page contains important notes related to specific machine models emulated b
 80286
 -----
 
-.. _ibmat:
 .. rubric:: IBM AT
 
 * On-board RAM is limited to 512 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
@@ -39,18 +38,6 @@ This page contains important notes related to specific machine models emulated b
 .. rubric:: IBM XT Model 286
 
 * On-board RAM is limited to 640 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:ISA Memory Expansion>` cards.
-
-.. rubric:: AMI IBM AT
-
-See: :ref:`ibmat`
-
-.. rubric:: Phoenix IBM AT
-
-See: :ref:`ibmat`
-
-.. rubric:: Quadtel IBM AT
-
-See: :ref:`ibmat`
 
 .. rubric:: GRiD GRiDcase 1520
 
