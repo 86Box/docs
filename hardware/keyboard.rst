@@ -12,6 +12,11 @@ Windows
 * Multimedia keys such as **Volume Up/Down** cannot be passed through to the emulated machine due to a Windows limitation.
 * System-wide key remapping through the **Scancode Map** registry key (as performed by applications such as SharpKeys) is fully supported.
 
+Linux
+^^^^^
+
+* The `xkbcommon <https://xkbcommon.org>`_ library is used to accurately map physical keys to the emulated keyboard on both X11 and Wayland. When compiling 86Box from source, make sure the development files for ``libxkbcommon`` and ``libxkbcommon-x11`` are installed, as this is an optional build component.
+
 macOS
 ^^^^^
 
@@ -48,11 +53,6 @@ macOS
 
   * - Num Lock
     - Clear
-
-Linux
-^^^^^
-
-* The `xkbcommon <https://xkbcommon.org>`_ library is used to accurately map physical keys to the emulated keyboard on both X11 and Wayland. When compiling 86Box from source, make sure the development files for ``libxkbcommon`` and ``libxkbcommon-x11`` are installed, as this is an optional build component.
 
 
 Special keys
