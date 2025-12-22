@@ -5,18 +5,67 @@ The menu bar located at the top of the 86Box window provides controls for the em
 
 .. important:: On macOS, the **Exit** (Quit), **Preferences** and **About 86Box** options are found in the **86Box** application menu instead of the locations outlined here.
 
+.. raw:: html
+
+  <style>
+    ul#interpreter > li:first-child {
+      list-style: url('../_images/interpreter_small.png');
+    }
+    ul#interpreter > li:first-child:hover {
+      list-style: url('../_images/recompiler_small.png');
+    }
+    li#pause {
+      list-style: url('../_images/pause_small.png');
+    }
+    li#pause:hover {
+      list-style: url('../_images/run_small.png');
+    }
+    li#hard-reset {
+      list-style: url('../_images/hard_reset_small.png');
+    }
+    li#send-cad {
+      list-style: url('../_images/send_cad_small.png');
+    }
+    li#send-cae {
+      list-style: url('../_images/send_cae_small.png');
+    }
+    li#acpi-shutdown {
+      list-style: url('../_images/acpi_shutdown_small.png');
+    }
+    ul#settings > li:first-child {
+      list-style: url('../_images/settings_small.png');
+    }
+  </style>
+
 Action
 ------
+
+.. _interpreter:
 
 * **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
 * **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
+
+  .. _pause:
+
 * **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+
+  .. _hard-reset:
+
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
+
+  .. _send-cad:
+
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+
+  .. _send-cae:
+
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+
+  .. _acpi-shutdown:
+
 * **ACPI shutdown:** send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
@@ -56,7 +105,7 @@ View
 
 .. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
 
-* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode, or :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <settings/input:Key bindings>`) to show or hide the user interface while in full screen mode.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
    * **Full screen stretch:** stretch the emulated display to completely fill the host display.
@@ -85,6 +134,8 @@ The **Clear image history** option empties the list of recently-loaded images on
 
 Tools
 -----
+
+.. _settings:
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
