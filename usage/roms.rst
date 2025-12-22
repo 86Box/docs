@@ -1,9 +1,9 @@
-ROM set
-=======
+ROM set and assets
+==================
 
-86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by expansion cards.
+86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by expansion cards. Additionally, some features require an :ref:`asset pack <usage/roms:Asset pack>` installed separately from the ROM set.
 
-The ROM set is organized into several directories for each device type, each of which contains futher subdirectories for each machine or device model or category.
+The ROM set and asset pack are organized into several directories for each device type, each of which contains futher subdirectories for each machine or device model or category.
 
 .. note:: The expected file names of the ROM dumps and their locations within the set are hardcoded in the emulator. If you rename them or add your own dumps with different file names, the emulator will not be able to make use of them.
 
@@ -44,3 +44,12 @@ The following locations are searched on macOS:
 2. ``/Library/Application Support/86Box/roms``
 
 .. note:: If 86Box cannot find any ROM dumps even after you extracted the set into one of the directories listed above, please make sure that the ``roms`` folder name does not contain a hidden extension. This can be fixed by selecting the folder in Finder, choosing *Get Info* in the context menu or the *File* menu, and renaming the folder in the *Name & Extension* section of the information window.
+
+Asset pack
+----------
+
+Some features also require an **asset pack**, which is included with release builds of 86Box downloaded from `GitHub <https://github.com/86Box/86Box/releases/latest>`_, as the ``assets`` folder inside the downloaded archive on Windows, or embedded within the application on Linux and macOS. It must be installed manually in other situations, such as when using :doc:`advanced builds </dev/builds>`.
+
+Currently, only the :ref:`floppy audio <settings/floppycdrom:Floppy drives>` feature requires the asset pack to be installed.
+
+The **same search path mechanism** :ref:`described above <usage/roms:Search path>` applies to the asset pack, but with a directory named ``assets`` instead of ``roms``. The ``-A`` or ``--assetpath`` command line argument can be used to specify a custom location.

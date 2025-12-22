@@ -20,7 +20,9 @@ Up to four floppy disk drives can be attached to the emulated machine, although 
 * **Check BPB:** if unchecked, 86Box will ignore the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ when determining the physical media format for a floppy image on this drive. See :ref:`hardware/diskimages:Floppy disk detection` for more details.
 * **Audio:** emulate the mechanical sounds of a real floppy drive. A list of drive models to choose from is provided; the *None* option disables these sounds.
 
-.. note:: Disabling "Check BPB" may be required in order to access UNIX/Linux installation floppies or other non-DOS disks, as outlined on :ref:`hardware/diskimages:Floppy disk detection`.
+.. note::
+  * Disabling *Check BPB* may be required in order to access UNIX/Linux installation floppies or other non-DOS disks, as outlined on :ref:`hardware/diskimages:Floppy disk detection`.
+  * The *Audio* option is only available if the :ref:`asset pack <usage/roms:Asset pack>` is installed.
 
 Floppy disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|floppy_35| |floppy_525| Floppy drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
