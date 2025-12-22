@@ -10,37 +10,37 @@ If any changes were made to the settings, you will be asked whether or not you w
 .. raw:: html
 
   <style>
-    div.toctree-wrapper > ul > li:nth-child(1)  {
+    div.toctree-wrapper li:has(a[href^="machine"]) {
       list-style: url('../_images/machine_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(2)  {
+    div.toctree-wrapper li:has(a[href^="display"]) {
       list-style: url('../_images/display_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(3)  {
+    div.toctree-wrapper li:has(a[href^="input"]) {
       list-style: url('../_images/input_devices_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(4)  {
+    div.toctree-wrapper li:has(a[href^="sound"]) {
       list-style: url('../_images/sound_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(5)  {
+    div.toctree-wrapper li:has(a[href^="network"]) {
       list-style: url('../_images/network_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(6)  {
+    div.toctree-wrapper li:has(a[href^="ports"]) {
       list-style: url('../_images/ports_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(7)  {
+    div.toctree-wrapper li:has(a[href^="storage"]) {
       list-style: url('../_images/storage_controllers_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(8)  {
+    div.toctree-wrapper li:has(a[href^="hdd"]) {
       list-style: url('../_images/hard_disk_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(9)  {
+    div.toctree-wrapper li:has(a[href^="floppycdrom"]) {
       list-style: url('../_images/floppy_and_cdrom_drives_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(10)  {
+    div.toctree-wrapper li:has(a[href^="removable"]) {
       list-style: url('../_images/other_removable_devices_small.png');
     }
-    div.toctree-wrapper > ul > li:nth-child(11)  {
+    div.toctree-wrapper li:has(a[href^="peripherals"]) {
       list-style: url('../_images/other_peripherals_small.png');
     }
   </style>
