@@ -49,7 +49,7 @@ Why is my emulated PS/2 mouse slow/laggy under Windows 95/98/98 SE/ME even at 10
 
 These operating systems set the polling rate of the mouse to 40 Hz by default, which is generally considered a really low polling rate.
 
-Either install Microsoft IntelliPoint (3.0 for Windows 95, 4.0/4.1 for Windows 98/98 SE/ME) or use PS2Rate and select 200MHz polling rate. The former is only recommended if the Wheel option is selected; it does not require any other programs to be enabled as it will select high polling rates by default and will work better with MS-DOS programs and games running inside the MS-DOS Prompt. Note that 4.0 requires Internet Explorer 5.5 to be installed.
+Either install Microsoft IntelliPoint (3.0 for Windows 95, 4.0/4.1 for Windows 98/98 SE/ME) or use PS2Rate and select 200 Hz polling rate. The former is only recommended if the Wheel options are selected; it does not require any other programs to be enabled as it will select high polling rates by default and will work better with MS-DOS programs and games running inside the MS-DOS Prompt. Note that 4.0 requires Internet Explorer 5.5 to be installed.
 
 Alternatively, you can check the "Update mouse every CPU frame" option in the Actions menu, but this is not accurate to the emulation and may cause noticeable performance drops.
 
