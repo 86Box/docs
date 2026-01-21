@@ -57,7 +57,7 @@ i486
 .. rubric:: Intel Classic R/R Plus (Monsoon)
 
 * By default, the BIOS setup entrance and memory test skipping prompts are disabled. To enter BIOS setup, press **F1** when the POST code *135* is displayed or if an error occurs. To skip the memory test, press the spacebar. Both prompts can be enabled in BIOS setup by toggling the *POST Memory Test Prompt* and *POST Setup Prompt* options.
-* Additionally, many other essential or otherwise useful BIOS setup options are disabled by default. We suggest loading the default option values by pressing **Esc** and then **F5** in BIOS setup. The *Onboard IDE* option must also be enabled if using the internal hard disk controller of the machine. Once all the necessary options are enabled, press **Esc** and then **F4** to save the changes.
+* Additionally, many other essential or otherwise useful BIOS setup options are also disabled by default. We suggest loading the default option values by pressing **Esc** and then **F5** in BIOS setup. The *Onboard IDE* option must also be enabled if using the internal hard disk controller of the machine. Once all the necessary options are enabled, press **Esc** and then **F4** to save the changes.
 
 .. rubric:: Zida Tomato 4DP
 
