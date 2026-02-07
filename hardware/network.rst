@@ -252,3 +252,26 @@ The host system can access forwarded ports through 127.0.0.1 or its own IP addre
         0_internal = 80
         1_protocol = udp
         1_external = 5555
+
+Custom SLiRP addresses
+^^^^^^^^^^^^^^^^^^^^^^
+
+If the default 10.0.x.0 addresses are unsuitable or undesired, they can be changed through the configuration file in the ``[Network]`` section, by defining ``net_0x_addr`` with the desired network (where x is the emulated network card).  All networks are created with a network mask 255.255.255.0 (CIDR /24).  It is strongly recommended to keep to the `Private-Use <https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml>`_ regions of IPv4; that is, stay within 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.
+
+.. container:: toggle-always-show
+
+    .. container:: toggle-header
+
+        Example: Set the first emulated network card's SLiRP network to 172.31.255.0/24
+
+    .. code-block:: none
+
+        [Network]
+        net_01_addr = 172.31.255.0
+
+For whatever network address you choose, the same fixed addresses demonstrated in the :ref:`SLiRP <hardware/network:SLiRP>` section apply.  Using the 172.31.255.0 example, the following addresses are used:
+
+* **IP address:** 172.31.255.15
+* **Subnet mask:** 255.255.255.0
+* **Default gateway:** 172.31.255.2
+* **DNS server:** 172.31.255.3
