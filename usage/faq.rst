@@ -30,8 +30,21 @@ In general, 86Box focuses more on the accuracy of emulation, especially for olde
 
 Meanwhile, PCem often takes various shortcuts to improve performance at the cost of accuracy, which does end up limiting the selection of software it can run.
 
-My virtual machine does not run at 100% speed, what do I do?
-------------------------------------------------------------
+Why is 86Box unable to run Xbox-level hardware when emulators for PS3 and Switch exist?
+---------------------------------------------------------------------------------------
+The difference is in how high level emulation and low level emulation works. High level lets you run much faster speeds at the cost of accuracy and compatibility. See the `Emulation General Wiki <https://emulation.gametechwiki.com/index.php/High/Low_level_emulation>`_ for a detailed explanation.
+
+Back in the late 90s, Ultra HLE came out that emulated an N64 at 100% speed on a system with a Pentium II 300. It would take another decade before computers got fast enough to do it in low level. The tradeoff is that HLE only ran about 20 games because the emulator had to be built specifically to run each game.
+
+Simply put, think of it this way:
+
+* **high level** = good enough to run just "these things"
+* **low level** = emulate the *entire* system to run literally anything that original hardware could have run, even including the hardware incompatibilities 
+
+In 86Box it's entirely possible to put a video card with a motherboard that would not boot and that replicates real life. Any console emulator doing PS2 or higher is doing high level emulation. This is why they have lists of compatible games - if they actually full emulated all the hardware, every game would just work because it would not know the difference but they cannot because no computer is fast enough.
+
+My virtual machine does not run at 100% speed, what can I do to fix this?
+-------------------------------------------------------------------------
 
 If the emulation speed is consistently way under 100%, then your configuration is too demanding for your host system. Try to pick a slower emulated CPU speed.
 
@@ -40,9 +53,29 @@ However, if you only experience casual drops in emulation speeds, you should not
 What is the top VM configuration my system will handle?
 -------------------------------------------------------
 
-There is no formula that would tell you this. In general, the higher the host's IPC (instructions per clock) rating, the higher emulated CPU speeds it can handle. However, the emulation speeds also depend on the kind of software that runs in the virtual machine.
+There is no formula that would tell you this with 100% certainty. In general, the higher the host's IPC (instructions per clock) rating, the higher emulated CPU speeds it can handle. However, the emulation speeds also depend on the kind of software that runs in the virtual machine.
 
-Therefore, the best way to optimize your virtual machine configuration is simply trial and error.
+A good way to estimate the limit of your host setup is by looking at `single-thread benchmarks <https://www.cpubenchmark.net/singleThread.html>`_. The higher a CPU is on this list, the faster it will run 86Box.
+
+For example:
+
+* **~4000** = Pentium II 300
+* **~3400** = Pentium II 233
+* **~2600** = Pentium 200
+* **~1600** = Pentium 75
+* **~700**  = 486DX2 66 (assuming the gpu on such a system can keep up)
+
+Keep in mind that these are only rough estimates. The best way to optimize your virtual machine configuration is simply trial and error.
+
+What are some era-appropriate configurations for 86Box?
+-------------------------------------------------------
+
+* **1988** - 386DX 25MHz w/ 1MB RAM, ATI VGA Wonder, AdLib, DOS 4.01 + Windows 2.1x/386
+* **1990** - 486DX 33MHz w/ 4MB RAM, Video 7 VRAM VGA + XGA, Sound Blaster 1.5 (CT1320C), DOS 4.01 + Windows 3.0
+* **1992** - 486DX2 66MHz w/ 8MB RAM, S3 924 / ATI Mach32, Sound Blaster 16 or Gravis Ultrasound, DOS 5.0 + Windows 3.1
+* **1994** - Pentium 100MHz w/ 32MB RAM, S3 Vision964 / ATI Mach64, Sound Blaster AWE32, DOS 6.22 + Windows 3.11
+* **1996** - PPro 200 (or Pentium 200 non-mmx) w/ 64MB RAM, Matrox Mystique + Voodoo 1, Sound Blaster AWE64 Gold, Windows 95 OSR2
+* **1998** - Pentium II 450MHz w/ 128MB RAM, Riva TNT + Voodoo 2 SLI, Aureal Vortex 2 / Sound Blaster Live, Windows 98 FE
 
 Why is my emulated PS/2 mouse slow/laggy under Windows 95/98/98 SE/ME even at 100% speed?
 -----------------------------------------------------------------------------------------
@@ -64,9 +97,14 @@ Even though these requirements seem modest in the present day, only some of the 
 
 It is almost always better to run Windows XP in a different virtualizer or emulator. On AMD and Intel based PCs, software such as `VirtualBox <https://www.virtualbox.org/>`_ or `Hyper-V <https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/Install-Hyper-V?tabs=powershell&pivots=windows/>`_ can run Windows XP close to bare-metal performance, as most CPU instructions can run unmodified. On Apple macOS computers, `UTM <https://mac.getutm.app/>`_ is capable of either running Windows XP in full hardware virtualization on Intel Macs, or with highly optimized x86 emulation on M-series Macs. UTM does not chase the fine-detail historic accuracy of 86Box and as such, is able to take "shortcuts" that can allow Windows XP and software on it to run with acceptable performance even under x86 emulation.
 
+Why doesn't 86Box have the XYZ board/card/peripheral?
+-----------------------------------------------------
+86Box is entirely comprised of volunteers. Any hardware added is done if someone is willing to contribute the code and work required to make it feasible. Some cards/hardware may never be in 86Box. This might be because documentation is non-existant, the hardware might be out of scope of the project, or other reasons. Asking for cards doesn't make it happen. There is a LOT of work that has to be accomplished to add anything. Anyone is welcome to contribute to the code base and make additions though, provided you follow our guidelines.
+
 Are you going to add emulation of the Pentium III and/or newer CPUs?
 --------------------------------------------------------------------
 
 In short, no. Newer CPUs are way too powerful and even the top-end systems that are currently on the market are not nearly performant enough to be able to emulate them at usable speeds. In fact, we already had to add some low-clocked variants of the Pentium II that never actually existed, just so more people could use it!
 
 For further reading, team member RichardG867 wrote a `blog post <https://86box.net/2022/03/21/why-not-p3>`_ that goes into the details of what makes the emulation of newer CPUs so controversial.
+
