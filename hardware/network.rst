@@ -55,6 +55,23 @@ If you have an incompatible network connection on your host system (such as Wi-F
 
       * Port forwarding can be performed through the Virtual Network Editor's *NAT Settings*.
 
+Local switch
+------------
+
+The local switch feature creates a virtual `network switch <https://en.wikipedia.org/wiki/Network_switch>`_ to plug virtual machines into.  It functions like a real hardware switch, routing packets based on MAC addresses and without any awareness of high-level protocols.  Protocols such as IPX/SPX, TCP/IP, and NetBEUI are entirely managed by the virtual machines.  This connection mode does not present any connectivity to the outside world, it is an entirely isolated switch.  The local switch uses multicast packets to transmit packets over your real LAN.  Multiple real computers can run 86Box virtual machines connected to the same local switch.
+
+Shared secret
+^^^^^^^^^^^^^
+
+The local switch supports a shared secret where every 86Box virtual machine connecting to the local switch must posses the same shared secret to participate.  This is a useful network isolation tool.  For instance, in a LAN shared by the users Fred, Wilma, Barney, and Betty, they might choose to use their own names as a shared secret to avoid accidentally joining in each others' networks.
+
+.. important:: Shared secrets are neither a security nor a privacy feature, they only provide isolation.  Packets continue to be sent in plain-text, and determined users can modify their local copy of 86Box to join a network by studying transmitted network packets.
+
+Hub mode
+^^^^^^^^
+
+Hub mode changes the functionality of the local switch into that of an `ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_.  The key difference is that a hub does not route packets, but instead sends all data packets to all connected devices at once.  This may be useful to study network protocols, but is generally inadvisable to enable.
+
 VDE
 ---
 
@@ -252,3 +269,26 @@ The host system can access forwarded ports through 127.0.0.1 or its own IP addre
         0_internal = 80
         1_protocol = udp
         1_external = 5555
+
+Custom SLiRP addresses
+^^^^^^^^^^^^^^^^^^^^^^
+
+If the default 10.0.x.0 addresses are unsuitable or undesired, they can be changed through the configuration file in the ``[Network]`` section, by defining ``net_0x_addr`` with the desired network (where x is the emulated network card).  All networks are created with a network mask 255.255.255.0 (CIDR /24).  It is strongly recommended to keep to the `Private-Use <https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml>`_ regions of IPv4; that is, stay within 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16.
+
+.. container:: toggle-always-show
+
+    .. container:: toggle-header
+
+        Example: Set the first emulated network card's SLiRP network to 172.31.255.0/24
+
+    .. code-block:: none
+
+        [Network]
+        net_01_addr = 172.31.255.0
+
+For whatever network address you choose, the same fixed addresses demonstrated in the :ref:`SLiRP <hardware/network:SLiRP>` section apply.  Using the 172.31.255.0 example, the following addresses are used:
+
+* **IP address:** 172.31.255.15
+* **Subnet mask:** 255.255.255.0
+* **Default gateway:** 172.31.255.2
+* **DNS server:** 172.31.255.3
