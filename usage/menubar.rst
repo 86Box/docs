@@ -73,8 +73,8 @@ Tools
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Language:** select a language for the 86Box user interface.
-   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`.
+   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
+   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
 
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
