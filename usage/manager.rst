@@ -69,7 +69,7 @@ Tools
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
   * **System Directory:** view or change the folder where emulated machines are stored.
-  * **Language:** select a language for the 86Box user interface.
+  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
   * **Check for updates on startup:** automatically check for 86Box updates when starting the manager.
   * **Use regular expressions in search box:** enable the use of Perl-syntax regexes to perform more complex searches with the search box.
 
