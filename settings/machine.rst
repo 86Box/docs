@@ -39,6 +39,11 @@ Memory
 
 Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the machine selected above.
 
+Use the 486 interpreter for 286 and 386 processors
+--------------------------------------------------
+
+Enable a faster but less accurate CPU emulation engine on 286- or 386-class processors. Recommended for low-end host systems which are struggling to emulate faster 386s. This option is not available if any other processor family is selected above.
+
 Dynamic Recompiler
 ------------------
 
