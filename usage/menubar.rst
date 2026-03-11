@@ -94,8 +94,8 @@ Tools
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Language:** select a language for the 86Box user interface.
-   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
+   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
+   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
    * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
    * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
    * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
