@@ -71,6 +71,11 @@ File
 * **New machine:** create a new machine from scratch or from an existing configuration file.
 * **Exit:** quit the manager. Requires confirmation if any machines are currently running.
 
+View
+^^^^
+
+* **Hide toolbar:** hides the :ref:`toolbar <usage/manager:Toolbar>` below the menu bar.
+
 Tools
 ^^^^^
 
@@ -78,7 +83,7 @@ Tools
 
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-  * **System Directory:** view or change the folder where emulated machines are stored.
+  * **System Directory:** view or change the folder where emulated machines are stored. The *Default* button resets to the default folder.
   * **Language:** select a language for the 86Box user interface.
   * **Remember size & position:** automatically save the manager window's size and position and the machine list's width.
   * **Check for updates on startup:** automatically check for 86Box updates when starting the manager.
@@ -96,6 +101,18 @@ Help
 
 * **Documentation:** open the very documentation you're reading.
 * **About 86Box:** show credits, license and build information about 86Box.
+
+Toolbar
+-------
+
+The **toolbar** located at the top of the manager window (right below the menu bar) provides controls for the machine list.
+
+* **New machine:** create a new machine from scratch or from an existing configuration file.
+* **Start:** start the selected machine.
+* **Hard reset:** force a reset of the selected machine.
+* **Force shutdown:** force a shutdown of the selected machine.
+* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the selected machine.
+* **Settings:** open the :doc:`Settings <../settings/index>` window to configure the selected machine.
 
 Status bar
 ----------
