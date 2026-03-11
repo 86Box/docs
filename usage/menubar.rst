@@ -83,8 +83,8 @@ Tools
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Language:** select a language for the 86Box user interface.
-   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`.
+   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
+   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
    * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
