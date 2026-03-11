@@ -20,7 +20,7 @@ done
 
 # Remove unnecessary icons.
 cd usage/images
-rm -f 86Box-* *active* *disabled* *mute* *-1.png *-2.png *-4.png *-5.png *-6.png
+rm -f 86Box-* *active* *disabled* *mute* *-[124-9].png *-[1-9][0-9].png
 
 # Get small and big icons.
 for i in *-0.png
