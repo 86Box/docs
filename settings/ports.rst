@@ -23,7 +23,7 @@ Emulated device to connect to the given parallel (LPT) port.
 
    * Printed documents are saved as .txt files in the ``printer`` subdirectory found in the emulated machine's directory.
 
-* **Generic ESC/P Dot-Matrix:** EPSON ESC/P-compatible printer.
+* **Generic ESC/P 2 Dot-Matrix:** EPSON ESC/P 2-compatible printer.
 
    * Printed pages are saved as .png files in the ``printer`` subdirectory found in the emulated machine's directory.
    * Use the **EPSON LQ-2500** printer driver for best results.
