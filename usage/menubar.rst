@@ -12,7 +12,7 @@ Action
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
 * **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
-* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
