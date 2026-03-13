@@ -26,7 +26,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 * **Bus:** storage bus to attach the disk to.
 * **Channel**/**ID:** where to attach the disk on the selected storage bus.
 
-   * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
+  * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
 
      +-----+----------+------+
      |Value|Channel   |Device|
@@ -48,7 +48,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
      |3:1  |Quaternary|Slave |
      +-----+----------+------+
    
-   * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI Controllers>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
+  * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI Controllers>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
 
      +-----+------------+-------+
      |Value|Controller  |SCSI ID|
@@ -79,7 +79,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
      +-----+------------+-------+
 
 
-   * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
+  * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
