@@ -31,9 +31,9 @@ Socket 7
 
 * Modular motherboard, consisting of a **P/I-P65UP5** baseboard and one of the following CPU cards:
 
-   * **C-P55T2D:** Socket 7 with Intel 430HX northbridge;
-   * **C-P6ND:** Socket 8 with Intel 440FX northbridge;
-   * **C-PKND:** Slot 1 with Intel 440FX northbridge.
+  * **C-P55T2D:** Socket 7 with Intel 430HX northbridge;
+  * **C-P6ND:** Socket 8 with Intel 440FX northbridge;
+  * **C-PKND:** Slot 1 with Intel 440FX northbridge.
 
 * While the northbridge depends on the selected CPU card, the southbridge always remains the Intel PIIX3, as it is located on the baseboard.
 * The real CPU cards support dual CPUs. As 86Box does not emulate multiprocessing, only a single CPU will be present.
@@ -64,8 +64,8 @@ See: :ref:`p65up5`
 
 * Equipped with the obscure SMSC Victory66 southbridge instead of the regular Intel PIIX4E.
 
-   * The Victory66 has faster IDE - up to Ultra ATA/66 as opposed to the PIIX4E's Ultra ATA/33 - and a different USB controller.
-   * Drivers for Windows 95, 98, Me and 2000 are available `here <https://essentials.86box.net/drivers/chipset/SMSC%20SLC90E66%20%28Victory66%29%20%28Windows%209x%20and%202000%29.zip>`_. Windows XP, Vista and 7 include drivers out of the box.
+  * The Victory66 has faster IDE - up to Ultra ATA/66 as opposed to the PIIX4E's Ultra ATA/33 - and a different USB controller.
+  * Drivers for Windows 95, 98, Me and 2000 are available `here <https://essentials.86box.net/drivers/chipset/SMSC%20SLC90E66%20%28Victory66%29%20%28Windows%209x%20and%202000%29.zip>`_. Windows XP, Vista and 7 include drivers out of the box.
 
 .. rubric:: NEC Mate NX MA30D/23D
 
@@ -98,7 +98,7 @@ See: :ref:`atc6310bxii`
 
 * Equipped with dual Winbond W83977EF Super I/O chips driving four serial (COM1-COM4) and two parallel (LPT1-LPT2) ports.
 
-   * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
+  * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
 
 * ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
 
