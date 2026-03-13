@@ -55,22 +55,40 @@ If you have an incompatible network connection on your host system (such as Wi-F
 
       * Port forwarding can be performed through the Virtual Network Editor's *NAT Settings*.
 
-Local switch
+Local Switch
 ------------
 
-The local switch feature creates a virtual `network switch <https://en.wikipedia.org/wiki/Network_switch>`_ to plug virtual machines into.  It functions like a real hardware switch, routing packets based on MAC addresses and without any awareness of high-level protocols.  Protocols such as IPX/SPX, TCP/IP, and NetBEUI are entirely managed by the virtual machines.  This connection mode does not present any connectivity to the outside world, it is an entirely isolated switch.  The local switch uses multicast packets to transmit packets over your real LAN.  Multiple real computers can run 86Box virtual machines connected to the same local switch.
+The local switch is a virtual Ethernet switch which uses multicast networking to **automatically connect** multiple 86Box machines running on the same host and on other hosts connected to the same real network; these machines can then communicate with each other as if they were connected through an `actual switch <https://en.wikipedia.org/wiki/Network_switch>`_.
+
+Unlike :ref:`hardware/network:VDE` and :ref:`hardware/network:TAP`, the switch works on **all host operating systems** supported by 86Box, and is **fully plug-and-play** with no configuration required on the host side :ref:`in most cases <hardware/network:Troubleshooting>`. However, it only provides connectivity between machines, so connecting to an external network and the Internet requires a machine running router software with two network cards: one connected to the switch and the other connected to the external network through :ref:`hardware/network:SLiRP`, :ref:`hardware/network:PCap` or other means.
 
 Shared secret
 ^^^^^^^^^^^^^
 
-The local switch supports a shared secret where every 86Box virtual machine connecting to the local switch must posses the same shared secret to participate.  This is a useful network isolation tool.  For instance, in a LAN shared by the users Fred, Wilma, Barney, and Betty, they might choose to use their own names as a shared secret to avoid accidentally joining in each others' networks.
+The shared secret :ref:`option <settings/network:Options>` allows for isolating virtual networks by setting a password. An emulated network card configured with a shared secret can **only** communicate with other emulated network cards set to the same shared secret, even if the machines are running on hosts connected to the same real network. This allows for different users on a shared real network to have their own separate virtual networks, for instance.
 
-.. important:: Shared secrets are neither a security nor a privacy feature, they only provide isolation.  Packets continue to be sent in plain-text, and determined users can modify their local copy of 86Box to join a network by studying transmitted network packets.
+.. important:: Shared secrets only provide basic isolation, without additional security nor privacy. Packets are sent in plain text, and therefore they can be captured and spoofed by network analysis tools or by modifying the 86Box source code.
 
-Hub mode
+Hub Mode
 ^^^^^^^^
 
-Hub mode changes the functionality of the local switch into that of an `ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_.  The key difference is that a hub does not route packets, but instead sends all data packets to all connected devices at once.  This may be useful to study network protocols, but is generally inadvisable to enable.
+The hub mode :ref:`option <settings/network:Options>` turns the local switch into an `Ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_. In this mode, also referred to as *promiscuous mode*, the emulated network card will listen in to **all packets** sent across the virtual network, including those not bound to the card's MAC address. Due to the performance impact, enabling hub mode is only recommended for specific applications such as analyzing network protocols.
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+If you're having trouble getting machines to communicate with each other through the local switch while other modes work, follow this checklist:
+
+* All machines must be running on the same **86Box version**.
+* All machines must have the same :ref:`shared secret <hardware/network:Shared secret>` if one is set.
+* All hosts must have a **single connection** to the **same network**.
+
+  * A host with multiple IPv4 addresses on the same network may cause issues related to packet duplication.
+  * Connecting two hosts on separate networks through a third middle-man host is not supported.
+
+* Any firewalls must allow traffic to **UDP port 8086** on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if any shared secret is set).
+* Some **home routers** have trouble bridging multicast traffic between wired and Wi-Fi; try having all hosts on the same connection type.
+* If you use **enterprise switches**, try changing the *IGMP Snooping* option in their settings.
 
 VDE
 ---
@@ -307,7 +325,7 @@ If the default 10.0.x.0 addresses are unsuitable or undesired, they can be chang
         [Network]
         net_01_addr = 172.31.255.0
 
-For whatever network address you choose, the same fixed addresses demonstrated in the :ref:`SLiRP <hardware/network:SLiRP>` section apply.  Using the 172.31.255.0 example, the following addresses are used:
+For whatever network address you choose, the same fixed addresses demonstrated in the :ref:`hardware/network:SLiRP` section apply.  Using the 172.31.255.0 example, the following addresses are used:
 
 * **IP address:** 172.31.255.15
 * **Subnet mask:** 255.255.255.0
