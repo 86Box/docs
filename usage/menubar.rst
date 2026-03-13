@@ -25,16 +25,16 @@ View
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.
 
-   * **Qt (Software)** is recommended in most cases.
-   * **Qt (OpenGL)** is known to perform better on some host systems. Try it if your system is struggling to maintain 100% emulation speed.
-   * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+  * **Qt (Software)** is recommended in most cases.
+  * **Qt (OpenGL)** is known to perform better on some host systems. Try it if your system is struggling to maintain 100% emulation speed.
+  * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
 * **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
 
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
-   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
-   * **Remove:** disable the currently-loaded shader.
+  * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
+  * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+  * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
+  * **Remove:** disable the currently-loaded shader.
 
 .. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
           * Shaders that take advantage of multipass and previous frames are not supported.
@@ -51,16 +51,16 @@ View
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
-   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
-   * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
-   * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
-   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+  * **Full screen stretch:** stretch the emulated display to completely fill the host display.
+  * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
+  * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
+  * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
-   * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
-   * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
-   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
+  * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
+  * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
+  * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
@@ -77,8 +77,8 @@ Tools
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
-   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
+  * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
+  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
 
 * **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
 
