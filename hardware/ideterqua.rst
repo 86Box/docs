@@ -50,8 +50,8 @@ The **Windows 9x family** will automatically detect Plug and Play IDE controller
 7. Select *Basic configuration 4* in the *Settings based on* box.
 8. Change the resource settings to match the I/O ports on the :ref:`table above <hardware/ideterqua:System resources>` and the configured IRQ. The first *Input/Output Range* range corresponds to the **main** I/O port, the second one corresponds to the **status** I/O port, and *Interrupt Request* corresponds to the IRQ.
 
-   * The status I/O port range is off by 6. Select 0368 for the tertiary channel or 03E8 for the quaternary channel.
-   * The screenshot below shows an example configuration for the tertiary channel.
+  * The status I/O port range is off by 6. Select 0368 for the tertiary channel or 03E8 for the quaternary channel.
+  * The screenshot below shows an example configuration for the tertiary channel.
 
 9. If both the tertiary and quaternary channels are enabled, repeat the steps above to enable the other controller.
 
@@ -81,15 +81,15 @@ Modules can be loaded at any time with the ``modprobe`` command, or loaded on bo
 
 * **libATA** (typically kernels **2.6.19 and above**):
 
-   * Load the ``pata_isapnp`` module to enable Plug and Play controllers.
-   * Load the ``pata_legacy`` module with the ``probe_all=1`` parameter to automatically detect and enable non-Plug and Play controllers. Only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported.
+  * Load the ``pata_isapnp`` module to enable Plug and Play controllers.
+  * Load the ``pata_legacy`` module with the ``probe_all=1`` parameter to automatically detect and enable non-Plug and Play controllers. Only the :ref:`default IRQs for each controller <hardware/ideterqua:System resources>` are supported.
 
 * **Legacy IDE** (typically kernels **older than 2.6.19**):
 
-   * Load the ``ide-pnp`` module to enable Plug and Play controllers.
-   * Non-Plug and Play controllers require editing the kernel command line on your bootloader to add each controller's I/O ports and IRQ:
+  * Load the ``ide-pnp`` module to enable Plug and Play controllers.
+  * Non-Plug and Play controllers require editing the kernel command line on your bootloader to add each controller's I/O ports and IRQ:
 
-      * **Tertiary:** ``ide2=0x168,0x36e,10`` (assuming IRQ 10)
-      * **Quaternary:** ``ide3=0x1e8,0x3ee,11`` (assuming IRQ 11)
+    * **Tertiary:** ``ide2=0x168,0x36e,10`` (assuming IRQ 10)
+    * **Quaternary:** ``ide3=0x1e8,0x3ee,11`` (assuming IRQ 11)
 
 .. note:: Some distributions may automatically detect additional IDE controllers; however, that is very rarely the case.
