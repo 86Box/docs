@@ -50,7 +50,7 @@ Action
 
   .. _pause:
 
-* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
 
   .. _hard-reset:
 
