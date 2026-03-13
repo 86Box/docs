@@ -8,29 +8,41 @@ then
 fi
 
 # Determine the ImageMagick executable.
-magick=magick
-$magick >/dev/null 2>&1 || magick=magick.exe
-$magick >/dev/null 2>&1 || magick=$(ls /c/Program\ Files/ImageMagick-*/magick.exe)
+if convert -version 2>&1 | grep -q ImageMagick
+then
+	magick=
+elif magick -version >/dev/null 2>&1
+then
+	magick=magick
+else
+	magick=$(ls /c/Program\ Files/ImageMagick-*/magick.exe)
+	if ! "$magick" -version >/dev/null 2>&1
+	then
+		echo ImageMagick not found.
+		exit 2
+	fi
+fi
 
 # Convert icons to PNG.
 for i in "$1/src/qt/icons/"*.ico
 do
-	"$magick" convert "$i" "usage/images/$(basename $i | sed -e 's/.ico$//').png"
+	"$magick" convert "$i" -set filename:size "%wx%h" "usage/images/$(basename $i | sed -e 's/.ico$//')-%[filename:size].png"
 done
 
 # Remove unnecessary icons.
 cd usage/images
-rm -f 86Box-* *active* *disabled* *mute* *-[124-9].png *-[1-9][0-9].png
+rm -f 86Box-* *active* *disabled* *mute*
 
 # Get small and big icons.
-for i in *-0.png
+for suffix in 8x8 256x256 128x128 64x64 32x32 16x16
 do
-	mv "$i" "$(echo $i | sed -e 's/-0/_small/')"
+	for i in *-$suffix.png
+	do
+		cp -a "$i" "$(echo $i | sed -e "s/-$suffix/_small/")"
+		[ "$suffix" != "16x16" ] && mv "$i" "$(echo $i | sed -e "s/-$suffix//")"
+	done
 done
-for i in *-3.png
-do
-	mv "$i" "$(echo $i | sed -e 's/-3//')"
-done
+rm -f *-*[0-9]x[0-9]*.png
 
 # Create include.rst entries.
 for i in *.png
