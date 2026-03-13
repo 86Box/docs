@@ -21,9 +21,9 @@ The *Configure* button provides the following settings:
 
 * **Voodoo type:** type of Voodoo card to emulate.
 
-   * **Voodoo Graphics:** the original Voodoo model, with a single Texture Mapping Unit operating at 50 MHz.
-   * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
-   * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
+  * **Voodoo Graphics:** the original Voodoo model, with a single Texture Mapping Unit operating at 50 MHz.
+  * **Obsidian SB50 + Amethyst:** a variant of the Voodoo Graphics, with two Texture Mapping Units operating at 50 MHz.
+  * **Voodoo 2:** the second Voodoo model, with two Texture Mapping Units operating at 90 MHz, as well as SLI support.
 
 .. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed here.
 
