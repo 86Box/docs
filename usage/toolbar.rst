@@ -5,18 +5,20 @@ Toolbar
 
 The toolbar located at the top of the 86Box window (right below the :doc:`menu bar <menubar>`) has two purposes: it provides quick actions for the emulated machine on its left hand side, and displays status information on its right hand side.
 
-|interpreter| |recompiler| Force interpretation / Allow recompilation
----------------------------------------------------------------------
-
-Temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Press again to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
-
 
 |pause| |run| Pause/resume execution
 ------------------------------------
 
 Pause emulation of the machine. Press again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
 
-.. note:: Emulation is automatically paused when the emulated machine enters ACPI sleep mode.
+.. note:: Emulation is automatically paused when the emulated machine enters **ACPI sleep mode**.
+
+|fast_forward| Fast forward
+---------------------------
+
+Run the emulated machine at the highest speed your host system can handle. Press again to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
+
+.. note:: When fast forwarding, all emulated audio is automatically **muted** to prevent distortion.
 
 |hard_reset| Hard reset
 -----------------------
@@ -37,6 +39,11 @@ Send a *Ctrl+Alt+Del* (left-most icon) or *Ctrl+Alt+Esc* (right-most icon) key c
 -------------------
 
 Open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
+
+|take_screenshot| |copy_screenshot| Take/copy screenshot
+--------------------------------------------------------
+
+Take a screenshot of the emulated display. The left-most icon saves the screenshot as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option in the :ref:`Tools menu <usage/menubar:Tools>`, while the right-most icon copies the image to the host system's clipboard instead. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` to take a screenshot to file; the key combinations for all screenshot commands are :ref:`customizable <settings/input:Key bindings>`.
 
 Status area
 -----------

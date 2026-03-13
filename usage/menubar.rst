@@ -8,41 +8,54 @@ The menu bar located at the top of the 86Box window provides controls for the em
 .. raw:: html
 
   <style>
-    ul#interpreter > li:first-child {
-      list-style: url('../_images/interpreter_small.png');
-    }
-    ul#interpreter > li:first-child:hover {
-      list-style: url('../_images/recompiler_small.png');
-    }
+    /* Note: li#... doesn't work on the first bullet point after any break, in which case use ul#... > li:first-child */
     li#pause {
-      list-style: url('../_images/pause_small.png');
+      list-style: url("../_images/pause_small.png");
     }
     li#pause:hover {
-      list-style: url('../_images/run_small.png');
+      list-style: url("../_images/run_small.png");
+    }
+    li#fast-forward {
+      list-style: url("../_images/fast_forward_small.png");
+    }
+    li#interpreter {
+      list-style: url("../_images/interpreter_small.png");
+    }
+    li#interpreter:hover {
+      list-style: url("../_images/recompiler_small.png");
     }
     li#hard-reset {
-      list-style: url('../_images/hard_reset_small.png');
+      list-style: url("../_images/hard_reset_small.png");
     }
     li#send-cad {
-      list-style: url('../_images/send_cad_small.png');
+      list-style: url("../_images/send_cad_small.png");
     }
     li#send-cae {
-      list-style: url('../_images/send_cae_small.png');
+      list-style: url("../_images/send_cae_small.png");
     }
     li#acpi-shutdown {
-      list-style: url('../_images/acpi_shutdown_small.png');
+      list-style: url("../_images/acpi_shutdown_small.png");
     }
     ul#settings > li:first-child {
-      list-style: url('../_images/settings_small.png');
+      list-style: url("../_images/settings_small.png");
+    }
+    ul#take-screenshot > li:first-child {
+      list-style: url("../_images/take_screenshot_small.png");
+    }
+    li#take-raw-screenshot {
+      list-style: url("../_images/take_raw_screenshot_small.png");
+    }
+    li#copy-screenshot {
+      list-style: url("../_images/copy_screenshot_small.png");
+    }
+    li#copy-raw-screenshot {
+      list-style: url("../_images/copy_raw_screenshot_small.png");
     }
   </style>
 
 Action
 ------
 
-.. _interpreter:
-
-* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
@@ -50,7 +63,15 @@ Action
 
   .. _pause:
 
-* **Pause:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Uncheck this option to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+
+  .. _fast-forward:
+
+* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
+
+  .. _interpreter:
+
+* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
 
   .. _hard-reset:
 
@@ -97,6 +118,8 @@ View
   * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
   * ``.cg`` and ``.cgp`` shaders are not supported, as these formats are long deprecated.
 
+* **OpenGL input stretch mode:** select the picture mode to use for the raw image data fed into the applied OpenGL shader(s). Refer to *Fullscreen stretch mode* below for the available options.
+* **OpenGL input scale:** scale the raw image data fed into the applied OpenGL shader(s) to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
 * **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
@@ -135,7 +158,7 @@ The **Clear image history** option empties the list of recently-loaded images on
 Tools
 -----
 
-.. _settings:
+  .. _settings:
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
@@ -143,7 +166,22 @@ Tools
 
 .. note:: Integration requires the Discord desktop app, running on Windows, Linux (``x86_64`` only) or macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
-* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
+  .. _take-screenshot:
+
+* **Take screenshot:** take a screenshot of the emulated display and save it as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
+
+  .. _take-raw-screenshot:
+
+* **Take raw screenshot:** same as *Take screenshot* above, but making a pixel-perfect capture of the machine's video output instead, without any processing such as scaling and shaders.
+
+  .. _copy-screenshot:
+
+* **Copy screenshot:** take a screenshot of the emulated display and copy it to the host system's clipboard.
+
+  .. _copy-raw-screenshot:
+
+* **Copy raw screenshot:** same as *Copy screenshot* above, but making a pixel-perfect capture of the machine's video output instead, without any processing such as scaling and shaders.
+
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
