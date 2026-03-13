@@ -27,16 +27,16 @@ View
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.
 
-   * **Qt (Software)** is recommended in most cases.
-   * **Qt (OpenGL)**, **Vulkan** and **Direct3D 9** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable, and *Direct3D 9* is only available on Windows hosts.
-   * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+  * **Qt (Software)** is recommended in most cases.
+  * **Qt (OpenGL)**, **Vulkan** and **Direct3D 9** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable, and *Direct3D 9* is only available on Windows hosts.
+  * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
 * **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
 
-   * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
-   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
-   * **Remove:** disable the currently-loaded shader.
+  * **Target framerate:** select the framerate at which the emulated display is updated. *Synchronize with video* automatically uses the emulated display's current refresh rate.
+  * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+  * **Browse:** load a ``.glsl`` shader file to apply to the emulated display.
+  * **Remove:** disable the currently-loaded shader.
 
 .. note:: * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
           * Shaders that take advantage of multipass and previous frames are not supported.
@@ -53,18 +53,18 @@ View
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
-   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
-   * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
-   * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
-   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
-   * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
+  * **Full screen stretch:** stretch the emulated display to completely fill the host display.
+  * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
+  * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
+  * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+  * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
 
 * **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
-   * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
-   * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
-   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
+  * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
+  * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
+  * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
@@ -89,10 +89,10 @@ Tools
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
-   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
-   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
-   * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
+  * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`. The *Default* button resets back to the standard icon set.
+  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
+  * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
+  * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
