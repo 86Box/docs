@@ -22,7 +22,7 @@ The virtual router provides automatic IP configuration to the emulated machine t
 * **Default gateway:** 10.0.\ *x*\ .2
 * **DNS server:** 10.0.\ *x*\ .3
 
-The host can be reached through IP address 10.0.\ *x*\ .2, while other devices on the host's network can be reached through their normal IP addresses.
+The host can be reached through IP address 10.0.\ *x*\ .2, while other devices on the host's network can be reached through their normal IP addresses. Advanced users can :ref:`override the private network's address <hardware/network:SLiRP network address>`.
 
 .. note:: SLiRP is only capable of routing TCP and UDP traffic, with limited ICMP ping support. Other protocols such as IPX and NetBEUI can only be used with :ref:`hardware/network:PCap` or :ref:`hardware/network:VDE` networking.
 
@@ -241,10 +241,31 @@ Advanced networking features
 
 The following advanced features can be accessed by directly editing the emulated machine's configuration file, which is ``86box.cfg`` by default.
 
+SLiRP network address
+^^^^^^^^^^^^^^^^^^^^^
+
+The private network provided by SLiRP can be moved to any /24 IPv4 block through the ``net_XX_addr`` directive in the ``[Network]`` section of the configuration file, where ``XX`` is the number of the emulated network card, in the range of 01 to 04.
+
+The host addresses within the custom network cannot be changed; for instance, if the network is configured to 192.168.86.0, then the emulated machine's IP will be 192.168.86.15.
+
+.. note:: Any IP passed to ``net_XX_addr`` that is not a /24 network address (ending in .0) will be ignored.
+
+.. container:: toggle-always-show
+
+    .. container:: toggle-header
+
+        Example: change first network card's SLiRP network to 192.168.86.0/24
+
+    .. code-block:: none
+
+        [Network]
+        net_01_net_type = slirp
+        net_01_addr = 192.168.86.0
+
 SLiRP port forwarding
 ^^^^^^^^^^^^^^^^^^^^^
 
-Port forwarding allows the host system and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding #x]`` section of the configuration file, where x is the number of the emulated network card, in the range of 1 to 4.
+Port forwarding allows the host system and other devices on its network to access TCP and UDP servers running on the emulated machine. This feature is configured through the ``[SLiRP Port Forwarding #x]`` section of the configuration file, where ``x`` is the number of the emulated network card, in the range of 1 to 4.
 
 Each port forward must be assigned a number, starting at 0 and counting up (skipping a number will result in all subsequent port forwards being ignored), which replaces ``X`` on the following directives:
 
@@ -254,7 +275,7 @@ Each port forward must be assigned a number, starting at 0 and counting up (skip
 
 The host system can access forwarded ports through 127.0.0.1 or its own IP address, while other devices on the network can access them through the host's IP address.
 
-.. note:: The emulated machine's IP address must be set to 10.0.\ *x*\ .15 (the default IP provided through DHCP) for port forwarding to work.
+.. note:: The emulated machine's IP address must end in .15 (the default IP provided through DHCP) for port forwarding to work.
 
 .. container:: toggle-always-show
 
