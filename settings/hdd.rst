@@ -33,60 +33,60 @@ The *New...* button opens a new window allowing you to create an existing hard d
 * **Bus:** storage bus to attach the disk to.
 * **Channel**/**ID:** where to attach the disk on the selected storage bus. Channels/IDs that are already in use cannot be selected.
 
-   * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
+  * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
 
-     +-----+----------+------+
-     |Value|Channel   |Device|
-     +=====+==========+======+
-     |0:0  |Primary   |Master|
-     +-----+----------+------+
-     |0:1  |Primary   |Slave |
-     +-----+----------+------+
-     |1:0  |Secondary |Master|
-     +-----+----------+------+
-     |1:1  |Secondary |Slave |
-     +-----+----------+------+
-     |2:0  |Tertiary  |Master|
-     +-----+----------+------+
-     |2:1  |Tertiary  |Slave |
-     +-----+----------+------+
-     |3:0  |Quaternary|Master|
-     +-----+----------+------+
-     |3:1  |Quaternary|Slave |
-     +-----+----------+------+
+    +-----+----------+------+
+    |Value|Channel   |Device|
+    +=====+==========+======+
+    |0:0  |Primary   |Master|
+    +-----+----------+------+
+    |0:1  |Primary   |Slave |
+    +-----+----------+------+
+    |1:0  |Secondary |Master|
+    +-----+----------+------+
+    |1:1  |Secondary |Slave |
+    +-----+----------+------+
+    |2:0  |Tertiary  |Master|
+    +-----+----------+------+
+    |2:1  |Tertiary  |Slave |
+    +-----+----------+------+
+    |3:0  |Quaternary|Master|
+    +-----+----------+------+
+    |3:1  |Quaternary|Slave |
+    +-----+----------+------+
    
-   * On SCSI disks, the first number corresponds to the controller's index, starting from 0 and following the order of: on-board SCSI controllers if present, then :ref:`sound cards <settings/sound:Sound card #1-#4>` with SCSI if present, then :ref:`configured SCSI controllers <settings/storage:SCSI>`; the second number is the SCSI ID within that controller:
+  * On SCSI disks, the first number corresponds to the controller's index, starting from 0 and following the order of: on-board SCSI controllers if present, then :ref:`sound cards <settings/sound:Sound card #1-#4>` with SCSI if present, then :ref:`configured SCSI controllers <settings/storage:SCSI>`; the second number is the SCSI ID within that controller:
 
-     +-----+------------+-------+
-     |Value|Controller  |SCSI ID|
-     +=====+============+=======+
-     |0:00 |Controller 1|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |0:15 |            |15     |
-     +-----+------------+-------+
-     |1:00 |Controller 2|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |1:15 |            |15     |
-     +-----+------------+-------+
-     |2:00 |Controller 3|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |2:15 |            |15     |
-     +-----+------------+-------+
-     |3:00 |Controller 4|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |3:15 |            |15     |
-     +-----+------------+-------+
+    +-----+------------+-------+
+    |Value|Controller  |SCSI ID|
+    +=====+============+=======+
+    |0:00 |Controller 1|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |0:15 |            |15     |
+    +-----+------------+-------+
+    |1:00 |Controller 2|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |1:15 |            |15     |
+    +-----+------------+-------+
+    |2:00 |Controller 3|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |2:15 |            |15     |
+    +-----+------------+-------+
+    |3:00 |Controller 4|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |3:15 |            |15     |
+    +-----+------------+-------+
 
 
-   * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
+  * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
