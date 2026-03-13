@@ -35,55 +35,55 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
   * On IDE disks, the first number corresponds to the IDE channel, and the second number corresponds to the Master/Slave position:
 
-     +-----+----------+------+
-     |Value|Channel   |Device|
-     +=====+==========+======+
-     |0:0  |Primary   |Master|
-     +-----+----------+------+
-     |0:1  |Primary   |Slave |
-     +-----+----------+------+
-     |1:0  |Secondary |Master|
-     +-----+----------+------+
-     |1:1  |Secondary |Slave |
-     +-----+----------+------+
-     |2:0  |Tertiary  |Master|
-     +-----+----------+------+
-     |2:1  |Tertiary  |Slave |
-     +-----+----------+------+
-     |3:0  |Quaternary|Master|
-     +-----+----------+------+
-     |3:1  |Quaternary|Slave |
-     +-----+----------+------+
+    +-----+----------+------+
+    |Value|Channel   |Device|
+    +=====+==========+======+
+    |0:0  |Primary   |Master|
+    +-----+----------+------+
+    |0:1  |Primary   |Slave |
+    +-----+----------+------+
+    |1:0  |Secondary |Master|
+    +-----+----------+------+
+    |1:1  |Secondary |Slave |
+    +-----+----------+------+
+    |2:0  |Tertiary  |Master|
+    +-----+----------+------+
+    |2:1  |Tertiary  |Slave |
+    +-----+----------+------+
+    |3:0  |Quaternary|Master|
+    +-----+----------+------+
+    |3:1  |Quaternary|Slave |
+    +-----+----------+------+
    
   * On SCSI disks, the first number corresponds to the :ref:`SCSI controller <settings/storage:SCSI Controllers>` (starting at 0 instead of 1), and the second number is the SCSI ID within that controller:
 
-     +-----+------------+-------+
-     |Value|Controller  |SCSI ID|
-     +=====+============+=======+
-     |0:00 |Controller 1|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |0:15 |            |15     |
-     +-----+------------+-------+
-     |1:00 |Controller 2|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |1:15 |            |15     |
-     +-----+------------+-------+
-     |2:00 |Controller 3|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |2:15 |            |15     |
-     +-----+------------+-------+
-     |3:00 |Controller 4|0      |
-     +-----+            +-------+
-     ||vel||            ||vel|  |
-     +-----+            +-------+
-     |3:15 |            |15     |
-     +-----+------------+-------+
+    +-----+------------+-------+
+    |Value|Controller  |SCSI ID|
+    +=====+============+=======+
+    |0:00 |Controller 1|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |0:15 |            |15     |
+    +-----+------------+-------+
+    |1:00 |Controller 2|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |1:15 |            |15     |
+    +-----+------------+-------+
+    |2:00 |Controller 3|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |2:15 |            |15     |
+    +-----+------------+-------+
+    |3:00 |Controller 4|0      |
+    +-----+            +-------+
+    ||vel||            ||vel|  |
+    +-----+            +-------+
+    |3:15 |            |15     |
+    +-----+------------+-------+
 
 
   * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
