@@ -42,18 +42,18 @@ If you have an incompatible network connection on your host system (such as Wi-F
 
 * Install and configure the *Microsoft KM-TEST Loopback Adapter* included with Windows.
 
-   * Guides on how to install this adapter are available online.
-   * The adapter alone only provides a direct connection to the host, with no DHCP server, therefore requiring manual IP configuration on both the host and the emulated machine.
-   * Windows' *Internet Connection Sharing* feature can be used to connect the emulated machine to the host's network and the Internet, with DHCP for automatic IP configuration, similarly to SLiRP but with the added benefit that the host can reach the emulated machine without port forwarding.
+  * Guides on how to install this adapter are available online.
+  * The adapter alone only provides a direct connection to the host, with no DHCP server, therefore requiring manual IP configuration on both the host and the emulated machine.
+  * Windows' *Internet Connection Sharing* feature can be used to connect the emulated machine to the host's network and the Internet, with DHCP for automatic IP configuration, similarly to SLiRP but with the added benefit that the host can reach the emulated machine without port forwarding.
 
-      * Port forwarding can be performed through Internet Connection Sharing's *Settings*.
+    * Port forwarding can be performed through Internet Connection Sharing's *Settings*.
 
 * If VMware is installed, use one of the VMnet adapters included with it.
 
-   * *VMnet1* (Host-only) connects to the host only.
-   * *VMnet8* (NAT) connects to the host, its network and the Internet.
+  * *VMnet1* (Host-only) connects to the host only.
+  * *VMnet8* (NAT) connects to the host, its network and the Internet.
 
-      * Port forwarding can be performed through the Virtual Network Editor's *NAT Settings*.
+    * Port forwarding can be performed through the Virtual Network Editor's *NAT Settings*.
 
 Local Switch
 ------------
