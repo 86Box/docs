@@ -79,19 +79,19 @@ View
 * **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
 * **Renderer:** select a graphical renderer for the emulated display.
 
-   * **Qt (Software)** is recommended in most cases.
-   * **Qt (OpenGL)** and **Vulkan** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable.
-   * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+  * **Qt (Software)** is recommended in most cases.
+  * **Qt (OpenGL)** and **Vulkan** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable.
+  * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
 * **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
 
-   * **Synchronize with video:** update the emulated display at its current refresh rate.
-   * **Use target framerate:** update the emulated display at the selected refresh rate.
-   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-   * **Add:** add a ``.glsl`` or ``.glslp`` file to the list of shaders to apply on the emulated display.
-   * **Remove:** remove the selected shader from the list.
-   * **Configure:** open a window to configure parameters on the selected shader.
-   * **Move up/down:** move the selected shader up or down in the processing order.
+  * **Synchronize with video:** update the emulated display at its current refresh rate.
+  * **Use target framerate:** update the emulated display at the selected refresh rate.
+  * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
+  * **Add:** add a ``.glsl`` or ``.glslp`` file to the list of shaders to apply on the emulated display.
+  * **Remove:** remove the selected shader from the list.
+  * **Configure:** open a window to configure parameters on the selected shader.
+  * **Move up/down:** move the selected shader up or down in the processing order.
 
 .. note::
   * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
@@ -108,19 +108,19 @@ View
 * **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <settings/input:Key bindings>`) to show or hide them.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
-   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
-   * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
-   * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
-   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
-   * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
+  * **Full screen stretch:** stretch the emulated display to completely fill the host display.
+  * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
+  * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
+  * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+  * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
 
 * **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
 * **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
 * **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
 
-   * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
-   * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
-   * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
+  * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
+  * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
+  * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
 
 * **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
 * **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
@@ -147,12 +147,12 @@ Tools
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-   * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
-   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
-   * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
-   * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
-   * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
-   * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
+  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
+  * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
+  * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
+  * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
+  * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
+  * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
 
 .. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
 
