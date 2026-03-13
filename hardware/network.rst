@@ -77,17 +77,17 @@ The hub mode :ref:`option <settings/network:Options>` turns the local switch int
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-If you're having trouble getting machines to communicate with each other through the local switch while other modes work, follow this checklist:
+If you're having trouble getting machines to communicate with each other through the local switch only (while other modes work), follow this checklist:
 
-* All machines must be running on the same **86Box version**.
-* All machines must have the same :ref:`shared secret <hardware/network:Shared secret>` if one is set.
+* All machines should be running on the **same 86Box version** to avoid incompatibilities.
+* All machines must have the **same** :ref:`shared secret <hardware/network:Shared secret>` if one is set.
 * All hosts must have a **single connection** to the **same network**.
 
-  * A host with multiple IPv4 addresses on the same network may cause issues related to packet duplication.
+  * A host manually configured to have multiple IPv4 addresses on the same network may cause issues related to packet duplication.
   * Connecting two hosts on separate networks through a third middle-man host is not supported.
 
-* Any firewalls must allow traffic to **UDP port 8086** on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if any shared secret is set).
-* Some **home routers** have trouble bridging multicast traffic between wired and Wi-Fi; try having all hosts on the same connection type.
+* Any **firewalls** must allow traffic to UDP port 8086, with IP fragmentation, on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if any secret is set).
+* Try connecting all hosts through a **wired connection**, as some routers have trouble handling multicast between Wi-Fi and wired devices, or even between Wi-Fi devices.
 * If you use **enterprise switches**, try changing the *IGMP Snooping* option in their settings.
 
 VDE
