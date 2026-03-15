@@ -72,7 +72,7 @@ The shared secret :ref:`option <settings/network:Options>` allows for isolating 
 Hub Mode
 ^^^^^^^^
 
-The hub mode :ref:`option <settings/network:Options>` turns the local switch into an `Ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_. In this mode, also referred to as *promiscuous mode*, the emulated network card will listen in to **all packets** sent across the virtual network, including those not bound to the card's MAC address. Due to the performance impact, enabling hub mode is only recommended for specific applications such as analyzing network protocols.
+The hub mode :ref:`option <settings/network:Options>` turns the local switch into an `Ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_. In this mode, also referred to as *promiscuous mode*, the emulated network card will listen in to **all packets** sent through the switch, including those not bound to the card's MAC address. Due to the performance impact, enabling hub mode is only recommended for specific applications such as analyzing network protocols.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
@@ -86,9 +86,37 @@ If you're having trouble getting machines to communicate with each other through
   * A host manually configured to have multiple IPv4 addresses on the same network may cause issues related to packet duplication.
   * Connecting two hosts on separate networks through a third middle-man host is not supported.
 
-* Any **firewalls** must allow traffic to UDP port 8086, with IP fragmentation, on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if any secret is set).
+* Any **firewalls** must allow traffic to UDP port 8086, with IP fragmentation, on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if a secret is set).
 * Try connecting all hosts through a **wired connection**, as some routers have trouble handling multicast between Wi-Fi and wired devices, or even between Wi-Fi devices.
 * If you use **enterprise switches**, try changing the *IGMP Snooping* option in their settings.
+
+Interoperability
+^^^^^^^^^^^^^^^^
+
+If no :ref:`shared secret <hardware/network:Shared secret>` is set, the local switch uses a simple protocol which allows **other emulators and virtualizers** to connect to it. Currently only QEMU supports connecting to the switch.
+
+QEMU
+""""
+
+QEMU 7.2 and newer can connect to the local switch with the ``dgram`` `network backend <https://www.qemu.org/docs/master/system/invocation.html#hxtool-5:~:text=%2Dnetdev%20dgram>`_, which requires starting QEMU from the command line, as it is **not available through front-ends** such as libvirt/virt-manager, Proxmox and UTM.
+
+.. container:: toggle-always-show
+
+    .. container:: toggle-header
+
+        Example: starting an x86 machine with a PCnet network card connected to the local switch
+
+    .. code-block:: none
+
+        qemu-system-x86_64 \
+            -device pcnet,netdev=net0 \
+            -netdev dgram,id=net0,remote.type=inet,remote.host=239.255.86.86,remote.port=8086 \
+            # add other options, and on Windows replace \ with ^
+
+Technical details
+"""""""""""""""""
+
+Applications can connect to the switch by sending and receiving raw Ethernet frames as UDP datagrams on multicast group 239.255.86.86 port 8086. If a shared secret is set, multicast group 239.255.80.86 is used instead, and each frame is prefixed by a 32-byte SHA3-256 hash of the secret string. Unicast and broadcast are currently not supported in normal operation and only used as a fallback on network interfaces flagged as non-multicast-capable by the operating system.
 
 VDE
 ---
