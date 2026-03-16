@@ -8,13 +8,12 @@ Disk images
   <style>
     /* There's no getting around Sphinx automatically sizing columns without some CSS.
        It's that kind of recurring issue a lot of people had but nobody ever addressed. */
-    table.docutils.colwidths-given > tbody > tr > td:not(:last-child),
-    table.docutils:not(.colwidths-given) > tbody > tr > td {
+    table.docutils:has(colgroup) > tbody > tr > td:not(:last-child),
+    table.docutils:not(:has(colgroup)) > tbody > tr > td {
       white-space: nowrap;
     }
-    table.docutils.colwidths-given > colgroup > col:not(:last-child),
-    table.docutils:not(.colwidths-given) > colgroup > col {
-      width: 0 !important;
+    table.docutils:has(colgroup) > tbody > tr > td:last-child {
+      min-width: 300px;
     }
   </style>
 
@@ -156,7 +155,7 @@ Supported formats:
 
   * - PCjs JSON
     - .json
-    - Read only. 86Box 4.2 added support for the v2 format, replacing v1 which is no longer in circulation.
+    - Read only. v2 format only, as the previous v1 is no longer in circulation.
 
   * - Teledisk
     - .td0
@@ -210,7 +209,9 @@ Supported formats:
     - Notes
 
   * - Cue sheet
-    - .cue + .bin (+ optional audio)
+    - .cue + .bin
+
+      (+ optional audio)
     - :ref:`Audio tracks are supported. <hardware/diskimages:CD audio>`
 
   * - ISO
@@ -219,7 +220,11 @@ Supported formats:
 
   * - Alcohol 120%
     - .mds + .mdf
-    - Daemon Tools v2 / encrypted images are not supported.
+    - Support for Daemon Tools MDS v2 images will not be available on Windows hosts if the included ``mdsx.dll`` file is missing from the 86Box directory.
+
+  * - Daemon Tools
+    - .mdx
+    - Support will not be available on Windows hosts if the included ``mdsx.dll`` file is missing from the 86Box directory.
 
 CD audio
 ^^^^^^^^
