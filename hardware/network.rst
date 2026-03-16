@@ -98,7 +98,7 @@ If no :ref:`shared secret <hardware/network:Shared secret>` is set, the local sw
 QEMU
 """"
 
-QEMU 7.2 and newer can connect to the local switch with the ``dgram`` `network backend <https://www.qemu.org/docs/master/system/invocation.html#hxtool-5:~:text=%2Dnetdev%20dgram>`_, which requires starting QEMU from the command line, as it is **not available through front-ends** such as libvirt/virt-manager, Proxmox and UTM.
+QEMU 7.2 and newer can connect to the local switch through the ``dgram`` `network backend <https://www.qemu.org/docs/master/system/invocation.html#hxtool-5:~:text=%2Dnetdev%20dgram>`_ with options ``remote.type=inet,remote.host=239.255.86.86,remote.port=8086`` as shown in the example below. This requires starting QEMU from the command line, as ``dgram`` is **not available through front-ends** such as libvirt/virt-manager, Proxmox and UTM.
 
 .. container:: toggle-always-show
 
