@@ -3,12 +3,14 @@
 Status bar
 ==========
 
-The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below, and image files can be dropped on the icons for removable media devices such as floppy and CD-ROM drives. Additionally, green or red indicator lights will appear on an icon when its device is in use, denoting reads and writes respectively, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled.
+The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below, and image files can be dropped on the icons for removable media devices such as floppy and CD-ROM drives.
+
+Additionally, green or red indicator lights will appear on the lower right corner of an icon when its device is in use, denoting reads and writes respectively, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled. Some devices also provide an additional indicator on the lower left corner.
 
 |cassette| Cassette deck
 ------------------------
 
-A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled.
+A cassette tape icon will appear if :ref:`IBM cassette emulation <settings/storage:Cassette>` is enabled. An indicator will appear on the lower left corner of the icon while the cassette is played or recorded.
 
 * **New image:** create a new cassette tape image file.
 * **Existing image:** insert a :ref:`cassette tape image file <hardware/diskimages:Cassette tape images>` into the deck. Dragging and dropping an image file on the icon will also load it.
@@ -44,19 +46,19 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 |cdrom| CD-ROM drives
 ---------------------
 
-A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`.
+A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`. An indicator will appear on the lower left corner of the icon while :ref:`hardware/diskimages:CD audio` is played or paused.
 
-* **Mute:** mute any :ref:`hardware/diskimages:CD audio` played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
+* **Mute:** mute any CD audio played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Folder:** insert a virtual CD-ROM or DVD-ROM with the contents of a host folder into this drive. Dragging and dropping a folder on the icon will also load it.
 * A history of the last few images, folders or host drives that were loaded into this drive. Click on an entry to load it back.
 * A list of host CD-ROM or DVD-ROM drives available for passthrough. Click on an entry to attach it to the emulated drive.
 * **Eject:** remove any disc inserted into this drive, or detach a host drive.
 
-|rdisk| |mo| Removable disk and MO drives
------------------------------------------
+|rdisk| |zip| |mo| Removable disk and MO drives
+-----------------------------------------------
 
-A removable disk or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
+A removable disk, ZIP or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:MO / removable disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
