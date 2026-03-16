@@ -26,11 +26,12 @@ Emulated device to connect to the given parallel (LPT) port.
 * **Generic ESC/P 2 Dot-Matrix:** EPSON ESC/P 2-compatible printer.
 
   * Printed pages are saved as .png files in the ``printer`` subdirectory found in the emulated machine's directory.
+  * Paper size and print quality can be configured through the *Configure* button.
   * Use the **EPSON LQ-2500** printer driver for best results.
 
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
-  * Printed documents are saved as .ps files in the ``printer`` subdirectory found in the emulated machine's directory. These files are automatically converted to .pdf once printing is completed.
+  * Printed documents are saved as .ps files in the ``printer`` subdirectory found in the emulated machine's directory. These files are automatically converted to .pdf once printing is completed; this conversion can be disabled by setting *Language* to *Raw* through the *Configure* button.
   * The original .ps files may remain in the directory if PDF conversion fails, or (on Windows hosts) if the included ``gsdll32.dll`` or ``gsdll64.dll`` file is missing from the 86Box directory.
   * Use the generic PostScript printer driver provided by your operating system.
   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
@@ -40,6 +41,8 @@ Emulated device to connect to the given parallel (LPT) port.
   * The :ref:`emulated network adapter <settings/network:Adapter>` must also be set to **[LPT] PLIP**.
   * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
   * PLIP only works with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
+
+The *Configure* button opens a new window with settings specific to the selected device, such as the output file format for printers.
 
 Serial port 1-4
 ---------------
