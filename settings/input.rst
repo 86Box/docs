@@ -52,6 +52,8 @@ If you're not sure as to what axis or button numbers map to which sticks and but
 Key bindings
 ------------
 
-View and change keyboard shortcuts for common emulator actions. The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
+View and change keyboard shortcuts for common emulator actions. All listed actions are also available on the :doc:`menu bar <../usage/menubar>` and some on the :doc:`toolbar <../usage/toolbar>`; see :doc:`../usage/menubar` for information on what they do.
+
+The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
 
 .. note:: The :kbd:`F8`\ +\ :kbd:`F12` key combination used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
