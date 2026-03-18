@@ -67,7 +67,6 @@ The Olivetti M series special keys are mapped as such:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 999
 
   * - Emulated key
     - Host key
@@ -112,28 +111,28 @@ Toshiba
 The Toshiba T1000 series function keys can be accessed by holding Right Alt or Right Ctrl:
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
   * - Function
-     - Right Alt/Ctrl +
+    - Right Alt/Ctrl +
 
   * - Show/hide numeric keypad overlay
-     - Num Lock
+    - Num Lock
 
   * - Change internal display font
-     - Right
+    - Right
 
   * - Use internal display
-     - Home
+    - Home
 
   * - Use external display
-     - End
+    - End
 
   * - Turbo mode on (T1200)
-     - Page Up
+    - Page Up
 
   * - Turbo mode off (T1200)
-     - Page Down
+    - Page Down
 
   * - Show/hide pop-up window (T1200)
-     - Print Screen
+    - Print Screen
