@@ -7,8 +7,11 @@ The **Sound** page contains settings related to the emulated machine's audio har
 
 Parallel port sound devices such as the **Disney Sound Source** and **Covox Speech Thing** are not present on this page; they can be configured through the :ref:`Ports page <settings/ports:LPT1-4 Device>`.
 
+|general_sound| General
+-----------------------
+
 Sound card #1-#4
-----------------
+^^^^^^^^^^^^^^^^
 
 Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an on-board sound chip, the *Internal device* option for sound card #1 enables the on-board sound.
 
@@ -18,8 +21,23 @@ Emulation for the Yamaha OPL series of synthesizers (used by many of the emulate
 
 The **YMOPL2Board** requires an external hardware device containing an OPL2 chip. See :doc:`../hardware/externalopl` for more information.
 
+Use FLOAT32 sound
+^^^^^^^^^^^^^^^^^
+
+Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
+
+FM synth driver
+^^^^^^^^^^^^^^^
+
+Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
+
+.. note:: **YMFM** is always used for OPL4 emulation on sound cards equipped with that synthesizer.
+
+|midi| MIDI
+-----------
+
 MIDI Out Device
----------------
+^^^^^^^^^^^^^^^
 
 Device to output MIDI music to, for sound cards equipped with an external MIDI output.
 
@@ -31,7 +49,7 @@ Device to output MIDI music to, for sound cards equipped with an external MIDI o
 The *Configure* button opens a new window with settings specific to the selected output device, such as the soundfont to use for *FluidSynth* and the host MIDI device to use for *System MIDI*.
 
 MIDI In Device
---------------
+^^^^^^^^^^^^^^
 
 Device to receive MIDI music from, for sound cards equipped with an external MIDI input.
 
@@ -41,20 +59,8 @@ Device to receive MIDI music from, for sound cards equipped with an external MID
 The *Configure* button opens a new window with settings specific to the selected input device, such as the host MIDI device to use for *System MIDI*.
 
 Standalone MPU-401
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Emulate a standalone **Roland MIDI Processing Unit** ISA card, which allows for MIDI input and output without a MPU-401-equipped sound card, and for running the few applications which require *intelligent mode* capability.
 
 The I/O port and IRQ can be configured through the *Configure* button.
-
-Use FLOAT32 sound
------------------
-
-Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
-
-FM synth driver
----------------
-
-Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
-
-.. note:: **YMFM** is always used for OPL4 emulation on sound cards equipped with that synthesizer.
