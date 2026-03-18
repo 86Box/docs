@@ -7,22 +7,22 @@ The **Storage controllers** page contains settings related to the emulated machi
 
 .. note:: The **Vision Systems LBA Enhancer** previously available here is now an ISA ROM card, which can be enabled through the :ref:`Other peripherals page <settings/peripherals:ISA ROM Cards>`.
 
-FD Controller
--------------
+Floppy drive controller
+-----------------------
 
 Floppy disk drive controller card to emulate. Selecting a controller is not required, unless you wish to use one of the add-on controllers for adding high-density 1.44M floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Configure* button.
 
-CD-ROM Controller
+CD-ROM controller
 -----------------
 
-Standalone CD-ROM controller card to emulate. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk>` or :ref:`settings/storage:SCSI`.
+Standalone CD-ROM controller card to emulate. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>` or :ref:`SCSI <settings/storage:SCSI controllers>`.
 
 The I/O port used by the selected controller can be configured through the *Configure* button.
 
-Hard disk
----------
+Hard disk controllers
+---------------------
 
 MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. The selection boxes only list cards supported by the machine's expansion buses. On machines equipped with an on-board disk controller, the *Internal device* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
 
@@ -30,8 +30,8 @@ The *Configure* buttons open a new window with settings specific to the correspo
 
 .. note:: The **tertiary and quaternary IDE controllers** are now selectable here, replacing the previous separate options for each. These controllers are not Plug and Play compliant by default, potentially requiring manual configuration of the emulated operating system, and may not be bootable; see :doc:`../hardware/ideterqua` for more information.
 
-SCSI
-----
+SCSI controllers
+----------------
 
 SCSI host bus adapter cards to emulate. Up to 4 SCSI cards are supported. The selection boxes only list cards supported by the machine's expansion buses.
 

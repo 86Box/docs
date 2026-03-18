@@ -54,7 +54,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
     |3:1  |Quaternary|Slave |
     +-----+----------+------+
    
-  * On SCSI disks, the first number corresponds to the controller's index, starting from 0 and following the order of: on-board SCSI controllers if present, then :ref:`sound cards <settings/sound:Sound card #1-#4>` with SCSI if present, then :ref:`configured SCSI controllers <settings/storage:SCSI>`; the second number is the SCSI ID within that controller:
+  * On SCSI disks, the first number corresponds to the controller's index, starting from 0 and following the order of: on-board SCSI controllers if present, then :ref:`sound cards <settings/sound:Sound card #1-#4>` with SCSI if present, then :ref:`configured SCSI controllers <settings/storage:SCSI controllers>`; the second number is the SCSI ID within that controller:
 
     +-----+------------+-------+
     |Value|Controller  |SCSI ID|
