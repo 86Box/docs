@@ -5,13 +5,16 @@
 
 The **Ports (COM & LPT)** page contains settings related to the emulated machine's I/O ports.
 
+|parallel_ports| Parallel ports
+-------------------------------
+
 Internal LPT ECP DMA
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 ISA DMA channel number to use for the on-board parallel port's Extended Capabilities Port mode. Only available on machines with physical DMA configuration jumpers for an on-board ECP-capable parallel port.
 
 LPT1-4 Device
--------------
+^^^^^^^^^^^^^
 
 Emulated device to connect to the given parallel (LPT) port.
 
@@ -44,23 +47,26 @@ Emulated device to connect to the given parallel (LPT) port.
 
 The *Configure* button opens a new window with settings specific to the selected device, such as the output file format for printers.
 
-Serial port 1-4
----------------
-
-Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
-
 Parallel port 1-4
------------------
+^^^^^^^^^^^^^^^^^
 
 Enable emulation of parallel ports ranging from LPT1 to LPT4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
 
 .. note:: The 4th parallel port is not widely supported. It is located at I/O port 268h.
 
-Serial port passthrough 1-4
+|serial_ports| Serial ports
 ---------------------------
+
+Serial port passthrough 1-4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Connect emulated serial ports to named pipes or serial ports on the host. Each instance corresponds to one of the 4 emulates serial ports.
 
 The *Configure* button next to each passthrough instance opens a new window with settings specific to it, such as the named pipe or serial port to use.
 
 .. note:: Passthrough will not operate correctly if the selected serial port is taken by a :ref:`serial mouse <settings/input:Mouse>`.
+
+Serial port 1-4
+^^^^^^^^^^^^^^^
+
+Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
