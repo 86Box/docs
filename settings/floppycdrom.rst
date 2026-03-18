@@ -5,8 +5,8 @@
 
 The **Floppy & CD-ROM drives** page contains settings related to the emulated machine's base removable storage drives.
 
-Floppy drives
--------------
+|floppy_tab| Floppy drives
+--------------------------
 
 Up to four floppy disk drives can be attached to the emulated machine, although not all machines provide BIOS support for more than two drives. The following settings apply to the selected drive:
 
@@ -26,8 +26,8 @@ Up to four floppy disk drives can be attached to the emulated machine, although 
 
 Floppy disk images can be inserted and removed through the :ref:`status bar <usage/statusbar:|floppy_35| |floppy_525| Floppy drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
-CD-ROM drives
--------------
+|cdrom| CD-ROM drives
+---------------------
 
 Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 

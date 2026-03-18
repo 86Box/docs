@@ -170,7 +170,7 @@ Floppy disk detection
 2. `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ data within the image;
 3. If all else fails, a guess is made based on the image file's size.
 
-The BIOS Parameter Block detection method may behave incorrectly with non-DOS floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS disks. Disabling :ref:`Check BPB <settings/floppycdrom:Floppy drives>` is strongly recommended when accessing these, as an inaccurate BPB detection may result in read errors, data corruption and other issues.
+The BIOS Parameter Block detection method may behave incorrectly with non-DOS floppy disks. Installation floppies for UNIX and Linux are common examples of non-DOS disks. Disabling :ref:`Check BPB <settings/floppycdrom:|floppy_tab| Floppy drives>` is strongly recommended when accessing these, as an inaccurate BPB detection may result in read errors, data corruption and other issues.
 
 .. note:: When using a **Raw** image of a non-DOS floppy with Check BPB disabled, make sure the image file is not truncated (smaller than its media size), otherwise incorrect behavior may still occur.
 

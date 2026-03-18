@@ -50,6 +50,6 @@ Asset pack
 
 Some features also require an **asset pack**, which is included with release builds of 86Box downloaded from `GitHub <https://github.com/86Box/86Box/releases/latest>`_, as the ``assets`` folder inside the downloaded archive on Windows, or embedded within the application on Linux and macOS. It must be installed manually in other situations, such as when using :doc:`advanced builds </dev/builds>`.
 
-Currently, only the :ref:`floppy audio <settings/floppycdrom:Floppy drives>` feature requires the asset pack to be installed.
+Currently, the :ref:`floppy audio <settings/floppycdrom:|floppy_tab| Floppy drives>` and :ref:`hard disk audio <settings/hdd:Model / Audio>` features require the asset pack to be installed.
 
 The **same search path mechanism** :ref:`described above <usage/roms:Search path>` applies to the asset pack, but with a directory named ``assets`` instead of ``roms``. The ``-A`` or ``--assetpath`` command line argument can be used to specify a custom location.

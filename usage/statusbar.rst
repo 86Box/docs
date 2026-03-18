@@ -34,7 +34,7 @@ Two cartridge icons will appear if the **IBM PCjr** is being emulated. Each icon
 |floppy_35| |floppy_525| Floppy drives
 --------------------------------------
 
-A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <settings/floppycdrom:Floppy drives>`.
+A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <settings/floppycdrom:|floppy_tab| Floppy drives>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
@@ -46,7 +46,7 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 |cdrom| CD-ROM drives
 ---------------------
 
-A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:CD-ROM drives>`. An indicator will appear on the lower left corner of the icon while :ref:`hardware/diskimages:CD audio` is played or paused.
+A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:|cdrom| CD-ROM drives>`. An indicator will appear on the lower left corner of the icon while :ref:`hardware/diskimages:CD audio` is played or paused.
 
 * **Mute:** mute any CD audio played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.
