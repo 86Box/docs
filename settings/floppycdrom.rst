@@ -31,7 +31,7 @@ CD-ROM drives
 
 Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
-* **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:SCSI controllers>` and :ref:`Panasonic/MKE <settings/storage:CD-ROM controller>` interfaces are supported.
+* **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>` and :ref:`Panasonic/MKE <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided.
