@@ -5,26 +5,39 @@
 
 The **Display** page contains settings related to the emulated machine's 2D and 3D video cards.
 
+|general_display| General
+-------------------------
+
 Video
------
+^^^^^
 
 Video card to emulate. This box only lists cards supported by the machine's expansion buses. On machines equipped with an on-board video chip, the *Internal device* option enables the on-board video.
 
 The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of video memory.
 
 Video #2
---------
+^^^^^^^^
 
 Optional secondary video card to emulate. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
 
 As with the primary card above, the *Configure* button can be used to configure the selected card.
 
+Monitor EDID
+^^^^^^^^^^^^
+
+Customize the emulated monitor's `Extended Display Identification Data <https://en.wikipedia.org/wiki/Extended_Display_Identification_Data>`_, which reports a model name, supported resolutions and other information to `DDC2 <https://en.wikipedia.org/wiki/Display_Data_Channel>`_\ -compatible video cards.
+
+The *Custom...* box allows for loading a custom EDID, which must be a binary file up to 256 bytes in size, or a plain text file containing an ``edid-decode`` report including the ``edid-decode (hex):`` section. The *Export...* button saves the default 86Box EDID to a binary file for customization.
+
+|accelerators| Accelerators
+---------------------------
+
 Voodoo Graphics
----------------
+^^^^^^^^^^^^^^^
 
-Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected above.
+Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected in the *General* tab.
 
-.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above, and this Voodoo Graphics option **cannot be selected** alongside them. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
+.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box in the *General* tab, and this Voodoo Graphics option **cannot be selected** alongside them. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
 
 The *Configure* button provides the following settings:
 
@@ -57,17 +70,10 @@ The *Configure* button provides the following settings:
 * **Dynamic Recompiler:** enable the Voodoo recompiler for faster emulation.
 
 IBM 8514/A / XGA / PS/55 Display Adapter Graphics
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Emulate an **IBM 8514/A**, **XGA** or **PS/55 Display Adapter** add-on graphics accelerator. The 8514/A is available for both MCA and ISA buses (emulating a generic clone card on the latter), while the other two are available for the MCA bus only.
 
 The *Configure* buttons next to each card open a new window with settings specific to that card, such as the amount of video memory for the 8514/A and model type for the XGA.
 
 .. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
-
-Monitor EDID
-------------
-
-Customize the emulated monitor's `Extended Display Identification Data <https://en.wikipedia.org/wiki/Extended_Display_Identification_Data>`_, which reports a model name, supported resolutions and other information to `DDC2 <https://en.wikipedia.org/wiki/Display_Data_Channel>`_\ -compatible video cards.
-
-The *Custom...* box allows for loading a custom EDID, which must be a binary file up to 256 bytes in size, or a plain text file containing an ``edid-decode`` report including the ``edid-decode (hex):`` section. The *Export...* button saves the default 86Box EDID to a binary file for customization.
