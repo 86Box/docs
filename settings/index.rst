@@ -19,6 +19,9 @@ If any changes were made to the settings, you will be asked whether or not you w
     div.toctree-wrapper li:has(a[href^="input"]) {
       list-style: url('../_images/input_devices_small.png');
     }
+    div.toctree-wrapper li:has(a[href^="bindings"]) {
+      list-style: url('../_images/key_bindings_small.png');
+    }
     div.toctree-wrapper li:has(a[href^="sound"]) {
       list-style: url('../_images/sound_small.png');
     }
@@ -52,6 +55,7 @@ If any changes were made to the settings, you will be asked whether or not you w
    machine
    display
    input
+   bindings
    sound
    network
    ports
