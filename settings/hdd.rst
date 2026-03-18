@@ -89,6 +89,9 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
+* **Image Format:** file format to use for the disk image.
+* **Block Size:** size of each dynamic data block in a dynamic or differencing VHD image. The default 2 MB is ideal in most cases.
+
 Press the *OK* button to create the disk image file, or *Cancel* to close the window without adding the disk.
 
 Adding an existing disk
