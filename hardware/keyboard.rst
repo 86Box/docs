@@ -26,7 +26,6 @@ macOS
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 999
 
   * - Emulated key
     - Host key
