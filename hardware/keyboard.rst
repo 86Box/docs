@@ -72,7 +72,7 @@ The Olivetti M series special keys are mapped as such:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 999
+  :widths: 999 1
 
   * - Emulated key
     - Host key
