@@ -118,6 +118,7 @@ The Toshiba T1000 series function keys can be accessed by holding Right Alt or R
 
 .. list-table::
   :header-rows: 1
+  :widths: 1 999
 
   * - Function
     - Right Alt/Ctrl +
