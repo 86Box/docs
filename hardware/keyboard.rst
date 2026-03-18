@@ -120,25 +120,25 @@ The Toshiba T1000 series function keys can be accessed by holding Right Alt or R
    :header-rows: 1
 
   * - Function
-     - Right Alt/Ctrl +
+    - Right Alt/Ctrl +
 
   * - Show/hide numeric keypad overlay
-     - Num Lock
+    - Num Lock
 
   * - Change internal display font
-     - Right
+    - Right
 
   * - Use internal display
-     - Home
+    - Home
 
   * - Use external display
-     - End
+    - End
 
   * - Turbo mode on (T1200)
-     - Page Up
+    - Page Up
 
   * - Turbo mode off (T1200)
-     - Page Down
+    - Page Down
 
   * - Show/hide pop-up window (T1200)
-     - Print Screen
+    - Print Screen
