@@ -55,10 +55,10 @@ A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdr
 * A list of host CD-ROM or DVD-ROM drives available for passthrough. Click on an entry to attach it to the emulated drive.
 * **Eject:** remove any disc inserted into this drive, or detach a host drive.
 
-|rdisk| |zip| |mo| Removable disk and MO drives
------------------------------------------------
+|rdisk| |zip| |mo| |tape| Removable disk, MO and tape drives
+------------------------------------------------------------
 
-A removable disk, ZIP or MO icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
+A removable disk, ZIP, MO or tape icon will appear for each configured :doc:`additional removable storage drive <../settings/removable>`.
 
 * **New image:** create a new disk image file. Opens the *New Image* window, which lets you select the image size and where to save the file.
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:MO / removable disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
