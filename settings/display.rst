@@ -64,3 +64,10 @@ Emulate an **IBM 8514/A**, **XGA** or **PS/55 Display Adapter** add-on graphics 
 The *Configure* buttons next to each card open a new window with settings specific to that card, such as the amount of video memory for the 8514/A and model type for the XGA.
 
 .. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
+
+Monitor EDID
+------------
+
+Customize the emulated monitor's `Extended Display Identification Data <https://en.wikipedia.org/wiki/Extended_Display_Identification_Data>`_, which reports a model name, supported resolutions and other information to `DDC2 <https://en.wikipedia.org/wiki/Display_Data_Channel>`_\ -compatible video cards.
+
+The *Custom...* box allows for loading a custom EDID, which must be a binary file up to 256 bytes in size, or a plain text file containing an ``edid-decode`` report including the ``edid-decode (hex):`` section. The *Export...* button saves the default 86Box EDID to a binary file for customization.
