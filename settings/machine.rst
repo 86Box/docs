@@ -14,10 +14,10 @@ The *Configure* button opens a new window with settings specific to the machine,
 
 .. note:: Settings for the machine's on-board devices have been moved to the *Configure* buttons at the devices' respective locations; for instance, configuring the amount of installed video memory for an on-board video chip is now done through the *Configure* button next to the :ref:`Display page's Video box <settings/display:Video>` when the *Internal device* option is selected there.
 
-CPU type / Speed
-----------------
+CPU type / Frequency
+--------------------
 
-Main processor to emulate. The *Speed* box lists all available speed grades for the processor family selected on the *CPU type* box. These boxes only list processor types and speed grades supported by the machine selected above.
+Main processor to emulate. The *Frequency* box lists all available speed grades for the processor family selected on the *CPU type* box. These boxes only list processor types and speed grades supported by the machine selected above.
 
 FPU
 ---
