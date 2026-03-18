@@ -89,7 +89,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
-* **Model:** :ref:`model preset <settings/hdd:Model / Audio>` to use for the disk.
+* **Model:** :ref:`model profile <settings/hdd:Model / Audio>` to use for the disk.
 * **Image Format:** file format to use for the disk image.
 * **Block Size:** size of each dynamic data block in a dynamic or differencing VHD image. The default 2 MB is ideal in most cases.
 
