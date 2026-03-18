@@ -5,7 +5,7 @@
 
 The **Storage controllers** page contains settings related to the emulated machine's disk drive controllers.
 
-.. note:: The **Vision Systems LBA Enhancer** previously available here is now an ISA ROM card, which can be enabled through the :ref:`Other peripherals page <settings/peripherals:ISA ROM Cards>`.
+.. note:: The **Vision Systems LBA Enhancer** previously available here is now an ISA ROM card, which can be enabled through the :ref:`Other peripherals page <settings/peripherals:|isa_rom| ISA ROM Cards>`.
 
 |general_storage_controllers| General
 -------------------------------------
