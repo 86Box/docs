@@ -63,27 +63,27 @@ Action
 
   .. _pause:
 
-* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <settings/input:Key bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:doc:`customizable <../settings/bindings>`) to pause or resume emulation.
 
   .. _fast-forward:
 
-* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
+* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:doc:`customizable <../settings/bindings>`) to control this option.
 
   .. _interpreter:
 
-* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <settings/input:Key bindings>`) to control this option.
+* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:doc:`customizable <../settings/bindings>`) to control this option.
 
   .. _hard-reset:
 
-* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to hard reset.
+* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:doc:`customizable <../settings/bindings>`) to hard reset.
 
   .. _send-cad:
 
-* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:doc:`customizable <../settings/bindings>`) to send that combination.
 
   .. _send-cae:
 
-* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <settings/input:Key bindings>`) to send that combination.
+* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:doc:`customizable <../settings/bindings>`) to send that combination.
 
   .. _acpi-shutdown:
 
@@ -128,7 +128,7 @@ View
 
 .. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
 
-* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <settings/input:Key bindings>`) to show or hide them.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:doc:`customizable <../settings/bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :doc:`customizable <../settings/bindings>`) to show or hide them.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
@@ -168,7 +168,7 @@ Tools
 
   .. _take-screenshot:
 
-* **Take screenshot:** take a screenshot of the emulated display and save it as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <settings/input:Key bindings>`) to take a screenshot.
+* **Take screenshot:** take a screenshot of the emulated display and save it as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:doc:`customizable <../settings/bindings>`) to take a screenshot.
 
   .. _take-raw-screenshot:
 
