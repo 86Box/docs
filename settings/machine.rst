@@ -5,8 +5,11 @@
 
 The **Machine** page contains settings related to the emulated machine as a whole, such as the machine type, CPU type and amount of memory.
 
+|machine_tab| Machine
+---------------------
+
 Search / Machine type / Machine
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box, while the *Search* box allows for finding and selecting a model from any class directly by name.
 
@@ -14,50 +17,13 @@ The *Configure* button opens a new window with settings specific to the machine,
 
 .. note:: Settings for the machine's on-board devices have been moved to the *Configure* buttons at the devices' respective locations; for instance, configuring the amount of installed video memory for an on-board video chip is now done through the *Configure* button next to the :ref:`Display page's Video box <settings/display:Video>` when the *Internal device* option is selected there.
 
-CPU type / Frequency
---------------------
-
-Main processor to emulate. The *Frequency* box lists all available speed grades for the processor family selected on the *CPU type* box. These boxes only list processor types and speed grades supported by the machine selected above.
-
-FPU
----
-
-Math co-processor to emulate. This box is not available if the processor selected above has an integrated co-processor or lacks support for an external one.
-
-Wait states
------------
-
-Number of memory wait states to use on a 286- or 386-class processor. This box is not available if any other processor family is selected above.
-
-PIT mode
---------
-
-Programmable Interval Timer emulation mode. **Auto** should cover most use cases, automatically selecting **Fast** mode on 486-class and newer processors or **Slow** mode on older ones. A limited set of timing-sensitive applications require **Slow** mode, which is slower but more accurate.
-
 Memory
-------
+^^^^^^
 
 Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the machine selected above.
 
-Use the 486 interpreter for 286 and 386 processors
---------------------------------------------------
-
-Enable a faster but less accurate CPU emulation engine on 286- or 386-class processors. Recommended for low-end host systems which are struggling to emulate faster 386s. This option is not available if any other processor family is selected above.
-
-Dynamic Recompiler
-------------------
-
-Enable the dynamic recompiler, which provides faster but less accurate CPU emulation. The recompiler is available as an option for 486-class processors, and is mandatory starting with the Pentium.
-
-.. note:: The recompiler can be disabled temporarily (even on processors where it is mandatory) through an option on the :ref:`Action menu <usage/menubar:Action>`, in the unlikely event that an application performs worse with the recompiler enabled. Selecting this temporary option again or restarting 86Box will reenable the recompiler.
-
-Softfloat FPU
--------------
-
-Enable a slower but more accurate math co-processor emulation, for running a limited set of operating systems and applications which demand full 80-bit precision from the floating point unit.
-
 Time synchronization
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
 
@@ -65,8 +31,51 @@ Automatically copy your host system's date and time over to the emulated machine
 * **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
 * **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
 
+|processor| Processor
+---------------------
+
+CPU type / Frequency
+^^^^^^^^^^^^^^^^^^^^
+
+Main processor to emulate. The *Speed* box lists all available speed grades for the processor family selected on the *CPU type* box. These boxes only list processor types and speed grades supported by the machine selected above.
+
+FPU
+^^^
+
+Math co-processor to emulate. This box is not available if the processor selected above has an integrated co-processor or lacks support for an external one.
+
+Wait states
+^^^^^^^^^^^
+
+Number of memory wait states to use on a 286- or 386-class processor. This box is not available if any other processor family is selected above.
+
+Softfloat FPU
+^^^^^^^^^^^^^
+
+Enable a slower but more accurate math co-processor emulation, for running a limited set of operating systems and applications which demand full 80-bit precision from the floating point unit.
+
+|performance| Performance
+-------------------------
+
+PIT mode
+^^^^^^^^
+
+Programmable Interval Timer emulation mode. **Auto** should cover most use cases, automatically selecting **Fast** mode on 486-class and newer processors or **Slow** mode on older ones. A limited set of timing-sensitive applications require **Slow** mode, which is slower but more accurate.
+
+Use the 486 interpreter for 286 and 386 processors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable a faster but less accurate CPU emulation engine on 286- or 386-class processors. Recommended for low-end host systems which are struggling to emulate faster 386s. This option is not available if any other processor family is selected above.
+
+Dynamic Recompiler
+^^^^^^^^^^^^^^^^^^
+
+Enable the dynamic recompiler, which provides faster but less accurate CPU emulation. The recompiler is available as an option for 486-class processors, and is mandatory starting with the Pentium.
+
+.. note:: The recompiler can be disabled temporarily (even on processors where it is mandatory) through an option on the :ref:`Action menu <usage/menubar:Action>`, in the unlikely event that an application performs worse with the recompiler enabled. Selecting this temporary option again or restarting 86Box will reenable the recompiler.
+
 CPU frame size
---------------
+^^^^^^^^^^^^^^
 
 Change the emulator's frame timing behavior. This mostly affects the smoothness of the emulated mouse and other input peripherals.
 
