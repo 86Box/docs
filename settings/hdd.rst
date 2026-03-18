@@ -12,14 +12,15 @@ All hard disks attached to the emulated machine are listed, with the following i
 
 * **Bus:** storage bus the disk is attached to, as well as the disk's bus channel or ID. These can be changed through the *Bus* and *Channel*/*ID* boxes below the list.
 * **File:** path to the disk image file.
-* **C/H/S:** disk size in cylinders, heads and sectors, respectively.
-* **MiB:** disk size in MiB.
-* **Model:** :ref:`emulated model profile <settings/hdd:Model>` for the disk.
+* **Geometry:** disk size in cylinders, heads, sectors and MiB, respectively.
+* **Model:** :ref:`emulated model profile <settings/hdd:Model / Audio>` for the disk.
 
-Model
------
+Model / Audio
+-------------
 
 The *Model* box below the hard disk list determines the **disk model** to emulate. Model profiles adjust the disk's identification data, as well as its performance according to rotation speed, physical layout and cache size. Generic profiles adjust performance to match an average period-correct disk, while the **RAM Disk** profile runs the disk as fast as the host can manage.
+
+Additionally, the *Audio* box allows for emulating the mechanical sounds of a real hard disk drive. A list of drive models to choose from is provided, according to the selected model's spindle speed; the *None* option disables these sounds.
 
 Adding a new disk
 -----------------
@@ -84,12 +85,11 @@ The *New...* button opens a new window allowing you to create an existing hard d
     |3:15 |            |15     |
     +-----+------------+-------+
 
-
   * On MFM/RLL, XTA and ESDI disks, the second number is 0 for the first drive on the controller, and 1 for the second drive.
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
-* **Model:** :ref:`model preset <settings/hdd:Model>` to use for the disk.
+* **Model:** :ref:`model preset <settings/hdd:Model / Audio>` to use for the disk.
 * **Image Format:** file format to use for the disk image.
 * **Block Size:** size of each dynamic data block in a dynamic or differencing VHD image. The default 2 MB is ideal in most cases.
 

@@ -41,7 +41,7 @@ This page contains important notes related to specific machine models emulated b
 
 .. rubric:: GRiD GRiDcase 1520
 
-* The BIOS is locked to specific Conner IDE hard disk models. Any hard disks must be set to the **Conner CP3024**, **CP3044** or **CP3104** :ref:`model profiles <settings/hdd:Model>`.
+* The BIOS is locked to specific Conner IDE hard disk models. Any hard disks must be set to the **Conner CP3024**, **CP3044** or **CP3104** :ref:`model profiles <settings/hdd:Model / Audio>`.
 * The Yamaha V6366 video chip is not emulated by 86Box. An **IBM CGA** set to amber monochrome mode (through the :ref:`Configure button <settings/display:Video>`) is recommended as an approximation.
 
 i386SX
