@@ -72,7 +72,7 @@ The Olivetti M series special keys are mapped as such:
 
 .. list-table::
   :header-rows: 1
-  :widths: 999 1
+  :widths: 1 999
 
   * - Emulated key
     - Host key
@@ -118,7 +118,7 @@ The Toshiba T1000 series function keys can be accessed by holding Right Alt or R
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 999
+  :widths: 999 1
 
   * - Function
     - Right Alt/Ctrl +
