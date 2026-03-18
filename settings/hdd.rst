@@ -13,7 +13,7 @@ All hard disks attached to the emulated system are listed, with the following in
 * **Bus:** storage bus the disk is attached to, as well as the disk's bus channel or ID. These can be changed through the *Bus* and *Channel*/*ID* boxes below the list.
 * **File:** path to the disk image file.
 * **C/H/S:** disk size in cylinders, heads and sectors, respectively.
-* **MB:** disk size in megabytes.
+* **MiB:** disk size in MiB.
 
 Adding a new disk
 -----------------
