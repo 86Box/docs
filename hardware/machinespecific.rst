@@ -42,7 +42,7 @@ Socket 7
 .. _ma23c:
 .. rubric:: NEC Mate NX MA23C
 
-* Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear; once a different line of text appears, press the **right arrow** key to enter the setup utility.
+* Accessing the BIOS setup utility takes an additional step. Press :kbd:`F2` during the NEC logo screen and a Japanese message will appear; once a different message appears, press :kbd:`🠊` (right arrow) to enter the setup utility.
 * The first setup option below the date and time can be used to change the BIOS language to English.
 
 Socket 8
