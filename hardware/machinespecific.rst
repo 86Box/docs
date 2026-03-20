@@ -49,7 +49,7 @@ i386SX
 
 .. rubric:: Amstrad MegaPC
 
-* The BIOS does not configure itself on first boot or after clearing CMOS; the machine will not work properly until an automatic configuration is performed by pressing **F9** on the BIOS setup's main *Setup* menu, then saving with **F10** and exiting with **Esc**.
+* The BIOS does not configure itself on first boot or after clearing CMOS; the machine will not work properly until an automatic configuration is performed by pressing :kbd:`F9` on the BIOS setup's main *Setup* menu, then saving with :kbd:`F10` and exiting with :kbd:`Esc`.
 
 i486
 ----
@@ -81,7 +81,7 @@ Socket 7
 .. _ma23c:
 .. rubric:: NEC Mate NX MA23C
 
-* Accessing the BIOS setup utility takes an additional step. Press **F2** during the NEC logo screen and some Japanese text will appear; once a different line of text appears, press the **right arrow** key to enter the setup utility.
+* Accessing the BIOS setup utility takes an additional step. Press :kbd:`F2` during the NEC logo screen and a Japanese message will appear; once a different message appears, press :kbd:`🠊` (right arrow) to enter the setup utility.
 * The first setup option below the date and time can be used to change the BIOS language to English.
 
 Socket 8
@@ -173,4 +173,4 @@ Some machines may have faulty or otherwise incomplete `Advanced Configuration an
 * Booting an existing Windows installation with the ACPI HAL will result in a STOP 0x000000A5 blue screen;
 * Booting Windows Vista or 7 (which require ACPI) will also result in a STOP 0x000000A5 blue screen, or a Windows Boot Manager 0xc0000225 error.
 
-There is no solution to this issue, as none of the currently emulated machines with broken ACPI ever received a BIOS update to fix it.
+There is no solution to this issue outside of disabling ACPI, as none of the affected machines ever received a BIOS update to fix it. ACPI can be disabled through the BIOS setup on many machines; if that is not an option, it can be disabled at operating system level while installing Windows 2000 or XP by pressing :kbd:`F7` when the *Press F6 if you need to install a third party SCSI or RAID driver...* message appears, which does disable ACPI even though no indication is displayed on screen.
