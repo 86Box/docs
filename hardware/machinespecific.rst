@@ -144,24 +144,27 @@ See: :ref:`atc6310bxii`
 
   * The I/O ports and IRQs used by all these ports can be configured in the BIOS setup.
 
-* ACPI is disabled by default, unlike other machines with Award v6.00PG BIOS. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
+* ACPI is disabled by default, unlike other machines with AwardBIOS v6.00PG. It can be enabled through the *ACPI function* option of the *Power Management Setup* menu on the BIOS setup.
 
 .. rubric:: ASUS CUBX
 
 * Equipped with an on-board CMD PCI-0648 IDE controller on the :ref:`tertiary and quaternary channels <settings/hdd:Adding a new disk>`, on top of the PIIX4E southbridge controller on the primary and secondary channels.
 
-.. rubric:: MSI MS-6318
+.. rubric:: Samsung CAIRO-5 (MS-6309)
 
-* Two on-board sound options are available: VIA AC'97 (referred to by the manual as "software audio") when :ref:`Sound card #1 <settings/sound:Sound card #1-#4>` is set to *None*, or Creative CT5880 ("hardware audio") when set to *Internal*.
+* The BIOS on this machine :ref:`has an ACPI bug <brokenacpi>` that causes Windows 2000 to crash and restart while its setup starts. To work around this issue, you must choose a non-ACPI HAL in the Windows setup by performing the following steps:
+  * Press **F5** when the "Setup is inspecting your computer's hardware configuration" message appears before the setup starts.
+  * Shortly after, a "Setup could not determine the type of computer you have" prompt will appear. Choose "Standard PC" and then press **Enter** to continue. The setup should then proceed without crashing, albeit without ACPI support.
 
-  * VIA AC'97 audio is only supported by the **Revision 7.x** BIOS variants, selectable through the :ref:`Configure button <settings/machine:Search / Machine type / Machine>` next to the machine selector.
+.. note::
+  This bug does not affect Windows XP and later versions, which should install the ACPI HAL by default without crashing.
 
 Miscellaneous
 -------------
 
 .. rubric:: Microsoft Virtual PC 2007
 
-* This machine loads the American Megatrends BIOS from Virtual PC 2007 into 86Box's emulation. It does not use the virtualization engine or any other components from Virtual PC.
+* This machine loads the AMIBIOS 8 ROM from Virtual PC 2007 on 86Box. It does not use the virtualization engine or any other components from Virtual PC.
 * Virtual PC's special 8 MB video card, WDM sound card and Guest Additions are not emulated by 86Box.
 
 ----
