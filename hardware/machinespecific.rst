@@ -56,10 +56,10 @@ i486
 
 .. rubric:: Intel Classic R/R Plus (Monsoon)
 
-* By default, the BIOS setup entrance and memory test skipping prompts are disabled. To enter BIOS setup, press **F1** when the POST code *135* is displayed or if an error occurs. To skip the memory test, press the spacebar. Both prompts can be enabled in BIOS setup by toggling the *POST Memory Test Prompt* and *POST Setup Prompt* options.
-* Additionally, many other essential or otherwise useful BIOS setup options are also disabled by default. We suggest loading the default option values by pressing **Esc** and then **F5** in BIOS setup. The *Onboard IDE* option must also be enabled if using the internal hard disk controller of the machine. Once all the necessary options are enabled, press **Esc** and then **F4** to save the changes.
+* The messages for entering the BIOS setup and skipping the memory test are not displayed by default. To enter the setup utility, press :kbd:`F1` when the number *135* or an error is displayed. To skip the memory test, press :kbd:`Space`. Both messages can be enabled through the *POST Setup Prompt* and *POST Memory Test Prompt* options on page 1 of the BIOS setup respectively.
+* The internal IDE hard disk controller is disabled by default. It can be enabled through the *Onboard IDE* option on page 1 of the BIOS setup.
 
-.. rubric:: Zida Tomato 4DP
+.. rubric:: Zida Tomato 4DPS
 
 * Floppy drive support is completely disabled by default. It can be enabled through the *Onboard FDD Controller* option of the *Chipset Features Setup* menu on the BIOS setup; the floppy drives themselves must also be configured in the *Standard CMOS Setup* menu.
 
@@ -150,16 +150,10 @@ See: :ref:`atc6310bxii`
 
 * Equipped with an on-board CMD PCI-0648 IDE controller on the :ref:`tertiary and quaternary channels <settings/hdd:Adding a new disk>`, on top of the PIIX4E southbridge controller on the primary and secondary channels.
 
-.. rubric:: Samsung CAIRO-5 (MS-6309)
+.. rubric:: Samsung CAIRO-5 (MSI MS-6309)
 
-* The BIOS on this machine :ref:`has an ACPI bug <brokenacpi>` that causes Windows 2000 to crash and restart while its setup starts. To work around this issue, you must choose a non-ACPI HAL in the Windows setup by performing the following steps:
-
-  * Press **F5** when the "Setup is inspecting your computer's hardware configuration" message appears before the setup starts.
-
-  * Shortly after, a "Setup could not determine the type of computer you have" prompt will appear. Choose "Standard PC" and then press **Enter** to continue. The setup should then proceed without crashing, albeit without ACPI support.
-
-.. note::
-  This bug does not affect Windows XP and later versions, which should install the ACPI HAL by default without crashing.
+* The BIOS is in Korean by default. Press :kbd:`F2` during the Samsung logo screen to enter the setup utility, where the first option can be used to change the BIOS language to English.
+* :ref:`Broken ACPI <brokenacpi>` causes some operating systems such as Windows 2000 and Linux to reboot during startup. :ref:`Disabling ACPI at operating system level <acpioff>` is required, as the BIOS lacks an option for it.
 
 Miscellaneous
 -------------
@@ -183,4 +177,5 @@ Some machines may have faulty or otherwise incomplete `Advanced Configuration an
 * Booting an existing Windows installation with the ACPI HAL will result in a STOP 0x000000A5 blue screen;
 * Booting Windows Vista or 7 (which require ACPI) will also result in a STOP 0x000000A5 blue screen, or a Windows Boot Manager 0xc0000225 error.
 
+.. _acpioff:
 There is no solution to this issue outside of disabling ACPI, as none of the affected machines ever received a BIOS update to fix it. ACPI can be disabled through the BIOS setup on many machines; if that is not an option, it can be disabled at operating system level while installing Windows 2000 or XP by pressing :kbd:`F7` when the *Press F6 if you need to install a third party SCSI or RAID driver...* message appears, which does disable ACPI even though no indication is displayed on screen.
