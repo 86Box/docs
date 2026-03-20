@@ -153,7 +153,9 @@ See: :ref:`atc6310bxii`
 .. rubric:: Samsung CAIRO-5 (MS-6309)
 
 * The BIOS on this machine :ref:`has an ACPI bug <brokenacpi>` that causes Windows 2000 to crash and restart while its setup starts. To work around this issue, you must choose a non-ACPI HAL in the Windows setup by performing the following steps:
+
   * Press **F5** when the "Setup is inspecting your computer's hardware configuration" message appears before the setup starts.
+
   * Shortly after, a "Setup could not determine the type of computer you have" prompt will appear. Choose "Standard PC" and then press **Enter** to continue. The setup should then proceed without crashing, albeit without ACPI support.
 
 .. note::
