@@ -17,7 +17,7 @@ Please note that Avalonia 86 currently only works on Windows and Linux.
 =========
 Community
 =========
-We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.86box.net>`_ for discussing anything related 
+We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.86box.net>`_ for discussing anything related
 to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 | Additionally, subscribe to our `YouTube channel <https://youtube.com/86box>`_ for content such as installation videos, and follow us on `Twitter <https://twitter.com/86BoxEmulator>`_ for occasional updates and fun facts.
@@ -30,7 +30,7 @@ Contents
 .. toctree::
    :maxdepth: 1
    :caption: Using 86Box
-   
+
    usage/gettingstarted
    usage/faq
    usage/roms
@@ -43,7 +43,7 @@ Contents
 .. toctree::
    :maxdepth: 1
    :caption: Emulated hardware
-   
+
    hardware/machinespecific
    hardware/keyboard
    hardware/diskimages
@@ -55,8 +55,9 @@ Contents
 .. toctree::
    :maxdepth: 1
    :caption: Development
-   
+
    dev/buildguide
    dev/builds
    dev/api/index
    dev/formats/index
+   dev/manager
