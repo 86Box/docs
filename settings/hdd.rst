@@ -102,6 +102,20 @@ The *Existing...* button opens a similar window to the *New...* button, except t
 
 After selecting the image file and checking if the parameters are correct, select the *Bus* and *Channel*/*ID* for the hard disk and press *OK* to add it. Press *Cancel* to close the window without adding the disk.
 
+Using physical disks
+^^^^^^^^^^^^^^^^^^^^
+
+Real disks connected to the host system can be attached to the emulated machine, as long as they meet the :ref:`131071 MB size limit and any other limits set by the emulated hardware <hardware/diskimages:Hard disk size limits>`. Use the *Existing...* button and set *File name* to:
+
+* **Windows:** ``\\.\PhysicalDriveX`` where ``X`` is the disk number displayed in the Disk Management (``diskmgmt.msc``) tool.
+* **Linux:** the path to the disk's block device, such as ``/dev/sdb`` for example.
+
+The *Cylinders*, *Heads*, *Sectors* and *Size (MB)* parameters are set automatically when *OK* is pressed.
+
+.. note::
+  * You must have the correct permissions to access the raw physical disk. This entails running 86Box as administrator on Windows and adjusting block device permissions on Linux.
+  * Any partitions on the disk must be unmounted to prevent data corruption. On Windows, use Disk Management to unmount the disk by right-clicking it and selecting *Offline* (not available on removable drives) or by removing all drive letters assigned to it.
+
 Removing a disk
 ---------------
 
