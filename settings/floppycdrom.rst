@@ -40,5 +40,6 @@ Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated
   * Only models with DVD support are able to read DVDs, unlike in previous 86Box versions.
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
+  * Large folders with 1+ GiB worth of data will be treated as DVDs when mounted, and will not mount on non-DVD drives.
 
 CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
