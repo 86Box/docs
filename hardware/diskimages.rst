@@ -229,7 +229,7 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 For **Cue sheet** images, audio tracks in raw (.bin), encapsulated (.wav) and compressed (.mp3 .ogg .flac .opus) formats are supported.
 

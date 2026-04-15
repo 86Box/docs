@@ -43,10 +43,10 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
 * **Eject:** remove the currently-inserted disk from this drive.
 
-|cdrom| CD-ROM drives
----------------------
+|cdrom| |dvdrom| CD-ROM drives
+------------------------------
 
-A CD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:|cdrom| CD-ROM drives>`. An indicator will appear on the lower left corner of the icon while :ref:`hardware/diskimages:CD audio` is played or paused.
+A CD or DVD icon will appear for each configured :ref:`CD-ROM drive <settings/floppycdrom:|cdrom| CD-ROM drives>`. An indicator will appear on the lower left corner of the icon while :ref:`hardware/diskimages:CD audio` is played or paused.
 
 * **Mute:** mute any CD audio played through this drive's analog output. CD audio is unmuted by default on the first configured CD-ROM drive.
 * **Image:** insert a :ref:`CD-ROM or DVD-ROM disc image file <hardware/diskimages:CD-ROM / DVD-ROM optical disc images>` into this drive. Dragging and dropping an image file on the icon will also load it.

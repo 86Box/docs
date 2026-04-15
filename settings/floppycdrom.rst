@@ -17,7 +17,7 @@ Up to four floppy disk drives can be attached to the emulated machine, although 
   * The special **PS/2** drive types have been removed, as the required inversion of the Density Select pin is now performed automatically on IBM PS/2 machines.
 
 * **Turbo timings:** run the drive mechanism as fast as possible. This decreases access times and makes some incorrectly-dumped floppies readable, but may cause issues with some operating systems and applications.
-* **Check BPB:** if unchecked, 86Box will ignore the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ when determining the physical media format for a floppy image on this drive. See :ref:`hardware/diskimages:Floppy disk detection` for more details.
+* **Check BPB:** use the `DOS BIOS Parameter Block <https://en.wikipedia.org/wiki/BIOS_parameter_block>`_ when determining the physical media format for a floppy image on this drive. See :ref:`hardware/diskimages:Floppy disk detection` for more details.
 * **Audio:** emulate the mechanical sounds of a real floppy drive. A list of drive models to choose from is provided; the *None* option disables these sounds.
 
 .. note::
@@ -29,16 +29,18 @@ Floppy disk images can be inserted and removed through the :ref:`status bar <usa
 |cdrom| CD-ROM drives
 ---------------------
 
-Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
+Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
 * **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>` and :ref:`Panasonic/MKE <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided.
+* **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data.
 
 .. note::
-  * Only models with DVD support are able to read DVDs (or host folders with more than 1 GB of data), unlike in previous 86Box versions.
+  * Only models with DVD support (indicated by the |dvdrom_small| DVD icon on the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>`) are able to read discs or host folders larger than 1 GB, unlike in previous 86Box versions.
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
+  * Disabling *Use EDC/ECC emulation* may be required for some copy-protected discs.
 
-CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
