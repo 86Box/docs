@@ -228,7 +228,7 @@ The emulated modem can **dial-out** to Telnet servers as a client, receive **dia
 
 .. important:: The :ref:`hardware/network:Telnet client` and :ref:`hardware/network:SLIP` modes cannot understand **country and area codes**, which are enabled by default on Windows. Check your dialing settings if you always get *no answer* or *no carrier*.
 
-The *Configure* button next to the :ref:`network card selector <settings/network:|network| Network Card #1-#4>` provides these settings for a modem:
+The *Configure* button next to the :ref:`network card selector <settings/network:|network| Adapter 1-4>` provides these settings for a modem:
 
 * **Serial Port:** port to attach the modem. When using other serial devices such as a :ref:`mouse <settings/input:Mouse>` or :ref:`serial passthrough <settings/ports:Serial port passthrough 1-4>`, make sure to select a port that is not used.
 * **Baud Rate:** bit rate for communicating with the modem. This has an impact on the reported and actual transfer speeds.
