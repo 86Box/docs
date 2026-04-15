@@ -179,6 +179,7 @@ Some machines may have faulty or otherwise incomplete `Advanced Configuration an
 
 There is no solution to this issue outside of disabling ACPI, as none of the affected machines ever received a BIOS update to fix it. ACPI can be disabled through the BIOS setup on many machines, or at operating system level if that is not an option:
 
-.. _acpioff:
+  .. _acpioff:
+
 * **Windows 2000 or XP:** during installation, press :kbd:`F7` when the *Press F6 if you need to install a third party SCSI or RAID driver...* message appears; this disables ACPI even though no indication is displayed on screen.
 * **Linux:** add ``acpi=off`` to the kernel command line.
