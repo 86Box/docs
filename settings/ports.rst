@@ -22,7 +22,7 @@ The check box (left) enables emulation of the corresponding parallel port. Any p
 
 .. note:: The LPT4 port is not widely supported. It is located at I/O port 268h.
 
-The dropdown (middle) selects an emulated device to connect to the parallel port; click |clear| to search for devices. The following devices are supported:
+The dropdown (middle) selects an emulated device to connect to the parallel port; click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** no device connected.
 * **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
@@ -56,9 +56,9 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
   * The GhostPCL library required to convert output files to .pdf is not included with 86Box due to a license incompatibility. Set *Language* to *Raw* through the *Configure* button to remove the warning displayed on startup.
   * The following PCL standards can be selected through the *Configure* button:
 
-    * *PCL 5e* (enhanced): introduced in 1992 with HP LaserJet 4.
-    * *PCL 5c* (color): introduced in 1992 with HP PaintJet 300XL and HP Color LaserJet.
-    * *HP-RTL* (Raster Transfer Language): a subset of PCL.
+    * *PCL 5e* (enhanced): introduced in 1992 with HP LaserJet 4;
+    * *PCL 5c* (color): introduced in 1992 with HP PaintJet 300XL and HP Color LaserJet;
+    * *HP-RTL* (Raster Transfer Language): a subset of PCL;
     * *PCL 6* (PXL): introduced in 1995.
 
 * **Parallel Line Internet Protocol:** a `PLIP <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
@@ -81,16 +81,16 @@ COM1-4
 
 The check box (left) enables emulation of the corresponding serial port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
 
-The dropdown (middle) selects an emulated device to connect to the serial port; click |clear| to search for devices. The following devices are supported:
+The dropdown (middle) selects an emulated device to connect to the serial port; click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** no device connected.
 * **Serial Passthrough:** connect to a serial port on the host system.
 
   * The host port's parameters (baud rate, parity, data bits and stop bits) are automatically configured to match the emulated port's parameters, unlike in previous 86Box versions which required manual configuration in the passthrough settings.
 
-* **Named Pipe:** connect to a named pipe on the host system.
+* **Named Pipe:** create or connect to a named pipe on the host system.
 
-  * On Windows hosts, the *Pipe path* does not require a ``\\.\pipe\`` prefix.
+  * On Windows hosts, *Auto* mode creates or connects to the pipe depending on whether or not it already exists, *Server* mode always creates the pipe and *Client* mode always connects to an existing pipe. The ``\\.\pipe\`` prefix is optional.
   * On Linux and macOS hosts, two pipes are created (adding ``.in`` and ``.out`` suffixes to the *Pipe path*) for bidirectional communication:
 
     .. list-table::
@@ -116,7 +116,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
 * **File:** write all data to a file and/or read data from a file on the host system.
 * **Virtual Console:** connect to a terminal on the host system, in one of multiple modes.
 
-  * On Windows hosts, this device always connects to a Command Prompt window (limited to one per emulated machine); the modes below are only available on Linux and macOS hosts.
+  * On Windows hosts, this device always connects to a Command Prompt window (limited to one per emulated machine). The modes below are only available on Linux and macOS hosts.
   * *Use standard input/output* connects to stdin and stdout, available when starting the machine directly from a terminal through the ``-P``/``--vmpath`` command line option.
   * *Create pseudoterminal* creates a PTY pseudoterminal, connects to it and displays its device path when the machine is started.
   * *Start terminal emulator* connects to the system's default terminal emulator.
