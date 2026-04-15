@@ -379,7 +379,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_STRING``: arbitrary text string entered by the user;
       * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button, with a file type filter specified by the ``file_filter`` member;
       * ``CONFIG_BINARY``: checkbox;
-      * ``CONFIG_INT``: arbitrary integer number, currently **not visible nor configurable** in the user interface;
+      * ``CONFIG_INT``: arbitrary integer number, currently treated as ``CONFIG_SELECTION`` by the user interface;
       * ``CONFIG_SPINNER``: arbitrary integer number entered by the user directly or through up/down arrows, within a range specified by the ``spinner`` member;
       * ``CONFIG_MAC``: last 3 octets of a MAC address, with a *Generate* button to randomize the octets;
       * ``CONFIG_MIDI_OUT``: combobox containing a list of system MIDI output devices;
