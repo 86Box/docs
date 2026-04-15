@@ -389,7 +389,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Default string value for a ``CONFIG_STRING`` option. Can be ``NULL`` if not applicable.
 
   * - ``default_int``
-    - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
+    - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
 
   * - ``file_filter``
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``NULL`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
@@ -397,7 +397,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       ``"Raw image (*.img)|*.img|Virtual Hard Disk (*.vhd)|*.vhd"``
 
   * - ``spinner``
-    - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ 0 }`` if not applicable.
+    - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ NULL }`` if not applicable.
 
       .. flat-table::
          :header-rows: 1
