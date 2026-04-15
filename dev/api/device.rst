@@ -381,7 +381,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_BINARY``: checkbox;
       * ``CONFIG_INT``: arbitrary integer number, currently **not visible nor configurable** in the user interface;
       * ``CONFIG_SPINNER``: arbitrary integer number entered by the user directly or through up/down arrows, within a range specified by the ``spinner`` member;
-      * ``CONFIG_MAC``: last 3 octets of a MAC address, currently **not visible nor configurable** in the user interface;
+      * ``CONFIG_MAC``: last 3 octets of a MAC address, with a *Generate* button to randomize the octets;
       * ``CONFIG_MIDI_OUT``: combobox containing a list of system MIDI output devices;
       * ``CONFIG_MIDI_IN``: combobox containing a list of system MIDI input devices;
       * ``CONFIG_END``: **mandatory** terminator to indicate the end of the option list.
