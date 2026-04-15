@@ -180,7 +180,7 @@ New devices must be **registered** before they can be selected by the user. This
 * **Video cards:** ``video_cards`` in ``src/video/vid_table.c``
 * **Sound cards:** ``sound_cards`` in ``src/sound/sound.c``
 * **Network cards:** ``net_cards`` in ``src/network/network.c``
-* **Parallel port devices:** ``lpt_devices`` in ``src/lpt.c``
+* **Parallel port devices:** ``lpt_devices`` in ``src/device/lpt.c``
 * **Hard disk controllers:** ``controllers`` in ``src/disk/hdc.c``
 * **Floppy disk controllers:** ``fdc_cards`` in ``src/floppy/fdc.c``
 * **SCSI controllers:** ``scsi_cards`` in ``src/scsi/scsi.c``
