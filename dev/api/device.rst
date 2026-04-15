@@ -315,12 +315,12 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
                 .type           = CONFIG_BINARY,
                 .default_int    = 1 /* checked by default */
             },
-            /*{
+            {
                 .name           = "int",
                 .description    = "Integer",
                 .type           = CONFIG_INT,
                 .default_int    = 1234
-            },*/
+            },
             {
                 .name           = "spinner",
                 .description    = "Spinner",
