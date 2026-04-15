@@ -36,8 +36,8 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_MCA``: IBM Micro Channel Architecture;
       * ``DEVICE_CBUS``: PC-98 C-BUS (reserved for future use);
       * ``DEVICE_HIL``: HP HIL (reserved for future use);
-      * ``DEVICE_COM``: serial port (reserved for future use);
-      * ``DEVICE_LPT``: parallel port (reserved for future use).
+      * ``DEVICE_COM``: serial port;
+      * ``DEVICE_LPT``: parallel port.
 
   * - :cspan:`1` ``local``
     - 32-bit value which can be read from this structure by the ``init`` callback.
