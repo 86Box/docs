@@ -35,15 +35,31 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 * **Generic ESC/P 2 Dot-Matrix:** EPSON ESC/P 2-compatible printer.
 
   * Printed pages are saved as .png files in the ``printer`` subdirectory found in the emulated machine's directory.
-  * Paper size and print quality can be configured through the *Configure* button.
-  * Use the **EPSON LQ-2500** printer driver for best results.
+  * The printer type, paper size and print quality (draft quality uses a dot-matrix font and letter quality uses TrueType fonts) can be configured through the *Configure* button.
+  * Use these printer drivers according to the selected printer type for best results:
+
+    * *EX-1000* (in order): EPSON EX-1000, EX-800, FX-286, FX-185, FX-85, JX-80, FX-100+, FX-80+, FX-100, FX-80, HS-80, MX-100 Type III, MX-82 F/T Type III, MX-80 F/T Type III, MX-80 Type III, MX-100, MX-82, MX-80 F/T Type II, MX-80 Type II, MX-80
+    * *ESC/P 2*: EPSON LQ-2500
+
+  * If the emulation speed decreases drastically during printing, disable ECP/EPP mode in the emulated machine's BIOS setup.
 
 * **Generic PostScript Printer:** PostScript-compatible printer with PDF output.
 
   * Printed documents are saved as .ps files in the ``printer`` subdirectory found in the emulated machine's directory. These files are automatically converted to .pdf once printing is completed; this conversion can be disabled by setting *Language* to *Raw* through the *Configure* button.
-  * The original .ps files may remain in the directory if PDF conversion fails, or (on Windows hosts) if the included ``gsdll32.dll`` or ``gsdll64.dll`` file is missing from the 86Box directory.
-  * Use the generic PostScript printer driver provided by your operating system.
+  * The original .ps files may remain in the directory if PDF conversion fails, or (on Windows x64 hosts) if the included ``gsdll64.dll`` file is missing from the 86Box directory. PDF conversion is not available on Windows ARM hosts.
+  * Use the generic PostScript printer driver provided by your operating system; note that generic drivers may support grayscale only.
   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
+
+* **Generic PCL Printer:** HP PCL-compatible printer.
+
+  * Printed documents are saved as .pcl or .pxl files in the ``printer`` subdirectory found in the emulated machine's directory.
+  * The GhostPCL library required to convert output files to .pdf is not included with 86Box due to a license incompatibility. Set *Language* to *Raw* through the *Configure* button to remove the warning displayed on startup.
+  * The following PCL standards can be selected through the *Configure* button:
+
+    * *PCL 5e* (enhanced): introduced in 1992 with HP LaserJet 4.
+    * *PCL 5c* (color): introduced in 1992 with HP PaintJet 300XL and HP Color LaserJet.
+    * *HP-RTL* (Raster Transfer Language): a subset of PCL.
+    * *PCL 6* (PXL): introduced in 1995.
 
 * **Parallel Line Internet Protocol:** a `PLIP <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
 
