@@ -388,7 +388,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
   * - ``file_filter``
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``NULL`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
 
-      ``"Raw image (*.img)|*.img|Virtual Hard Disk (*.vhd)|*.vhd"``
+      ``"Raw image (*.img *.ima)|*.img,*.ima|Virtual Hard Disk (*.vhd)|*.vhd"``
 
   * - ``spinner``
     - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ NULL }`` if not applicable.
