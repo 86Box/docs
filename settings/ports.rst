@@ -116,6 +116,9 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
   * On Linux and macOS hosts, the *Pipe path* can also point to a character device (such as a pseudoterminal created by the **Virtual Console** device on another emulated machine), in which case the *Auto* and *Client* modes will connect to that device instead.
 
 * **File:** write all outgoing data to a file and/or read incoming data from a file on the host system.
+
+  * If *Append to file if it exists* is unchecked, the outgoing data file is cleared every time the emulated machine is started or hard reset.
+
 * **Virtual Console:** connect to a terminal on the host system, in one of multiple modes.
 
   * On Windows hosts, this device always connects to a Command Prompt window (limited to one per emulated machine). The modes below are only available on Linux and macOS hosts.
