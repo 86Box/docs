@@ -5,7 +5,7 @@ Status bar
 
 The status bar located at the bottom of the 86Box window provides icons related to devices attached to the emulated machine. Move your mouse cursor over an icon to see what device it represents. **Most icons can be clicked on** to access options related to their respective devices, which are listed below, and image files can be dropped on the icons for removable media devices such as floppy and CD-ROM drives.
 
-Additionally, green or red indicator lights will appear on the lower right corner of an icon when its device is in use, denoting reads and writes respectively, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled. Some devices also provide an additional indicator on the lower left corner.
+Additionally, green or red indicator lights will appear on the lower corners of an icon when its device is in use, denoting reads and writes respectively, unless :ref:`Update status bar icons <usage/menubar:Tools>` is disabled. Some devices also provide an additional indicator on the lower left corner.
 
 |cassette| Cassette deck
 ------------------------
