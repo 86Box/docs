@@ -181,6 +181,7 @@ New devices must be **registered** before they can be selected by the user. This
 * **Sound cards:** ``sound_cards`` in ``src/sound/sound.c``
 * **Network cards:** ``net_cards`` in ``src/network/network.c``
 * **Parallel port devices:** ``lpt_devices`` in ``src/lpt.c``
+* **Serial port devices:** ``char_devices`` in ``src/char/char.c``
 * **Hard disk controllers:** ``controllers`` in ``src/disk/hdc.c``
 * **Floppy disk controllers:** ``fdc_cards`` in ``src/floppy/fdc.c``
 * **SCSI controllers:** ``scsi_cards`` in ``src/scsi/scsi.c``
