@@ -315,7 +315,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_HEX16``: combobox containing a list of 16-bit hexadecimal values (useful for ISA I/O ports) specified by the ``selection`` member;
       * ``CONFIG_HEX20``: combobox containing a list of 20-bit hexadecimal values (useful for ISA memory addresses) specified by the ``selection`` member;
       * ``CONFIG_STRING``: arbitrary text string entered by the user, currently **not visible nor configurable** in the user interface;
-      * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button;
+      * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button, with a file type filter specified by the ``file_filter`` member;
       * ``CONFIG_BINARY``: checkbox;
       * ``CONFIG_INT``: arbitrary integer number, currently **not visible nor configurable** in the user interface;
       * ``CONFIG_SPINNER``: arbitrary integer number entered by the user directly or through up/down arrows, within a range specified by the ``spinner`` member;
@@ -328,7 +328,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Default string value for a ``CONFIG_STRING`` option. Can be ``""`` if not applicable.
 
   * - ``default_int``
-    - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
+    - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
 
   * - ``file_filter``
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``""`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
