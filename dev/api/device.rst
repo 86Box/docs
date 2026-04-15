@@ -309,44 +309,47 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
                 .file_filter    = "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar"
             },
             {
-                .name           = "binary",
-                .description    = "Binary",
-                .type           = CONFIG_BINARY,
-                .default_int    = 1 /* checked by default */
+                .name        = "binary",
+                .description = "Binary",
+                .type        = CONFIG_BINARY,
+                .default_int = 1 /* checked by default */
             },
             {
-                .name           = "int",
-                .description    = "Integer",
-                .type           = CONFIG_INT,
-                .default_int    = 1234
+                .name        = "int",
+                .description = "Integer",
+                .type        = CONFIG_INT,
+                .default_int = 1234
             },
             {
-                .name           = "spinner",
-                .description    = "Spinner",
-                .type           = CONFIG_SPINNER,
-                .default_int    = 1234,
-                .spinner        = {
+                .name        = "spinner",
+                .description = "Spinner",
+                .type        = CONFIG_SPINNER,
+                .default_int = 1234,
+                .spinner     = {
                     .min  = 1204,
                     .max  = 1294,
                     .step = 10
                 }
             },
             {
-                .name           = "mac",
-                .description    = "MAC address",
-                .type           = CONFIG_MAC
+                .name        = "mac",
+                .description = "MAC address",
+                .type        = CONFIG_MAC
             },
             {
-                .name           = "midi_out",
-                .description    = "MIDI output",
-                .type           = CONFIG_MIDI_OUT,
-                .default_int    = 0
+                .name        = "midi_out",
+                .description = "MIDI output",
+                .type        = CONFIG_MIDI_OUT
             },
             {
-                .name           = "midi_in",
-                .description    = "MIDI input",
-                .type           = CONFIG_MIDI_IN,
-                .default_int    = 0
+                .name        = "midi_in",
+                .description = "MIDI input",
+                .type        = CONFIG_MIDI_IN
+            },
+            {
+                .name        = "serport",
+                .description = "Serial port",
+                .type        = CONFIG_SERPORT
             },
             { .name = "", .description = "", .type = CONFIG_END }
         };
@@ -383,6 +386,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_MAC``: last 3 octets of a MAC address, currently **not visible nor configurable** in the user interface;
       * ``CONFIG_MIDI_OUT``: combobox containing a list of system MIDI output devices;
       * ``CONFIG_MIDI_IN``: combobox containing a list of system MIDI input devices;
+      * ``CONFIG_SERPORT``: combobox containing a list of host serial ports;
       * ``CONFIG_END``: **mandatory** terminator to indicate the end of the option list.
 
   * - ``default_string``
@@ -443,7 +447,7 @@ Configured option values can be read from within the device's ``init`` callback 
     - Description
 
   * - ``name``
-    - The option's ``name``. Accepted option types are ``CONFIG_STRING`` and ``CONFIG_FNAME``.
+    - The option's ``name``. Accepted option types are ``CONFIG_STRING``, ``CONFIG_FNAME`` and ``CONFIG_SERPORT``.
 
   * - **Return value**
     - The option's configured string value, or its ``default_string`` if no value is present. Note that a ``const char *`` is returned.
