@@ -40,8 +40,9 @@ A 3.5" or 5.25" floppy icon will appear for each configured :ref:`floppy drive <
 * **Existing image:** insert a :ref:`disk image file <hardware/diskimages:Floppy disk images>` into this drive. Dragging and dropping an image file on the icon will also load it.
 * **Existing image (Write-protected):** insert a disk image file into this drive as a read-only disk.
 * A history of the last few images that were loaded into this drive. Click on an entry to load it back.
+* **Use host floppy drive:** attach a host floppy drive to this emulated drive. Only available on Linux and macOS hosts.
 * **Export to 86F:** convert the currently-inserted disk image file to 86Box's :doc:`../dev/formats/86f` surface image format. You will be asked where to save the converted file.
-* **Eject:** remove the currently-inserted disk from this drive.
+* **Eject:** remove the currently-inserted disk from this drive, or detach a host drive.
 
 |cdrom| |dvdrom| CD-ROM drives
 ------------------------------
