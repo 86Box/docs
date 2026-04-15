@@ -65,7 +65,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 
       * ``priv``: opaque pointer previously returned by ``init``.
   
-  * - :rspan:`2`
+  * - :rspan:`1`
 
       .. raw:: html
 
@@ -78,18 +78,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * Return value: ``1`` if the device is available for selection, or ``0`` if it is unavailable (due to missing ROMs, for example).
 
   * - ``poll``
-    - Function called whenever the mouse position is updated. Valid for mouse devices only. Takes the form of:
-
-      ``int poll(int x, int y, int z, int b, void *priv)``
-
-      * ``x`` and ``y``: relative mouse movement coordinates (signed);
-      * ``z``: relative scroll wheel movement coordinate (signed);
-      * ``b``: button state: bit 0 (``0x1``) set if left button pressed, bit 1 (``0x2``) set if right button pressed, bit 2 (``0x4``) set if middle button pressed;
-      * ``priv``: opaque pointer previously returned by ``init``;
-      * Return value: ``0`` if the change was processed, or any other value otherwise.
-
-  * - ``register_pci_slot``
-    - Reserved for future use.
+    - No longer used.
 
   * - :cspan:`1` ``speed_changed``
     - Function called whenever the emulated CPU clock speed is changed. Can be ``NULL``. Timer intervals (when using the undocumented legacy timer API) and anything else sensitive to the CPU clock speed should be updated in this callback. Takes the form of:
