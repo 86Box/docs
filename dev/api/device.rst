@@ -33,7 +33,8 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_AC97``: AMR, CNR or ACR;
       * ``DEVICE_PCJR``: IBM PCjr;
       * ``DEVICE_PS2``: IBM PS/1 or PS/2;
-      * ``DEVICE_MCA``: IBM Micro Channel Architecture;
+      * ``DEVICE_MCA``: 16-bit IBM Micro Channel Architecture;
+      * ``DEVICE_MCA32``: 32-bit IBM Micro Channel Architecture;
       * ``DEVICE_CBUS``: PC-98 C-BUS (reserved for future use);
       * ``DEVICE_HIL``: HP HIL (reserved for future use);
       * ``DEVICE_COM``: serial port (reserved for future use);
