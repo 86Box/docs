@@ -21,7 +21,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 
       * ``DEVICE_SIDECAR``: IBM PCjr sidecar;
       * ``DEVICE_ISA``: 8-bit ISA;
-      * ``DEVICE_AT``: 16-bit ISA;
+      * ``DEVICE_ISA16``: 16-bit ISA;
       * ``DEVICE_EISA``: EISA (reserved for future use);
       * ``DEVICE_VLB``: VESA Local Bus;
       * ``DEVICE_OLB``: OPTi Local Bus;
@@ -136,7 +136,7 @@ Most devices need a place to store their internal state. We discourage the use o
         const device_t foo1234_device = {
             .name = "Foo-1234",
             .internal_name = "foo1234",
-            .flags = DEVICE_AT, /* 16-bit ISA */
+            .flags = DEVICE_ISA16,
             .local = 1234,
             .init = foo_init,
             .close = foo_close,
