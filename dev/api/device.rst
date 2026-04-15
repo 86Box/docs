@@ -377,7 +377,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
     - Default string value for a ``CONFIG_STRING`` option. Can be ``NULL`` if not applicable.
 
   * - ``default_int``
-    - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
+    - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. On ``CONFIG_FNAME`` options, setting this to ``1`` makes the file selector button bring up a save dialog instead of an open dialog. Can be ``0`` if not applicable.
 
   * - ``file_filter``
     - File type filter for a ``CONFIG_FNAME`` option. Can be ``NULL`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
