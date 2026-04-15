@@ -5,23 +5,23 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 
 .. flat-table:: ``device_t``
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 1 999
 
-  * - :cspan:`1` Member
+  * - Member
     - Description
 
-  * - :cspan:`1` ``name``
+  * - ``name``
     - The device's name, displayed in the user interface. ``"Foo-1234"`` for example. Suffixes like ``"(PCI)"`` are removed at run-time.
 
-  * - :cspan:`1` ``internal_name``
+  * - ``internal_name``
     - The device's internal name, used to identify it in the emulated machine's configuration file. ``"foo1234"`` for example.
 
-  * - :cspan:`1` ``flags``
+  * - ``flags``
     - One or more bit flags to indicate the expansion bus(es) supported by the device, for determining :ref:`device availability <dev/api/device:Availability>` on the selected machine:
 
       * ``DEVICE_SIDECAR``: IBM PCjr sidecar;
       * ``DEVICE_ISA``: 8-bit ISA;
-      * ``DEVICE_AT``: 16-bit ISA;
+      * ``DEVICE_ISA16``: 16-bit ISA;
       * ``DEVICE_EISA``: EISA (reserved for future use);
       * ``DEVICE_VLB``: VESA Local Bus;
       * ``DEVICE_OLB``: OPTi Local Bus;
@@ -33,17 +33,18 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_AC97``: AMR, CNR or ACR;
       * ``DEVICE_PCJR``: IBM PCjr;
       * ``DEVICE_PS2``: IBM PS/1 or PS/2;
-      * ``DEVICE_MCA``: IBM Micro Channel Architecture;
+      * ``DEVICE_MCA``: 16-bit IBM Micro Channel Architecture;
+      * ``DEVICE_MCA32``: 32-bit IBM Micro Channel Architecture;
       * ``DEVICE_CBUS``: PC-98 C-BUS (reserved for future use);
       * ``DEVICE_HIL``: HP HIL (reserved for future use);
       * ``DEVICE_COM``: serial port (reserved for future use);
       * ``DEVICE_LPT``: parallel port (reserved for future use).
 
-  * - :cspan:`1` ``local``
+  * - ``local``
     - 32-bit value which can be read from this structure by the ``init`` callback.
       Use this value to tell different subtypes of the same device, for example.
 
-  * - :cspan:`1` ``init``
+  * - ``init``
     - Function called whenever this device is initialized, either from starting 86Box or from a hard reset. Can be ``NULL``, in which case the opaque pointer passed to other callbacks will be invalid. Takes the form of:
 
       ``void *init(const struct device_t *info)``
@@ -51,61 +52,42 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``info``: pointer to this ``device_t`` structure;
       * Return value: opaque pointer passed to the other callbacks below, usually a pointer to the device's :ref:`state structure <dev/api/device:State structure>`.
 
-  * - :cspan:`1` ``close``
+  * - ``close``
     - Function called whenever this device is de-initialized, either from closing 86Box or from a hard reset. Can be ``NULL``. Takes the form of:
 
       ``void close(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` ``reset``
+  * - ``reset``
     - Function called whenever this device undergoes a soft reset. Can be ``NULL``. Takes the form of:
 
       ``void reset(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
   
-  * - :rspan:`2`
-
-      .. raw:: html
-
-         <div class="vertical-text">union</div>
-    - ``available``
+  * - ``available``
     - Function called whenever this device's availability is being checked. Can be ``NULL``, in which case the device will always be available. Takes the form of:
 
       ``int available()``
 
       * Return value: ``1`` if the device is available for selection, or ``0`` if it is unavailable (due to missing ROMs, for example).
 
-  * - ``poll``
-    - Function called whenever the mouse position is updated. Valid for mouse devices only. Takes the form of:
-
-      ``int poll(int x, int y, int z, int b, void *priv)``
-
-      * ``x`` and ``y``: relative mouse movement coordinates (signed);
-      * ``z``: relative scroll wheel movement coordinate (signed);
-      * ``b``: button state: bit 0 (``0x1``) set if left button pressed, bit 1 (``0x2``) set if right button pressed, bit 2 (``0x4``) set if middle button pressed;
-      * ``priv``: opaque pointer previously returned by ``init``;
-      * Return value: ``0`` if the change was processed, or any other value otherwise.
-
-  * - ``register_pci_slot``
-    - Reserved for future use.
-
-  * - :cspan:`1` ``speed_changed``
+  * - ``speed_changed``
     - Function called whenever the emulated CPU clock speed is changed. Can be ``NULL``. Timer intervals (when using the undocumented legacy timer API) and anything else sensitive to the CPU clock speed should be updated in this callback. Takes the form of:
 
       ``void speed_changed(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` ``force_redraw``
+  * - ``force_redraw``
     - Function called whenever the emulated screen has to be fully redrawn. Can be ``NULL``. Only useful for video cards. Takes the form of:
 
       ``void force_redraw(void *priv)``
 
       * ``priv``: opaque pointer previously returned by ``init``.
 
-  * - :cspan:`1` ``config``
+  * - ``config``
     - Array of :ref:`device configuration options <dev/api/device:Configuration>`, or ``NULL`` if no options are available.
 
 State structure
@@ -155,7 +137,7 @@ Most devices need a place to store their internal state. We discourage the use o
         const device_t foo1234_device = {
             .name = "Foo-1234",
             .internal_name = "foo1234",
-            .flags = DEVICE_AT, /* 16-bit ISA */
+            .flags = DEVICE_ISA16,
             .local = 1234,
             .init = foo_init,
             .close = foo_close,
