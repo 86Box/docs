@@ -33,7 +33,7 @@ The *Configure* button opens a new window with settings specific to the selected
 
 .. note::
   * On most Ethernet cards, the MAC address is partially configurable and always prefixed by an `Organizationally Unique Identifier <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_ belonging to the card's manufacturer, such as ``00:E0:4C`` for Realtek; while on some generic cards, the full MAC is configurable.
-  * The **[LPT] Parallel Port Internet Protocol** network adapter requires a **PLIP Network** device to be attached to a :ref:`parallel port <settings/ports:Parallel port 1-4>`.
+  * The **[LPT] Parallel Port Internet Protocol** network adapter requires a **PLIP Network** device to be attached to a :ref:`parallel port <settings/ports:LPT1-4>`.
   * Settings for the **[COM] Standard Hayes-compliant Modem** are described on :ref:`Networking <hardware/network:Modem>`.
 
 Options

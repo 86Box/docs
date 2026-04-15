@@ -34,7 +34,7 @@ The following options are available by **right-clicking** a machine:
 * **Wipe NVRAM:** clear the machine's CMOS non-volatile memory. On models with Flash ROM, the original BIOS is also reflashed.
 * **Delete:** delete the machine, along with **everything** stored within its directory.
 * **Open folder:** open the directory where the machine's configuration file is stored.
-* **Open printer tray**: open the directory where documents printed by the machine's :ref:`emulated printers <settings/ports:LPT1-4 Device>` are saved.
+* **Open printer tray**: open the directory where documents printed by the machine's :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
 * **Open screenshots folder**: open the directory where screenshots of the machine are saved.
 * **Show config file:** display the contents of the machine's ``86box.cfg`` file for sharing, support requests and bug reports.
 

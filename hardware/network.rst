@@ -230,7 +230,7 @@ The emulated modem can **dial-out** to Telnet servers as a client, receive **dia
 
 The *Configure* button next to the :ref:`network card selector <settings/network:|network| Adapter 1-4>` provides these settings for a modem:
 
-* **Serial Port:** port to attach the modem. When using other serial devices such as a :ref:`mouse <settings/input:Mouse>` or :ref:`serial passthrough <settings/ports:Serial port passthrough 1-4>`, make sure to select a port that is not used.
+* **Serial Port:** port to attach the modem. When using a :ref:`serial mouse <settings/input:Mouse>` or :ref:`other serial devices <settings/ports:COM1-4>`, make sure to select a port that is not used.
 * **Baud Rate:** bit rate for communicating with the modem. This has an impact on the reported and actual transfer speeds.
 * **TCP/IP listening port:** TCP port number used for the :ref:`hardware/network:Telnet server` to receive dial-in connections, or ``0`` to disable dial-in.
 * **Phonebook File:** text file containing a list of phone numbers and the addresses they should connect to. Format is one entry per line (up to 200 entries), with the phone number, followed by a space or tab, followed by the address to connect to.

@@ -195,7 +195,7 @@ Tools
 .. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
-* **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4 Device>` are saved.
+* **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.
 
 Help
