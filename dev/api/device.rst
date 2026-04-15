@@ -261,38 +261,95 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
         #include <86box/device.h>
 
         static const device_config_t foo_config[] = {
-            { "selection", "Selection",   CONFIG_SELECTION, "", 5,       "", { 0 },
-                {
-                    { "IRQ 5", 5 },
-                    { "IRQ 7", 7 },
-                    { ""         }
+            {
+                .name        = "selection",
+                .description = "Selection",
+                .type        = CONFIG_SELECTION,
+                .default_int = 5,
+                .selection   = {
+                    { .description = "IRQ 5", .value = 5 },
+                    { .description = "IRQ 7", .value = 7 },
+                    { NULL                               }
                 }
             },
-            { "hex16",     "16-bit hex",  CONFIG_HEX16,     "", 0x220,   "", { 0 },
-                {
-                    { "0x220", 0x220 },
-                    { "0x330", 0x330 },
-                    { ""             }
+            {
+                .name        = "hex16",
+                .description = "16-bit hex",
+                .type        = CONFIG_HEX16,
+                .default_int = 0x220,
+                .selection   = {
+                    { .description = "0x220", .value = 0x220 },
+                    { .description = "0x330", .value = 0x330 },
+                    { NULL                                   }
                 }
             },
-            { "hex20",     "20-bit hex",  CONFIG_HEX20,     "", 0xd8000, "", { 0 },
-                {
+            {
+                .name        = "hex20",
+                .description = "20-bit hex",
+                .type        = CONFIG_HEX20,
+                .default_int = 0xd8000,
+                .selection   = {
                     /* While the memory *segment* is displayed to the user, we store the
                        *linear* (segment << 4) base address in the configuration file. */
-                    { "D800h", 0xd8000 },
-                    { "DC00h", 0xdc000 },
-                    { ""               }
+                    { .description = "D800h", .value = 0xd8000 },
+                    { .description = "DC00h", .value = 0xdc000 },
+                    { NULL                                     }
                 }
             },
-            { "string",    "String",      CONFIG_STRING,    "Default" },
-            { "fname",     "Filename",    CONFIG_FNAME,     "", 0, "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar" },
-            { "binary",    "Binary",      CONFIG_BINARY,    "", 1 /* checked by default */ },
-            { "int",       "Integer",     CONFIG_INT,       "", 1234 },
-            { "spinner",   "Spinner",     CONFIG_SPINNER,   "", 1234, "", { 1204, 1294, 10 } },
-            { "mac",       "MAC address", CONFIG_MAC,       "", 0 },
-            { "midi_out",  "MIDI output", CONFIG_MIDI_OUT,  "", 0 },
-            { "midi_in",   "MIDI input",  CONFIG_MIDI_IN,   "", 0 },
-            { "",          "",            CONFIG_END }
+            {
+                .name           = "string",
+                .description    = "String",
+                .type           = CONFIG_STRING,
+                .default_string = "Default"
+            },
+            {
+                .name           = "fname",
+                .description    = "Filename",
+                .type           = CONFIG_FNAME,
+                .default_string = "",
+                .file_filter    = "File type (*.foo)|*.foo|Another file type (*.bar)|*.bar"
+            },
+            {
+                .name           = "binary",
+                .description    = "Binary",
+                .type           = CONFIG_BINARY,
+                .default_int    = 1 /* checked by default */
+            },
+            {
+                .name           = "int",
+                .description    = "Integer",
+                .type           = CONFIG_INT,
+                .default_int    = 1234
+            },
+            {
+                .name           = "spinner",
+                .description    = "Spinner",
+                .type           = CONFIG_SPINNER,
+                .default_int    = 1234,
+                .spinner        = {
+                    .min  = 1204,
+                    .max  = 1294,
+                    .step = 10
+                }
+            },
+            {
+                .name           = "mac",
+                .description    = "MAC address",
+                .type           = CONFIG_MAC
+            },
+            {
+                .name           = "midi_out",
+                .description    = "MIDI output",
+                .type           = CONFIG_MIDI_OUT,
+                .default_int    = 0
+            },
+            {
+                .name           = "midi_in",
+                .description    = "MIDI input",
+                .type           = CONFIG_MIDI_IN,
+                .default_int    = 0
+            },
+            { .name = "", .description = "", .type = CONFIG_END }
         };
 
         const device_t foo_device = {
@@ -319,29 +376,29 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_SELECTION``: combobox containing a list of values specified by the ``selection`` member;
       * ``CONFIG_HEX16``: combobox containing a list of 16-bit hexadecimal values (useful for ISA I/O ports) specified by the ``selection`` member;
       * ``CONFIG_HEX20``: combobox containing a list of 20-bit hexadecimal values (useful for ISA memory addresses) specified by the ``selection`` member;
-      * ``CONFIG_STRING``: arbitrary text string entered by the user, currently **not visible nor configurable** in the user interface;
-      * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button;
+      * ``CONFIG_STRING``: arbitrary text string entered by the user;
+      * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button, with a file type filter specified by the ``file_filter`` member;
       * ``CONFIG_BINARY``: checkbox;
-      * ``CONFIG_INT``: arbitrary integer number, currently **not visible nor configurable** in the user interface;
+      * ``CONFIG_INT``: arbitrary integer number, currently treated as ``CONFIG_SELECTION`` by the user interface;
       * ``CONFIG_SPINNER``: arbitrary integer number entered by the user directly or through up/down arrows, within a range specified by the ``spinner`` member;
-      * ``CONFIG_MAC``: last 3 octets of a MAC address, currently **not visible nor configurable** in the user interface;
+      * ``CONFIG_MAC``: last 3 octets of a MAC address, with a *Generate* button to randomize the octets;
       * ``CONFIG_MIDI_OUT``: combobox containing a list of system MIDI output devices;
       * ``CONFIG_MIDI_IN``: combobox containing a list of system MIDI input devices;
       * ``CONFIG_END``: **mandatory** terminator to indicate the end of the option list.
 
   * - ``default_string``
-    - Default string value for a ``CONFIG_STRING`` option. Can be ``""`` if not applicable.
+    - Default string value for a ``CONFIG_STRING`` option. Can be ``NULL`` if not applicable.
 
   * - ``default_int``
-    - Default integer value for a ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
+    - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. Can be ``0`` if not applicable.
 
   * - ``file_filter``
-    - File type filter for a ``CONFIG_FNAME`` option. Can be ``""`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
+    - File type filter for a ``CONFIG_FNAME`` option. Can be ``NULL`` if not applicable. Must be specified in Windows ``description|mask|description|mask...`` format, for example:
 
       ``"Raw image (*.img)|*.img|Virtual Hard Disk (*.vhd)|*.vhd"``
 
   * - ``spinner``
-    - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ 0 }`` if not applicable.
+    - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ NULL }`` if not applicable.
 
       .. flat-table::
          :header-rows: 1
