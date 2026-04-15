@@ -113,12 +113,17 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
        - Read data from emulated machine
        - Write data to emulated machine
 
-* **File:** write all data to a file and/or read data from a file on the host system.
+  * On Linux and macOS hosts, the *Pipe path* can also point to a character device (such as a pseudoterminal created by the **Virtual Console** device on another emulated machine), in which case the *Auto* and *Client* modes will connect to that device instead.
+
+* **File:** write all outgoing data to a file and/or read incoming data from a file on the host system.
 * **Virtual Console:** connect to a terminal on the host system, in one of multiple modes.
 
   * On Windows hosts, this device always connects to a Command Prompt window (limited to one per emulated machine). The modes below are only available on Linux and macOS hosts.
   * *Use standard input/output* connects to stdin and stdout, available when starting the machine directly from a terminal through the ``-P``/``--vmpath`` command line option.
   * *Create pseudoterminal* creates a PTY pseudoterminal, connects to it and displays its device path when the machine is started.
+
+    * The **Named Pipe** device can be used to manually connect another machine to the pseudoterminal.
+
   * *Start terminal emulator* connects to the system's default terminal emulator.
 
     * On Linux hosts, ``xdg-terminal-exec`` or ``x-terminal-emulator`` is used; if neither of those is available, a suitable terminal is guessed.
