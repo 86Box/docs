@@ -35,7 +35,7 @@ Up to eight CD-ROM / DVD-ROM optical disc drives can be attached to the emulated
 * **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided.
 
 .. note::
-  * Only models with DVD support are able to read DVDs, unlike in previous 86Box versions.
+  * Only models with DVD support are able to read discs or host folders larger than 1 GB, unlike in previous 86Box versions.
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
 
