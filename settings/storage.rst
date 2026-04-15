@@ -13,21 +13,21 @@ The **Storage controllers** page contains settings related to the emulated machi
 Floppy drive controller
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Floppy disk drive controller card to emulate. Selecting a controller is not required, unless you wish to use one of the add-on controllers for adding high-density 1.44M floppy support to XT machines.
+Floppy disk drive controller card to emulate. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus. Selecting a controller is not required, unless you wish to use one of the add-on controllers for adding high-density 1.44M floppy support to XT machines.
 
 The BIOS option ROM address used by the selected controller can be configured through the *Configure* button.
 
 CD-ROM controller
 ^^^^^^^^^^^^^^^^^
 
-Standalone CD-ROM controller card to emulate. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>` or :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`.
+Standalone CD-ROM controller card to emulate. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>` or :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`.
 
 The I/O port used by the selected controller can be configured through the *Configure* button.
 
 Hard disk controllers
 ^^^^^^^^^^^^^^^^^^^^^
 
-MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. The selection boxes only list cards supported by the machine's expansion buses. On machines equipped with an on-board disk controller, the *Internal device* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
+MFM, RLL, ESDI or IDE hard disk drive controller cards to emulate. Up to 4 controller cards are supported. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus. On machines equipped with an on-board disk controller, the *Internal device* option for controller #1 enables the on-board controller; this is not required for machines with on-board IDE.
 
 The *Configure* buttons open a new window with settings specific to the corresponding controller card, such as the I/O port and IRQ for ISA cards.
 
@@ -41,6 +41,6 @@ Enable IBM cassette tape emulation. Only available on machines with a cassette p
 |scsi_controllers| SCSI controllers
 -----------------------------------
 
-SCSI host bus adapter cards to emulate. Up to 4 SCSI cards are supported. The selection boxes only list cards supported by the machine's expansion buses.
+SCSI host bus adapter cards to emulate. Up to 4 SCSI cards are supported. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus.
 
 The *Configure* buttons open a new window with settings specific to the corresponding SCSI card, such as the I/O port and IRQ for ISA cards.

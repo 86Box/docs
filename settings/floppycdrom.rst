@@ -10,10 +10,10 @@ The **Floppy & CD-ROM drives** page contains settings related to the emulated ma
 
 Up to four floppy disk drives can be attached to the emulated machine, although not all machines provide BIOS support for more than two drives. The following settings apply to the selected drive:
 
-* **Type:** floppy drive to emulate. Some types have special properties and should only be used in very specific applications:
+* **Type:** floppy drive to emulate.  Click |clear| to search for types by name. Some types have special properties and should only be used in very specific applications:
 
-  * **5.25" 1.2M 300/360 RPM** and **3.5" 1.44M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or NEC PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.
-  * **3.5" 1.44M PC-98:** NEC PC-98 drive, which is 3-mode and inverts the polarity of the Density Select pin.
+  * **5.25" 1.2M 300/360 RPM**, **3.5" 1.44M 300/360 RPM** and **3.5" 2.88M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or NEC PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.
+  * **3.5" 1.25M PC-98:** NEC PC-98 drive, which is 3-mode and inverts the polarity of the Density Select pin.
   * The special **PS/2** drive types have been removed, as the required inversion of the Density Select pin is now performed automatically on IBM PS/2 machines.
 
 * **Turbo timings:** run the drive mechanism as fast as possible. This decreases access times and makes some incorrectly-dumped floppies readable, but may cause issues with some operating systems and applications.
@@ -34,7 +34,7 @@ Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulate
 * **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>` and :ref:`Panasonic/MKE <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
-* **Type:** CD-ROM drive model to identify as. A list of drive models to choose from is provided.
+* **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
 * **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data.
 
 .. note::

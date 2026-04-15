@@ -13,7 +13,7 @@ Parallel port sound devices such as the **Disney Sound Source** and **Covox Spee
 Sound card #1-#4
 ^^^^^^^^^^^^^^^^
 
-Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed. On machines equipped with an on-board sound chip, the *Internal device* option for sound card #1 enables the on-board sound.
+Sound cards to emulate. Up to 4 different sound cards are supported. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus. On machines equipped with an on-board sound chip, the *Internal device* option for sound card #1 enables the on-board sound.
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
@@ -26,12 +26,19 @@ Use FLOAT32 sound
 
 Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
 
+Audio output device
+^^^^^^^^^^^^^^^^^^^
+
+Select a host audio device to use for all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
+
+.. note:: This option does not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
+
 FM synth driver
 ^^^^^^^^^^^^^^^
 
 Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
 
-.. note:: **YMFM** is always used for OPL4 emulation on sound cards equipped with that synthesizer.
+.. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers.
 
 |midi| MIDI
 -----------
@@ -39,7 +46,7 @@ Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM*
 MIDI Out Device
 ^^^^^^^^^^^^^^^
 
-Device to output MIDI music to, for sound cards equipped with an external MIDI output.
+Device to output MIDI music to, for sound cards equipped with an external MIDI output. Click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** don't output MIDI music.
 * **FluidSynth:** a software soundfont synthesizer. Selecting a soundfont file is required; there will be no synthesizer output if no soundfont is configured.
@@ -51,7 +58,7 @@ The *Configure* button opens a new window with settings specific to the selected
 MIDI In Device
 ^^^^^^^^^^^^^^
 
-Device to receive MIDI music from, for sound cards equipped with an external MIDI input.
+Device to receive MIDI music from, for sound cards equipped with an external MIDI input. Click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** don't receive MIDI music.
 * **System MIDI:** receive from a MIDI device on the host system, such as a USB MIDI adapter.

@@ -11,33 +11,23 @@ The **Display** page contains settings related to the emulated machine's 2D and 
 Video
 ^^^^^
 
-Video card to emulate. This box only lists cards supported by the machine's expansion buses. On machines equipped with an on-board video chip, the *Internal device* option enables the on-board video.
+Video card to emulate. This box only lists cards supported by the machine's expansion buses; click |clear| to search for cards by name or bus. On machines equipped with an on-board video chip, the *Internal device* option enables the on-board video.
 
 The *Configure* button opens a new window with settings specific to the selected video card, such as the amount of video memory.
 
 Video #2
 ^^^^^^^^
 
-Optional secondary video card to emulate. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
+Optional secondary video card to emulate. Click |clear| to search for cards by name or bus. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
 
 As with the primary card above, the *Configure* button can be used to configure the selected card.
 
-Monitor EDID
-^^^^^^^^^^^^
-
-Customize the emulated monitor's `Extended Display Identification Data <https://en.wikipedia.org/wiki/Extended_Display_Identification_Data>`_, which reports a model name, supported resolutions and other information to `DDC2 <https://en.wikipedia.org/wiki/Display_Data_Channel>`_\ -compatible video cards.
-
-The *Custom...* box allows for loading a custom EDID, which must be a binary file up to 256 bytes in size, or a plain text file containing an ``edid-decode`` report including the ``edid-decode (hex):`` section. The *Export...* button saves the default 86Box EDID to a binary file for customization.
-
-|accelerators| Accelerators
----------------------------
-
-Voodoo Graphics
-^^^^^^^^^^^^^^^
+Voodoo 1 or 2 Graphics
+^^^^^^^^^^^^^^^^^^^^^^
 
 Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected in the *General* tab.
 
-.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box in the *General* tab, and this Voodoo Graphics option **cannot be selected** alongside them. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
+.. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above, and this Voodoo Graphics option **cannot be selected** alongside them. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
 
 The *Configure* button provides the following settings:
 
@@ -77,3 +67,38 @@ Emulate an **IBM 8514/A**, **XGA** or **PS/55 Display Adapter** add-on graphics 
 The *Configure* buttons next to each card open a new window with settings specific to that card, such as the amount of video memory for the 8514/A and model type for the XGA.
 
 .. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
+
+|monitor| Monitor
+-----------------
+
+VGA screen type
+^^^^^^^^^^^^^^^
+
+Select the VGA monitor type to emulate. Color, grayscale, amber, green and white phosphor monitors are available.
+
+Grayscale conversion type
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Select the color-to-grayscale conversion profile to use when a grayscale monitor is selected. BT.601, BT.709 and Average profiles are available.
+
+Monitor EDID
+^^^^^^^^^^^^
+
+Customize the emulated monitor's `Extended Display Identification Data <https://en.wikipedia.org/wiki/Extended_Display_Identification_Data>`_, which reports a model name, supported resolutions and other information to `DDC2 <https://en.wikipedia.org/wiki/Display_Data_Channel>`_\ -compatible video cards.
+
+The *Custom...* box allows for loading a custom EDID, which must be a binary file up to 256 bytes in size, or a plain text file containing an ``edid-decode`` report including the ``edid-decode (hex):`` section. The *Export...* button saves the default 86Box EDID to a binary file for customization.
+
+Overscan
+^^^^^^^^
+
+Add an overscan border around the display. Most video hardware types support this option.
+
+Inverted VGA monitor
+^^^^^^^^^^^^^^^^^^^^
+
+Emulate a VGA monitor with inverted colors. Only applicable when emulating VGA-compatible video hardware.
+
+Change contrast for monochrome display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Optimize the contrast of monochrome CGA monitors for 4-color operation. Only applicable when emulating CGA-compatible video hardware with a monochrome monitor selected through the *Configure* button next to the :ref:`settings/display:Video` box.

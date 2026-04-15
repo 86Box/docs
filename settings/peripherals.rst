@@ -11,7 +11,7 @@ The **Other peripherals** page contains settings related to disk drive controlle
 ISA RTC
 ^^^^^^^
 
-Emulate an ISA real-time clock card, for machines without an integrated real-time clock.
+Emulate an ISA real-time clock card, for machines without an integrated real-time clock. Click |clear| to search for cards by name.
 
 The I/O port and/or IRQ used by the selected controller can be configured through the *Configure* button.
 
@@ -80,14 +80,14 @@ The serial number displayed in software can be configured through the *Configure
 |isa_memory| ISA Memory Expansion
 ---------------------------------
 
-Add up to four ISA-based memory expansion cards, for machines which support memory expansion through the ISA bus.
+Add up to four ISA-based memory expansion cards, for machines which support memory expansion through the ISA bus. Click |clear| to search for cards by name.
 
 The memory start address and size for each card can be configured through its respective *Configure* button.
 
 |isa_rom| ISA ROM Cards
 -----------------------
 
-Add up to four ROM expansion cards, which can load a predefined or custom BIOS option ROM directly into the emulated machine.
+Add up to four ROM expansion cards, which can load a predefined or custom BIOS option ROM directly into the emulated machine. Click |clear| to search for cards by name.
 
 The **Vision Systems LBA Enhancer** ROM can help work around the :ref:`hard disk size limits <hardware/diskimages:Hard disk size limits>` on many older machines. Hard disks up to 8055 MB (16367 cylinders, 16 heads, 63 sectors) in size are supported; they must be manually configured to **8 cylinders, 8 heads and 8 sectors** on the machine's BIOS setup utility for the Enhancer to handle them.
 

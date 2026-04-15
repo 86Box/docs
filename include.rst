@@ -3,6 +3,7 @@
    <br />&nbsp;
 .. |vel| unicode:: 0x22EE
    :trim:
+.. |clear| unicode:: 0x1F167
 
 .. |accelerators| image:: /usage/images/accelerators.png
 .. |accelerators_small| image:: /usage/images/accelerators_small.png

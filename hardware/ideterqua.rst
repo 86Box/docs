@@ -1,7 +1,7 @@
 Tertiary and quaternary IDE
 ===========================
 
-The additional tertiary and quaternary IDE controllers, enabled through the :ref:`Storage controllers <settings/storage:Hard disk controllers>` settings page, are not supported by all emulated BIOSes and may require manual configuration of the emulated operating system. The specific details are outlined on this page.
+The generic additional tertiary and quaternary IDE controllers, enabled through the :ref:`Storage controllers settings page's General tab <settings/storage:Hard disk controllers>`, are not supported by all emulated BIOSes and may require manual configuration of the emulated operating system. The specific details are outlined on this page.
 
 System resources
 ----------------
@@ -11,9 +11,9 @@ The following resources are used by these additional controllers:
 +----------+-------------+---------------+---+
 |Channel   |Main I/O port|Status I/O port|IRQ|
 +==========+=============+===============+===+
-|Tertiary  |01E8h        |03EEh          |11 |
+|Tertiary  |1E8h         |3EEh           |11 |
 +----------+-------------+---------------+---+
-|Quaternary|0168h        |036Eh          |10 |
+|Quaternary|168h         |36Eh           |10 |
 +----------+-------------+---------------+---+
 
 .. note:: The tertiary and quaternary I/O ports and IRQs were incorrectly switched in 86Box versions prior to 4.0.1.

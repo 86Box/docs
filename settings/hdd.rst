@@ -18,9 +18,11 @@ All hard disks attached to the emulated machine are listed, with the following i
 Model / Audio
 -------------
 
-The *Model* box below the hard disk list determines the **disk model** to emulate. Model profiles adjust the disk's identification data, as well as its performance according to rotation speed, physical layout and cache size. Generic profiles adjust performance to match an average period-correct disk, while the **RAM Disk** profile runs the disk as fast as the host can manage.
+The *Model* box below the hard disk list determines the **disk model** to emulate. Click |clear| to search for models by name or bus. Model profiles adjust the disk's identification data, as well as its performance according to rotation speed, physical layout and cache size. Generic profiles adjust performance to match an average period-correct disk, while the **RAM Disk** profile runs the disk as fast as the host can manage.
 
 Additionally, the *Audio* box allows for emulating the mechanical sounds of a real hard disk drive. A list of drive models to choose from is provided, according to the selected model's spindle speed; the *None* option disables these sounds.
+
+.. note:: The *Audio* option is only available if the :ref:`asset pack <usage/roms:Asset pack>` is installed.
 
 Adding a new disk
 -----------------
@@ -89,7 +91,7 @@ The *New...* button opens a new window allowing you to create an existing hard d
 
 .. note:: If the disk is attached to a channel or controller that doesn't exist, such as the tertiary IDE channel with no tertiary IDE controller present, it will be effectively disabled.
 
-* **Model:** :ref:`model profile <settings/hdd:Model / Audio>` to use for the disk.
+* **Model:** :ref:`model profile <settings/hdd:Model / Audio>` to use for the disk. A list of drive models to choose from is provided; click |clear| to search for models by name or bus.
 * **Image Format:** file format to use for the disk image.
 * **Block Size:** size of each dynamic data block in a dynamic or differencing VHD image. The default 2 MB is ideal in most cases.
 

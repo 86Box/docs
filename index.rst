@@ -39,6 +39,7 @@ Contents
    usage/toolbar
    usage/statusbar
    settings/index
+   usage/preferences
 
 .. toctree::
    :maxdepth: 1

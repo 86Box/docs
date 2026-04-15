@@ -13,7 +13,7 @@ Network interface cards to emulate. Up to 4 independent network cards are suppor
 Mode
 ^^^^
 
-Network emulation mode to use on this card. See :doc:`../hardware/network` for more information on these.
+Network emulation mode to use on this card. See :doc:`../hardware/network` for more information on these. The following modes are supported:
 
 * **Null Driver:** emulate an empty network. All packets are dropped.
 * **SLiRP:** creates a private network with a virtual router. Similar to the **NAT** mode on other emulators and virtualizers.
@@ -27,7 +27,7 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 Adapter
 ^^^^^^^
 
-Network card to emulate. Only cards supported by the machine's expansion buses will be listed.
+Network card to emulate. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus.
 
 The *Configure* button opens a new window with settings specific to the selected network card, such as the MAC address for Ethernet cards, and the I/O port and IRQ for ISA cards.
 

@@ -8,10 +8,10 @@ The **Machine** page contains settings related to the emulated machine as a whol
 |machine_tab| Machine
 ---------------------
 
-Search / Machine type / Machine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Machine type / Machine
+^^^^^^^^^^^^^^^^^^^^^^
 
-Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box, while the *Search* box allows for finding and selecting a model from any class directly by name.
+Machine/motherboard model to emulate. The *Machine* box lists all available models for the machine class selected on the *Machine type* box. Click |clear| to search for a machine by name or chipset across all classes.
 
 The *Configure* button opens a new window with settings specific to the machine, such as BIOS type selection.
 

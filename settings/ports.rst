@@ -18,11 +18,11 @@ ISA DMA channel number to use for the on-board parallel port's Extended Capabili
 LPT1-4
 ^^^^^^
 
-The check box (left) enables emulation of the specified parallel port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
+The check box (left) enables emulation of the corresponding parallel port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
 
-.. note:: The LPT4 port is not widely supported. It is located at I/O port 0268h.
+.. note:: The LPT4 port is not widely supported. It is located at I/O port 268h.
 
-The dropdown (middle) selects an emulated device to connect to the parallel port:
+The dropdown (middle) selects an emulated device to connect to the parallel port; click |clear| to search for devices. The following devices are supported:
 
 * **None:** no device connected.
 * **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
@@ -63,14 +63,14 @@ The *Configure* button (right) opens a new window with settings specific to the 
 COM1-4
 ^^^^^^
 
-The check box (left) enables emulation of the specified serial port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
+The check box (left) enables emulation of the corresponding serial port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
 
-The dropdown (middle) selects an emulated device to connect to the serial port:
+The dropdown (middle) selects an emulated device to connect to the serial port; click |clear| to search for devices. The following devices are supported:
 
 * **None:** no device connected.
 * **Serial Passthrough:** connect to a serial port on the host system.
 
-  * The serial port's parameters (baud rate, parity, data bits and stop bits) are controlled directly by the emulated machine, unlike in previous 86Box versions which required configuring those separately in the passthrough settings.
+  * The host port's parameters (baud rate, parity, data bits and stop bits) are automatically configured to match the emulated port's parameters, unlike in previous 86Box versions which required manual configuration in the passthrough settings.
 
 * **Named Pipe:** connect to a named pipe on the host system.
 
@@ -86,8 +86,8 @@ The dropdown (middle) selects an emulated device to connect to the serial port:
        - ``.out`` pipe function
 
      * - Auto
-       - Send data from emulated machine to pipe if an application is already reading from it, otherwise send data from pipe to emulated machine
-       - Opposite of ``.in`` pipe
+       - Same as Client mode if an application is already reading from this pipe; otherwise, same as Server mode
+       - Opposite direction of ``.in`` pipe
 
      * - Server
        - Write data to emulated machine

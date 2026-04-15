@@ -63,27 +63,28 @@ Action
 
   .. _pause:
 
-* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:doc:`customizable <../settings/bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to pause or resume emulation.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to show or hide them.
 
   .. _fast-forward:
 
-* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:doc:`customizable <../settings/bindings>`) to control this option.
+* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
 
   .. _interpreter:
 
-* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:doc:`customizable <../settings/bindings>`) to control this option.
+* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
 
   .. _hard-reset:
 
-* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:doc:`customizable <../settings/bindings>`) to hard reset.
+* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to hard reset.
 
   .. _send-cad:
 
-* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:doc:`customizable <../settings/bindings>`) to send that combination.
+* **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F12` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to send that combination.
 
   .. _send-cae:
 
-* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:doc:`customizable <../settings/bindings>`) to send that combination.
+* **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to send that combination.
 
   .. _acpi-shutdown:
 
@@ -98,6 +99,24 @@ View
 * **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
+* **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
+* **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
+* **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
+
+  * **Full screen stretch:** stretch the emulated display to completely fill the host display.
+  * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
+  * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
+  * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
+  * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
+
+* **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
+* **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
+* **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
+* **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
+
+.. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
+
+* **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **Renderer:** select a graphical renderer for the emulated display.
 
   * **Qt (Software)** is recommended in most cases.
@@ -120,33 +139,6 @@ View
 
 * **OpenGL input stretch mode:** select the picture mode to use for the raw image data fed into the applied OpenGL shader(s). Refer to *Fullscreen stretch mode* below for the available options.
 * **OpenGL input scale:** scale the raw image data fed into the applied OpenGL shader(s) to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
-* **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
-* **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
-* **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
-* **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
-* **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
-
-.. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
-
-* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:doc:`customizable <../settings/bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :doc:`customizable <../settings/bindings>`) to show or hide them.
-* **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
-
-  * **Full screen stretch:** stretch the emulated display to completely fill the host display.
-  * **4:3:** stretch the emulated display to a 4:3 aspect ratio, then scale it to fit the host display.
-  * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
-  * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
-  * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
-
-* **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
-* **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
-* **EGA/(S)VGA settings:** contains display settings specific to EGA, VGA and Super VGA video hardware.
-
-  * **Inverted VGA monitor:** emulate a VGA monitor with inverted colors.
-  * **VGA screen type:** select the VGA monitor type to emulate. *Color*, *Grayscale*, *Amber*, *Green* and *White* phosphor monitors can be selected.
-  * **Grayscale conversion type:** select the color-to-grayscale conversion profile (*BT.601*, *BT.709* or *Average*) to use when a grayscale monitor is selected.
-
-* **CGA/PCjr/Tandy/EGA/(S)VGA overscan:** add an overscan border around the display. This border is only added when emulating the specified video hardware types.
-* **Change contrast for monochrome display:** optimize the contrast of monochrome CGA monitors for 4-color operation.
 
 Media
 -----
@@ -168,7 +160,7 @@ Tools
 
   .. _take-screenshot:
 
-* **Take screenshot:** take a screenshot of the emulated display and save it as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:doc:`customizable <../settings/bindings>`) to take a screenshot.
+* **Take screenshot:** take a screenshot of the emulated display and save it as a .png image in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F11` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to take a screenshot.
 
   .. _take-raw-screenshot:
 
@@ -181,19 +173,8 @@ Tools
   .. _copy-raw-screenshot:
 
 * **Copy raw screenshot:** same as *Copy screenshot* above, but making a pixel-perfect capture of the machine's video output instead, without any processing such as scaling and shaders.
-
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
-* **Preferences:** open the *Preferences* window, which provides the following options:
-
-  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
-  * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
-  * **Select media images from program working directory:** if checked, the first file open/save prompt to pop up will start on the emulated machine's directory. This option is particularly useful for macOS users.
-  * **Inhibit multimedia keys:** if checked, multimedia keys such as **Volume Up/Down** will not be passed through to the emulated machine.
-  * **Ask for confirmation before saving settings / quitting / hard resetting:** enable confirmation messages for certain actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
-  * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
-
-.. note:: The *Preferences* window options are **saved system-wide** and apply to all machines on all copies of 86Box 5.0 and newer. Any changes made with previous versions (saved per-machine) have been reset.
-
+* **Preferences:** open the :doc:`Preferences window <preferences>` window to configure options related to 86Box as a whole.
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.

@@ -62,7 +62,7 @@ Some keyboards provide additional function or otherwise special keys on top of t
 Multimedia keys
 ^^^^^^^^^^^^^^^
 
-Passthrough of Microsoft multimedia function keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` can be disabled through the *Inhibit multimedia keys* option in the :ref:`Preferences window <usage/menubar:Tools>`.
+Passthrough of Microsoft multimedia function keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` can be disabled through the :ref:`Inhibit multimedia keys option in the Preferences window's Input page <usage/preferences:Inhibit multimedia keys>`.
 
 Olivetti
 ^^^^^^^^
