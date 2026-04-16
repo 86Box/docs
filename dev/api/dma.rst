@@ -10,7 +10,7 @@ DMA
 
 .. flat-table:: ``dma_channel_read``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -25,7 +25,7 @@ DMA
 
 .. flat-table:: ``dma_channel_write``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -48,7 +48,7 @@ Direct memory read/write
 
 .. flat-table:: ``mem_readb_phys`` / ``mem_readw_phys`` / ``mem_readl_phys``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -62,7 +62,7 @@ Direct memory read/write
 
 .. flat-table:: ``mem_writeb_phys`` / ``mem_writew_phys`` / ``mem_writel_phys``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description

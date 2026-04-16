@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |input_devices| Input devices
 =============================
 
