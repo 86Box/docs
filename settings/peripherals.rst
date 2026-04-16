@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |other_peripherals| Other peripherals
 =====================================
 

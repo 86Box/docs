@@ -1,0 +1,4 @@
+/* Give some spacing to icons in headings. */
+h1 > img, h2 > img {
+	padding-right: 5px;
+}
