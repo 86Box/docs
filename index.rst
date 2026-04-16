@@ -13,8 +13,7 @@ The project maintainer is `OBattler <https://github.com/OBattler>`_.
 If you need a configuration manager for 86Box, use the `86Box Manager <https://github.com/86Box/86BoxManager>`_, our
 officially endorsed 86Box configuration manager, developed by Overdoze (`daviunic <https://github.com/daviunic>`_).
 
-Community
----------
+.. rubric:: Community
 
 We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box|?#86box>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related to retro computing and, of course, 86Box. We look forward to hearing from you!
 
