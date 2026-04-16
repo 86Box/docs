@@ -84,13 +84,19 @@ html_js_files = [
 
 highlight_language = 'c'
 
+latex_toplevel_sectioning = 'section'
 latex_elements = {
-    'preamble': r'''
-    \newenvironment{sphinxclasstoggle-header}{
-        \begin{quote}
-        \centering
-    }{
-        \end{quote}
-    }
-    ''',
+	'extraclassoptions': 'oneside',
+	'preamble': r'''
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+\setcounter{tocdepth}{2}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\newenvironment{sphinxclasstoggle-header}{
+	\begin{quote}
+	\centering
+}{
+	\end{quote}
+}
+'''
 }
