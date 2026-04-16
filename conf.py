@@ -3,7 +3,7 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-import sphinx_rtd_theme, time
+import os, sphinx_rtd_theme, time
 
 # -- Path setup --------------------------------------------------------------
 
@@ -43,6 +43,21 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+rst_prolog = ''
+def generate_icons(app):
+	for icon_dir in ('usage/images',):
+		for icon in os.listdir(icon_dir):
+			fn, ext = os.path.splitext(icon)
+			if ext == '.png':
+				if fn[-6:] != '_small' and 'html' not in app.builder.name: # use small icons in non-HTML applications
+					small_icon = fn + '_small' + ext
+					if os.path.exists(os.path.join(icon_dir, small_icon)):
+						icon = small_icon
+				app.config.rst_prolog += f'.. |{fn}| image:: /{icon_dir}/{icon}\n'
+
+def setup(app):
+	app.connect('builder-inited', generate_icons)
 
 
 # -- Options for HTML output -------------------------------------------------
