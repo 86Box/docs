@@ -3,7 +3,7 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-import sphinx_rtd_theme, time
+import os, sphinx_rtd_theme, time
 
 # -- Path setup --------------------------------------------------------------
 
@@ -44,6 +44,25 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# Generate icon substitutions.
+rst_prolog = ''
+def generate_icons(app):
+	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
+	for icon_dir in ('usage/images',):
+		for icon in os.listdir(icon_dir):
+			fn, ext = os.path.splitext(icon)
+			if ext == '.png':
+				if fn[-6:] != '_small' and 'html' not in app.builder.name: # use small icons in non-HTML applications
+					small_icon = fn + '_small' + ext
+					if os.path.exists(os.path.join(icon_dir, small_icon)):
+						icon = small_icon
+				app.config.rst_prolog += f'.. |{fn}| image:: /{icon_dir}/{icon}\n'
+
+def setup(app):
+	app.connect('builder-inited', generate_icons)
+
+highlight_language = 'c'
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -67,4 +86,22 @@ html_js_files = [
 	'js/86box.js',
 ]
 
-highlight_language = 'c'
+
+# -- Options for LaTeX/PDF output --------------------------------------------
+
+latex_toplevel_sectioning = 'section'
+latex_elements = {
+	'extraclassoptions': 'oneside',
+	'preamble': r'''
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+\setcounter{tocdepth}{2}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\newenvironment{sphinxclasstoggle-header}{
+	\begin{quote}
+	\centering
+}{
+	\end{quote}
+}
+'''
+}
