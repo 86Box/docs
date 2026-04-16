@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |ports| Ports (COM & LPT)
 =========================
 

@@ -1,7 +1,7 @@
 Keyboard
 ========
 
-This page outlines keyboard behavior specific to different host operating systems, real keyboards and emulated machines.
+This |page| outlines keyboard behavior specific to different host operating systems, real keyboards and emulated machines.
 
 Host systems
 ------------
