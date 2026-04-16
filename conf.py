@@ -72,5 +72,3 @@ html_theme = 'sphinx_rtd_theme'
 if os.path.isdir('_static'):
 	html_static_path = ['_static']
 html_favicon = 'favicon.ico'
-
-latex_toplevel_sectioning = 'part'

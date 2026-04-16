@@ -16,18 +16,28 @@ officially endorsed 86Box configuration manager, developed by Overdoze (`daviuni
 
 We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box|?#86box>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related to retro computing and, of course, 86Box. We look forward to hearing from you!
 
+.. raw:: latex
+
+   \part{Using 86Box}
+
 .. toctree::
    :maxdepth: 1
    :caption: Using 86Box
+   :hidden:
    
    usage/gettingstarted
    usage/menubar
    usage/statusbar
    settings/index
 
+.. raw:: latex
+
+   \part{Emulated hardware}
+
 .. toctree::
    :maxdepth: 1
    :caption: Emulated hardware
+   :hidden:
    
    hardware/machinespecific
    hardware/diskimages
@@ -35,9 +45,14 @@ We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box
    hardware/network
    hardware/isabugger
 
+.. raw:: latex
+
+   \part{Development}
+
 .. toctree::
    :maxdepth: 1
    :caption: Development
+   :hidden:
    
    dev/buildguide
    dev/builds
