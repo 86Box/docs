@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |storage_controllers| Storage controllers
 =========================================
 

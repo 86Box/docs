@@ -44,7 +44,9 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # Generate icon substitutions.
-rst_prolog = ''
+rst_prolog = r'''.. |vel| unicode:: 0x22EE
+   :trim:
+'''
 def generate_icons(app):
 	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
 	for icon_dir in ('usage/images',):
@@ -71,9 +73,13 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-if os.path.isdir('_static'):
-	html_static_path = ['_static']
+html_static_path = ['_static']
+
 html_favicon = 'favicon.ico'
+
+html_css_files = [
+	'css/86box.css',
+]
 
 
 # -- Options for LaTeX/PDF output --------------------------------------------
