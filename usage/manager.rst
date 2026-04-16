@@ -77,6 +77,8 @@ Tools
   * The manager **must be restarted** for any changes to the system directory to take effect.
   * The system directory is **scanned recursively** for machines through their ``86box.cfg`` files.
 
+.. warning:: When setting a new system directory, make sure there is no ``86box.cfg`` file at its root; otherwise, the system directory itself will be detected as an emulated machine, and deleting that machine will also delete all machines stored in the system directory. This bug was fixed in 86Box 6.0.
+
 * **Check for updates:** check for and download any available 86Box version update.
 
 Help
