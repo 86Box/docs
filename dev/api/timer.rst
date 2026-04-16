@@ -53,7 +53,7 @@ Timers can be added with the ``timer_add`` function. The best place for adding a
 
 .. flat-table:: ``timer_add``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -129,7 +129,7 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
 
 .. flat-table:: ``timer_on_auto``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description

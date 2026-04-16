@@ -5,7 +5,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 
 .. flat-table:: ``device_t``
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 68 166 470
 
   * - :cspan:`1` Member
     - Description
@@ -297,7 +297,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
 
 .. flat-table:: ``device_config_t``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 143 552
 
   * - Member
     - Description
@@ -340,7 +340,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
 
       .. flat-table::
          :header-rows: 1
-         :widths: 1 999
+         :widths: 87 432
 
          * - Member
            - Description
@@ -359,7 +359,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
 
       .. flat-table::
          :header-rows: 1
-         :widths: 1 999
+         :widths: 120 400
 
          * - Member
            - Description
@@ -376,7 +376,7 @@ Configured option values can be read from within the device's ``init`` callback 
 
 .. flat-table:: ``device_get_config_string``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -389,7 +389,7 @@ Configured option values can be read from within the device's ``init`` callback 
 
 .. flat-table:: ``device_get_config_int`` / ``device_get_config_hex16`` / ``device_get_config_hex20``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -406,7 +406,7 @@ Configured option values can be read from within the device's ``init`` callback 
 
 .. flat-table:: ``device_get_config_int_ex`` / ``device_get_config_mac``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
