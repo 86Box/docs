@@ -86,10 +86,11 @@ highlight_language = 'c'
 
 latex_elements = {
     'preamble': r'''
-    \newenvironment{sphinxclasstoggleheader}{
-        \begin{center}
+    \newenvironment{sphinxclasstoggle-header}{
+        \begin{quote}
+        \centering
     }{
-        \end{center}
+        \end{quote}
     }
     ''',
 }
