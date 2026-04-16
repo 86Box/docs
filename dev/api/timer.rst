@@ -1,7 +1,7 @@
 Timers
 ======
 
-**Timers** allow devices to perform tasks after a set period. This period is **automatically scaled** to match the emulation speed, which helps 86Box stay relatively accurate, unlike other emulators and virtualizers which may operate timers in real time independently of speed. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/timer.h``.
+**Timers** allow devices to perform tasks after a set period. This period is **automatically scaled** to match the emulation speed, which helps 86Box stay relatively accurate, unlike other emulators and virtualizers which may operate timers in real time independently of speed. Unless otherwise stated, all structures, functions and constants in this |page| are provided by ``86box/timer.h``.
 
 .. note:: Timers are processed after each CPU instruction in interpreter mode, or each recompiled code block in dynamic recompiler mode (unless an instruction requests a Time Stamp Counter (TSC) update). In both cases, timer accuracy **should** be in the single-digit microsecond range at a minimum, which is good enough for most time-sensitive applications such as 48 KHz audio.
 
@@ -53,7 +53,7 @@ Timers can be added with the ``timer_add`` function. The best place for adding a
 
 .. flat-table:: ``timer_add``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -129,7 +129,7 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
 
 .. flat-table:: ``timer_on_auto``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description

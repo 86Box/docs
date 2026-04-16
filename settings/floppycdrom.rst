@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |floppy_and_cdrom_drives| Floppy & CD-ROM drives
 ================================================
 

@@ -5,7 +5,7 @@ Port I/O
 
 .. flat-table:: ``io_sethandler`` / ``io_removehandler``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -205,7 +205,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
 
 .. flat-table:: ``io_trap_add``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -230,7 +230,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
 
 .. flat-table:: ``io_trap_remap``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
