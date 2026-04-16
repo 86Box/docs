@@ -1,7 +1,7 @@
 Devices
 =======
 
-The **device** is the main unit of emulated components in 86Box. Each device is represented by one or more constant ``device_t`` objects, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/device.h``.
+The **device** is the main unit of emulated components in 86Box. Each device is represented by one or more constant ``device_t`` objects, which contain metadata about the device itself, several callbacks and an array of user-facing configuration options. Unless otherwise stated, all structures, functions and constants in this |page| are provided by ``86box/device.h``.
 
 .. flat-table:: ``device_t``
   :header-rows: 1
