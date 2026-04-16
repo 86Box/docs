@@ -73,4 +73,4 @@ if os.path.isdir('_static'):
 	html_static_path = ['_static']
 html_favicon = 'favicon.ico'
 
-latex_toplevel_sectioning = True
+latex_toplevel_sectioning = 'part'
