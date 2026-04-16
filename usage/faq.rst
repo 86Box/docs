@@ -59,23 +59,23 @@ A good way to estimate the limit of your host setup is by looking at `single-thr
 
 For example:
 
-* **~4000** = Pentium II 300
-* **~3400** = Pentium II 233
-* **~2600** = Pentium 200
-* **~1600** = Pentium 75
-* **~700**  = 486DX2 66 (assuming the gpu on such a system can keep up)
+* **~4000** = Pentium II 300 MHz
+* **~3400** = Pentium II 233 MHz
+* **~2600** = Pentium 200 MHz
+* **~1600** = Pentium 75 MHz
+* **~700**  = 486DX2 66 MHz (assuming the GPU on such a system can keep up)
 
 Keep in mind that these are only rough estimates. The best way to optimize your virtual machine configuration is simply trial and error.
 
 What are some era-appropriate configurations for 86Box?
 -------------------------------------------------------
 
-* **1988** - 386DX 25MHz w/ 1MB RAM, ATI VGA Wonder, AdLib, DOS 4.01 + Windows 2.1x/386
-* **1990** - 486DX 33MHz w/ 4MB RAM, Video 7 VRAM VGA + XGA, Sound Blaster 1.5 (CT1320C), DOS 4.01 + Windows 3.0
-* **1992** - 486DX2 66MHz w/ 8MB RAM, S3 924 / ATI Mach32, Sound Blaster 16 or Gravis Ultrasound, DOS 5.0 + Windows 3.1
-* **1994** - Pentium 100MHz w/ 32MB RAM, S3 Vision964 / ATI Mach64, Sound Blaster AWE32, DOS 6.22 + Windows 3.11
-* **1996** - PPro 200 (or Pentium 200 non-mmx) w/ 64MB RAM, Matrox Mystique + Voodoo 1, Sound Blaster AWE64 Gold, Windows 95 OSR2
-* **1998** - Pentium II 450MHz w/ 128MB RAM, Riva TNT + Voodoo 2 SLI, Aureal Vortex 2 / Sound Blaster Live, Windows 98 FE
+* **1988** - 386DX 25 MHz, 1 MB RAM, ATI VGA Wonder, AdLib, DOS 4.01 + Windows 2.1x/386
+* **1990** - 486DX 33 MHz, 4 MB RAM, Video 7 VRAM VGA + XGA, Sound Blaster 1.5 (CT1320C), DOS 4.01 + Windows 3.0
+* **1992** - 486DX2 66 MHz, 8 MB RAM, S3 924 / ATI Mach32, Sound Blaster 16 or Gravis Ultrasound, DOS 5.0 + Windows 3.1
+* **1994** - Pentium 100 MHz, 32 MB RAM, S3 Vision964 / ATI Mach64, Sound Blaster AWE32, DOS 6.22 + Windows 3.11
+* **1996** - Pentium 200 MHz non-MMX (or Pentium Pro 200 MHz), 64 MB RAM, Matrox Mystique + Voodoo 1, Sound Blaster AWE64 Gold, Windows 95 OSR2 (or Windows NT 4.0 for a Pentium Pro)
+* **1998** - Pentium II 450 MHz, 128 MB RAM, Matrox Mystique 220 + Voodoo 2 SLI, Ensoniq AudioPCI, Windows 98 FE
 
 Why is my emulated PS/2 mouse slow/laggy under Windows 95/98/98 SE/ME even at 100% speed?
 -----------------------------------------------------------------------------------------
