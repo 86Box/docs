@@ -80,11 +80,9 @@ html_favicon = 'favicon.ico'
 
 latex_toplevel_sectioning = 'section'
 latex_elements = {
-	'extraclassoptions': 'openany,oneside',
+	'extraclassoptions': 'oneside',
 	'preamble': r'''
 \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
 \setcounter{tocdepth}{2}
-\usepackage{titlesec}
-\newcommand{\sectionbreak}{\clearpage}
 '''
 }
