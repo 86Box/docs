@@ -45,7 +45,10 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # Generate icon substitutions.
-rst_prolog = '.. |clear| unicode:: 0x1F167\n'
+rst_prolog = r'''.. |vel| unicode:: 0x22EE
+   :trim:
+.. |clear| unicode:: 0x1F167
+'''
 def generate_icons(app):
 	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
 	for icon_dir in ('usage/images',):
