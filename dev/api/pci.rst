@@ -77,7 +77,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
 
 .. flat-table:: ``pci_add_card``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -190,7 +190,7 @@ The most important registers in the standard set are:
 
 .. flat-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 56 113 582
 
   * - Offsets
     - Register
