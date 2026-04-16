@@ -82,5 +82,6 @@ latex_elements = {
 	'extraclassoptions': 'openany,oneside',
 	'preamble': r'''
 \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+\setcounter{tocdepth}{2}
 '''
 }
