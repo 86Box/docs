@@ -73,8 +73,9 @@ if os.path.isdir('_static'):
 	html_static_path = ['_static']
 html_favicon = 'favicon.ico'
 
+latex_toplevel_sectioning = 'section'
 latex_elements = {
 	'preamble': r'''
-\renewcommand{\contentsname}{Contents}
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
 '''
 }
