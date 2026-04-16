@@ -43,9 +43,3 @@ do
 	done
 done
 rm -f *-*[0-9]x[0-9]*.png
-
-# Create include.rst entries.
-for i in *.png
-do
-	echo '.. |'$(echo $i | sed -e 's/.png//')'| image:: /usage/images/'$i
-done

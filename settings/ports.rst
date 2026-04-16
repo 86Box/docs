@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |ports| Ports (COM & LPT)
 =========================
 
@@ -95,7 +93,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
 
     .. list-table::
      :header-rows: 1
-     :widths: 1 999 999
+     :widths: 73 287 287
 
      * - Mode
        - ``.in`` pipe function

@@ -1,6 +1,7 @@
 ===========
 About 86Box
 ===========
+
 `86Box <https://86box.net>`_ is an IBM PC system emulator that specializes in running old
 operating systems and software designed for IBM PC systems and compatibles
 from 1981 through fairly recent system designs based on the PCI bus.
@@ -14,23 +15,23 @@ If you need a configuration manager for 86Box, use the `Avalonia 86 <https://git
 officially endorsed 86Box configuration manager, developed by notBald (`notBald <https://github.com/notBald>`_).
 Please note that Avalonia 86 currently only works on Windows and Linux.
 
-=========
-Community
-=========
+.. rubric:: Community
+
 We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.86box.net>`_ for discussing anything related
 to retro computing and, of course, 86Box. We look forward to hearing from you!
 
 | Additionally, subscribe to our `YouTube channel <https://youtube.com/86box>`_ for content such as installation videos, and follow us on `Twitter <https://twitter.com/86BoxEmulator>`_ for occasional updates and fun facts.
 | For more links, visit our `official website <https://86box.net>`_.
 
-========
-Contents
-========
+.. raw:: latex
+
+   \chapter{Using 86Box}
 
 .. toctree::
    :maxdepth: 1
    :caption: Using 86Box
-
+   :hidden:
+   
    usage/gettingstarted
    usage/faq
    usage/roms
@@ -41,10 +42,15 @@ Contents
    settings/index
    usage/preferences
 
+.. raw:: latex
+
+   \chapter{Emulated hardware}
+
 .. toctree::
    :maxdepth: 1
    :caption: Emulated hardware
-
+   :hidden:
+   
    hardware/machinespecific
    hardware/keyboard
    hardware/diskimages
@@ -53,10 +59,15 @@ Contents
    hardware/isabugger
    hardware/externalopl
 
+.. raw:: latex
+
+   \chapter{Development}
+
 .. toctree::
    :maxdepth: 1
    :caption: Development
-
+   :hidden:
+   
    dev/buildguide
    dev/builds
    dev/api/index
