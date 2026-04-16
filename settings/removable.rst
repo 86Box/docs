@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |other_removable_devices| Other removable devices
 =================================================
 

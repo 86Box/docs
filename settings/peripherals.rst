@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |other_peripherals| Other peripherals
 =====================================
 
@@ -34,7 +32,7 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 999
+  :widths: 80 615
 
   * - Port
     - Machine types
