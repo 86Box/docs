@@ -43,8 +43,10 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# Generate icon substitutions.
 rst_prolog = ''
 def generate_icons(app):
+	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
 	for icon_dir in ('usage/images',):
 		for icon in os.listdir(icon_dir):
 			fn, ext = os.path.splitext(icon)
@@ -72,3 +74,17 @@ html_theme = 'sphinx_rtd_theme'
 if os.path.isdir('_static'):
 	html_static_path = ['_static']
 html_favicon = 'favicon.ico'
+
+
+# -- Options for LaTeX/PDF output --------------------------------------------
+
+latex_toplevel_sectioning = 'section'
+latex_elements = {
+	'extraclassoptions': 'oneside',
+	'preamble': r'''
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+\setcounter{tocdepth}{2}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+'''
+}

@@ -1,5 +1,6 @@
 About 86Box
 ===========
+
 `86Box <https://86box.net>`_ is an IBM PC system emulator that specializes in running old
 operating systems and software designed for IBM PC systems and compatibles
 from 1981 through fairly recent system designs based on the PCI bus.
@@ -12,17 +13,18 @@ The project maintainer is `OBattler <https://github.com/OBattler>`_.
 If you need a configuration manager for 86Box, use the `86Box Manager <https://github.com/86Box/86BoxManager>`_, our
 officially endorsed 86Box configuration manager, developed by Overdoze (`daviunic <https://github.com/daviunic>`_).
 
-Community
----------
-We operate an `IRC channel <https://kiwiirc.com/client/irc.ringoflightning.net/?nick=86box|?#softhistory>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related 
-to retro computing and, of course, 86Box. We look forward to hearing from you!
+.. rubric:: Community
 
-Contents
---------
+We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box|?#86box>`_ and a `Discord server <https://discord.gg/QXK9XTv>`_ for discussing anything related to retro computing and, of course, 86Box. We look forward to hearing from you!
+
+.. raw:: latex
+
+   \chapter{Using 86Box}
 
 .. toctree::
    :maxdepth: 1
    :caption: Using 86Box
+   :hidden:
    
    usage/gettingstarted
    usage/menubar
@@ -30,9 +32,14 @@ Contents
    usage/statusbar
    settings/index
 
+.. raw:: latex
+
+   \chapter{Emulated hardware}
+
 .. toctree::
    :maxdepth: 1
    :caption: Emulated hardware
+   :hidden:
    
    hardware/machinespecific
    hardware/diskimages
@@ -40,9 +47,14 @@ Contents
    hardware/network
    hardware/isabugger
 
+.. raw:: latex
+
+   \chapter{Development}
+
 .. toctree::
    :maxdepth: 1
    :caption: Development
+   :hidden:
    
    dev/buildguide
    dev/builds
