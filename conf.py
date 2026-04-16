@@ -84,5 +84,7 @@ latex_elements = {
 	'preamble': r'''
 \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
 \setcounter{tocdepth}{2}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
 '''
 }
