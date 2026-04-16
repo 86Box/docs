@@ -59,6 +59,8 @@ def generate_icons(app):
 def setup(app):
 	app.connect('builder-inited', generate_icons)
 
+highlight_language = 'c'
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -82,7 +84,8 @@ html_js_files = [
 	'js/86box.js',
 ]
 
-highlight_language = 'c'
+
+# -- Options for LaTeX/PDF output --------------------------------------------
 
 latex_toplevel_sectioning = 'section'
 latex_elements = {
