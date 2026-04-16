@@ -1,9 +1,9 @@
 Threads
 =======
 
-Compute-intensive tasks can be offloaded from the main emulation flow with **threads**. Unless otherwise stated, all structures, functions and constants in this page are provided by ``86box/plat.h``.
+Compute-intensive tasks can be offloaded from the main emulation flow with **threads**. Unless otherwise stated, all structures, functions and constants in this |page| are provided by ``86box/plat.h``.
 
-.. warning:: 86Box API functions (excluding those in this page) are generally **not thread-safe** and must be called from the **main emulation thread**. Thread-unsafe actions (such as raising an interrupt) can be performed by the callback of a free-running :doc:`timer <timer>` which looks for data written to the device's :ref:`state structure <dev/api/device:State structure>` by a thread, as timers run on the main emulation thread.
+.. warning:: 86Box API functions (excluding those in this |page|) are generally **not thread-safe** and must be called from the **main emulation thread**. Thread-unsafe actions (such as raising an interrupt) can be performed by the callback of a free-running :doc:`timer <timer>` which looks for data written to the device's :ref:`state structure <dev/api/device:State structure>` by a thread, as timers run on the main emulation thread.
 
 .. note:: The contents of ``thread_t`` and other structures used by ``thread_*`` functions are platform-specific; therefore, pointers to those structures should be treated as opaque pointers.
 
@@ -14,7 +14,7 @@ Threads can be started with the ``thread_create`` function. Additionally, the ``
 
 .. flat-table:: ``thread_create``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -36,7 +36,7 @@ Threads can be started with the ``thread_create`` function. Additionally, the ``
 
 .. flat-table:: ``thread_wait``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -55,7 +55,7 @@ Events
 
 .. flat-table:: ``thread_create_event``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -65,7 +65,7 @@ Events
 
 .. flat-table:: ``thread_set_event`` / ``thread_reset_event`` / ``thread_destroy_event``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -75,7 +75,7 @@ Events
 
 .. flat-table:: ``thread_wait_event``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -99,7 +99,7 @@ Mutexes
 
 .. flat-table:: ``thread_create_mutex``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -109,7 +109,7 @@ Mutexes
 
 .. flat-table:: ``thread_wait_mutex`` / ``thread_release_mutex`` / ``thread_close_mutex``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -120,7 +120,7 @@ Mutexes
 
 .. flat-table:: ``thread_test_mutex``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description

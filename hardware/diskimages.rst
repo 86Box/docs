@@ -25,7 +25,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
@@ -112,7 +112,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
@@ -182,7 +182,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
@@ -203,7 +203,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
@@ -235,7 +235,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
@@ -262,7 +262,7 @@ Supported formats:
 
 .. list-table::
   :header-rows: 1
-  :widths: 1 1 999
+  :widths: 171 122 586
 
   * - Format
     - File extension
