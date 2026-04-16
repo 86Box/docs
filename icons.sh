@@ -31,9 +31,3 @@ for i in *-3.png
 do
 	mv "$i" "$(echo $i | sed -e 's/-3//')"
 done
-
-# Create include.rst entries.
-for i in *.png
-do
-	echo '.. |'$(echo $i | sed -e 's/.png//')'| image:: /usage/images/'$i
-done
