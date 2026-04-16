@@ -123,7 +123,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
 
   * On Windows hosts, this device always connects to a Command Prompt window (limited to one per emulated machine). The modes below are only available on Linux and macOS hosts.
   * *Use standard input/output* connects to stdin and stdout, available when starting the machine directly from a terminal through the ``-P``/``--vmpath`` command line option.
-  * *Create pseudoterminal* creates a PTY pseudoterminal, connects to it and displays its device path when the machine is started.
+  * *Create pseudoterminal* creates a PTY device, connects to it and displays its path when the machine is started.
 
     * The **Named Pipe** device can be used to manually connect another machine to the pseudoterminal.
 
@@ -132,10 +132,10 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
     * On Linux hosts, ``xdg-terminal-exec`` or ``x-terminal-emulator`` is used; if neither of those is available, a suitable terminal is guessed.
     * On macOS hosts, the Apple Terminal app is always used; note that its default settings keep the terminal window open after the port is disconnected.
 
-  * *Run custom command* creates a PTY pseudoterminal, connects to it and executes the configured *Custom command*.
+  * *Run custom command* creates a PTY device, connects to it and executes the configured *Custom command*.
 
     * The default command (leave blank to restore it) starts a GNU Screen session, which runs in the background and can be attached to by running ``screen -r`` on a terminal.
-    * Variables ``$PTY`` (device path to the pseudoterminal), ``$VMNAME`` (machine :ref:`display name <usage/manager:Machine list>`) and ``$PORT`` (emulated port name such as ``COM1``) are passed to the command.
+    * Variables ``$PTY`` (path to the PTY device), ``$VMNAME`` (machine :ref:`display name <usage/manager:Machine list>`), ``$PORT`` (emulated port name such as ``COM1``) and ``$PIPECMD`` (command used in *Start terminal emulator* mode) are passed to the command.
 
 * **Loopback Plug:** a serial plug with pins wired together in a null-modem configuration, for use with diagnostic software.
 
