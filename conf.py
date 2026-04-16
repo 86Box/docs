@@ -83,3 +83,14 @@ html_js_files = [
 ]
 
 highlight_language = 'c'
+
+latex_elements = {
+    'preamble': r'''
+    \newenvironment{sphinxcontainer-toggle-header}{
+        \begin{center}
+        \textbf
+    }{
+        \end{center}
+    }
+    ''',
+}
