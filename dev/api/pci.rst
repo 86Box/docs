@@ -900,7 +900,7 @@ An emulated PCI device can assert or de-assert an interrupt on any pin with the 
 
 .. flat-table:: ``pci_set_irq`` / ``pci_clear_irq``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
@@ -918,7 +918,7 @@ Some chipsets may provide steerable **motherboard IRQ** (MIRQ) lines for on-boar
 
 .. flat-table:: ``pci_set_mirq`` / ``pci_clear_mirq``
   :header-rows: 1
-  :widths: 1 999
+  :widths: 113 582
 
   * - Parameter
     - Description
