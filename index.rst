@@ -18,7 +18,8 @@ We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box
 
 .. raw:: latex
 
-   \part{Using 86Box}
+   \renewcommand{\contentsname}{Contents}
+   \chapter{Using 86Box}
 
 .. toctree::
    :maxdepth: 1
@@ -32,7 +33,7 @@ We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box
 
 .. raw:: latex
 
-   \part{Emulated hardware}
+   \chapter{Emulated hardware}
 
 .. toctree::
    :maxdepth: 1
@@ -47,7 +48,7 @@ We operate an `IRC channel <https://kiwiirc.com/client/irc.86box.net/?nick=86box
 
 .. raw:: latex
 
-   \part{Development}
+   \chapter{Development}
 
 .. toctree::
    :maxdepth: 1
