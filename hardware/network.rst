@@ -1,7 +1,7 @@
 Networking
 ==========
 
-86Box supports two connection modes for the :doc:`emulated network cards <../settings/network>`. The specific details on these connection modes and network emulation as a whole are outlined on this page.
+86Box supports two connection modes for the :doc:`emulated network cards <../settings/network>`. The specific details on these connection modes and network emulation as a whole are outlined on this |page|.
 
 SLiRP
 -----
