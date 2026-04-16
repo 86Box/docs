@@ -86,7 +86,7 @@ highlight_language = 'c'
 
 latex_elements = {
     'preamble': r'''
-    \newenvironment{sphinxclasstoggle-header}{
+    \newenvironment{sphinxclasstoggleheader}{
         \begin{center}
     }{
         \end{center}
