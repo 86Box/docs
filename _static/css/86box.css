@@ -2,3 +2,11 @@
 h1 > img, h2 > img {
 	padding-right: 5px;
 }
+
+/* Remove bottom spacing from lists in tables and admonitions. */
+table.docutils ul, table.docutils ol {
+	margin-bottom: 0 !important;
+}
+div.admonition > p:nth-child(2) {
+	margin-bottom: 0;
+}
