@@ -164,7 +164,7 @@ One trace entry is output per line, formatted as such::
 * Port being accessed (in hexadecimal)
 * Value being read or written (in hexadecimal)
 
-.. note:: I/O tracing incurs a heavy load on stderr output, which can bottleneck emulation to a near halt in I/O-heavy workloads (such as POST) when outputting to a terminal. Using the ``-L`` command line option to redirect logging to a file on solid state storage is highly recommended.
+.. note:: I/O tracing incurs a heavy load on stderr output, which can bottleneck emulation to a near halt in I/O-heavy workloads (such as POST) when outputting to a terminal. Using the ``-L``/``--logfile`` command line option to redirect logging to a file on solid state storage is highly recommended.
 
 I/O traps
 ---------
