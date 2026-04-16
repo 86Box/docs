@@ -46,7 +46,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # Generate icon substitutions.
 rst_prolog = ''
 def generate_icons(app):
-	rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}'
+	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}'
 	for icon_dir in ('usage/images',):
 		for icon in os.listdir(icon_dir):
 			fn, ext = os.path.splitext(icon)
