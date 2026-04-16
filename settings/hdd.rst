@@ -1,5 +1,3 @@
-.. include:: /include.rst
-
 |hard_disk| Hard disks
 ======================
 
