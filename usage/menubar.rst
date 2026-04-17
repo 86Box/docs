@@ -54,7 +54,7 @@ View
 
 .. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
 
-* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <settings/input:Key bindings>`) to enter full screen mode or go back to windowed mode.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
   * **Full screen stretch:** stretch the emulated display to completely fill the host display.
