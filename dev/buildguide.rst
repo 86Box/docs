@@ -45,25 +45,25 @@ The ``CMakePresets.json`` file contains several common compilation options for 8
       - Dev. branch
       - Optimized
     * - ``regular`` 
-      - ✕
-      - ✕
-      - ✕
-      - ✕
+      - ✖
+      - ✖
+      - ✖
+      - ✖
     * - ``debug``
-      - ✓
-      - ✕
-      - ✕
-      - ✕
+      - ✔
+      - ✖
+      - ✖
+      - ✖
     * - ``experimental``
-      - ✓
-      - ✓
-      - ✓
-      - ✕
+      - ✔
+      - ✔
+      - ✔
+      - ✖
     * - ``optimized``
-      - ✕
-      - ✕
-      - ✕
-      - ✓
+      - ✖
+      - ✖
+      - ✖
+      - ✔
 
 The presets are consumed during the initial project generation stage by using the ``--preset`` CMake command line option, e.g.:
 
