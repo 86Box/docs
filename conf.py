@@ -44,25 +44,24 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-# Generate icon substitutions.
-rst_prolog = r'''.. |vel| unicode:: 0x22EE
-   :trim:
-.. |clear| unicode:: 0x1F167
-'''
-def generate_icons(app):
-	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
+# Generate substitutions.
+rst_prolog = '.. |clear| unicode:: 0x1F167\n'
+def generate_subs(app):
+	is_latex = "latex" in app.builder.name
+	app.config.rst_prolog += f'.. |vel| unicode:: {"0x2026" if is_latex else "0x22EE"}\n'
+	app.config.rst_prolog += f'.. |page| replace:: {"section" if is_latex else "page"}\n'
 	for icon_dir in ('usage/images',):
 		for icon in os.listdir(icon_dir):
 			fn, ext = os.path.splitext(icon)
 			if ext == '.png':
-				if fn[-6:] != '_small' and 'html' not in app.builder.name: # use small icons in non-HTML applications
+				if is_latex and fn[-6:] != '_small': # use small icons in LaTeX PDF
 					small_icon = fn + '_small' + ext
 					if os.path.exists(os.path.join(icon_dir, small_icon)):
 						icon = small_icon
 				app.config.rst_prolog += f'.. |{fn}| image:: /{icon_dir}/{icon}\n'
 
 def setup(app):
-	app.connect('builder-inited', generate_icons)
+	app.connect('builder-inited', generate_subs)
 
 highlight_language = 'c'
 
@@ -108,3 +107,9 @@ latex_elements = {
 }
 '''
 }
+
+
+# -- Options for EPUB output --------------------------------------------
+
+epub_tocdepth = 2
+epub_tocscope = 'includehidden'
