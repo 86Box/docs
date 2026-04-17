@@ -144,7 +144,9 @@ I/O tracing
 
 The I/O module provides a compile-time option to unconditionally log every port operation performed by the emulated machine. Add ``#define ENABLE_IO_LOG 1`` to the top of ``src/io.c`` to enable global I/O tracing.
 
-One trace entry is output per line, formatted as such::
+One trace entry is output per line, formatted as such:
+
+.. code-block:: none
 
   [E000:0000C0A6] (0, 1, 0001) in b(0061) = 2C
   [E000:0000C0AC] (0, 0, 0000) outb(00EB, 3C)
