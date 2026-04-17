@@ -108,7 +108,7 @@ latex_elements = {
 ''',
 	'utf8extra': r'''
 \usepackage{circledsteps}
-\DeclareUnicodeCharacter{1F167}{\Circled[fill color=black,inner color=white,#1]{\textbf{$\times$}}}
+\DeclareUnicodeCharacter{1F167}{\Circled[fill color=black,inner color=white,#1]{\pmb{$\times$}}}
 '''
 }
 
