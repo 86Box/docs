@@ -373,17 +373,13 @@ The aforementioned base address alignment allows software (BIOSes and operating 
     :header-rows: 2
     :stub-columns: 1
 
-    * - .. only:: not latex
-          
-          Byte
+    * - Byte
       - :cspan:`7` ``0x13``
       - :cspan:`7` ``0x12``
       - :cspan:`7` ``0x11``
       - :cspan:`7` ``0x10``
 
-    * - .. only:: not latex
-         
-         Bit
+    * - Bit
       - 31
       - 30
       - 29
@@ -417,10 +413,7 @@ The aforementioned base address alignment allows software (BIOSes and operating 
       - 1
       - 0
 
-    * - 
-        .. only:: not latex
-          
-          Value
+    * - Value
       - :cspan:`19` Base memory address (4096-byte aligned)
       - :cspan:`7` Always ``0``
       - :cspan:`2` :abbr:`Flags (Read-only)`
@@ -430,17 +423,13 @@ The aforementioned base address alignment allows software (BIOSes and operating 
     :header-rows: 2
     :stub-columns: 1
 
-    * - .. only:: not latex
-          
-          Byte
+    * - Byte
       - :cspan:`7` ``0x17``
       - :cspan:`7` ``0x16``
       - :cspan:`7` ``0x15``
       - :cspan:`7` ``0x14``
 
-    * - .. only:: not latex
-          
-          Bit
+    * - Bit
       - 31
       - 30
       - 29
@@ -474,9 +463,7 @@ The aforementioned base address alignment allows software (BIOSes and operating 
       - 1
       - 0
 
-    * - .. only:: not latex
-          
-          Value
+    * - Value
       - :cspan:`15` Ignored (``0`` recommended)
       - :cspan:`9` Base :doc:`I/O port <io>` (64-byte aligned)
       - :cspan:`3` Always ``0``
@@ -651,17 +638,13 @@ The main difference between this register and BARs is that the ROM can be enable
     :header-rows: 2
     :stub-columns: 1
 
-    * - .. only:: not latex
-          
-          Byte
+    * - Byte
       - :cspan:`7` ``0x33``
       - :cspan:`7` ``0x32``
       - :cspan:`7` ``0x31``
       - :cspan:`7` ``0x30``
 
-    * - .. only:: not latex
-          
-          Bit
+    * - Bit
       - 31
       - 30
       - 29
@@ -695,9 +678,7 @@ The main difference between this register and BARs is that the ROM can be enable
       - 1
       - 0
 
-    * - .. only:: not latex
-          
-          Value
+    * - Value
       - :cspan:`16` Base memory address (32768-byte aligned)
       - :cspan:`13` Always ``0``
       - :abbr:`E (ROM Enable)`
