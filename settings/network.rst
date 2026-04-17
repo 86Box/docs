@@ -25,7 +25,7 @@ Network emulation mode to use on this card. See :doc:`../hardware/network` for m
 Adapter
 ^^^^^^^
 
-Network card to emulate. Only cards supported by the machine's expansion buses will be listed; click |clear| to search for cards by name or bus.
+Network card to emulate. Only cards supported by the machine's expansion buses will be listed. Click |clear| to search for cards by name or bus.
 
 The *Configure* button opens a new window with settings specific to the selected network card, such as the MAC address for Ethernet cards, and the I/O port and IRQ for ISA cards.
 

@@ -8,7 +8,7 @@ The **Floppy & CD-ROM drives** page contains settings related to the emulated ma
 
 Up to four floppy disk drives can be attached to the emulated machine, although not all machines provide BIOS support for more than two drives. The following settings apply to the selected drive:
 
-* **Type:** floppy drive to emulate.  Click |clear| to search for types by name. Some types have special properties and should only be used in very specific applications:
+* **Type:** floppy drive to emulate. Click |clear| to search for types by name. Some types have special properties and should only be used in very specific applications:
 
   * **5.25" 1.2M 300/360 RPM**, **3.5" 1.44M 300/360 RPM** and **3.5" 2.88M 300/360 RPM**: "3-mode" drives, which are capable of reading 360K 5.25" or NEC PC-98 3.5" disks if the emulated machine's BIOS supports 3-mode operation.
   * **3.5" 1.25M PC-98:** NEC PC-98 drive, which is 3-mode and inverts the polarity of the Density Select pin.

@@ -20,7 +20,7 @@ The check box (left) enables emulation of the corresponding parallel port. Any p
 
 .. note:: The LPT4 port is not widely supported. It is located at I/O port 268h.
 
-The dropdown (middle) selects an emulated device to connect to the parallel port; click |clear| to search for devices by name. The following devices are supported:
+The dropdown (middle) selects an emulated device to connect to the parallel port. Click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** no device connected.
 * **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
@@ -79,7 +79,7 @@ COM1-4
 
 The check box (left) enables emulation of the corresponding serial port. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB serial cards.
 
-The dropdown (middle) selects an emulated device to connect to the serial port; click |clear| to search for devices by name. The following devices are supported:
+The dropdown (middle) selects an emulated device to connect to the serial port. Click |clear| to search for devices by name. The following devices are supported:
 
 * **None:** no device connected.
 * **Serial Passthrough:** connect to a serial port on the host system.

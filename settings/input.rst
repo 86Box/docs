@@ -8,7 +8,7 @@ The **Input devices** page contains settings related to the emulated machine's m
 Keyboard
 --------
 
-Select the keyboard type to emulate. This box only lists keyboards supported by the machine; click |clear| to search for keyboards by name.
+Select the keyboard type to emulate. This box only lists keyboards supported by the machine. Click |clear| to search for keyboards by name.
 
 The *Configure* button opens a new window with settings specific to the selected keyboard type, such as the number of keys.
 
