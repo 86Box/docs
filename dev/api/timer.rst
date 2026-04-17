@@ -111,13 +111,13 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
            - Bit 0 (0x01) clear: stop countdown timer;
            - Bit 1 (0x02) set: automatically restart timer. */
         static void
-        foo_outb(uint16_t addr, uint8_t val, void *priv)
+        foo_outb(uint16_t port, uint8_t val, void *priv)
         {
             /* Get the device state structure. */
             foo_t *dev = (foo_t *) priv;
 
             /* Handle writes to register 0x80. */
-            if ((addr & 0xff) == 0x80) {
+            if ((port & 0xff) == 0x80) {
                 dev->regs[0x80] = val;
                 if (val & 0x01) /* bit 0 set */
                     timer_on_auto(&dev->countdown_timer, 100.0);
