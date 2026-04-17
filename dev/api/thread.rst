@@ -27,8 +27,7 @@ Threads can be started with the ``thread_create`` function. Additionally, the ``
       * ``priv``: opaque pointer (see ``priv`` below).
 
   * - ``priv``
-    - Opaque pointer passed to the ``thread_func`` above.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to the ``thread_func`` above, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - **Return value**
     - ``thread_t`` pointer representing the newly-created thread.
