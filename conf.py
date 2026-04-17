@@ -105,9 +105,11 @@ latex_elements = {
 }{
 	\end{quote}
 }
-\usepackage{circledsteps}
 ''',
-	'utf8extra': r'\DeclareUnicodeCharacter{1F167}{\Circled[fill color=black,inner color=white,#1]{\textsf{X}}}}'
+	'utf8extra': r'''
+\usepackage{circledsteps}
+\DeclareUnicodeCharacter{1F167}{\Circled[fill color=black,inner color=white,#1]{\pmb{\checkmark}}}
+'''
 }
 
 
