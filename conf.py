@@ -44,16 +44,15 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # Generate icon substitutions.
-rst_prolog = r'''.. |vel| unicode:: 0x22EE
-   :trim:
-'''
+rst_prolog = ''
 def generate_icons(app):
-	app.config.rst_prolog += f'.. |page| replace:: {"page" if "html" in app.builder.name else "section"}\n'
+	app.config.rst_prolog += f'.. |vel| {"replace:: ..." if "latex" in app.builder.name else "unicode:: 0x22EE"}\n'
+	app.config.rst_prolog += f'.. |page| replace:: {"section" if "latex" in app.builder.name else "page"}\n'
 	for icon_dir in ('usage/images',):
 		for icon in os.listdir(icon_dir):
 			fn, ext = os.path.splitext(icon)
 			if ext == '.png':
-				if fn[-6:] != '_small' and 'html' not in app.builder.name: # use small icons in non-HTML applications
+				if fn[-6:] != '_small' and 'latex' in app.builder.name: # use small icons in LaTeX PDF
 					small_icon = fn + '_small' + ext
 					if os.path.exists(os.path.join(icon_dir, small_icon)):
 						icon = small_icon
