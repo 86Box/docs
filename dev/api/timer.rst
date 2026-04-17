@@ -69,8 +69,7 @@ Timers can be added with the ``timer_add`` function. The best place for adding a
       * ``priv``: opaque pointer (see ``priv`` below).
 
   * - ``priv``
-    - Opaque pointer passed to the ``callback`` above.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to the ``callback`` above, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - ``start_timer``
     - Part of the :ref:`legacy API <dev/api/timer:Legacy API>`, should always be ``0``.
@@ -107,7 +106,7 @@ The ``timer_on_auto`` function can be used to start (with the provided microseco
                 timer_on_auto(&dev->countdown_timer, 100.0);
         }
 
-        /* Our device handles I/O port register 0x__80 like this:
+        /* Our device handles I/O port register 0x__80 as such:
            - Bit 0 (0x01) set: start 100-microsecond countdown timer;
            - Bit 0 (0x01) clear: stop countdown timer;
            - Bit 1 (0x02) set: automatically restart timer. */

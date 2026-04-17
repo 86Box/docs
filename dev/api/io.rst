@@ -45,8 +45,7 @@ Port I/O
   * - ``outl``
 
   * - ``priv``
-    - Opaque pointer passed to this handler's read/write operation callbacks.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to this handler's read/write operation callbacks, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
 I/O handlers can be added or removed at any time, although ``io_removehandler`` must be called with the **exact same** parameters that ``io_sethandler`` was originally called with. For non-Plug and Play devices, you might want to add handlers in the ``init`` callback; for ISA Plug and Play devices, you'd add and/or remove handlers on the ``config_changed`` callback; for PCI devices, you'd do the same whenever the Command register or Base Address (BAR) registers are written to; and so on.
 
@@ -222,8 +221,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
       * ``priv``: opaque pointer (see ``priv`` below).
 
   * - ``priv``
-    - Opaque pointer passed to the ``func`` callback above.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to the ``func`` callback above, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - **Return value**
     - Opaque (``void``) pointer representing the newly-created I/O trap.
