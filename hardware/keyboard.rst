@@ -21,11 +21,12 @@ macOS
 ^^^^^
 
 * Apple keyboards with **European or other ISO layouts** may have *the key below Esc* and *the key to the right of Left Shift* switch places in the emulated machine, due to a hardware quirk in many of those keyboards (both internal and external) and a limitation in the way macOS corrects it.
-* The :kbd:`Num =` key is only usable in operating systems which recognize that key on Microsoft PS/2 multimedia keyboards.
+* The :kbd:`Num =` key is only usable in operating systems which recognize that key on Microsoft PS/2 multimedia keyboards.
 * Mac special keys are mapped to their PC equivalents where possible:
 
 .. list-table::
   :header-rows: 1
+  :widths: 140 739
 
   * - Emulated key
     - Host key
@@ -62,7 +63,7 @@ Some keyboards provide additional function or otherwise special keys on top of t
 Multimedia keys
 ^^^^^^^^^^^^^^^
 
-Passthrough of Microsoft multimedia function keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` can be disabled through the :ref:`Inhibit multimedia keys option in the Preferences window's Input page <usage/preferences:Inhibit multimedia keys>`.
+Passthrough of Microsoft multimedia function keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` can be disabled through the :ref:`Inhibit multimedia keys option in the Preferences window's Input page <usage/preferences:Inhibit multimedia keys>`.
 
 Olivetti
 ^^^^^^^^

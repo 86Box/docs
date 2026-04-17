@@ -64,7 +64,7 @@ Action
   .. _pause:
 
 * **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to pause or resume emulation.
-* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to show or hide them.
+* **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to show or hide them.
 
   .. _fast-forward:
 

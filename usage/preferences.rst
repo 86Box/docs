@@ -39,7 +39,7 @@ Adjust the emulated mouse's tracking sensitivity. The *Default* button resets ba
 Inhibit multimedia keys
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Disable the passthrough of multimedia keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` to the emulated machine.
+Disable the passthrough of multimedia keys such as :kbd:`Volume Up` and :kbd:`Play/Pause` to the emulated machine.
 
 |key_bindings| Key bindings
 ---------------------------

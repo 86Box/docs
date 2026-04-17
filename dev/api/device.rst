@@ -6,6 +6,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 .. flat-table:: ``device_t``
   :header-rows: 1
   :widths: 113 470
+  :class: longtable
 
   * - Member
     - Description
@@ -345,6 +346,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
 .. flat-table:: ``device_config_t``
   :header-rows: 1
   :widths: 143 552
+  :class: longtable
 
   * - Member
     - Description
@@ -386,37 +388,19 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
   * - ``spinner``
     - ``device_config_spinner_t`` sub-structure containing the minimum/maximum/step values for a ``CONFIG_SPINNER`` option. Can be ``{ NULL }`` if not applicable.
 
-      .. flat-table::
-         :header-rows: 1
-         :widths: 87 432
+      Members:
 
-         * - Member
-           - Description
-
-         * - ``min``
-           - Minimum selectable value.
-
-         * - ``max``
-           - Maximum selectable value.
-
-         * - ``step``
-           - Units to be incremented/decremented with the arrow buttons. Note that the user can still type in arbitrary numbers that are within ``min`` and ``max`` but not aligned to ``step``.
+      * ``min``: minimum selectable value.
+      * ``max``: maximum selectable value.
+      * ``step``: units to be incremented/decremented with the arrow buttons. Note that the user can still type in arbitrary numbers that are within ``min`` and ``max`` but not aligned to ``step``.
 
   * - ``selection``
     - Array of ``device_config_selection_t`` sub-structures containing the choices for a ``CONFIG_SELECTION``, ``CONFIG_HEX16`` or ``CONFIG_HEX20`` option. Can be ``{ 0 }`` if not applicable. Must be terminated with an object with a ``description`` of ``""``.
 
-      .. flat-table::
-         :header-rows: 1
-         :widths: 120 400
+      Members:
 
-         * - Member
-           - Description
-
-         * - ``description``
-           - Description for this choice, displayed in the user interface.
-
-         * - ``value``
-           - Integer value corresponding to this choice, used to identify it in the emulated machine's configuration file.
+      * ``description``: description for this choice, displayed in the user interface.
+      * ``value``: integer value corresponding to this choice, used to identify it in the emulated machine's configuration file.
 
 Configured option values can be read from within the device's ``init`` callback with the ``device_get_config_*`` functions. These functions automatically operate in the context of the device currently being initialized.
 
