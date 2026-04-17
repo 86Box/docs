@@ -14,7 +14,7 @@ Variants
 
   * The Old Recompiler is not available for the ARM architecture. You must select the New Recompiler for running 86Box on ARM Linux systems.
 
-* On **Windows**, **x64** is the only option, as native ARM builds are currently not provided.
+* On **Windows**, select **x64** or **ARM** according to your system's architecture.
 
 * On **Linux**, select **x64** or **ARM** according to your system's architecture.
 
