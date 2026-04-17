@@ -97,4 +97,5 @@ latex_elements = {
 
 # -- Options for EPUB output --------------------------------------------
 
+epub_tocdepth = 2
 epub_tocscope = 'includehidden'
