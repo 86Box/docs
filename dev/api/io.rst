@@ -19,10 +19,10 @@ Port I/O
   * - ``inb``
     - :rspan:`2` I/O read operation callback functions. Can be ``NULL``. Each callback takes the form of:
 
-      ``TYPE callback(uint16_t addr, void *priv)``
+      ``TYPE callback(uint16_t port, void *priv)``
 
       * ``TYPE``: operation width: ``uint8_t`` for ``inb``, ``uint16_t`` for ``inw``, ``uint32_t`` for ``inl``;
-      * ``addr``: exact I/O port being read;
+      * ``port``: exact I/O port being read;
       * ``priv``: opaque pointer (see ``priv`` below);
       * Return value: 8- (``inb``), 16- (``inw``) or 32-bit (``inl``) value read from this port.
 
@@ -33,9 +33,9 @@ Port I/O
   * - ``outb``
     - :rspan:`2` I/O write operation callback functions. Can be ``NULL``. Each callback takes the form of:
 
-      ``void callback(uint16_t addr, TYPE val, void *priv)``
+      ``void callback(uint16_t port, TYPE val, void *priv)``
 
-      * ``addr``: exact I/O port being written;
+      * ``port``: exact I/O port being written;
       * ``TYPE``: operation width: ``uint8_t`` for ``outb``, ``uint16_t`` for ``outw``, ``uint32_t`` for ``outl``;
       * ``val``: 8- (``outb``), 16- (``outw``) or 32-bit (``outl``) value being written to this port;
       * ``priv``: opaque pointer (see ``priv`` below).
@@ -45,8 +45,7 @@ Port I/O
   * - ``outl``
 
   * - ``priv``
-    - Opaque pointer passed to this handler's read/write operation callbacks.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to this handler's read/write operation callbacks, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
 I/O handlers can be added or removed at any time, although ``io_removehandler`` must be called with the **exact same** parameters that ``io_sethandler`` was originally called with. For non-Plug and Play devices, you might want to add handlers in the ``init`` callback; for ISA Plug and Play devices, you'd add and/or remove handlers on the ``config_changed`` callback; for PCI devices, you'd do the same whenever the Command register or Base Address (BAR) registers are written to; and so on.
 
@@ -119,10 +118,10 @@ This feature's main use cases are devices which store registers that are 8-bit w
         } foo_t;
 
         static uint8_t
-        foo_io_inb(uint16_t addr, void *priv)
+        foo_io_inb(uint16_t port, void *priv)
         {
             foo_t *dev = (foo_t *) priv;
-            return dev->regs[addr & 0xff]; /* register index = I/O port's least significant byte */
+            return dev->regs[port & 0xff]; /* register index = I/O port's least significant byte */
         }
 
         /* No foo_io_inw, so a 16-bit read will read two 8-bit registers in succession.
@@ -184,14 +183,14 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
         } foo_t;
 
         static void
-        foo_trap_220(int size, uint16_t addr, uint8_t write, uint8_t val, void *priv)
+        foo_trap_220(int size, uint16_t port, uint8_t write, uint8_t val, void *priv)
         {
             /* Get the device state structure. */
             foo_t *dev = (foo_t *) priv;
 
             /* Do whatever you want. */
             pclog("Foo: Trapped I/O %s to port %04X, size %d\n",
-                  write ? "write" : "read", addr, size);
+                  write ? "write" : "read", port, size);
             if (write)
               pclog("Foo: Written value: %02X\n", val);
         }
@@ -239,17 +238,16 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
   * - ``func``
     - Function called whenever an I/O operation of any type or size is performed to the trap's I/O address range. Takes the form of:
 
-      ``void func(int size, uint16_t addr, uint8_t write, uint8_t val, void *priv)``
+      ``void func(int size, uint16_t port, uint8_t write, uint8_t val, void *priv)``
 
       * ``size``: I/O operation width: ``1``, ``2`` or ``4``;
-      * ``addr``: I/O address the operation is being performed on;
+      * ``port``: I/O address the operation is being performed on;
       * ``write``: ``0`` if this operation is a *read*, or ``1`` if it's a *write*;
       * ``val``: value being written if this operation is a write;
       * ``priv``: opaque pointer (see ``priv`` below).
 
   * - ``priv``
-    - Opaque pointer passed to the ``func`` callback above.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to the ``func`` callback above, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - **Return value**
     - Opaque (``void``) pointer representing the newly-created I/O trap.
@@ -268,7 +266,7 @@ A second type of I/O handler, **I/O traps** allow a device (usually System Manag
     - * ``1`` to enable this trap;
       * ``0`` to disable it.
 
-  * - ``addr``
+  * - ``port``
     - First I/O port (0x0000-0xffff) covered by this trap.
 
   * - ``size``
