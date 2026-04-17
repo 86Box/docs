@@ -93,3 +93,8 @@ latex_elements = {
 \newcommand{\sectionbreak}{\clearpage}
 '''
 }
+
+
+# -- Options for EPUB output --------------------------------------------
+
+epub_tocscope = 'includehidden'
