@@ -234,19 +234,20 @@ Devices can have any number of user-facing configuration options, usually access
 .. figure:: images/deviceconfig.png
    :align: center
 
-   All option types currently configurable through the user interface. [TO BE UPDATED ONCE I GET OUT OF HIDPI]
+   All option types currently configurable through the user interface.
 
-These options are stored in the emulated machine's configuration file, in a section identified by the device's ``name``:
+These options are stored in the emulated machine's configuration file, in a section identified by the device's ``name``, optionally followed by the device's instance number (preceded by ``#``) if it's different from the default ``0``:
 
 .. code-block:: none
 
-    [Foo-1234]
+    [Foo-1234 #1]
     selection = 0
     hex16 = 0220
     hex20 = D8000
     fname = D:/VMs/86Box/86Box.exe
     binary = 1
     spinner = 1234
+    mac = 00:00:00
     midi_out = 0
     midi_in = 0
 
