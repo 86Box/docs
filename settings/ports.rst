@@ -48,7 +48,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
   * Use the generic PostScript printer driver provided by your operating system; note that generic drivers may support grayscale only.
   * Windows 95 and newer do not have a generic PostScript driver; use the **Apple LaserWriter IIf** driver for grayscale, or the **Apple Color LW 12/660 PS** driver for color.
 
-* **Generic PCL Printer:** HP PCL-compatible printer.
+* **Generic PCL Printer:** HP Printer Command Language-compatible printer.
 
   * Printed documents are saved as .pcl or .pxl files in the ``printer`` subdirectory found in the emulated machine's directory.
   * The GhostPCL library required to convert output files to .pdf is not included with 86Box due to a license incompatibility. Set *Language* to *Raw* through the *Configure* button to remove the warning displayed on startup.
