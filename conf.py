@@ -105,7 +105,8 @@ latex_elements = {
 }{
 	\end{quote}
 }
-'''
+''',
+	'utf8extra': r'\DeclareUnicodeCharacter{1F167}{\textcircled{x}}'
 }
 
 
