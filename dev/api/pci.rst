@@ -187,7 +187,7 @@ The most important registers in the standard set are:
 
 .. flat-table::
   :header-rows: 1
-  :widths: 94 100 501
+  :widths: 84 100 511
 
   * - Offsets
     - Register
