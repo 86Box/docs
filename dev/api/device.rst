@@ -244,6 +244,7 @@ These options are stored in the emulated machine's configuration file, in a sect
     selection = 0
     hex16 = 0220
     hex20 = D8000
+    string = Default
     fname = D:/VMs/86Box/86Box.exe
     binary = 1
     spinner = 1234
