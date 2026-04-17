@@ -132,7 +132,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port; 
 
   * *Run custom command* creates a PTY device, connects to it and executes the configured *Custom command*.
 
-    * The default command (leave blank to restore it) starts a GNU Screen session, which runs in the background and can be attached to by running ``screen -r`` on a terminal.
+    * The default command (leave blank to restore it) connects to a new GNU Screen session, which runs in the background and can be attached to by running ``screen -r`` on a terminal.
     * Variables ``$PTY`` (path to the PTY device), ``$VMNAME`` (machine :ref:`display name <usage/manager:Machine list>`), ``$PORT`` (emulated port name such as ``COM1``) and ``$PIPECMD`` (command used in *Start terminal emulator* mode) are passed to the command.
 
 * **Loopback Plug:** a serial plug with pins wired together in a null-modem configuration, for use with diagnostic software.
