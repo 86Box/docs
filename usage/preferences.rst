@@ -1,7 +1,7 @@
 Preferences
 ===========
 
-The **Preferences** window contains options related to 86Box as a whole, which are saved system-wide and apply to all machines.
+The **Preferences** window allows you to configure options related to 86Box as a whole, which are saved system-wide and apply to all emulated machines.
 
 .. note:: Any changes made to the preferences in 86Box versions older than 5.0 (saved per-machine) have been reset.
 
