@@ -188,20 +188,20 @@ The most important registers in the standard set are:
 
 .. flat-table::
   :header-rows: 1
-  :widths: 56 113 582
+  :widths: 104 100 491
 
   * - Offsets
     - Register
     - Description
 
-  * - ``0x00 - 0x01``
+  * - ``0x00-0x01``
     - Vendor ID
     - :rspan:`1` Unique IDs assigned to the device's vendor (2 bytes) and the device itself (2 more bytes). The `PCI ID Repository <https://pci-ids.ucw.cz>`_ is a comprehensive repository of many (but not all) known PCI IDs.
 
-  * - ``0x02 - 0x03``
+  * - ``0x02-0x03``
     - Device ID
 
-  * - ``0x04 - 0x05``
+  * - ``0x04-0x05``
     - Command
     - Control several core aspects of the PCI device:
 
@@ -214,19 +214,19 @@ The most important registers in the standard set are:
     - Usually ``0`` to indicate a normal PCI header.
       Bit 7 (``0x80``) must be set if this is the first function (function ``0``) of a :ref:`multi-function device <dev/api/pci:Multi-function devices>`.
 
-  * - ``0x10 - 0x27``
+  * - ``0x10-0x27``
     - :ref:`dev/api/pci:Base Address Registers`
     - Sets the base address for each memory or :doc:`I/O <io>` range provided by this device.
 
-  * - ``0x2c - 0x2d``
+  * - ``0x2c-0x2d``
     - Subvendor ID
     - :rspan:`1` Unique vendor (2 bytes) and device (2 bytes) IDs sometimes assigned to different implementations of the same PCI device without having to change the main Vendor and Device IDs.
       Usually all ``0`` if the device doesn't call for such IDs.
 
-  * - ``0x2e - 0x2f``
+  * - ``0x2e-0x2f``
     - Subsystem ID
 
-  * - ``0x30 - 0x33``
+  * - ``0x30-0x33``
     - Expansion ROM
     - Base address and enable bit for the device's :ref:`option ROM <dev/api/pci:Option ROM>`.
       Must be read-only if the device does not provide an option ROM.
@@ -371,13 +371,17 @@ The aforementioned base address alignment allows software (BIOSes and operating 
     :header-rows: 2
     :stub-columns: 1
 
-    * - Byte
+    * - .. only:: not latex
+          
+          Byte
       - :cspan:`7` ``0x13``
       - :cspan:`7` ``0x12``
       - :cspan:`7` ``0x11``
       - :cspan:`7` ``0x10``
 
-    * - Bit
+    * - .. only:: not latex
+         
+         Bit
       - 31
       - 30
       - 29
@@ -411,27 +415,30 @@ The aforementioned base address alignment allows software (BIOSes and operating 
       - 1
       - 0
 
-    * - Value
+    * - 
+        .. only:: not latex
+          
+          Value
       - :cspan:`19` Base memory address (4096-byte aligned)
       - :cspan:`7` Always ``0``
-      - :cspan:`2`
-
-        .. raw:: html
-
-          <abbr title="Read-only">Flags</span>
+      - :cspan:`2` :abbr:`Flags (Read-only)`
       - ``0``
 
   .. flat-table:: I/O BAR (example: 64 ports large, starting at ``0x14``)
     :header-rows: 2
     :stub-columns: 1
 
-    * - Byte
+    * - .. only:: not latex
+          
+          Byte
       - :cspan:`7` ``0x17``
       - :cspan:`7` ``0x16``
       - :cspan:`7` ``0x15``
       - :cspan:`7` ``0x14``
 
-    * - Bit
+    * - .. only:: not latex
+          
+          Bit
       - 31
       - 30
       - 29
@@ -465,13 +472,13 @@ The aforementioned base address alignment allows software (BIOSes and operating 
       - 1
       - 0
 
-    * - Value
+    * - .. only:: not latex
+          
+          Value
       - :cspan:`15` Ignored (``0`` recommended)
       - :cspan:`9` Base :doc:`I/O port <io>` (64-byte aligned)
       - :cspan:`3` Always ``0``
-      - .. raw:: html
-
-          <abbr title="Reserved (read-only)">R</abbr>
+      - :abbr:`R (Reserved (read-only))`
       - ``1``
 
 .. container:: toggle
@@ -642,13 +649,17 @@ The main difference between this register and BARs is that the ROM can be enable
     :header-rows: 2
     :stub-columns: 1
 
-    * - Byte
+    * - .. only:: not latex
+          
+          Byte
       - :cspan:`7` ``0x33``
       - :cspan:`7` ``0x32``
       - :cspan:`7` ``0x31``
       - :cspan:`7` ``0x30``
 
-    * - Bit
+    * - .. only:: not latex
+          
+          Bit
       - 31
       - 30
       - 29
@@ -682,12 +693,12 @@ The main difference between this register and BARs is that the ROM can be enable
       - 1
       - 0
 
-    * - Value
+    * - .. only:: not latex
+          
+          Value
       - :cspan:`16` Base memory address (32768-byte aligned)
       - :cspan:`13` Always ``0``
-      - .. raw:: html
-
-          <abbr title="ROM Enable">E</span>
+      - :abbr:`E (ROM Enable)`
 
 .. container:: toggle
 
