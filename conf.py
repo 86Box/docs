@@ -43,9 +43,9 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-# Generate icon substitutions.
+# Generate substitutions.
 rst_prolog = ''
-def generate_icons(app):
+def generate_subs(app):
 	is_latex = "latex" in app.builder.name
 	app.config.rst_prolog += f'.. |vel| unicode:: {"0x2026" if is_latex else "0x22EE"}\n'
 	app.config.rst_prolog += f'.. |page| replace:: {"section" if is_latex else "page"}\n'
@@ -60,7 +60,7 @@ def generate_icons(app):
 				app.config.rst_prolog += f'.. |{fn}| image:: /{icon_dir}/{icon}\n'
 
 def setup(app):
-	app.connect('builder-inited', generate_icons)
+	app.connect('builder-inited', generate_subs)
 
 
 # -- Options for HTML output -------------------------------------------------
