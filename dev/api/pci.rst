@@ -106,8 +106,7 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
       * ``priv``: opaque pointer (see ``priv`` below);
 
   * - ``priv``
-    - Opaque pointer passed to this device's configuration space register read/write callbacks.
-      Usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
+    - Opaque pointer passed to this device's configuration space register read/write callbacks, usually a pointer to a device's :ref:`state structure <dev/api/device:State structure>`.
 
   * - **Return value**
     - ``int`` value (subject to change in the future) representing the newly-added device.
@@ -190,7 +189,7 @@ The most important registers in the standard set are:
 
 .. flat-table::
   :header-rows: 1
-  :widths: 104 100 491
+  :widths: 84 100 511
 
   * - Offsets
     - Register
