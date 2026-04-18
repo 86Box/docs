@@ -307,7 +307,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
 
 .. flat-table:: ``device_config_t``
   :header-rows: 1
-  :widths: 143 552
+  :widths: 113 582
   :class: longtable
 
   * - Member
