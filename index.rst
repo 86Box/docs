@@ -70,6 +70,6 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    
    dev/buildguide
    dev/builds
+   dev/manager
    dev/api/index
    dev/formats/index
-   dev/manager
