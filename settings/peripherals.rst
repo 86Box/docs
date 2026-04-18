@@ -32,7 +32,7 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
 
 .. flat-table::
   :header-rows: 1
-  :widths: 80 615
+  :widths: 60 635
 
   * - Port
     - Machine types
@@ -49,10 +49,10 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
   * - ``0x84``
     - Early Compaq
 
-  * - ``0x190``
+  * - ``0x0190``
     - IBM PS/1 and PS/2 not based on the Micro Channel Architecture
 
-  * - ``0x680``
+  * - ``0x0680``
     - Micro Channel Architecture
 
 .. note:: Some operating systems and applications use port ``0x80`` (which is shared with the POST card on most machines) for other purposes. If you notice the POST code display is flickering and the emulation speed has decreased drastically, try disabling the POST card.
