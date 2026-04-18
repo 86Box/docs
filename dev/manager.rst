@@ -14,7 +14,7 @@ The messages have following format:
 
 .. flat-table:: Message schema
   :header-rows: 1
-  :widths: 88 75 500
+  :widths: 68 55 540
 
   * - Name
     - Type
@@ -43,7 +43,7 @@ The following messages are sent to the manager by the 86Box instance:
 
 .. flat-table:: Client messages
   :header-rows: 1
-  :widths: 238 457
+  :widths: 218 477
 
   * - Name
     - Description
@@ -83,7 +83,7 @@ The following messages are sent to the instance by the manager:
 
 .. flat-table:: Server messages
   :header-rows: 1
-  :widths: 238 457
+  :widths: 218 477
 
   * - Name
     - Description
@@ -121,7 +121,7 @@ Commands sent by the manager must be followed by a new line character (``\n``). 
 
 .. flat-table:: Commands
   :header-rows: 1
-  :widths: 159 536
+  :widths: 139 556
 
   * - Name
     - Description
@@ -160,7 +160,7 @@ All window messages sent by the emulator include the emulator's main window hand
 
 .. flat-table:: Windows messages
   :header-rows: 1
-  :widths: 159 80 88 368
+  :widths: 139 70 78 408
 
   * - Name
     - Value
