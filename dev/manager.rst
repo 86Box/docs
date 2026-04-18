@@ -10,7 +10,7 @@ This is the latest protocol introduced with 86Box 5.0 and used by the built-in v
 
 The manager attaches to the 86Box instance by setting the ``VMM_86BOX_SOCKET`` environment variable to the full name of a named pipe on Windows or a Unix domain socket on Unix-compatible operating systems. The pipe or socket must already exist when launching 86Box.
 
-The messages have following format:
+The messages have the following format:
 
 .. flat-table:: Message schema
   :header-rows: 1
@@ -154,13 +154,13 @@ Window message protocol (Windows-only)
 
 This is the original protocol used by 86Box Manager, which uses Windows window messages for communication between the manager and the 86Box instance.
 
-The manager attaches to the instance by passing an arbitrary ``uint64_t`` identifier and its own window handle, both formatted as hexadecimal numbers and separated by a comma via the ``-H`` / ``--hwnd`` command line argument, i.e. ``-H <vm_id>,<hwnd>``.
+The manager attaches to the instance by passing an arbitrary ``uint64_t`` identifier (``vm_id``) and its own window handle (``hwnd``), both formatted as hexadecimal numbers and separated by a comma via the ``-H``/``--hwnd`` command line argument, i.e. ``-H vm_id,hwnd``.
 
 All window messages sent by the emulator include the emulator's main window handle in ``LPARAM``. Use the ``WM_SENDHWND`` window message sent upon 86Box startup to match this to the identifier provided in the command line.
 
 .. flat-table:: Windows messages
   :header-rows: 1
-  :widths: 139 70 78 408
+  :widths: 139 65 68 423
 
   * - Name
     - Value
