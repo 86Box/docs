@@ -5,7 +5,7 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
 
 .. flat-table:: ``device_t``
   :header-rows: 1
-  :widths: 68 166 470
+  :widths: 58 156 490
   :class: longtable
 
   * - :cspan:`1` Member
