@@ -32,7 +32,7 @@ The POST card will automatically use the correct diagnostic I/O port for the emu
 
 .. list-table::
   :header-rows: 1
-  :widths: 80 615
+  :widths: 60 635
 
   * - Port
     - Machine types
