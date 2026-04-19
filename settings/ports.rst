@@ -93,7 +93,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 
     .. list-table::
      :header-rows: 1
-     :widths: 73 287 287
+     :widths: 53 297 297
 
      * - Mode
        - ``.in`` pipe function
@@ -115,7 +115,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 
 * **File:** write all outgoing data to a file and/or read incoming data from a file on the host system.
 
-  * If *Append to file if it exists* is unchecked, the outgoing data file is cleared every time the emulated machine is started or hard reset.
+  * If *Append to file if it exists* is unchecked, the outgoing data file is cleared every time the device is connected, including when the emulated machine is started or hard reset.
 
 * **Virtual Console:** connect to a terminal on the host system, in one of multiple modes.
 

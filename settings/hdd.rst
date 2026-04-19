@@ -108,7 +108,7 @@ Using physical disks
 Real disks connected to the host system can be attached to the emulated machine, as long as they meet the :ref:`131071 MB size limit and any other limits set by the emulated hardware <hardware/diskimages:Hard disk size limits>`. Use the *Existing...* button and set *File name* to:
 
 * **Windows:** ``\\.\PhysicalDriveX`` where ``X`` is the disk number displayed in the Disk Management (``diskmgmt.msc``) tool.
-* **Linux:** the path to the disk's block device, such as ``/dev/sdb`` for example.
+* **Linux:** full path to the disk's block device, ``/dev/sdb`` for example.
 
 The *Cylinders*, *Heads*, *Sectors* and *Size (MB)* parameters are set automatically when *OK* is pressed.
 
