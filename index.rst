@@ -52,6 +52,7 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    :hidden:
    
    hardware/machinespecific
+   hardware/devicespecific
    hardware/keyboard
    hardware/diskimages
    hardware/ideterqua
