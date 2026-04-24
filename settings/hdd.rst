@@ -114,9 +114,10 @@ The *Cylinders*, *Heads*, *Sectors* and *Size (MB)* parameters are set automatic
 
 .. note::
   * You must have the correct permissions to access the raw physical disk. This entails running 86Box as administrator on Windows and adjusting block device permissions on Linux.
-  * Any partitions on the disk must be unmounted to prevent data corruption. On Windows, use Disk Management to unmount the disk by right-clicking it and selecting *Offline* (not available on removable drives) or by removing all drive letters assigned to it.
+  * Any partitions on the disk must be unmounted to prevent data corruption. On Windows, use Disk Management to unmount the disk by right-clicking it and selecting *Offline* (not available on removable drives) or by removing the drive letters from all of its partitions.
 
 Removing a disk
 ---------------
 
 Select a disk on the list and press *Remove* to remove it.
+  
