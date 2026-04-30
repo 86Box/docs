@@ -3,13 +3,15 @@ Device-specific notes
 
 This |page| contains important notes related to various devices emulated by 86Box.
 
-Video cards
------------
+----
 
-.. rubric:: ATi Mach64GX
+|display| Display
+-----------------
 
-* These require a DOS utility to configure the EEPROM, as the drivers will otherwise not work correctly.
+.. rubric:: ATI Mach64GX
 
-.. rubric:: Cirrus Logic CL-GD5420
+* After creating an emulated machine or :ref:`wiping NVRAM <usage/manager:Machine list>`, the card must be configured using the ``INSTALL.EXE`` DOS utility included with Windows driver packages, otherwise the drivers for many operating systems will exhibit issues.
 
-* The drivers shipped with Windows NT 3.1 for this card does not support all video modes possible with 1MB of video memory correctly; only 512KB modes are supported.
+.. rubric:: Cirrus Logic GD5420
+
+* The driver included with Windows NT 3.1 does not properly support the extra video modes that are unlocked when the card is configured with 1 MB of video memory.

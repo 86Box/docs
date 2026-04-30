@@ -47,7 +47,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # Generate substitutions.
 rst_prolog = '.. |clear| unicode:: 0x1F167\n'
 def generate_subs(app):
-	is_latex = "latex" in app.builder.name
+	is_latex = 'latex' in app.builder.name
 	app.config.rst_prolog += f'.. |vel| unicode:: {"0x2026" if is_latex else "0x22EE"}\n'
 	app.config.rst_prolog += f'.. |page| replace:: {"section" if is_latex else "page"}\n'
 	for icon_dir in ('usage/images',):
