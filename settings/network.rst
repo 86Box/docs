@@ -31,7 +31,8 @@ The *Configure* button opens a new window with settings specific to the selected
 
 .. note::
   * On most Ethernet cards, the MAC address is partially configurable and always prefixed by an `Organizationally Unique Identifier <https://en.wikipedia.org/wiki/Organizationally_unique_identifier>`_ belonging to the card's manufacturer, such as ``00:E0:4C`` for Realtek; while on some generic cards, the full MAC is configurable.
-  * The **[LPT] Parallel Port Internet Protocol** network adapter requires a **PLIP Network** device to be attached to a :ref:`parallel port <settings/ports:LPT1-4>`.
+  * The **[LPT] Parallel Port Internet Protocol** network adapter requires a parallel port (LPT1 by default) not in use by :ref:`other parallel devices <settings/ports:LPT1-4>`; it no longer requires the separate PLIP parallel device from previous 86Box versions.
+  * The PLIP adapter is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled); it is not compatible with the Windows Direct Cable Connection feature or any other parallel port networking implementations.
   * Settings for the **[COM] Standard Hayes-compliant Modem** are described on :ref:`Networking <hardware/network:Modem>`.
 
 Options

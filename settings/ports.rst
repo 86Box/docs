@@ -59,12 +59,6 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
     * *HP-RTL* (Raster Transfer Language): a subset of PCL;
     * *PCL 6* (PXL): introduced in 1995.
 
-* **Parallel Line Internet Protocol:** a `PLIP <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
-
-  * The :ref:`emulated network adapter <settings/network:Adapter>` must also be set to **[LPT] PLIP**.
-  * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
-  * PLIP only works with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
-
 * **Named Pipe:** create or connect to a named pipe on the host system.
 
   * The same options as the :ref:`Named Pipe serial device <pipe>` apply here, with an added option for the parallel cable type.
