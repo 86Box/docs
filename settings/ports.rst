@@ -65,6 +65,12 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
   * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
   * PLIP only works with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
 
+* **Named Pipe:** create or connect to a named pipe on the host system.
+
+  * The same options as the :ref:`Named Pipe serial device <pipe>` apply here, with an added option for the parallel cable type.
+  * The *Unidirectional / LapLink* cable sends 8-bit and receives 4-bit data, following the simple cross-over wiring supported by many PC-to-PC connection software, including MS-DOS Interlnk, Windows Direct Cable Connection and PLIP.
+  * The *DirectParallel FAST* cable is backwards compatible with the LapLink cable and adds support for faster bidirectional and ECP modes on Windows Direct Cable Connection.
+
 * **Loopback Plug:** a parallel plug with pins wired together in a specific manner, for use with diagnostic software.
 
   * Different wirings can be selected through the *Configure* button.
@@ -86,6 +92,8 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 
   * The host port's parameters (baud rate, parity, data bits and stop bits) are automatically configured to match the emulated port's parameters, unlike in previous 86Box versions which required manual configuration in the passthrough settings.
 
+  .. _pipe:
+
 * **Named Pipe:** create or connect to a named pipe on the host system.
 
   * On Windows hosts, *Auto* mode creates or connects to the pipe depending on whether or not it already exists, *Server* mode always creates the pipe and *Client* mode always connects to an existing pipe. The ``\\.\pipe\`` prefix is optional.
@@ -93,7 +101,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 
     .. list-table::
      :header-rows: 1
-     :widths: 53 297 297
+     :widths: 63 292 292
 
      * - Mode
        - ``.in`` pipe function
