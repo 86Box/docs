@@ -10,6 +10,8 @@ This is the latest interface protocol, introduced with 86Box 5.0 and used by the
 
 The manager attaches to the 86Box instance by launching it with the ``VMM_86BOX_SOCKET`` environment variable set to the full path to a named pipe on Windows or a ``SOCK_STREAM`` domain socket on Unix-compatible operating systems. The pipe/socket must already exist.
 
+Messages are sent as ``QString`` objects via ``QDataStream`` version ``Qt_5_7`` (``17``).
+
 JSON messages are formatted as such:
 
 .. flat-table::
