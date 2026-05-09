@@ -62,7 +62,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 * **Named Pipe:** create or connect to a named pipe on the host system.
 
   * The same options as the :ref:`Named Pipe serial device <pipe>` apply here, with an added option for the parallel cable type.
-  * The *Unidirectional / LapLink* cable sends 8-bit and receives 4-bit data, following the simple cross-over wiring supported by many PC-to-PC connection software, including MS-DOS Interlnk, Windows Direct Cable Connection and PLIP.
+  * The *Unidirectional / LapLink* cable transmits 8-bit and receives 5-bit data, following the simple cross-over wiring supported by many PC-to-PC connection software, including MS-DOS Interlnk, Windows Direct Cable Connection and PLIP.
   * The *DirectParallel FAST* cable is backwards compatible with the LapLink cable and adds support for faster bidirectional and ECP modes on Windows Direct Cable Connection.
 
 * **Loopback Plug:** a parallel plug with pins wired together in a specific manner, for use with diagnostic software.
