@@ -125,7 +125,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
   * *Use standard input/output* connects to stdin and stdout, available when starting the machine directly from a terminal through the ``-P``/``--vmpath`` command line option.
   * *Create pseudoterminal* creates a PTY device, connects to it and displays its path when the machine is started.
 
-    * The **Named Pipe** device can be used to manually connect another machine to the pseudoterminal.
+    * The **Named Pipe** device can be used to connect another machine to this pseudoterminal by specifying its path as the pipe path.
 
   * *Start terminal emulator* connects to the system's default terminal emulator.
 
