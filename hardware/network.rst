@@ -72,7 +72,7 @@ The shared secret :ref:`option <settings/network:Options>` allows for isolating 
 Hub Mode
 ^^^^^^^^
 
-The hub mode :ref:`option <settings/network:Options>` turns the local switch into an `Ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_. In this mode, also referred to as *promiscuous mode*, the emulated network card will listen in to **all packets** sent through the switch, including those not bound to the card's MAC address. Due to the performance impact, enabling hub mode is only recommended for specific applications such as analyzing network protocols.
+The hub mode :ref:`option <settings/network:Options>` turns the local switch into an `Ethernet hub <https://en.wikipedia.org/wiki/Ethernet_hub>`_. In this mode, also referred to as *promiscuous mode*, the emulated network card will listen in to **all packets** sent through the switch, including those not bound to the card's MAC address. Due to the performance impact, enabling hub mode is only recommended for specific applications such as packet sniffing.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
@@ -83,7 +83,7 @@ If you're having trouble getting machines to communicate with each other through
 * All machines must have the **same** :ref:`shared secret <hardware/network:Shared secret>` if one is set.
 * All hosts must have a **single connection** to the **same network**.
 
-  * A host manually configured to have multiple IPv4 addresses on the same network may cause issues related to packet duplication.
+  * A host with multiple interfaces and/or IPv4 addresses on the same network may cause issues related to packet duplication.
   * Connecting two hosts on separate networks through a third middle-man host is not supported.
 
 * Any **firewalls** must allow traffic to UDP port 8086, with IP fragmentation, on multicast groups 239.255.86.86 (used if no shared secret is set) and 239.255.80.86 (used if a secret is set).
