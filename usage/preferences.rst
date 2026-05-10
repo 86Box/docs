@@ -11,7 +11,7 @@ The **Preferences** window allows you to configure options related to 86Box as a
 Language
 ^^^^^^^^
 
-Select a language for the 86Box user interface. The *Default* button resets back to the system language.
+Select a language for the 86Box user interface. Click |clear| to search for languages by their English name. The *Default* button resets back to the system language.
 
 Select media images from program working directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
