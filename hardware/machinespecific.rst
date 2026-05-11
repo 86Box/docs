@@ -89,6 +89,10 @@ Socket 7
 * Accessing the BIOS setup utility takes an additional step. Press :kbd:`F2` during the NEC logo screen and a Japanese message will appear; once a different message appears, press :kbd:`🠊` (right arrow) to enter the setup utility.
 * The first setup option below the date and time can be used to change the BIOS language to English.
 
+.. rubric:: Siemens Simatic OP47
+
+* Equipped with SMC FDC37C932FR and Intel 82091AA Super I/O chips driving four serial (COM1-COM4) and one parallel (LPT1) ports.
+
 Socket 8
 --------
 
