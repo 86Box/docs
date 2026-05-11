@@ -15,7 +15,7 @@ Sound cards to emulate. Up to 4 different sound cards are supported. Only cards 
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
-Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`. MOS Technology 6581 SID emulation for the Innovation SSI-2001 and The Entertainer is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library. General Instrument AY-3-8913 emulation for the Mindscape Music Board is provided by the `Ayumi <http://sovietov.com/app/ayumi/ayumi.html>`_ library.
+Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL2 Lite <https://github.com/nukeykt/Nuked-OPL2-Lite>`_, `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`. MOS Technology 6581 SID emulation for the Innovation SSI-2001 and The Entertainer is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library. General Instrument AY-3-8913 emulation for the Mindscape Music Board is provided by the `Ayumi <http://sovietov.com/app/ayumi/ayumi.html>`_ library.
 
 The **OPL2Board** requires an external hardware device containing an OPL2 chip. See :doc:`../hardware/externalopl` for more information.
 
