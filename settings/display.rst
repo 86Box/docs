@@ -37,6 +37,7 @@ The *Configure* button provides the following settings:
 
 * **Framebuffer memory size** / **Texture memory size**: amount of video memory for the Frame Buffer Interface and Texture Mapping Unit(s), respectively.
 * **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on screen.
+* **Dither subtraction:** apply a different texture dithering algorithm.
 * **Screen Filter:** apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
 * **Render threads:** split the workloads of each Voodoo card into different CPU threads for faster emulation. The recommended amount of render threads depends on your host system's CPU core count, and whether or not Voodoo 2 SLI is enabled:
 
