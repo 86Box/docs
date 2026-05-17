@@ -70,6 +70,8 @@ The *Configure* buttons next to each card open a new window with settings specif
 |monitor| Monitor
 -----------------
 
+All settings in this tab, except for :ref:`Monitor EDID <settings/display:Monitor EDID>`, can be changed without a hard reset of the emulated machine.
+
 VGA screen type
 ^^^^^^^^^^^^^^^
 

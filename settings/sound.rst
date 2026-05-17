@@ -51,7 +51,7 @@ Device to output MIDI music to, for sound cards equipped with an external MIDI o
 * **Roland MT-32**/**CM-32L Emulation:** emulate a Roland synthesizer module. Emulation is provided by the `Munt <http://munt.sourceforge.net>`_ library.
 * **System MIDI:** output to a MIDI device on the host system, such as the Windows software synthesizer or a USB MIDI adapter.
 
-The *Configure* button opens a new window with settings specific to the selected output device, such as the soundfont to use for *FluidSynth* and the host MIDI device to use for *System MIDI*.
+The *Configure* button opens a new window with settings specific to the selected output device, such as the soundfont to use for *FluidSynth* and the host MIDI device to use for *System MIDI*. All output devices can be attached, removed or configured without a hard reset of the emulated machine.
 
 MIDI In Device
 ^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ Device to receive MIDI music from, for sound cards equipped with an external MID
 * **None:** don't receive MIDI music.
 * **System MIDI:** receive from a MIDI device on the host system, such as a USB MIDI adapter.
 
-The *Configure* button opens a new window with settings specific to the selected input device, such as the host MIDI device to use for *System MIDI*.
+The *Configure* button opens a new window with settings specific to the selected input device, such as the host MIDI device to use for *System MIDI*. All input devices can be attached, removed or configured without a hard reset of the emulated machine.
 
 Standalone MPU-401
 ^^^^^^^^^^^^^^^^^^

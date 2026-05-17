@@ -33,7 +33,7 @@ Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulate
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
-* **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data.
+* **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data. Can be changed without a hard reset of the emulated machine.
 
 .. note::
   * Only models with DVD support (indicated by the |dvdrom_small| DVD icon on the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>`) are able to read discs or host folders larger than 1 GB, unlike in previous 86Box versions.
