@@ -24,7 +24,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 
 * **None:** no device connected.
 * **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
-* **LPT DAC / Covox Speech Thing:** sound device with a simple resistor ladder DAC, supported by many games (through compatibility with the *Disney Sound Source* above), demos and trackers.
+* **LPT DAC / Covox Speech Thing:** sound device with a simple resistor ladder DAC, supported by many games, demos and trackers.
 * **Stereo LPT DAC:** stereo version of the **LPT DAC**, using the *Strobe* pin to select the active output channel.
 * **FTL Sound Adapter:** enhanced version of the **Stereo LPT DAC**, with additional circuitry for Dungeon Master.
 * **SiliconSoft SoundJr:** enhanced version of the **Stereo LPT DAC**, with volume control through the printer control pins.
