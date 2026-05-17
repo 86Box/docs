@@ -3,7 +3,7 @@
 
 The **Ports (COM & LPT)** page contains settings related to the emulated machine's I/O ports.
 
-.. note:: The **serial port passthrough** options previously available here are now part of the *Serial Passthrough*, *Named Pipe* and *Virtual Console* :ref:`serial devices <settings/ports:COM1-4>`.
+.. note:: The **serial port passthrough** options previously available here are now part of the **Serial Passthrough**, **Named Pipe** and **Virtual Console** :ref:`serial devices <settings/ports:COM1-4>`.
 
 |parallel_ports| Parallel ports
 -------------------------------
@@ -69,7 +69,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 
   * Different wirings can be selected through the *Configure* button.
 
-The *Configure* button (right) opens a new window with settings specific to the selected device, such as the output file format for printers.
+The *Configure* button (right) opens a new window with settings specific to the selected device, such as the output file format for printers. All devices can be attached and some can be removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by :ref:`PLIP <settings/network:Adapter>`.
 
 |serial_ports| Serial ports
 ---------------------------
@@ -139,4 +139,4 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 
 * **Loopback Plug:** a serial plug with pins wired together in a null-modem configuration, for use with diagnostic software.
 
-The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough.
+The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`serial mouse <settings/input:Mouse>` or :ref:`modem <settings/network:Adapter>`.
