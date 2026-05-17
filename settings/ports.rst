@@ -25,7 +25,13 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 * **None:** no device connected.
 * **Disney Sound Source:** sound device with a resistor ladder DAC (digital-to-analog converter) and FIFO, supported by many games.
 * **LPT DAC / Covox Speech Thing:** sound device with a simple resistor ladder DAC, supported by many games (through compatibility with the *Disney Sound Source* above), demos and trackers.
-* **Stereo LPT DAC:** stereo version of the LPT DAC, using the *Strobe* pin to select the active output channel.
+* **Stereo LPT DAC:** stereo version of the **LPT DAC**, using the *Strobe* pin to select the active output channel.
+* **FTL Sound Adapter:** enhanced version of the **Stereo LPT DAC**, with additional circuitry for Dungeon Master.
+* **SiliconSoft SoundJr:** enhanced version of the **Stereo LPT DAC**, with volume control through the printer control pins.
+* **AdLib-on-LPT / Creative Music System-on-LPT / Tandy-on-LPT:** sound devices providing standard ISA sound chips through the parallel interface.
+
+  * Special drivers are required for games and applications to access these sound chips through the parallel port.
+
 * **Generic Text Printer:** simple printer capable of outputting text only.
 
   * Printed documents are saved as .txt files in the ``printer`` subdirectory found in the emulated machine's directory.
@@ -65,6 +71,10 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
   * The *Unidirectional / LapLink* cable transmits 8-bit and receives 5-bit data, following the simple cross-over wiring supported by many PC-to-PC connection software, including MS-DOS Interlnk, Windows Direct Cable Connection and PLIP.
   * The *Bidirectional* cable transmits and receives 8-bit data with no control/status lines.
   * The *DirectParallel FAST* cable is backwards compatible with the LapLink cable and adds support for faster bidirectional and ECP modes on Windows Direct Cable Connection.
+
+* **File:** write all outgoing data to a file on the host system.
+
+  * Raw data is written to the file, without the document separation and page formatting performed by the **Generic Text Printer**.
 
 * **Loopback Plug:** a parallel plug with pins wired together in a specific manner, for use with diagnostic software.
 
