@@ -92,11 +92,6 @@ Additional information area
 
 This area, located to the right of the icons described above, contains additional information which may be provided by components such as the :ref:`settings/peripherals:ISABugger` and :ref:`settings/peripherals:POST card`.
 
-Monitor sleep mode
-^^^^^^^^^^^^^^^^^^
-
-The *Monitor in sleep mode* message will be displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
-
 MT-32 display
 ^^^^^^^^^^^^^
 
@@ -112,12 +107,14 @@ POST card
 
 The leftmost hexadecimal value is the most recent POST code reported, while the rightmost value is the second most recent code, like on a real dual-display POST card. A value of ``--`` indicates that no POST code has been reported yet.
 
-.. note:: The additional information area can only be used by one component at a time. The MT-32 display has the highest priority, followed by the monitor sleep mode message, then the ISABugger and POST card with the same priority (taking over whenever they're written to).
+.. note:: The additional information area can only be used by one component at a time. The MT-32 display has the highest priority, followed by both the ISABugger and POST card with the same priority (taking over whenever they're written to).
 
 Refresh rate indicator
 ----------------------
 
 The emulated monitor's current refresh rate, as defined by the :doc:`display hardware <../settings/display>`.
+
+A *Monitor in sleep mode* message is displayed if the emulated monitor has been put into DPMS sleep mode by the operating system. Pressing a key or moving the mouse is often enough to wake the monitor up.
 
 |num_lock_off| |caps_lock_off| |scroll_lock_off| Keyboard indicators
 --------------------------------------------------------------------
