@@ -16,7 +16,7 @@ The *Configure* button opens a new window with settings specific to the selected
 Video #2
 ^^^^^^^^
 
-Optional secondary video card to emulate. Click |clear| to search for cards by name or bus. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
+Optional secondary video card to emulate. Click |clear| to search for cards by name or bus. Only the **MDA**, **Hercules**, **Hercules Plus** and a limited set of **PCI/AGP VGA** cards are currently supported as secondary options. The secondary card's video output is displayed on a separate window.
 
 As with the primary card above, the *Configure* button can be used to configure the selected card.
 
