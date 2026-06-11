@@ -135,6 +135,10 @@ Slot 2
 
 * The BIOS display will corrupt itself during the memory test if the maximum of 2048 MB RAM is selected. This is a visual glitch which does not otherwise negatively impact the machine.
 
+.. rubric:: Supermicro S2DGE
+
+* Equipped with an on-board Adaptec AIC-7890 SCSI controller on the S2DGU variant. Since the BIOSes of two boards are binary identical, *Supermicro S2DGU* is set as an alias of this machine.
+
 Socket 370
 ----------
 
