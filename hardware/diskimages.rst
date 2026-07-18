@@ -4,7 +4,7 @@ Disk images
 86Box supports a large variety of disk image formats for the emulated storage drives.
 
 .. raw:: html
-  
+
   <style>
     /* There's no getting around Sphinx automatically sizing columns without some CSS.
        It's that kind of recurring issue a lot of people had but nobody ever addressed. */
@@ -226,6 +226,10 @@ Supported formats:
     - .mdx
     - Support will not be available on Windows hosts if the included ``mdsx.dll`` file is missing from the 86Box directory.
 
+  * - `CHD <https://docs.mamedev.org/tools/chdman.html>`_
+    - .chd
+    -
+
   * - `AaruFormat <https://aaru.app/>`_
     - .aaruf, .aif, .aaruformat
     - Support for AaruFormat images requires ``libaaruformat.dll`` (Windows), ``libaaruformat.dylib`` (macOS), or ``libaaruformat.so`` (Linux and other Unices)
@@ -236,6 +240,11 @@ CD audio
 Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **AaruFormat**, **Cue sheet**, and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 For **Cue sheet** images, audio tracks in raw (.bin), encapsulated (.wav) and compressed (.mp3 .ogg .flac) formats are supported.
+
+CHD support
+^^^^^^^^^^^
+
+CHD files are most often seen in software sets intended for the `MAME <https://www.mamedev.org/>`_ emulator, but other sources exist, including self-made images created with the ``chdman`` utility.  86Box only supports CHDs that represent CD and DVD media, other CHD types (such as hard disk and LaserDisc) are not supported.
 
 Cassette tape images
 --------------------
