@@ -210,13 +210,13 @@ Supported formats:
 
   * - ISO
     - .iso
-    -
+    - Represents only a single data track, no audio tracks supported.
 
   * - Cue sheet
     - .cue + .bin
 
       (+ optional audio)
-    - :ref:`Audio tracks are supported. <hardware/diskimages:CD audio>`
+    -
 
   * - Alcohol 120%
     - .mds + .mdf
@@ -237,9 +237,24 @@ Supported formats:
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **AaruFormat**, **Cue sheet**, and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported with most image formats, with the notable exception of ISO file images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 For **Cue sheet** images, audio tracks in raw (.bin), encapsulated (.wav) and compressed (.mp3 .ogg .flac) formats are supported.
+
+Multiple session support
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+CDs containing multiple sessions (sometimes branded “Enhanced CD”) is supported on the **Cue sheet**, **Alcohol 120%**, **Daemon Tools**, and **AaruFormat** image types.  Other image types do not support representing multiple sessions.
+
+For **Cue sheet** images, multiple sessions are implement through an unofficial ``REM SESSION XX`` extension, not supported by the original CDRWIN software nor many other Cue sheet-supporting programs.  An example of a multi-session Cue sheet is as follows::
+
+  FILE "data.bin" BINARY
+  REM SESSION 01
+    TRACK 01 AUDIO
+      INDEX 01 00:00:00
+  REM SESSION 02
+    TRACK 02 MODE2/2352
+      INDEX 01 05:00:00
 
 CHD support
 ^^^^^^^^^^^
