@@ -208,15 +208,15 @@ Supported formats:
     - File extension
     - Notes
 
+  * - ISO
+    - .iso
+    -
+
   * - Cue sheet
     - .cue + .bin
 
       (+ optional audio)
     - :ref:`Audio tracks are supported. <hardware/diskimages:CD audio>`
-
-  * - ISO
-    - .iso
-    -
 
   * - Alcohol 120%
     - .mds + .mdf
@@ -226,10 +226,14 @@ Supported formats:
     - .mdx
     - Support will not be available on Windows hosts if the included ``mdsx.dll`` file is missing from the 86Box directory.
 
+  * - `AaruFormat <https://aaru.app/>`_
+    - .aaruf, .aif, .aaruformat
+    - Support for AaruFormat images requires ``libaaruformat.dll`` (Windows), ``libaaruformat.dylib`` (macOS), or ``libaaruformat.so`` (Linux and other Unices)
+
 CD audio
 ^^^^^^^^
 
-Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **Cue sheet** and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
+Compact Disc Digital Audio (CDDA) playback through the emulated CD-ROM drives is supported on **AaruFormat**, **Cue sheet**, and **Daemon Tools** images. Audio output is enabled on the first CD-ROM drive and muted on subsequent drives by default; individual drives can be muted or unmuted through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.
 
 For **Cue sheet** images, audio tracks in raw (.bin), encapsulated (.wav) and compressed (.mp3 .ogg .flac) formats are supported.
 
