@@ -246,7 +246,7 @@ Multiple session support
 
 CDs containing multiple sessions (sometimes branded “Enhanced CD”) is supported on the **Cue sheet**, **Alcohol 120%**, **Daemon Tools**, and **AaruFormat** image types.  Other image types do not support representing multiple sessions.
 
-For **Cue sheet** images, multiple sessions are implement through an unofficial ``REM SESSION XX`` extension, not supported by the original CDRWIN software nor many other Cue sheet-supporting programs.  An example of a multi-session Cue sheet is as follows::
+For **Cue sheet** images, multiple sessions are implemented through an unofficial ``REM SESSION XX`` extension, not supported by the original CDRWIN software nor many other Cue sheet-supporting programs.  An example of a multi-session Cue sheet is as follows::
 
   FILE "data.bin" BINARY
   REM SESSION 01
