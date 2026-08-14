@@ -232,7 +232,7 @@ Supported formats:
 
   * - `AaruFormat <https://aaru.app/>`_
     - .aaruf, .aif, .aaruformat
-    - Support for AaruFormat images requires ``libaaruformat.dll`` (Windows), ``libaaruformat.dylib`` (macOS), or ``libaaruformat.so`` (Linux and other Unices)
+    - Support will not be available on Windows hosts if the included ``libaaruformat.dll`` file is missing from the 86Box directory.
 
 CD audio
 ^^^^^^^^
