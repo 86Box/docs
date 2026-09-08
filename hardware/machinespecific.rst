@@ -90,6 +90,7 @@ Socket 7
 * Being early internal betas, the BIOS versions used on this machine have some known bugs and quirks:
   * By default, the integrated IDE controller is disabled in the BIOS setup utility. To enable it, go to the *Integrated Peripherals* sub-menu under the *Advanced* menu and set the *On-Chip Primary PCI IDE* and *On-Chip Secondary PCI IDE* options to **Enabled**. Note that there is also an *Onboard IDE Controller* option in the same menu, which controls the unused IDE controller in the W83877F super I/O and should be left **Disabled**, as otherwise it will conflict with the PIIX4 southbridge's IDE controller and cause the machine to be unable to detect any IDE drives.
   * The November 1997 beta's setup utility is very buggy and tends to crash when scrolling down in long menus. The January 1998 beta, which is the default option in 86Box, is noticeably more stable in comparison.
+  * The IDE drive types in the setup utility are a bit non-standard. To set an IDE channel to auto-detect a drive, the drive type must be set to 47; while to set it to use custom drive parameters, the type must be set to 49 or 50.
   * Under Windows 9x (95, 98 and Me), the Intel PIIX4 IDE driver may conflict with the standard IDE driver. The IDE controller is perfectly functional otherwise.
 
 .. _ma23c:
