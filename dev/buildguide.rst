@@ -126,7 +126,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl3-dev libzstd-dev libpng-dev libopenal-dev librtmidi-dev libfluidsynth-dev libsndfile1-dev libserialport-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev
+    $ sudo apt install build-essential cmake pkg-config ninja-build libfreetype-dev libsdl3-dev libzstd-dev libpng-dev libopenal-dev librtmidi-dev libfluidsynth-dev libsndfile1-dev libserialport-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev libslirp-dev
 
 
 Arch
@@ -134,7 +134,7 @@ Arch
 
 .. code-block:: bash
   
-    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja libfreetype sdl2 zstd libpng openal rtmidi libslirp fluidsynth libsndfile libserialport qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
+    $ sudo pacman -Sy base-devel cmake pkgconf ninja libfreetype sdl2 zstd libpng openal rtmidi libslirp fluidsynth libsndfile libserialport qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
 
 
 Fedora
@@ -145,7 +145,7 @@ Fedora
   .. code-block:: bash
 
         $ sudo dnf group install c-development
-        $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build freetype-devel SDL3-devel libatomic libzstd-devel libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static libpng-static
+        $ sudo dnf install cmake pkg-config ninja-build freetype-devel SDL3-devel libatomic libzstd-devel libpng-devel libslirp-devel libXi-devel openal-soft-devel rtmidi-devel fluidsynth-devel libsndfile-devel libserialport-devel qt5-linguist qt5-qtconfiguration-devel qt5-qtbase-private-devel qt5-qtbase-static wayland-devel libevdev-devel libxkbcommon-x11-devel zlib-ng-compat-static libpng-static
 
 
 
