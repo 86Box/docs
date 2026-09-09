@@ -136,7 +136,7 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules \
+    $ sudo apt install build-essential cmake \
                        pkg-config ninja-build libfreetype-dev libsdl3-dev \
                        libzstd-dev libpng-dev libopenal-dev librtmidi-dev \
                        libfluidsynth-dev libsndfile1-dev libserialport-dev \
@@ -150,7 +150,7 @@ Arch
 
 .. code-block:: bash
   
-    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkgconf ninja \
+    $ sudo pacman -Sy base-devel cmake pkgconf ninja \
                       libfreetype sdl2 zstd libpng openal rtmidi libslirp \
                       fluidsynth libsndfile libserialport qt5-base \
                       qt5-xcb-private-headers qt5-tools libevdev libxkbcommon \
@@ -165,7 +165,7 @@ Fedora
   .. code-block:: bash
 
         $ sudo dnf group install c-development
-        $ sudo dnf install cmake extra-cmake-modules pkg-config ninja-build \
+        $ sudo dnf install cmake pkg-config ninja-build \
                            freetype-devel SDL3-devel libatomic libzstd-devel \
                            libpng-devel libslirp-devel libXi-devel \
                            openal-soft-devel rtmidi-devel fluidsynth-devel \
