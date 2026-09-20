@@ -15,12 +15,12 @@ Sound cards to emulate. Up to 4 different sound cards are supported. Only cards 
 
 The *Configure* button opens a new window with settings specific to the selected sound card, such as the I/O ports, IRQ and DMA channels for ISA cards.
 
-Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL2 Lite <https://github.com/nukeykt/Nuked-OPL2-Lite>`_, `Nuked OPL3 <https://github.com/nukeykt/Nuked-OPL3>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`. MOS Technology 6581 SID emulation for the Innovation SSI-2001 and The Entertainer is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library. General Instrument AY-3-8913 emulation for the Mindscape Music Board is provided by the `Ayumi <http://sovietov.com/app/ayumi/ayumi.html>`_ library.
+Emulation for the Yamaha OPL series of synthesizers (used by many of the emulated cards) is provided by a modified `Nuked OPL2 Lite <https://github.com/nukeykt/Nuked-OPL2-Lite>`_, `Nuked OPL3 Fast <https://github.com/tgies/Nuked-OPL3-fast>`_, `Nuked CQM <https://github.com/nukeykt/Nuked-CQM>`_ or `ymfm <https://github.com/aaronsgiles/ymfm>`_ library, per the :ref:`selection below <settings/sound:FM synth driver>`. MOS Technology 6581 SID emulation for the Innovation SSI-2001 and The Entertainer is provided by the reSIDfp component of the `libsidplayfp <https://github.com/libsidplayfp/libsidplayfp>`_ library. General Instrument AY-3-8913 emulation for the Mindscape Music Board is provided by the `Ayumi <http://sovietov.com/app/ayumi/ayumi.html>`_ library.
 
 The **OPL2Board** requires an external hardware device containing an OPL2 chip. See :doc:`../hardware/externalopl` for more information.
 
 Use FLOAT32 sound
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^\
 
 Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
 
@@ -36,7 +36,7 @@ FM synth driver
 
 Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
 
-.. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers.
+.. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers. **Nuked CQM** is always used on Sound Blaster cards equipped with Creative CQM.
 
 |midi| MIDI
 -----------
