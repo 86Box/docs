@@ -19,6 +19,13 @@ Emulation for the Yamaha OPL series of synthesizers (used by many of the emulate
 
 The **OPL2Board** requires an external hardware device containing an OPL2 chip. See :doc:`../hardware/externalopl` for more information.
 
+FM synth driver
+^^^^^^^^^^^^^^^
+
+Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
+
+.. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers.
+
 Use FLOAT32 sound
 ^^^^^^^^^^^^^^^^^
 
@@ -27,16 +34,9 @@ Use the 32-bit floating point (instead of 16-bit integer) data type for audio ou
 Audio output device
 ^^^^^^^^^^^^^^^^^^^
 
-Select a host audio device to use for all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
+Host audio device to use for all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
 
 .. note:: This option does not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
-
-FM synth driver
-^^^^^^^^^^^^^^^
-
-Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM** may improve emulation performance at the cost of accuracy.
-
-.. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers.
 
 |midi| MIDI
 -----------
