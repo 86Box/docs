@@ -226,12 +226,16 @@ Supported formats:
     - .mdx
     - Support will not be available on Windows hosts if the included ``mdsx.dll`` file is missing from the 86Box directory.
 
-  * - `CHD <https://docs.mamedev.org/tools/chdman.html>`_
-    - .chd
+  * - CloneCD
+    - .ccd + .img + .sub
     -
 
+  * - `CHD <https://docs.mamedev.org/tools/chdman.html>`_
+    - .chd
+    - The :ref:`usage/preferences:Precache CHD files into memory` option preloads uncompressed image contents into RAM for improved performance.
+
   * - `AaruFormat <https://aaru.app/>`_
-    - .aaruf, .aif, .aaruformat
+    - .aaruf / .aif / .aaruformat
     - Support will not be available on Windows hosts if the included ``libaaruformat.dll`` file is missing from the 86Box directory.
 
 CD audio
@@ -244,17 +248,25 @@ For **Cue sheet** images, audio tracks in raw (.bin), encapsulated (.wav) and co
 Multiple session support
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-CDs containing multiple sessions (sometimes branded “Enhanced CD”) is supported on the **Cue sheet**, **Alcohol 120%**, **Daemon Tools**, and **AaruFormat** image types.  Other image types do not support representing multiple sessions.
+CDs containing multiple sessions (sometimes branded “Enhanced CD”) is supported on the **Cue sheet**, **Alcohol 120%**, **Daemon Tools** and **AaruFormat** image types.  Other image types do not support representing multiple sessions.
 
-For **Cue sheet** images, multiple sessions are implemented through an unofficial ``REM SESSION XX`` extension, not supported by the original CDRWIN software nor many other Cue sheet-supporting programs.  An example of a multi-session Cue sheet is as follows::
+For **Cue sheet** images, multiple sessions are implemented through the unofficial ``REM SESSION XX`` extension, not supported by the original CDRWIN software nor many other Cue-supporting applications.
 
-  FILE "data.bin" BINARY
-  REM SESSION 01
-    TRACK 01 AUDIO
-      INDEX 01 00:00:00
-  REM SESSION 02
-    TRACK 02 MODE2/2352
-      INDEX 01 05:00:00
+.. container:: toggle
+
+    .. container:: toggle-header
+
+        Example of a multi-session Cue sheet
+
+    .. code-block:: none
+
+        FILE "data.bin" BINARY
+        REM SESSION 01
+          TRACK 01 AUDIO
+            INDEX 01 00:00:00
+        REM SESSION 02
+          TRACK 02 MODE2/2352
+            INDEX 01 05:00:00
 
 CHD support
 ^^^^^^^^^^^

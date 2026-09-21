@@ -28,6 +28,11 @@ Ask for confirmation before saving settings / quitting / hard resetting
 
 Enable confirmation messages for the specified actions. These options can reenable confirmations after they have been disabled through the *Don't show this message again* box.
 
+Precache CHD files into memory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Load the full uncompressed contents of CHD format :ref:`hardware/diskimages:CD-ROM / DVD-ROM optical disc images` into host RAM ahead of time. May improve emulation performance when using CHD images, especially compressed ones, at the cost of longer disc mounting times and higher 86Box RAM usage.
+
 Color scheme
 ^^^^^^^^^^^^
 
