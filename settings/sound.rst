@@ -27,7 +27,7 @@ Yamaha OPL2/3 emulation back-end to use. **Nuked** is the default, while **YMFM*
 .. note:: **YMFM** is always used for OPL4 and OPM emulation on sound cards equipped with either of those synthesizers.
 
 Use FLOAT32 sound
-^^^^^^^^^^^^^^^^^\
+^^^^^^^^^^^^^^^^^
 
 Use the 32-bit floating point (instead of 16-bit integer) data type for audio output, which is less prone to clipping but may not work at all on some host systems. Try disabling this if you're getting no audio output from 86Box at all.
 
@@ -36,7 +36,12 @@ Audio output device
 
 Host audio device to use for all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware.
 
-.. note:: This option does not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
+Sample rate
+^^^^^^^^^^^
+
+Audio sample rate target for all audio produced by the emulated machine's PC speaker, :doc:`sound cards <../settings/sound>` and other sound hardware. May improve the sound quality of some applications if changed.
+
+.. note:: The **Audio output device** and **Sample rate** options do not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
 
 |midi| MIDI
 -----------
