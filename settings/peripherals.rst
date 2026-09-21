@@ -44,6 +44,9 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
   * - ``0x84``
     - Early Compaq
 
+  * - ``0xA1``
+    - IBM Multistation 5550
+
   * - ``0xE0 0xE4``
     - Dell (4-character text display after the port ``0x80`` hex display)
 
