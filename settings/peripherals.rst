@@ -44,6 +44,9 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
   * - ``0x84``
     - Early Compaq
 
+  * - ``0x90``
+    - 8086-based IBM PS/2
+
   * - ``0xA1``
     - IBM Multistation 5550
 
@@ -51,7 +54,7 @@ The POST card will automatically use the correct diagnostic I/O ports for the em
     - Dell (4-character text display after the port ``0x80`` hex display)
 
   * - ``0x190``
-    - IBM PS/1 and PS/2 not based on the Micro Channel Architecture
+    - IBM PS/1 and other PS/2 not based on the Micro Channel Architecture
 
   * - ``0x378``
     - Olivetti
