@@ -87,6 +87,13 @@ This icon is always present, providing options to control all audio produced by 
 
 .. note:: Sound options do not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
 
+|recompiler| |interpreter| Dynamic recompiler
+---------------------------------------------
+
+A dynamic recompiler / interpreter icon will appear if the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>` is enabled, displaying whether or not the recompiler is currently enabled.
+
+* **Force interpretation / Allow recompilation:** temporarily disable the recompiler. Uncheck this option to reenable it. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`I` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
+
 Additional information area
 ---------------------------
 
