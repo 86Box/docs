@@ -59,24 +59,24 @@ Action
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
-* **Auto-pause on focus loss:** automatically pause emulation while the 86Box window is not focused.
 
   .. _pause:
 
-* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F1` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to pause or resume emulation.
+* **Pause / Resume:** pause emulation of the machine. Select this option again to resume emulation. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`P` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to pause or resume emulation.
 * **Fullscreen:** enter full screen mode. You can press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Up` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to enter full screen mode or go back to windowed mode. The menu bar, :doc:`toolbar <toolbar>` and :doc:`status bar <statusbar>` are hidden by default in full screen mode; press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`Page Down` (also :ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to show or hide them.
+* **Toggle on-screen display:** show or hide the :doc:`osd`. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`O` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to toggle the OSD.
 
   .. _fast-forward:
 
-* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
+* **Fast forward:** run the emulated machine at the highest speed your host system can handle. Uncheck this option to return to normal speed. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`F` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
 
   .. _interpreter:
 
-* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`I` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
+* **Force interpretation / Allow recompilation:** temporarily disable the :ref:`dynamic recompiler <settings/machine:Dynamic Recompiler>`. Uncheck this option to reenable the recompiler. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`I` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to control this option.
 
   .. _hard-reset:
 
-* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Alt`\ +\ :kbd:`F12` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to hard reset.
+* **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`Shift`\ +\ :kbd:`F12` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to hard reset.
 
   .. _send-cad:
 
@@ -85,18 +85,19 @@ Action
   .. _send-cae:
 
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine. You can alternatively press :kbd:`Ctrl`\ +\ :kbd:`F10` (:ref:`customizable <usage/preferences:|key_bindings| Key bindings>`) to send that combination.
+* **Non-maskable interrupt:** send an NMI to the emulated machine, for advanced users running debugging tools.
 
   .. _acpi-shutdown:
 
-* **ACPI shutdown:** send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
+* **Power off:** send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
 ----
 
-* **Hide toolbar:** hides the :doc:`toolbar <toolbar>` below the menu bar.
-* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
-* **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
+* **Hide toolbar:** hide the :doc:`toolbar <toolbar>` below the menu bar.
+* **Hide status bar:** hide the :doc:`status bar <statusbar>` at the bottom of the window.
+* **Show non-primary monitors:** show or hide the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
@@ -109,7 +110,7 @@ View
   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
   * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
 
-* **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. 
+* **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. Not available on macOS hosts.
 * **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
 * **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*), double (*2x*) or larger (up to *8x*) sizes.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
@@ -120,21 +121,21 @@ View
 * **Renderer:** select a graphical renderer for the emulated display.
 
   * **Qt (Software)** is recommended in most cases.
-  * **Qt (OpenGL)** and **Vulkan** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable.
-  * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
+  * **OpenGL** and **Vulkan** allow for shader effects to be applied to the emulated display, however, they are not compatible with older integrated GPUs.
 
-* **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
+* **Renderer options:** open a window to configure the *OpenGL* and *Vulkan* renderers. This option will be available if any of those renderers is selected.
 
   * **Synchronize with video:** update the emulated display at its current refresh rate.
   * **Use target framerate:** update the emulated display at the selected refresh rate.
   * **VSync:** enable vertical sync. Recommended if tearing artifacts are observed.
-  * **Add:** add a ``.glsl`` or ``.glslp`` file to the list of shaders to apply on the emulated display.
+  * **GPU:** graphics processor to use for rendering. Only available on the *Vulkan* renderer.
+  * **Add:** add a ``.glsl``/``.glslp`` (OpenGL) or ``.slangp`` (Vulkan) file to the list of shaders to apply on the emulated display.
   * **Remove:** remove the selected shader from the list.
   * **Configure:** open a window to configure parameters on the selected shader.
   * **Move up/down:** move the selected shader up or down in the processing order.
 
 .. note::
-  * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the `RetroArch glsl-shaders repository <https://github.com/libretro/glsl-shaders>`_ is a good place to start.
+  * Many shaders are available for simulating CRT displays, VHS tapes and other aesthetics; the RetroArch `glsl-shaders <https://github.com/libretro/glsl-shaders>`_ and `slang-shaders <https://github.com/libretro/slang-shaders>`_ repositories are good places to start.
   * ``.cg`` and ``.cgp`` shaders are not supported, as these formats are long deprecated.
 
 * **OpenGL input stretch mode:** select the picture mode to use for the raw image data fed into the applied OpenGL shader(s). Refer to *Fullscreen stretch mode* below for the available options.

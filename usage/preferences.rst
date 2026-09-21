@@ -18,6 +18,11 @@ Select media images from program working directory
 
 Start the first file open/save prompt on the emulated machine's directory. This option is particularly useful for macOS users.
 
+Auto-pause on focus loss / dialog boxes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Automatically pause emulation while the 86Box window is not focused, and/or when the window is covered by a file selector or other dialog boxes.
+
 Ask for confirmation before saving settings / quitting / hard resetting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

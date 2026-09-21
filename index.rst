@@ -39,6 +39,7 @@ to retro computing and, of course, 86Box. We look forward to hearing from you!
    usage/menubar
    usage/toolbar
    usage/statusbar
+   usage/osd
    settings/index
    usage/preferences
 
