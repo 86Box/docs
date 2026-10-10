@@ -85,7 +85,7 @@ The following messages can be sent to the instance by the manager:
     - Pause or unpause the emulated machine.
 
   * - ``CtrlAltDel``
-    - Send a *Ctrl+Alt+Delete* keyboard sequence to the emulated machine.
+    - Send a *Ctrl+Alt+Del* keyboard sequence to the emulated machine.
 
   * - ``ShowSettings``
     - Open the emulated machine's :doc:`Settings window <../settings/index>`.
@@ -127,7 +127,7 @@ Commands sent by the manager must be followed by a newline character (``\n``). T
     - Pause or unpause the emulated machine.
 
   * - ``cad``
-    - Send a *Ctrl+Alt+Delete* keyboard sequence to the emulated machine.
+    - Send a *Ctrl+Alt+Del* keyboard sequence to the emulated machine.
 
   * - ``reset``
     - Force a reset of the emulated machine.
@@ -190,7 +190,7 @@ All window messages sent by the emulator include the main window's handle in ``L
   * - ``WM_CTRLALTDEL``
     - ``0x8894``
     - Manager
-    - Send a *Ctrl+Alt+Delete* keyboard sequence to the emulated machine.
+    - Send a *Ctrl+Alt+Del* keyboard sequence to the emulated machine.
 
   * - ``WM_SENDSTATUS``
     - ``0x8895``
