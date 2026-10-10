@@ -12,4 +12,4 @@ Up to four Magneto-Optical, four removable disk drives and four tape drives can 
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels and SCSI IDs.
 * **Type**: drive model to identify as. A list of drive models to choose from is provided; click |clear| to search for models by name. Each model supports different types of media, while the *86BOX* models supports all types.
 
-MO, removable disk and tape images can be inserted and removed through the :ref:`status bar <usage/statusbar:|rdisk| |zip| |jaz| |mo| |tape| Removable disk, MO and tape drives>` or :ref:`Media menu <usage/menubar:Media>`.
+MO, removable disk and tape images can be inserted and removed through the :ref:`status bar <usage/statusbar:|rdisk| |zip| |jaz| |syquest| |mo| |tape| Removable disk, MO and tape drives>` or :ref:`Media menu <usage/menubar:Media>`.
