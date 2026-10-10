@@ -32,7 +32,6 @@ This |page| contains important notes related to specific machine models emulated
 .. rubric:: IBM AT
 
 * On-board RAM is limited to 512 KB; more can be added through :ref:`ISA memory expansion <settings/peripherals:|isa_memory| ISA Memory Expansion>` cards.
-* The IBM Personal Computer Diagnostics disks are not Y2K-compliant and will produce a *0152 ERROR - SYSTEM BOARD* code if :ref:`time synchronization <settings/machine:Time synchronization>` is enabled. This code can be cleared by disabling time synchronization, then wiping NVRAM :ref:`through the VM manager <usage/manager:Machine list>` or by deleting ``ibmat.nvr`` from the machine's ``nvr`` directory.
 
 .. rubric:: IBM XT Model 286
 
@@ -60,7 +59,7 @@ i486
 
 .. rubric:: Zida Tomato 4DPS
 
-* Floppy drive support is completely disabled by default. It can be enabled through the *Onboard FDD Controller* option of the *Chipset Features Setup* menu in the BIOS setup; the floppy drives themselves must also be configured in the *Standard CMOS Setup* menu.
+* On the default Funworld BIOS, floppy drive support must be enabled manually through the *Onboard FDD Controller* option of the *Chipset Features Setup* menu in the BIOS setup; the floppy drives themselves must also be configured in the *Standard CMOS Setup* menu.
 
 Socket 7
 --------
@@ -84,16 +83,14 @@ Socket 7
 
 .. rubric:: AwardBIOS v6.00PG Beta Evaluation Board
 
-* This is an implementation of the motherboard used by Award Software to evaluate what are assumed to be early betas of AwardBIOS v6.00PG circa 1997-1998.
-* Although the betas share their BIOS ID with that of the `EFA P5TX-AT <https://theretroweb.com/motherboards/s/efa-p5tx-at>`_ and `E5TX-AT <https://theretroweb.com/motherboards/s/efa-e5tx-at>`_, they utilize a different super I/O chip (Winbond W83877F instead of ALi M5135) and different southbridge IRQ (IRQ 1 instead of IRQ 7), hence making them incompatible with those motherboards.
-* The betas also identify themselves as AwardBIOS v4.51PG. Although; instead of the traditional blue BIOS setup utility, they use a non-standard one that matches the visual style of PhoenixBIOS 4.0x's "NuBIOS" utility, which is more in line with other known AwardBIOS v6.00PG betas.
-* Being early internal betas, the BIOS versions used on this machine have some known bugs and quirks:
+* This custom motherboard was used by Award Software to evaluate what are assumed to be early betas of AwardBIOS v6.00PG around 1997-1998.
+* The BIOS identifies as AwardBIOS v4.51PG for the `EFA P5TX-AT <https://theretroweb.com/motherboards/s/efa-p5tx-at>`_ or `E5TX-AT <https://theretroweb.com/motherboards/s/efa-e5tx-at>`_; however, the target hardware deviates from those boards, and the setup utility is an early version of the Phoenix-style one seen in some v6.00PG implementations.
+* Being early internal betas, the BIOS versions have known bugs and quirks:
 
-  * By default, the integrated IDE controller is disabled in the BIOS setup utility. To enable it, go to the *Integrated Peripherals* sub-menu under the *Advanced* menu and set the *On-Chip Primary PCI IDE* and *On-Chip Secondary PCI IDE* options to **Enabled**. Note that there is also an *Onboard IDE Controller* option in the same menu, which controls the unused IDE controller in the W83877F super I/O and should be left **Disabled**, as otherwise it will conflict with the PIIX4 southbridge's IDE controller and cause the machine to be unable to detect any IDE drives.
-  * The November 1997 beta's setup utility is very buggy and tends to crash when scrolling down in long menus. The January 1998 beta, which is the default option in 86Box, is noticeably more stable in comparison.
-  * The IDE drive types in the setup utility are a bit non-standard. To set an IDE channel to auto-detect a drive, the drive type must be set to *47*; while to set it to use custom drive parameters, the type must be set to *49* or *50*.
-  * To set an optical drive (CD-ROM, DVD-ROM, etc.), the type must be set to *47* for auto-detection, as the utility does not support a specific type for such drives (like on standard AwardBIOS v4.51PG).
-  * Under Windows 9x (95, 98 and Me), the Intel PIIX4 IDE driver may conflict with the standard IDE driver. The IDE controller is perfectly functional otherwise.
+  * The integrated IDE controller is disabled by default in the BIOS setup. To enable it, go to the *Integrated Peripherals* sub-menu under the *Advanced* menu and set the *On-Chip Primary PCI IDE* and *On-Chip Secondary PCI IDE* options to *Enabled*. Note that the *Onboard IDE Controller* option in the same menu corresponds to the Super I/O chip's unused IDE controller and should remain *Disabled* to prevent a conflict with the chipset IDE.
+  * The November 1997 beta's setup utility often crashes when scrolling down in long menus, while the January 1998 beta (the default option) is more stable.
+  * The setup utility's IDE drive types are slightly non-standard: type *47* corresponds to automatic detection, while both *49* and *50* correspond to custom drive parameters. CD-ROM and other non-hard-disk drives must be set to *47*.
+  * Windows 95, 98 and Me may report a conflict between IDE drivers, which does not affect normal operation.
 
 .. _ma23c:
 .. rubric:: NEC Mate NX MA23C
@@ -104,6 +101,31 @@ Socket 7
 .. rubric:: Siemens Simatic OP47
 
 * Equipped with SMC FDC37C932FR and Intel 82091AA Super I/O chips driving four serial (COM1-COM4) and one parallel (LPT1) ports.
+
+Super Socket 7
+--------------
+
+.. _cobalt3k-pacifica:
+.. rubric:: Cobalt RaQ 3/4
+
+* **Not PC compatible:** the BIOS can only boot the Cobalt operating system or a customized Linux installation from an IDE hard disk or a network server, and it can only be interacted with through an :ref:`LCD console <hardware/keyboard:Cobalt>` or a serial console. Keyboards and video cards are not supported.
+* The BIOS defaults to network boot for restoring the operating system. Official restore discs are live CDs designed to be booted on a normal PC with a **direct network connection** to the Cobalt.
+
+  * Using another 86Box machine with an *Intel PRO/100* network card connected through the :ref:`Local Switch feature <hardware/network:Local Switch>` is recommended.
+  * Some restore discs will not change the default boot order to hard disk when done. Change it through the BIOS menu before or after restoring: hard reset the machine, hold down :kbd:`Space` (Select) when the Cobalt logo starts to appear, release it when *Select option* appears, use the arrow keys to select *Configure boot*, press :kbd:`Enter`, select *From disk*, press :kbd:`Enter`, select *Boot from disk* or *Boot from net*, press :kbd:`Enter`.
+
+* Recommended machine settings for the Cobalt operating system:
+
+  * :ref:`BIOS <settings/machine:Machine type / Machine>` 2.3.39 (the default option), as later versions have restore-related bugs.
+  * :ref:`Network cards 1 and 2 <settings/network:|network| Adapter 1-4>` set to *Internal device*.
+  * :ref:`COM1 <settings/ports:COM1-4>` set to *Virtual Console* for detailed boot logs. :ref:`LPT1 <settings/ports:LPT1-4>` set to *None* as it is internally taken up by the LCD console and therefore cannot be used.
+  * Two identical :doc:`IDE hard disks <../settings/hdd>` on channels 0:0 and 1:0, as some restore discs set up a RAID 1 across two disks and will fail to restore without them. On-board SCSI is available but not supported by software.
+
+.. _cobalt3k-carmel:
+.. rubric:: Cobalt Qube 3
+
+* See: :ref:`cobalt3k-pacifica`
+* The National Semiconductor DP83815 Ethernet controllers are not emulated by 86Box. They are replaced by the RaQ 3/4's Intel 82559ER, which are fully supported by the BIOS and operating system.
 
 Socket 8
 --------

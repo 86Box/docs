@@ -65,12 +65,17 @@ Use the 486 interpreter for 286 and 386 processors
 
 Enable a faster but less accurate CPU emulation engine on 286- or 386-class processors. Recommended for low-end host systems which are struggling to emulate faster 386s. This option is not available if any other processor family is selected above.
 
-Dynamic Recompiler
+Dynamic recompiler
 ^^^^^^^^^^^^^^^^^^
 
 Enable the dynamic recompiler, which provides faster but less accurate CPU emulation. The recompiler is available as an option for 486-class processors, and is mandatory starting with the Pentium.
 
 .. note:: The recompiler can be disabled temporarily (even on processors where it is mandatory) through an option on the :ref:`Action menu <usage/menubar:Action>`, in the unlikely event that an application performs worse with the recompiler enabled. Selecting this temporary option again or restarting 86Box will reenable the recompiler.
+
+Accurate FPU environment on the dynamic recompiler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable to remove some performance shortcuts in the math co-processor emulation while using the dynamic recompiler, for running a limited set of applications which demand access to floating point unit instruction state. Can be combined with :ref:`Softfloat <settings/machine:Softfloat FPU>` for maximum FPU accuracy at a high performance cost.
 
 CPU frame size
 ^^^^^^^^^^^^^^

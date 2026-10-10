@@ -141,3 +141,49 @@ The Toshiba T1000 series function keys can be accessed by holding Right Alt or R
 
   * - Show/hide pop-up window (T1200)
     - Print Screen
+
+Cobalt
+^^^^^^
+
+The :ref:`Cobalt RaQ 3/4 <cobalt3k-pacifica>` and :ref:`Qube 3 <cobalt3k-carmel>` use an LCD console with buttons for accessing menus in the firmware or the operating system, instead of a regular keyboard and display.
+
+.. |bullet| unicode:: U+2022
+
+.. flat-table::
+  :header-rows: 1
+
+  * - :cspan:`1` Console button
+    - Host key
+
+  * - ⯅
+    - Up
+    - 🠉
+
+  * - ⯆
+    - Down
+    - 🠋
+
+  * - ⯇
+    - Left
+    - 🠈
+
+  * - ⯈
+    - Right
+    - 🠊
+
+  * - S
+
+      ▷⁠|
+    - Select
+    - Space
+
+  * - E
+
+      |bullet|
+    - Enter
+    - Enter
+
+  * - :cspan:`1` Password reset
+
+      (pinhole)
+    - Esc

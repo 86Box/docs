@@ -149,5 +149,6 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
     * Variables ``$PTY`` (path to the PTY device), ``$VMNAME`` (machine :ref:`display name <usage/manager:Machine list>`), ``$PORT`` (emulated port name such as ``COM1``) and ``$PIPECMD`` (command used in *Start terminal emulator* mode) are passed to the command.
 
 * **Loopback Plug:** a serial plug with pins wired together in a null-modem configuration, for use with diagnostic software.
+* **FujiNet (BoIP):** connect to a `FujiNet <https://fujinet.online/>`_ Bus-over-IP TCP server.
 
-The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`serial mouse <settings/input:Mouse>` or :ref:`modem <settings/network:Adapter>`.
+The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`serial mouse <settings/input:Mouse>`, :ref:`tablet <settings/input:Tablet>` or :ref:`modem <settings/network:Adapter>`.

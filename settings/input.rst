@@ -15,18 +15,28 @@ The *Configure* button opens a new window with settings specific to the selected
 Mouse
 -----
 
-Emulate a pointing device. Click |clear| to search for devices by name. The following types are supported:
+Emulate a mouse. Click |clear| to search for mice by name. The following types are supported:
 
 * **Bus mouse:** ISA expansion card with a mouse interface. The I/O port and IRQ used by the card are configurable.
 * **Serial mouse:** connected to the serial port of your choosing.
-* **Serial tablet:** also connected to a serial port, but providing absolute (seamless) input on supported operating systems and/or applications.
 * **PS/2 mouse:** connected to the PS/2 port. Only available on machines with a PS/2 mouse port.
 
-The *Configure* button opens a new window with settings specific to the selected device type, such as the number of buttons, or the serial port for a serial mouse or tablet.
+The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
 
 .. note::
-  * **Serial pointing devices** require the configured serial port to be enabled and set to *None* on the :ref:`Ports page's Serial ports tab <settings/ports:COM1-4>`.
+  * **Serial mice** require the configured serial port to be enabled and set to *None* on the :ref:`Ports page's Serial ports tab <settings/ports:COM1-4>`.
   * The **middle mouse button** cannot be used to release mouse capture when emulating a pointing device with 3 or more buttons.
+
+Tablet
+------
+
+Emulate a tablet, touchscreen or light pen device, providing absolute (seamless) input on supported operating systems and/or applications. Click |clear| to search for devices by name.
+
+The *Configure* button opens a new window with settings specific to the selected device type, such as the serial port for a serial tablet.
+
+.. note::
+  * **Serial tablets** require the configured serial port to be enabled and set to *None* on the :ref:`Ports page's Serial ports tab <settings/ports:COM1-4>`.
+  * Use the :ref:`Action menu <usage/menubar:Action>`'s **Input device** option to switch to a crosshair cursor, or to switch between mouse and tablet when emulating both simultaneously.
 
 Joystick
 --------

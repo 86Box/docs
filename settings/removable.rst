@@ -8,7 +8,7 @@ The **Other removable devices** page contains settings related to the emulated m
 
 Up to four Magneto-Optical, four removable disk drives and four tape drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
-* **Bus:** storage bus to attach the drive to. ATAPI (IDE) and SCSI are supported. For tape drives, FDC (floppy-based tape) and LPT (parallel port) are also supported.
+* **Bus:** storage bus to attach the drive to. ATAPI (IDE) and SCSI are supported. For tape drives, LPT (parallel port) and FDC (floppy-based tape) are also supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels and SCSI IDs.
 * **Type**: drive model to identify as. A list of drive models to choose from is provided; click |clear| to search for models by name. Each model supports different types of media, while the *86BOX* models supports all types.
 

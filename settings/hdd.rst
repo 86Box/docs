@@ -18,6 +18,8 @@ Model / Audio
 
 The *Model* box below the hard disk list determines the **disk model** to emulate. Click |clear| to search for models by name or bus. Model profiles adjust the disk's identification data, as well as its performance according to rotation speed, physical layout and cache size. Generic profiles adjust performance to match an average period-correct disk, while the **RAM Disk** profile runs the disk as fast as the host can manage.
 
+The *Configure* button next to the *Model* box allows for changing the disk's identification data when a generic profile is selected.
+
 Additionally, the *Audio* box allows for emulating the mechanical sounds of a real hard disk drive. A list of drive models to choose from is provided, according to the selected model's spindle speed; the *None* option disables these sounds.
 
 .. note:: The *Audio* option is only available if the :ref:`asset pack <usage/roms:Asset pack>` is installed.

@@ -214,9 +214,15 @@ Supported formats:
 
   * - Cue sheet
     - .cue + .bin
-
+      
       (+ optional audio)
-    -
+    - 
+
+  * - TOC
+    - .toc + .bin
+      
+      (+ optional audio)
+    - 
 
   * - Alcohol 120%
     - .mds + .mdf
@@ -228,7 +234,7 @@ Supported formats:
 
   * - CloneCD
     - .ccd + .img + .sub
-    -
+    - 
 
   * - `CHD <https://docs.mamedev.org/tools/chdman.html>`_
     - .chd

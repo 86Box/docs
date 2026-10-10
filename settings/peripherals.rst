@@ -84,7 +84,7 @@ The serial number displayed in software can be configured through the *Configure
 |isa_memory| ISA Memory Expansion
 ---------------------------------
 
-Add up to four ISA-based memory expansion cards, for machines which support memory expansion through the ISA bus. Click |clear| to search for cards by name.
+Add up to four memory expansion cards, for machines which support memory expansion through the ISA or MCA bus. Click |clear| to search for cards by name.
 
 The memory start address and size for each card can be configured through its respective *Configure* button.
 

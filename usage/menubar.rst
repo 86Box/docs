@@ -59,6 +59,7 @@ Action
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while the 86Box window is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
 * **Update mouse every CPU frame:** force the emulated mouse to send movements as fast as possible, ignoring any polling rate set by the emulated operating system.
+* **Input device:** select whether the host mouse controls the emulated :ref:`mouse <settings/input:Mouse>` or :ref:`tablet <settings/input:Tablet>`. *Tablet (Crosshair)* also changes the host cursor to a crosshair. Only available when emulating a tablet.
 
   .. _pause:
 
@@ -89,7 +90,7 @@ Action
 
   .. _acpi-shutdown:
 
-* **Power off:** send a power button press to the emulated machine. Only available on machines with ACPI soft power off support.
+* **Power off:** send a power button press to the emulated machine. On machines without ACPI soft power off support, this has the same effect as **Exit** below.
 * **Exit:** quit 86Box. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 
 View
@@ -102,6 +103,7 @@ View
 * **Remember size & position:** automatically save the 86Box window's size and position for this emulated machine.
 * **Specify dimensions:** open a window where an exact size (in pixels) for the emulated display can be set. If checked, the *Lock to this size* box prevents changes in the emulated display's resolution from overriding the specified size.
 * **Force 4:3 display ratio:** stretch the emulated display to a 4:3 aspect ratio, independently of the emulated machine's screen resolution.
+* **Force machine display ratio:** stretch the emulated display to the emulated machine's original display aspect ratio, independently of its screen resolution. Only available on specific machines with special aspect ratios.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
   * **Full screen stretch:** stretch the emulated display to completely fill the host display.

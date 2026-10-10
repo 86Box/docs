@@ -31,7 +31,7 @@ Enable confirmation messages for the specified actions. These options can reenab
 Precache CHD files into memory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Load the full uncompressed contents of CHD format :ref:`hardware/diskimages:CD-ROM / DVD-ROM optical disc images` into host RAM ahead of time. May improve emulation performance when using CHD images, especially compressed ones, at the cost of longer disc mounting times and higher 86Box RAM usage.
+Load the full uncompressed contents of CHD format :ref:`hardware/diskimages:CD-ROM / DVD-ROM optical disc images` into host RAM ahead of time. May improve emulation performance when using CHD images, especially compressed ones, at the cost of longer disc mounting times and higher 86Box memory usage.
 
 Color scheme
 ^^^^^^^^^^^^
