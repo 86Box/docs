@@ -158,7 +158,7 @@ Slot 1/2
 
 .. rubric:: Freeway FW-6400GX
 
-* The maximum amount of RAM is limited to 2032 MB due to a BIOS bug with 2048 MB.
+* The maximum amount of RAM is limited to 1792 MB due to a BIOS bug with 2048 MB.
 * ACPI is disabled by default. It can be enabled through the *ACPI Aware O/S* option of the *Power Management Setup* menu in the BIOS setup.
 * Once enabled, ACPI :ref:`does not work correctly <brokenacpi>` if a non-Intel CPU is selected.
 
