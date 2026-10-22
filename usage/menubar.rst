@@ -159,9 +159,6 @@ Tools
 
 * **Settings:** open the :doc:`Settings <../settings/index>` window to configure the emulated machine.
 * **Update status bar icons:** enable the activity lights on :doc:`status bar <statusbar>` icons. Unchecking this option may improve emulation performance on low-end host systems.
-* **Enable Discord integration:** enable Discord Rich Presence. 86Box shares the emulated machine's name, model and CPU with other Discord users.
-
-.. note:: Integration requires the Discord desktop app, running on Windows (x64 only), Linux (``x86_64`` only) or macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
   .. _take-screenshot:
 
@@ -183,6 +180,8 @@ Tools
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.
+
+.. note:: Discord integration has been moved to the :ref:`VM manager <preferences>`.
 
 Help
 ----

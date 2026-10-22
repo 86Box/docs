@@ -88,11 +88,13 @@ Tools
   * **Remember size & position:** automatically save the manager window's size and position and the machine list's width.
   * **Check for updates on startup:** automatically check for 86Box updates when starting the manager.
   * **Use regular expressions in search box:** enable the use of Perl-syntax regexes to perform more complex searches with the search box.
+  * **Discord**: check *Show running machines in my Discord status* to enable Discord integration, which shares the information specified in *Details shown* with other Discord users.
   * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
 
 .. note::
   * The manager **must be restarted** for any changes to the system directory to take effect.
   * The system directory is **scanned recursively** for machines through their ``86box.cfg`` files.
+  * Discord integration requires the Discord desktop app and the 86Box manager to be running. The host OS and Windows DLL limitations from previous 86Box versions no longer apply.
 
 * **Check for updates:** check for and download any available 86Box version update.
 
