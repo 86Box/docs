@@ -108,24 +108,24 @@ Super Socket 7
 .. _cobalt3k-pacifica:
 .. rubric:: Cobalt RaQ 3/4
 
-* **Not PC compatible:** the BIOS can only boot the Cobalt operating system or a customized Linux installation from an IDE hard disk or a network server, and it can only be interacted with through an :ref:`LCD console <hardware/keyboard:Cobalt>` or a serial console. Keyboards and video cards are not supported.
-* The BIOS defaults to network boot for restoring the operating system. Official restore discs are live CDs designed to be booted on a normal PC with a **direct network connection** to the Cobalt.
+* **Not PC compatible:** the BIOS can only boot the Cobalt operating system or a customized Linux installation from an IDE hard disk or a network server, and it can only be interacted with through the :ref:`LCD console <hardware/keyboard:Cobalt>` or a serial console. Keyboards and video cards are not supported.
+* The BIOS defaults to network boot for restoring the operating system. Official restore discs are live CDs designed to be booted on a regular PC with a **direct network connection** to the Cobalt.
 
   * Using another 86Box machine with an *Intel PRO/100* network card connected through the :ref:`Local Switch feature <hardware/network:Local Switch>` is recommended.
   * Some restore discs will not change the default boot order to hard disk when done. Change it through the BIOS menu before or after restoring: hard reset the machine, hold down :kbd:`Space` (Select) when the Cobalt logo starts to appear, release it when *Select option* appears, use the arrow keys to select *Configure boot*, press :kbd:`Enter`, select *From disk*, press :kbd:`Enter`, select *Boot from disk* or *Boot from net*, press :kbd:`Enter`.
+  * Some restore discs will disable the serial console when done. To enable it again: hard reset the machine, hold down :kbd:`Esc` (password reset pinhole) when the Cobalt logo starts to appear, release it when *console ON* appears.
 
 * Recommended machine settings for the Cobalt operating system:
 
   * :ref:`BIOS <settings/machine:Machine type / Machine>` 2.3.39 (the default option), as later versions have restore-related bugs.
   * :ref:`Network cards 1 and 2 <settings/network:|network| Adapter 1-4>` set to *Internal device*.
   * :ref:`COM1 <settings/ports:COM1-4>` set to *Virtual Console* for detailed boot logs. :ref:`LPT1 <settings/ports:LPT1-4>` set to *None* as it is internally taken up by the LCD console and therefore cannot be used.
-  * Two identical :doc:`IDE hard disks <../settings/hdd>` on channels 0:0 and 1:0, as some restore discs set up a RAID 1 across two disks and will fail to restore without them. On-board SCSI is available but not supported by software.
+  * Two identical :doc:`IDE hard disks <../settings/hdd>` on channels 0:0 and 1:0, as some restore discs set up a RAID 1 across two disks and will fail to restore without both. On-board SCSI is available but not supported by software.
 
 .. _cobalt3k-carmel:
 .. rubric:: Cobalt Qube 3
 
-* See: :ref:`cobalt3k-pacifica`
-* The National Semiconductor DP83815 Ethernet controllers are not emulated by 86Box. They are replaced by the RaQ 3/4's Intel 82559ER, which are fully supported by the BIOS and operating system.
+See: :ref:`cobalt3k-pacifica`
 
 Socket 8
 --------
