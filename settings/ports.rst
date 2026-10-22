@@ -71,6 +71,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
   * The *Unidirectional / LapLink* cable transmits 8-bit and receives 5-bit data, following the simple cross-over wiring supported by many PC-to-PC connection software, including MS-DOS Interlnk, Windows Direct Cable Connection and PLIP.
   * The *Bidirectional* cable transmits and receives 8-bit data with no control/status lines.
   * The *DirectParallel FAST* cable is backwards compatible with the LapLink cable and adds support for faster bidirectional and ECP modes on Windows Direct Cable Connection.
+  * The *Raw SPP with handshaking* differs from the *Unidirectional / LapLink* cable in that transmitting a byte requires pulsing the *Strobe* pin, emulating a printer's behavior.
 
 * **File:** write all outgoing data to a file on the host system.
 
