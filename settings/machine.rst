@@ -77,6 +77,16 @@ Accurate FPU environment on the dynamic recompiler
 
 Enable to remove some performance shortcuts in the math co-processor emulation while using the dynamic recompiler, for running a limited set of applications which demand access to floating point unit instruction state. Can be combined with :ref:`Softfloat <settings/machine:Softfloat FPU>` for maximum FPU accuracy at a high performance cost.
 
+Block linking on the dynamic recompiler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable a dynamic recompiler optimization which is known to improve emulation speed in most cases, but reduce it in a limited set of applications.
+
+Debug registers on 486 and later processors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable the hardware breakpoint/watchpoint functionality on 486-class or newer processors, for running software debuggers and copy-protected games which require it, at the cost of slower emulation. This functionality is always enabled on 386-class processors.
+
 CPU frame size
 ^^^^^^^^^^^^^^
 
