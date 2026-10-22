@@ -67,6 +67,13 @@ The *Configure* buttons next to each card open a new window with settings specif
 
 .. note:: Pairing the 8514/A and XGA with each other or with video cards from **ATI** or **S3** may result in compatibility issues, as each card implements a set of 8514/A features.
 
+PowerVR PCX1/PCX2 Graphics
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Emulate an **NEC PowerVR PCX1** or **PCX2** add-on 3D accelerator connected to the PCI bus.
+
+The *Configure* button opens a new window with settings specific to the accelerator card, such as the chip type.
+
 |monitor| Monitor
 -----------------
 
