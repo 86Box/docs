@@ -41,6 +41,13 @@ The **device** is the main unit of emulated components in 86Box. Each device is 
       * ``DEVICE_COM``: serial port;
       * ``DEVICE_LPT``: parallel port.
 
+      The following device behavior flags can be **OR**\ ed to the bus flags above:
+
+      * ``DEVICE_SOFTRESET``: also call the ``reset`` function specified below in a soft reset;
+      * ``DEVICE_HOTPLUG_IN``: can be safely added without a hard reset;
+      * ``DEVICE_HOTPLUG_OUT``: can be safely removed without a hard reset;
+      * ``DEVICE_HOTPLUG``: can be safely added and removed without a hard reset.
+
   * - ``local``
     - 32-bit value which can be read from this structure by the ``init`` callback.
       Use this value to tell different subtypes of the same device, for example.
