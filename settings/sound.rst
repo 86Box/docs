@@ -43,6 +43,23 @@ Audio sample rate target for all audio produced by the emulated machine's PC spe
 
 .. note:: The **Audio output device** and **Sample rate** options do not apply to MIDI music sent to a software synthesizer through the :ref:`System MIDI <settings/sound:MIDI Out Device>` device, as these synthesizers are external to 86Box.
 
+Enable audio input (mic/line-in)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable sound cards to record from a host audio input device such as a microphone or line input.
+
+.. note:: Recording support is currently limited to most ISA sound cards.
+
+Audio input device
+^^^^^^^^^^^^^^^^^^
+
+Host audio device to use for recording. The same device is connected to all sound cards which support recording.
+
+Audio input sample rate
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Audio sample rate target for recording. May improve recording quality if changed.
+
 |midi| MIDI
 -----------
 
