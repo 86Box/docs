@@ -23,11 +23,11 @@ As with the primary card above, the *Configure* button can be used to configure 
 Voodoo 1 or 2 Graphics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected in the *General* tab.
+Emulate a **3dfx Voodoo** add-on 3D accelerator, connected to both the PCI bus and the video card selected above.
 
 .. note:: The **Voodoo Banshee** and **Voodoo 3** are independent video cards, which are not found here; they must be selected on the :ref:`settings/display:Video` box above, and this Voodoo Graphics option **cannot be selected** alongside them. For these cards, the *Configure* button next to the :ref:`settings/display:Video` box provides similar settings to the ones listed below.
 
-The *Configure* button provides the following settings:
+The *Configure* button opens a new window with settings specific to the accelerator card:
 
 * **Voodoo type:** type of Voodoo card to emulate.
 
