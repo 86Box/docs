@@ -111,6 +111,8 @@ View
   * **Square pixels (keep ratio):** scale the emulated display to fit the host display, without changing the aspect ratio.
   * **Integer scale:** scale the emulated display to the largest integer scale factor to fit the host display. This provides the highest possible picture quality, at the cost of black bars if the host display's resolution is not divisible by the emulated display's resolution.
   * **4:3 integer scale:** stretch the emulated display to a 4:3 aspect ratio, then scale it to the largest integer scale factor to fit the host display.
+  * **Center:** center the emulated display on the host display without further scaling.
+  * **4:3 center:** stretch the emulated display to a 4:3 aspect ratio, then center it on the host display without further scaling.
 
 * **Apply fullscreen stretch mode when maximized:** apply the picture mode selected above in windowed mode if *Resizeable window* is enabled and the window is maximized. Not available on macOS hosts.
 * **CGA composite settings:** adjust the picture's hue, saturation, brightness, contrast and sharpness. Only available when emulating a composite CGA monitor.
