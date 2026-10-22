@@ -75,6 +75,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 * **File:** write all outgoing data to a file on the host system.
 
   * Raw data is written to the file, without the document separation and page formatting performed by the **Generic Text Printer**.
+  * *Write to the file immediately* flushes the file on every write, which is recommended if an external application is watching it.
 
 * **Loopback Plug:** a parallel plug with pins wired together in a specific manner, for use with diagnostic software.
 
@@ -129,6 +130,7 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 * **File:** write all outgoing data to a file and/or read incoming data from a file on the host system.
 
   * If *Append to file if it exists* is unchecked, the outgoing data file is cleared every time the device is connected, including when the emulated machine is started or hard reset.
+  * *Write to the file immediately* flushes the file on every write, which is recommended if an external application is watching it.
 
 * **Virtual Console:** connect to a terminal on the host system, in one of multiple modes.
 
