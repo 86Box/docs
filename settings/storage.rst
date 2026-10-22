@@ -31,6 +31,11 @@ The *Configure* buttons open a new window with settings specific to the correspo
 
 .. note:: The **tertiary and quaternary IDE controllers** are now selectable here, replacing the previous separate options for each. These controllers are not Plug and Play compliant by default, potentially requiring manual configuration of the emulated operating system, and may not be bootable; see :doc:`../hardware/ideterqua` for more information.
 
+Turbo IDE
+^^^^^^^^^
+
+Enable to bypass bus speed limits on emulated IDE devices. Any limits set by :ref:`hard disk model presets <settings/hdd:Model / Audio>` or :ref:`CD-ROM drive speeds <settings/floppycdrom:|cdrom| CD-ROM drives>` still apply.
+
 Cassette
 ^^^^^^^^
 
