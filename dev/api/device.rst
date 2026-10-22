@@ -295,6 +295,12 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
                 .default_string = "Default"
             },
             {
+                .name           = "strhex",
+                .description    = "Hex string",
+                .type           = CONFIG_STRHEX,
+                .default_string = "FFFF"
+            },
+            {
                 .name           = "fname",
                 .description    = "Filename",
                 .type           = CONFIG_FNAME,
@@ -373,6 +379,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_HEX16``: combobox containing a list of 16-bit hexadecimal values (useful for ISA I/O ports) specified by the ``selection`` member;
       * ``CONFIG_HEX20``: combobox containing a list of 20-bit hexadecimal values (useful for ISA memory addresses) specified by the ``selection`` member;
       * ``CONFIG_STRING``: arbitrary text string entered by the user;
+      * ``CONFIG_STRHEX``: arbitrary 16-bit hexadecimal value entered as a string by the user;
       * ``CONFIG_FNAME``: arbitrary file path entered by the user directly or through a file selector button, with a file type filter specified by the ``file_filter`` member;
       * ``CONFIG_BINARY``: checkbox;
       * ``CONFIG_INT``: arbitrary integer number, currently treated as ``CONFIG_SELECTION`` by the user interface;
@@ -384,7 +391,7 @@ Configuration options can be specified in the ``config`` member of ``device_t``,
       * ``CONFIG_END``: **mandatory** terminator to indicate the end of the option list.
 
   * - ``default_string``
-    - Default string value for a ``CONFIG_STRING`` option. Can be ``NULL`` if not applicable.
+    - Default string value for a ``CONFIG_STRING`` or ``CONFIG_STRHEX`` option. Can be ``NULL`` if not applicable.
 
   * - ``default_int``
     - Default integer value for a ``CONFIG_SELECTION``, ``CONFIG_HEX16``, ``CONFIG_HEX20``, ``CONFIG_BINARY``, ``CONFIG_INT`` or ``CONFIG_SPINNER`` option. On ``CONFIG_FNAME`` options, setting this to ``1`` makes the file selector button bring up a save dialog instead of an open dialog. Can be ``0`` if not applicable.
@@ -423,7 +430,7 @@ Configured option values can be read from within the device's ``init`` callback 
     - Description
 
   * - ``name``
-    - The option's ``name``. Accepted option types are ``CONFIG_STRING``, ``CONFIG_FNAME`` and ``CONFIG_SERPORT``.
+    - The option's ``name``. Accepted option types are ``CONFIG_STRING``, ``CONFIG_STRHEX``, ``CONFIG_FNAME`` and ``CONFIG_SERPORT``.
 
   * - **Return value**
     - The option's configured string value, or its ``default_string`` if no value is present. Note that a ``const char *`` is returned.
