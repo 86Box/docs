@@ -20,7 +20,7 @@ CD-ROM controller
 
 Standalone CD-ROM controller card to emulate. Only cards supported by the machine's expansion buses will be listed. Click |clear| to search for cards by name or bus. These cards provide vendor-specific CD-ROM interfaces beyond :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>` or :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`.
 
-The I/O port used by the selected controller can be configured through the *Configure* button.
+The I/O port, IRQ and DMA used by the selected controller (where applicable) can be configured through the *Configure* button.
 
 Hard disk controllers
 ^^^^^^^^^^^^^^^^^^^^^
