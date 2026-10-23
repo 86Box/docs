@@ -81,6 +81,13 @@ Emulate the hardware license key card required by Novell NetWare 2.0a among othe
 
 The serial number displayed in software can be configured through the *Configure* button.
 
+Software-initiated poweroff device (IBM 5140)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Emulate the IBM PC Convertible's soft power off interface, which allows supported software to power the emulated machine off.
+
+The I/O port used by this interface can be configured through the *Configure* button.
+
 |isa_memory| ISA Memory Expansion
 ---------------------------------
 
