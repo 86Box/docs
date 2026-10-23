@@ -217,7 +217,7 @@ TAP
 
 TAP is a simpler method for connecting 86Box machines and other applications together without the complexity of :ref:`hardware/network:VDE`.
 
-.. note:: TAP is only available on **Linux** hosts.
+.. note:: TAP is only available on **Linux** hosts. Additionally, it is not supported on the **AppImage**, as the ``cap_net_raw`` and ``cap_net_admin`` permissions cannot be passed through to it. Extracting the AppImage or running it as root is not recommended.
 
 The bridge name specified in the :ref:`network settings <settings/network:Options>` represents a virtual network: all applications set to the same bridge name will be connected to the same network. 86Box will automatically create the bridge if it doesn't already exist.
 
