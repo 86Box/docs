@@ -30,7 +30,7 @@ Floppy disk images can be inserted and removed through the :ref:`status bar <usa
 Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
 * **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`, LPT (MicroSolutions Backpack interface), :ref:`Hitachi, Mitsumi, Panasonic/MKE, Philips and Sony <settings/storage:CD-ROM controller>` interfaces are supported.
-* **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
+* **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels and SCSI IDs.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
 * **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data. Can be changed without a hard reset of the emulated machine.
