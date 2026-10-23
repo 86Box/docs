@@ -82,7 +82,7 @@ The dropdown (middle) selects an emulated device to connect to the parallel port
 
   * Different wirings can be selected through the *Configure* button.
 
-The *Configure* button (right) opens a new window with settings specific to the selected device, such as the output file format for printers. All devices can be attached and some can be removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by :ref:`PLIP <settings/network:Adapter>`.
+The *Configure* button (right) opens a new window with settings specific to the selected device, such as the output file format for printers. All devices can be attached and some can be removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`PLIP network device <settings/network:Adapter>`, :ref:`CD-ROM drive <settings/floppycdrom:|cdrom| CD-ROM drives>` or :ref:`removable disk drive <settings/removable:|mo| |rdisk_tab| |tape| MO / Removable disk / Tape drives>`.
 
 |serial_ports| Serial ports
 ---------------------------
@@ -154,4 +154,4 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 * **Loopback Plug:** a serial plug with pins wired together in a null-modem configuration, for use with diagnostic software.
 * **FujiNet (BoIP):** connect to a `FujiNet <https://fujinet.online/>`_ Bus-over-IP TCP server.
 
-The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`serial mouse <settings/input:Mouse>`, :ref:`tablet <settings/input:Tablet>` or :ref:`modem <settings/network:Adapter>`.
+The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`mouse <settings/input:Mouse>`, :ref:`tablet <settings/input:Tablet>` or :ref:`modem <settings/network:Adapter>`.

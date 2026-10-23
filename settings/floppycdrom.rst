@@ -29,7 +29,7 @@ Floppy disk images can be inserted and removed through the :ref:`status bar <usa
 
 Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
-* **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`, :ref:`Hitachi, Mitsumi, Panasonic/MKE, Philips and Sony <settings/storage:CD-ROM controller>` interfaces are supported.
+* **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`, LPT (MicroSolutions Backpack interface), :ref:`Hitachi, Mitsumi, Panasonic/MKE, Philips and Sony <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information.
 * **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
 * **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
@@ -40,5 +40,6 @@ Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulate
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
   * Disabling *Use EDC/ECC emulation* may be required for some copy-protected discs.
+  * The **LPT** bus requires the specified parallel port to be :ref:`enabled <settings/ports:LPT1-4>` and not in use by a :ref:`PLIP network device <settings/network:Adapter>`, :ref:`removable disk drive <settings/removable:|mo| |rdisk_tab| |tape| MO / Removable disk / Tape drives>` or :ref:`other parallel device <settings/ports:LPT1-4>`.
 
 CD-ROM / DVD-ROM disc images or host drives can be inserted and removed through the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>` or :ref:`Media menu <usage/menubar:Media>`.

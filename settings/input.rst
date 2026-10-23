@@ -24,7 +24,7 @@ Emulate a mouse. Click |clear| to search for mice by name. The following types a
 The *Configure* button opens a new window with settings specific to the selected mouse type, such as the number of buttons, or the serial port for a serial mouse.
 
 .. note::
-  * **Serial mice** require the configured serial port to be enabled and set to *None* on the :ref:`Ports page's Serial ports tab <settings/ports:COM1-4>`.
+  * **Serial mice** require the configured serial port to be :ref:`enabled <settings/ports:COM1-4>` and not in use by a :ref:`tablet <settings/input:Tablet>`, :ref:`modem <settings/network:Adapter>` or :ref:`other serial device <settings/ports:COM1-4>`.
   * The **middle mouse button** cannot be used to release mouse capture when emulating a pointing device with 3 or more buttons.
 
 Tablet
@@ -35,7 +35,7 @@ Emulate a tablet, touchscreen or light pen device, providing absolute (seamless)
 The *Configure* button opens a new window with settings specific to the selected device type, such as the serial port for a serial tablet.
 
 .. note::
-  * **Serial tablets** require the configured serial port to be enabled and set to *None* on the :ref:`Ports page's Serial ports tab <settings/ports:COM1-4>`.
+  * **Serial tablets** require the configured serial port to be :ref:`enabled <settings/ports:COM1-4>` and not in use by a :ref:`mouse <settings/input:Mouse>`, :ref:`modem <settings/network:Adapter>` or :ref:`other serial device <settings/ports:COM1-4>`.
   * Use the :ref:`Action menu <usage/menubar:Action>`'s **Input device** option to switch to a crosshair cursor, or to switch between mouse and tablet when emulating both simultaneously.
 
 Joystick
