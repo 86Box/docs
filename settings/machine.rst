@@ -25,9 +25,15 @@ Time synchronization
 
 Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
 
-* **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
-* **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
-* **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+Unchecking time synchronization disables it. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
+
+* **Local time:** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
+* **UTC:** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+
+**Year adjustment** can additionally be used to fake a guest's time by changing the year it begins in. Month, day, and time of day are preserved from the real time. This might be useful to avoid year-2000 problems or testing "timebombed" operating system betas.
+
+* **Offset by:** allows to adjust the year by adding or subtracting from the current year.
+* **Fixed year:** sets the guest's year to the same value every time it starts.
 
 |processor| Processor
 ---------------------
