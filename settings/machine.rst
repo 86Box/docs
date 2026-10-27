@@ -20,14 +20,22 @@ Memory
 
 Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the machine selected above.
 
-Time synchronization
-^^^^^^^^^^^^^^^^^^^^
+Synchronize with host clock
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
+Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens on each boot.
 
-* **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
-* **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
-* **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+**Time zone:** controls which time is used for the emulated system:
+
+* **Local:** synchronizes the time in your host system's configured time zone. Use this when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
+* **UTC:** synchronizes the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux or *BSD.
+
+**Date:** controls the synchronization of the year, month, and day, while the hour, minute, and second remain synchronized to the host using the set time zone rule:
+
+* **Match the host:** completely synchronizes the current date set on your host, which allows guest operating systems to follow the real date and reflect it in timestamps. This may especially be crucial when interacting with Internet services through the guest, as a roughly correct clock is expected in many network protocols.
+* **Offset the year by:** allows altering the date by offsetting the year by a specified integer number of years; negative values represent years in the past and positive values represent years in the future. If you set a value of -40 while the current year is 2027, the guest will boot up believing the year to be 1987; in the year 2028, the guest will boot up in the year 1988. This option may help to avoid year 2000 or year 2038 issues with some software.
+* **Always use the year:** sets a static year that the guest will always boot up in, while preserving the current month and day. If you set this value, for instance, to 1986, the guest will always boot up believing it to be 1986. This may cause timestamps to wrap around at the start of a new year, making newer files appear older than earlier ones. This option may help to avoid year 2000 or year 2038 issues with some software.
+* **Do not synchronize the date:** causes 86Box to only synchronize the hour, minute, and second components of the real-time clock. Any date set by the BIOS and/or operating system in the guest will stick. This may be especially useful in running "timebombed" interim builds of operating systems that have a narrow window of time during which they are permitted to be installed and used.
 
 |processor| Processor
 ---------------------
