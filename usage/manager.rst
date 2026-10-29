@@ -15,7 +15,7 @@ Opening 86Box will start the **virtual machine manager**, which allows for creat
 Machine list
 ------------
 
-The **left-hand side** of the manager window displays a list of all machines found in the :ref:`system directory <preferences>`, along with their current state and icon. Click on a machine to select it.
+The **left-hand side** of the manager window displays a list of all machines found in the :ref:`system directory <usage/preferences:System Directory>`, along with their current state and icon. Click on a machine to select it.
 
 The following options are available by **right-clicking** a machine:
 
@@ -47,7 +47,7 @@ The **search box** at the bottom of the machine list allows for filtering the li
 * Names of **hardware components** present in the machines, as displayed in the :ref:`details pane <usage/manager:Machine details>`.
 * **Image file names** for any media inserted into the machines, including hard disks, floppies and CDs.
 
-Advanced users can :ref:`enable regular expressions <preferences>` to perform more complex searches.
+Advanced users can :ref:`enable regular expressions <usage/preferences:Use regular expressions in search box>` to perform more complex searches.
 
 Machine details
 ---------------
@@ -83,18 +83,7 @@ Tools
 
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
-  * **System Directory:** view or change the folder where emulated machines are stored. The *Default* button resets to the default folder.
-  * **Language:** select a language for the 86Box user interface. The *Default* button resets back to the system language.
-  * **Remember size & position:** automatically save the manager window's size and position and the machine list's width.
-  * **Check for updates on startup:** automatically check for 86Box updates when starting the manager.
-  * **Use regular expressions in search box:** enable the use of Perl-syntax regexes to perform more complex searches with the search box.
-  * **Discord**: check *Show running machines in my Discord status* to enable Discord integration, which shares the information specified in *Details shown* with other Discord users.
-  * **Color scheme:** select a visual style for the 86Box user interface. *System* uses the operating system's global preference if possible.
-
-.. note::
-  * The manager **must be restarted** for any changes to the system directory to take effect.
-  * The system directory is **scanned recursively** for machines through their ``86box.cfg`` files.
-  * Discord integration requires the Discord desktop app and the 86Box manager to be running. The host OS and Windows DLL limitations from previous 86Box versions no longer apply.
+  
 
 * **Check for updates:** check for and download any available 86Box version update.
 
@@ -121,4 +110,4 @@ Status bar
 
 The **status bar** located at the bottom of the manager window displays a **count** of running, paused and total available machines.
 
-Additionally, any information about **available updates** will be displayed in the status bar if :ref:`checking for updates on startup <preferences>` is enabled.
+Additionally, any information about **available updates** will be displayed in the status bar if :ref:`checking for updates on startup <usage/preferences:Check for updates on startup>` is enabled.

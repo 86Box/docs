@@ -1,7 +1,7 @@
 Preferences
 ===========
 
-The **Preferences** window allows you to configure options related to 86Box as a whole, which are saved system-wide and apply to all emulated machines.
+The **Preferences** window allows you to configure options related to 86Box as a whole, which are saved system-wide and apply to all emulated machines as well as the :doc:`manager <manager>`.
 
 .. note:: Any changes made to the preferences in 86Box versions older than 5.0 (saved per-machine) have been reset.
 
@@ -59,3 +59,37 @@ View and change keyboard shortcuts for common emulator actions. Most listed acti
 The *Clear binding* button removes the shortcut associated with the selected action, and the *Bind* button allows for entering a new shortcut.
 
 .. note:: The :kbd:`F8`\ +\ :kbd:`F12` key combination used for releasing mouse capture in previous 86Box versions can no longer be configured as a shortcut.
+
+|86Box| VM Manager
+------------------
+
+System Directory
+^^^^^^^^^^^^^^^^
+
+View or change the folder where emulated machines are stored. The *Default* button resets to the default folder.
+
+.. note:: 
+  * The manager **must be restarted** for any changes to the system directory to take effect.
+  * The system directory is **scanned recursively** for machines through their ``86box.cfg`` files.
+
+Remember size & position
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Automatically save the manager window's size and position and the machine list's width.
+
+Check for updates on startup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Automatically check for 86Box updates when starting the manager.
+
+Use regular expressions in search box
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable the use of Perl-syntax regexes to perform more complex searches with the manager's search box.
+
+Discord
+^^^^^^^
+
+Check *Show running machines in my Discord status* to enable Discord integration, which shares the information specified in *Details shown* with other Discord users.
+
+.. note:: Discord integration requires the Discord desktop app and the 86Box manager to be running. The host OS and Windows DLL limitations from previous 86Box versions no longer apply.

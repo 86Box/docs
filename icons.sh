@@ -26,12 +26,12 @@ fi
 # Convert icons to PNG.
 for i in "$1/src/qt/icons/"*.ico
 do
-	"$magick" convert "$i" -set filename:size "%wx%h" "usage/images/$(basename $i | sed -e 's/.ico$//')-%[filename:size].png"
+	"$magick" convert "$i" -set filename:size "%wx%h" "usage/images/$(basename $i | sed -e 's/.ico$//' -e 's/-green//')-%[filename:size].png"
 done
 
 # Remove unnecessary icons.
 cd usage/images
-rm -f 86Box-* *active* *disabled* *mute*
+rm -f 86Box-gra* 86Box-[ry]* *active* *disabled* *mute*
 
 # Get small and big icons.
 for suffix in 8x8 256x256 128x128 64x64 32x32 16x16

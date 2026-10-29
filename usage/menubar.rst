@@ -181,7 +181,7 @@ Tools
 * **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.
 
-.. note:: Discord integration has been moved to the :ref:`VM manager <preferences>`.
+.. note:: Discord integration has been moved to the :doc:`VM manager <manager>` and its :ref:`preferences <usage/preferences:Discord>`.
 
 Help
 ----
