@@ -155,3 +155,25 @@ The dropdown (middle) selects an emulated device to connect to the serial port. 
 * **FujiNet (BoIP):** connect to a `FujiNet <https://fujinet.online/>`_ Bus-over-IP TCP server.
 
 The *Configure* button (right) opens a new window with settings specific to the selected device, such as the host serial port to use for passthrough. All devices can be attached, removed or configured without a hard reset of the emulated machine, as long as the port is not claimed by a :ref:`mouse <settings/input:Mouse>`, :ref:`tablet <settings/input:Tablet>` or :ref:`modem <settings/network:Adapter>`.
+
+|ports| USB
+-----------
+
+Card
+^^^^
+
+USB host controller card to emulate for adding USB ports. Only cards supported by the machine's expansion buses will be listed.
+
+.. note:: On machines with **on-board USB**, devices are only connected to the card selected here once no more on-board ports are available.
+
+Hub
+^^^
+
+USB hub to emulate for adding more USB ports to an existing controller.
+
+Mass storage
+^^^^^^^^^^^^
+
+USB storage device to emulate.
+
+A single device type is currently available, which provides a full SCSI bus (identified as *USB Mass Storage*) allowing for multiple :doc:`hard disks <hdd>`, :ref:`CD-ROM drives <settings/floppycdrom:|cdrom| CD-ROM drives>` and :doc:`removable storage drives <removable>` to be attached as a single mass storage device. Shortcuts to the storage device pages are provided.

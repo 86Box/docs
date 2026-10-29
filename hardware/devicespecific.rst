@@ -22,3 +22,10 @@ This |page| contains important notes related to various devices emulated by 86Bo
 .. rubric:: Xircom Pocket Ethernet III
 
 * The driver included with Windows 98 may fail to load with an error message due to a parallel port detection bug. Fix it by selecting an I/O address instead of a port name: on the *Network* control panel, select the *Xircom Pocket Ethernet III*, click *Properties*, go to the *Advanced* tab and change *LPT Port or I/O Address* to ``378`` for LPT1, ``278`` for LPT2 or ``3BC`` for LPT3.
+
+|ports| Ports
+-------------
+
+.. rubric:: VIA VT83C572 PCI to USB Controller
+
+* This early USB 1.1 controller is not supported by Windows 2000 (and potentially other operating systems) due to bugs in the real hardware.
