@@ -20,14 +20,14 @@ Memory
 
 Amount of RAM to give the emulated machine. The minimum and maximum allowed amounts of RAM will vary depending on the machine selected above.
 
-Time synchronization
-^^^^^^^^^^^^^^^^^^^^
+Synchronize with host clock
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Automatically copy your host system's date and time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
+Automatically copy your host system's date and/or time over to the emulated machine's hardware real-time clock. Synchronization is performed every time the emulated operating system reads the hardware clock to calibrate its own internal clock, which usually happens once on every boot.
 
-* **Disabled:** do not perform time synchronization. The emulated machine's date and time can be set through its operating system or BIOS setup utility. Time only ticks while the emulated machine is running.
-* **Enabled (local time):** synchronize the time in your host system's configured timezone. Use this option when emulating an operating system which stores *local time* in the hardware clock, such as DOS or Windows.
-* **Enabled (UTC):** synchronize the time in Coordinated Universal Time (UTC). Use this option when emulating an operating system which stores *UTC time* in the hardware clock, such as Linux.
+*Time zone* selects whether or not to use the host system's configured timezone for the machine's hardware clock, which depends on the emulated operating system: *Local* uses the timezone and is ideal for DOS and Windows, while *UTC* uses Coordinated Universal Time and is ideal for Linux.
+
+*Date* selects how the clock's date is handled: *Match the host* uses the current year and date, *Offset the year by* uses the current date while adding or subtracting from the current year, *Always use this year* uses the current date in the specified year, and *Do not synchronize the date* disables date synchronization.
 
 |processor| Processor
 ---------------------
