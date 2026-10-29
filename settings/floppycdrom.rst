@@ -27,18 +27,23 @@ Floppy disk images can be inserted and removed through the :ref:`status bar <usa
 |cdrom| CD-ROM drives
 ---------------------
 
-Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
+Up to eight optical disc drives can be attached to the emulated machine. The following settings apply to the selected drive:
 
 * **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`, LPT (MicroSolutions Backpack interface), :ref:`Hitachi, Mitsumi, Panasonic/MKE, Philips and Sony <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels and SCSI IDs.
-* **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
+* **Unlimited capacity:** allows the drive to accept disc images larger than the drive type would normally allow.
 * **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
 * **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data. Can be changed without a hard reset of the emulated machine.
+* **CD speed, DVD speed, HD/BD speed:** maximum transfer speed for the drive, segregated by media type. "Turbo" allows unrestricted read speeds.
 
 .. note::
-  * Only models with DVD support (indicated by the |dvdrom_small| DVD icon on the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>`) are able to read discs or host folders larger than 1 GB, unlike in previous 86Box versions.
+  * If the image format does not specify a media type, CD-ROM images are detected by sizes ≤445500 sectors (99-minute/900MB CD-Rs), DVD-ROM images are detected up to 8.5GB, HD DVD images up to 30GB, and Blu-ray images up to 50GB.
+  * Host folders must fit within drive capacity limits, or use the unlimited capacity option.
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
+  * The **86Box 86B_HDDVD 1.00** model only permits CD, DVD, and HD DVD media.
+  * The **86Box 86B_BD 1.00** model only permits CD, DVD, and Blu-ray media.
+  * The **86Box 86B_ULTRA 1.00** model permits media from all four types: CD, DVD, HD DVD, and Blu-ray.
   * Disabling *Use EDC/ECC emulation* may be required for some copy-protected discs.
   * The **LPT** bus requires the specified parallel port to be :ref:`enabled <settings/ports:LPT1-4>` and not in use by a :ref:`PLIP network device <settings/network:Adapter>`, :ref:`removable disk drive <settings/removable:|mo| |rdisk_tab| |tape| MO / Removable disk / Tape drives>` or :ref:`other parallel device <settings/ports:LPT1-4>`.
 
