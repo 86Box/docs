@@ -16,6 +16,13 @@ This |page| contains important notes related to various devices emulated by 86Bo
 
 * The driver included with Windows NT 3.1 does not properly support the extra video modes that are unlocked when the card is configured with 1 MB of video memory.
 
+|sound| Sound
+-------------
+
+.. rubric:: HP Multimedia Pro 16V-A
+
+* Early BIOS implementations of ISA Plug and Play, such as that in the **ASUS PVI-486SP3**, may fail to boot with this card due to its dummy PnP device for the disabled IDE controller.
+
 |network| Network
 -----------------
 
