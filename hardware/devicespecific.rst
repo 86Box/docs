@@ -26,6 +26,10 @@ This |page| contains important notes related to various devices emulated by 86Bo
 |network| Network
 -----------------
 
+.. rubric:: Xircom Pocket Ethernet II
+
+* The Windows NT 3.1 driver is not installable due to a broken ``OEMSETUP.INF`` file. Replace ``\NT\TAGFILE = xcspe2`` with ``TAGFILE = \NT\xcspe2`` in that file to fix it.
+
 .. rubric:: Xircom Pocket Ethernet III
 
 * The driver included with Windows 98 may fail to load with an error message due to a parallel port detection bug. Fix it by selecting an I/O address instead of a port name: on the *Network* control panel, select the *Xircom Pocket Ethernet III*, click *Properties*, go to the *Advanced* tab and change *LPT Port or I/O Address* to ``378`` for LPT1, ``278`` for LPT2 or ``3BC`` for LPT3.
