@@ -177,9 +177,9 @@ Tools
 * **Copy raw screenshot:** same as *Copy screenshot* above, but making a pixel-perfect capture of the machine's video output instead, without any processing such as scaling and shaders.
 * **Sound:** provides the same options that are accessible by clicking the :ref:`sound icon on the status bar <usage/statusbar:|sound| Sound>`.
 * **Preferences:** open the :doc:`Preferences window <preferences>` window to configure options related to 86Box as a whole.
-* **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
-* **Open printer tray**: open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
-* **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.
+* **MCA devices:** open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
+* **Open printer tray:** open the host system's file browser on the directory where documents printed by :ref:`emulated printers <settings/ports:LPT1-4>` are saved.
+* **Open screenshots folder:** open the host system's file browser on the directory where screenshots of this emulated machine are saved. Screenshots can also be viewed through the :doc:`manager`.
 
 .. note:: Discord integration has been moved to the :doc:`VM manager <manager>` and its :ref:`preferences <usage/preferences:Discord>`.
 
