@@ -31,12 +31,12 @@ Up to eight CD-ROM or DVD-ROM optical disc drives can be attached to the emulate
 
 * **Bus:** storage bus to attach the drive to. :ref:`ATAPI (IDE) <settings/storage:Hard disk controllers>`, :ref:`SCSI <settings/storage:|scsi_controllers| SCSI controllers>`, LPT (MicroSolutions Backpack interface), :ref:`Hitachi, Mitsumi, Panasonic/MKE, Philips and Sony <settings/storage:CD-ROM controller>` interfaces are supported.
 * **Channel**/**ID:** where to attach the drive on the selected storage bus. See :ref:`settings/hdd:Adding a new disk` for more information on IDE channels and SCSI IDs.
-* **Speed:** maximum transfer speed for the drive. Up to 72x is supported.
+* **CD**/**DVD**/**HD/BD speed:** maximum transfer speed for each of the drive's supported media types. Speeds can only be changed on the generic *86Box* drive models. *Turbo* makes the drive as fast as the storage bus allows.
 * **Type:** CD-ROM drive model to identify as. A list of drive models (suitable for the selected bus) to choose from is provided; click |clear| to search for models by name or speed.
+* **Unlimited capacity:** remove all disc capacity limits, allowing the drive to read discs or host folders larger than its supported media types.
 * **Use EDC/ECC emulation:** enable checking of CD-ROM error correction data. Can be changed without a hard reset of the emulated machine.
 
 .. note::
-  * Only models with DVD support (indicated by the |dvdrom_small| DVD icon on the :ref:`status bar <usage/statusbar:|cdrom| |dvdrom| CD-ROM drives>`) are able to read discs or host folders larger than 1 GB, unlike in previous 86Box versions.
   * Some emulated machines have manufacturer restore discs locked to a specific drive model.
   * The **86Box 86B_CD 1.00** model emulates early versions of the ATAPI and SCSI standards as required by older drivers.
   * Disabling *Use EDC/ECC emulation* may be required for some copy-protected discs.
