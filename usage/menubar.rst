@@ -94,7 +94,7 @@ Tools
   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity. The *Default* button resets back to the default sensitivity.
   * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
 
-* **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
+* **MCA devices:** open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
 * **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
 
 Help
