@@ -126,7 +126,8 @@ MSYS2
                   $MINGW_PACKAGE_PREFIX-libslirp $MINGW_PACKAGE_PREFIX-libsndfile \
                   $MINGW_PACKAGE_PREFIX-qt5-static \
                   $MINGW_PACKAGE_PREFIX-qt5-translations \
-                  $MINGW_PACKAGE_PREFIX-vulkan-headers
+                  $MINGW_PACKAGE_PREFIX-vulkan-headers \
+                  $MINGW_PACKAGE_PREFIX-minizip
 
 
 .. note:: The command installs the packages only for the currently used MinGW environment, therefore you will need to repeat the procedure for every target you plan to build for.
@@ -142,7 +143,7 @@ Ubuntu, Debian
                        libfluidsynth-dev libsndfile1-dev libserialport-dev \
                        qtbase5-dev qtbase5-private-dev qttools5-dev \
                        libevdev-dev libxkbcommon-dev \
-                       libxkbcommon-x11-dev libslirp-dev
+                       libxkbcommon-x11-dev libslirp-dev libminizip-dev
 
 
 Arch
@@ -154,7 +155,7 @@ Arch
                       libfreetype sdl2 zstd libpng openal rtmidi libslirp \
                       fluidsynth libsndfile libserialport qt5-base \
                       qt5-xcb-private-headers qt5-tools libevdev libxkbcommon \
-                      libxkbcommon-x11 vulkan-devel
+                      libxkbcommon-x11 vulkan-devel minizip
 
 
 Fedora
@@ -173,7 +174,7 @@ Fedora
                            qt5-qtconfiguration-devel qt5-qtbase-private-devel \
                            qt5-qtbase-static wayland-devel libevdev-devel \
                            libxkbcommon-x11-devel zlib-ng-compat-static \
-                           libpng-static
+                           libpng-static minizip-devel
 
 
 
@@ -184,7 +185,7 @@ macOS (Homebrew)
 
     $ brew install cmake ninja pkg-config freetype sdl3 zstd libpng \
                    openal-soft rtmidi libslirp fluid-synth libsndfile \
-                   libserialport qt@5
+                   libserialport qt@5 minizip
 
 
 FreeBSD
@@ -193,7 +194,7 @@ FreeBSD
 .. code-block:: bash
 
     $ pkg install cmake pkgconf freetype-gl sdl3 zstd libspng openal-soft \
-                  rtmidi qt5 libslirp fluidsynth libsndfile
+                  rtmidi qt5 libslirp fluidsynth libsndfile minizip
 
 .. note:: If you get an error about ``linux/input.h`` while building, this is due to ``libevdev.h`` mistakenly importing a Linux header file on FreeBSD. Copy the full path of ``libevdev.h`` from the error and open it with an editor. Within the file, replace the ``linux/input.h`` reference with ``dev/evdev/input.h`` and try building again.
 
