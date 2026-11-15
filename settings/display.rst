@@ -39,21 +39,21 @@ The *Configure* button opens a new window with settings specific to the accelera
 * **Bilinear filtering:** apply bilinear filtering to smooth out textures displayed on screen.
 * **Dither subtraction:** apply a different texture dithering algorithm.
 * **Screen Filter:** apply a filter to make the screen picture resemble the DAC (digital-to-analog converter) output of a real Voodoo card.
-* **Render threads:** split the workloads of each Voodoo card into different CPU threads for faster emulation. The recommended amount of render threads depends on your host system's CPU core count, and whether or not Voodoo 2 SLI is enabled:
+* **Render threads:** split the workloads of each Voodoo card into different CPU threads for faster emulation. The recommended maximum amount of render threads depends on your host system's CPU core count, and whether or not Voodoo 2 SLI is enabled:
 
-+----------+--------------------------+
-|Host cores|Recommended render threads|
-|          +-----------+--------------+
-|          |Single card|Voodoo 2 SLI  |
-+==========+===========+==============+
-|2         |1          |1             |
-+----------+-----------+--------------+
-|4         |2          |1             |
-+----------+-----------+--------------+
-|6 or 8    |4          |2             |
-+----------+-----------+--------------+
-|10 or more|4          |4             |
-+----------+-----------+--------------+
++----------+----------------------------------+
+|Host cores|Recommended maximum render threads|
+|          +-----------------+----------------+
+|          |Single card      |Voodoo 2 SLI    |
++==========+=================+================+
+|2         |1                |1               |
++----------+-----------------+----------------+
+|4         |2                |1               |
++----------+-----------------+----------------+
+|6 or 8    |4                |2               |
++----------+-----------------+----------------+
+|10 or more|4                |4               |
++----------+-----------------+----------------+
 
 * **SLI:** add a second Voodoo 2 card to the system, connected to the first one through a Scan Line Interleave (SLI) interface.
 * **Dynamic Recompiler:** enable the Voodoo recompiler for faster emulation.
