@@ -18,6 +18,15 @@ The emulator utilizes a search path mechanism to locate ROMs. By default, the fo
 
 A custom location can be specified by using the ``-R`` or ``--rompath`` command line argument, which then precedes any other considered locations.
 
+.. rubric:: Command line arguments
+
+The following command line arguments affect where ROMs are searched:
+
+* ``-R`` or ``--rompath path``: adds ``path`` to the start of the search path. It can be given more than once, in which case the paths are searched in the order given. A relative path is relative to the current working directory.
+* ``-P`` or ``--vmpath path``: sets the VM path, whose ``roms`` subdirectory is searched first after any ``-R`` paths.
+* ``-C`` or ``--config file``, or the configuration file given as the last argument: when ``-P`` is not used, the VM path is the directory containing the configuration file. For example, ``86Box /path/to/vm/86box.cfg`` searches ``/path/to/vm/roms`` first. On 86Box 6.0 and older, the current working directory was used instead, so ``-P`` must be used for the ``roms`` subdirectory of the VM to be searched.
+* ``-Z`` or ``--lastvmpath``: treats the last argument as the VM path instead of a configuration file.
+
 .. tip:: The list of all paths searched when loading ROMs is printed to the log and standard output when 86Box starts.
 
 .. rubric:: Windows
