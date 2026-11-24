@@ -188,9 +188,9 @@ See: :ref:`atc6310bxii`
 
 * Equipped with an on-board CMD PCI-0648 IDE controller on the :ref:`tertiary and quaternary channels <settings/hdd:Adding a new disk>`, on top of the PIIX4E southbridge controller on the primary and secondary channels.
 
-.. rubric:: Samsung CAIRO-5 (MSI MS-6309)
+.. rubric:: MSI MS-6309
 
-* The BIOS is in Korean by default. Press :kbd:`F2` during the Samsung logo screen to enter the setup utility, where the first option can be used to change the BIOS language to English.
+* The Samsung CAIRO-5 BIOS is in Korean by default. Press :kbd:`F2` during the Samsung logo screen to enter the setup utility, where the first option can be used to change the BIOS language to English.
 
 Miscellaneous
 -------------
